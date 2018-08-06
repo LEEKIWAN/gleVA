@@ -7,19 +7,64 @@
 //
 
 import UIKit
+import AFNetworking
 
-class ViewController: UIViewController {
+class CategoryCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var categoryNameLabel: UILabel!
+    @IBOutlet weak var videoCountLabel: UIButton!
+}
 
+
+class ViewController: UIViewController, UICollectionViewDataSource {
+  
+    var categoryArray: Array<CategoryObject> = []
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.requestCategoryList()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func requestCategoryList() {
+        AFHTTPSessionManager().get("https://api.avgle.com/v1/categories", parameters: nil, progress: nil, success: { (task, responseObject) in
+            let dict = responseObject as! Dictionary<String, Any>
+            
+            let response = dict["response"] as! Dictionary<String, Any>
+            let array = response["categories"] as! NSArray
+            
+            for item in array {
+                let dataJson = try! JSONSerialization.data(withJSONObject: item, options: JSONSerialization.WritingOptions.prettyPrinted)
+                let category = try! JSONDecoder().decode(CategoryObject.self, from: dataJson)
+                
+                self.categoryArray.append(category)
+            }
+            
+            self.collectionView.reloadData()
+        }) { (task, error) in
+            
+        }
     }
-
+    
+    
+    //MARK: - UICollectionViewDataSource
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.categoryArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let data = self.categoryArray[indexPath.row]
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath as IndexPath) as! CategoryCollectionViewCell
+        
+//        cell.categoryNameLabel.text = data.name
+        cell.backgroundColor = UIColor.blue
+        
+        return cell
+    }
 
 }
 

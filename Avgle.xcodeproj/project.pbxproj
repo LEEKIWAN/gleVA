@@ -12,9 +12,13 @@
 		831A8A872114907600C4C695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831A8A852114907600C4C695 /* Main.storyboard */; };
 		831A8A892114907700C4C695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831A8A882114907700C4C695 /* Assets.xcassets */; };
 		831A8A8C2114907700C4C695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831A8A8A2114907700C4C695 /* LaunchScreen.storyboard */; };
+		835DC4342118699F006BFEE3 /* CategoriesObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835DC4332118699F006BFEE3 /* CategoriesObject.swift */; };
+		A306047F02C09312F88A7D9B /* Pods_Avgle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDE0B4B355D4662E276D729 /* Pods_Avgle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2891E2C8EF019798991D53CC /* Pods-Avgle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avgle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Avgle/Pods-Avgle.release.xcconfig"; sourceTree = "<group>"; };
+		6BDE0B4B355D4662E276D729 /* Pods_Avgle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Avgle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		831A8A7E2114907600C4C695 /* Avgle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avgle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		831A8A812114907600C4C695 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		831A8A832114907600C4C695 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		831A8A882114907700C4C695 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		831A8A8B2114907700C4C695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		831A8A8D2114907700C4C695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		835DC4332118699F006BFEE3 /* CategoriesObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesObject.swift; sourceTree = "<group>"; };
+		CD2A6D2AC8485EB0555EF5CC /* Pods-Avgle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avgle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Avgle/Pods-Avgle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A306047F02C09312F88A7D9B /* Pods_Avgle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16F7618327E6AF7965ED8347 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD2A6D2AC8485EB0555EF5CC /* Pods-Avgle.debug.xcconfig */,
+				2891E2C8EF019798991D53CC /* Pods-Avgle.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		365FDAF15B52FC035B2EB440 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BDE0B4B355D4662E276D729 /* Pods_Avgle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		831A8A752114907600C4C695 = {
 			isa = PBXGroup;
 			children = (
 				831A8A802114907600C4C695 /* Avgle */,
 				831A8A7F2114907600C4C695 /* Products */,
+				16F7618327E6AF7965ED8347 /* Pods */,
+				365FDAF15B52FC035B2EB440 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				831A8A812114907600C4C695 /* AppDelegate.swift */,
+				835DC4332118699F006BFEE3 /* CategoriesObject.swift */,
 				831A8A832114907600C4C695 /* ViewController.swift */,
 				831A8A852114907600C4C695 /* Main.storyboard */,
 				831A8A882114907700C4C695 /* Assets.xcassets */,
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 831A8A902114907700C4C695 /* Build configuration list for PBXNativeTarget "Avgle" */;
 			buildPhases = (
+				6B7FBB1137017A44C985B77F /* [CP] Check Pods Manifest.lock */,
 				831A8A7A2114907600C4C695 /* Sources */,
 				831A8A7B2114907600C4C695 /* Frameworks */,
 				831A8A7C2114907600C4C695 /* Resources */,
+				A47994BCC42D17D9E042CA00 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,12 +159,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6B7FBB1137017A44C985B77F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Avgle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A47994BCC42D17D9E042CA00 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Avgle/Pods-Avgle-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeMenuViewController/SwipeMenuViewController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeMenuViewController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Avgle/Pods-Avgle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		831A8A7A2114907600C4C695 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				831A8A842114907600C4C695 /* ViewController.swift in Sources */,
+				835DC4342118699F006BFEE3 /* CategoriesObject.swift in Sources */,
 				831A8A822114907600C4C695 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +349,7 @@
 		};
 		831A8A912114907700C4C695 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD2A6D2AC8485EB0555EF5CC /* Pods-Avgle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +368,7 @@
 		};
 		831A8A922114907700C4C695 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2891E2C8EF019798991D53CC /* Pods-Avgle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
