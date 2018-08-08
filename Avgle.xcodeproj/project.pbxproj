@@ -13,6 +13,7 @@
 		831A8A892114907700C4C695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831A8A882114907700C4C695 /* Assets.xcassets */; };
 		831A8A8C2114907700C4C695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831A8A8A2114907700C4C695 /* LaunchScreen.storyboard */; };
 		835DC4342118699F006BFEE3 /* CategoriesObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835DC4332118699F006BFEE3 /* CategoriesObject.swift */; };
+		83A7E328211B27C00041E94B /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A7E327211B27C00041E94B /* VideoListViewController.swift */; };
 		A306047F02C09312F88A7D9B /* Pods_Avgle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDE0B4B355D4662E276D729 /* Pods_Avgle.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		831A8A8B2114907700C4C695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		831A8A8D2114907700C4C695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		835DC4332118699F006BFEE3 /* CategoriesObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesObject.swift; sourceTree = "<group>"; };
+		83A7E327211B27C00041E94B /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
 		CD2A6D2AC8485EB0555EF5CC /* Pods-Avgle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avgle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Avgle/Pods-Avgle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 				831A8A812114907600C4C695 /* AppDelegate.swift */,
 				835DC4332118699F006BFEE3 /* CategoriesObject.swift */,
 				831A8A832114907600C4C695 /* ViewController.swift */,
+				83A7E327211B27C00041E94B /* VideoListViewController.swift */,
 				831A8A852114907600C4C695 /* Main.storyboard */,
 				831A8A882114907700C4C695 /* Assets.xcassets */,
 				831A8A8A2114907700C4C695 /* LaunchScreen.storyboard */,
@@ -207,6 +210,7 @@
 			files = (
 				831A8A842114907600C4C695 /* ViewController.swift in Sources */,
 				835DC4342118699F006BFEE3 /* CategoriesObject.swift in Sources */,
+				83A7E328211B27C00041E94B /* VideoListViewController.swift in Sources */,
 				831A8A822114907600C4C695 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

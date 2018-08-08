@@ -9,19 +9,41 @@
 import UIKit
 import AFNetworking
 
-class CategoryCollectionViewCell: UICollectionViewCell {
+class CategoryTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var videoCountLabel: UIButton!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    
+    override func awakeFromNib() {
+        videoCountLabel.layer.cornerRadius = videoCountLabel.frame.size.height / 2
+    }
+    
+    func setData(data: CategoryObject) {
+        self.coverImageView.image = nil
+        self.indicatorView.startAnimating()
+        
+        self.coverImageView.setImageWith(URLRequest.init(url: NSURL.init(string: data.cover_url!)! as URL), placeholderImage: nil, success: { (request, response, image) in
+        
+            self.indicatorView.stopAnimating()
+            self.coverImageView.image = image
+        }) { (request, response, error) in
+            
+        }
+        
+        self.coverImageView.setImageWith(NSURL.init(string: data.cover_url!)! as URL)
+        self.videoCountLabel.setTitle("\(data.total_videos!)", for: .normal)
+        self.categoryNameLabel.text = data.name
+    }
 }
 
 
-class ViewController: UIViewController, UICollectionViewDataSource {
-  
-    var categoryArray: Array<CategoryObject> = []
+class ViewController: UIViewController, UITableViewDataSource {
+
+    @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    var categoryArray: Array<CategoryObject> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +56,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
             
             let response = dict["response"] as! Dictionary<String, Any>
             let array = response["categories"] as! NSArray
-            
+        
             for item in array {
                 let dataJson = try! JSONSerialization.data(withJSONObject: item, options: JSONSerialization.WritingOptions.prettyPrinted)
                 let category = try! JSONDecoder().decode(CategoryObject.self, from: dataJson)
@@ -42,28 +64,26 @@ class ViewController: UIViewController, UICollectionViewDataSource {
                 self.categoryArray.append(category)
             }
             
-            self.collectionView.reloadData()
+            self.tableView.reloadData()
         }) { (task, error) in
             
         }
     }
     
     
-    //MARK: - UICollectionViewDataSource
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.categoryArray.count
+    //MARK: - UITableViewDataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.categoryArray.count;
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = self.categoryArray[indexPath.row]
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath as IndexPath) as! CategoryCollectionViewCell
+        let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "CategoryIdentifier", for: indexPath) as! CategoryTableViewCell
         
-//        cell.categoryNameLabel.text = data.name
-        cell.backgroundColor = UIColor.blue
+        tableViewCell.setData(data: data)
         
-        return cell
+        return tableViewCell;
     }
 
 }
