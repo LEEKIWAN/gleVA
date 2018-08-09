@@ -39,7 +39,7 @@ class CategoryTableViewCell: UITableViewCell {
 }
 
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -48,6 +48,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.requestCategoryList()
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     func requestCategoryList() {
@@ -85,6 +87,23 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         return tableViewCell;
     }
-
+    
+    //MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.dismiss(animated: false, completion: nil)
+        
+        let storyboard = UIStoryboard.init(name: "VideoListViewController", bundle: nil)
+        let videoListViewController = storyboard.instantiateViewController(withIdentifier: "VideoListViewController") as! VideoListViewController
+        videoListViewController.categoryArray = self.categoryArray
+        videoListViewController.selectedCategory = indexPath.row
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window!.rootViewController = videoListViewController
+        
+    }
 }
 
