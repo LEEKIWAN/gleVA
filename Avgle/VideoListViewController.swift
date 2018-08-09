@@ -14,22 +14,34 @@ class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMen
 
     var selectedCategory: Int?
     var categoryArray: Array<CategoryObject>?
-
+    
+    var viewControllerArray: [VideoCollectionViewController] = []
     
     @IBOutlet weak var swipeMenuView: SwipeMenuView! {
         didSet {
             swipeMenuView.delegate                        = self
             swipeMenuView.dataSource                      = self
-            var options: SwipeMenuViewOptions             = .init()
+//            var options: SwipeMenuViewOptions             = .init()
 //            options.tabView.additionView.backgroundColor  = UIColor.blue
 //            options.tabView.itemView.textColor            = UIColor.darkGray
 //            options.tabView.itemView.selectedTextColor    = UIColor.white
-            swipeMenuView.options = options
+//            swipeMenuView.options = options
         }
     }
     
     override func viewDidLoad() {
+        
+        for i in 0 ..< categoryArray!.count {
+            let storyboard = UIStoryboard.init(name: "VideoCollectionViewController", bundle: nil)
+            let videoCollectionViewController = storyboard.instantiateViewController(withIdentifier: "VideoCollectionViewController") as! VideoCollectionViewController
+
+            videoCollectionViewController.currentCategory = self.categoryArray![i]
+            self.addChildViewController(videoCollectionViewController)
+        }
+        
+        
         self.swipeMenuView.reloadData()
+        
         
         self.swipeMenuView.jump(to: selectedCategory!, animated: false)
     }
@@ -46,8 +58,8 @@ class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMen
     
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewControllerForPageAt index: Int) -> UIViewController {
         
-        let storyboard = UIStoryboard.init(name: "VideoCollectionViewController", bundle: nil)
-        let videoCollectionViewController = storyboard.instantiateViewController(withIdentifier: "VideoCollectionViewController") as! VideoCollectionViewController
+        let videoCollectionViewController = childViewControllers[index]
+        videoCollectionViewController.didMove(toParentViewController: self)
         
         
         return videoCollectionViewController
@@ -64,7 +76,10 @@ class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMen
     }
     
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, willChangeIndexFrom fromIndex: Int, to toIndex: Int) {
-        // Codes
+        
+        let videoCollectionViewController = childViewControllers[toIndex] as! VideoCollectionViewController
+        videoCollectionViewController.requestVideoList()
+        
     }
     
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, didChangeIndexFrom fromIndex: Int, to toIndex: Int) {

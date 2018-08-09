@@ -8,9 +8,9 @@
 
 import UIKit
 
-class CategoriesObject: Codable {
-
-}
+//class CategoriesObject: Codable {
+//
+//}
 
 class CategoryObject: Codable {
     var CHID: String?
