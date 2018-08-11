@@ -15,6 +15,8 @@
 		83503E00211DFB8B00C50891 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83503DFF211DFB8B00C50891 /* VideoCollectionViewCell.swift */; };
 		83503E02211DFBBB00C50891 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83503E01211DFBBB00C50891 /* CategoryTableViewCell.swift */; };
 		83503E04211E79CC00C50891 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83503E03211E79CC00C50891 /* Int+Extension.swift */; };
+		83503E06211EE2F700C50891 /* VideoPlayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83503E05211EE2F700C50891 /* VideoPlayViewController.storyboard */; };
+		83503E08211EE30300C50891 /* VideoPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83503E07211EE30300C50891 /* VideoPlayViewController.swift */; };
 		835DC4342118699F006BFEE3 /* CategoriesObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835DC4332118699F006BFEE3 /* CategoriesObject.swift */; };
 		8384630A211C6D2D00660098 /* VideoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83846309211C6D2D00660098 /* VideoObject.swift */; };
 		8384630C211C7F3B00660098 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8384630B211C7F3A00660098 /* ContentViewController.swift */; };
@@ -39,6 +41,8 @@
 		83503DFF211DFB8B00C50891 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		83503E01211DFBBB00C50891 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		83503E03211E79CC00C50891 /* Int+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		83503E05211EE2F700C50891 /* VideoPlayViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoPlayViewController.storyboard; sourceTree = "<group>"; };
+		83503E07211EE30300C50891 /* VideoPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayViewController.swift; sourceTree = "<group>"; };
 		835DC4332118699F006BFEE3 /* CategoriesObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesObject.swift; sourceTree = "<group>"; };
 		83846309211C6D2D00660098 /* VideoObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoObject.swift; sourceTree = "<group>"; };
 		8384630B211C7F3A00660098 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				831A8A832114907600C4C695 /* ViewController.swift */,
 				83A7E327211B27C00041E94B /* VideoListViewController.swift */,
 				83A7E32D211C65970041E94B /* VideoCollectionViewController.swift */,
+				83503E07211EE30300C50891 /* VideoPlayViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				831A8A852114907600C4C695 /* Main.storyboard */,
 				83A7E32B211C650F0041E94B /* VideoCollectionViewController.storyboard */,
 				83A7E329211C5F810041E94B /* VideoListViewController.storyboard */,
+				83503E05211EE2F700C50891 /* VideoPlayViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -234,6 +240,7 @@
 				831A8A892114907700C4C695 /* Assets.xcassets in Resources */,
 				831A8A872114907600C4C695 /* Main.storyboard in Resources */,
 				83A7E32A211C5F810041E94B /* VideoListViewController.storyboard in Resources */,
+				83503E06211EE2F700C50891 /* VideoPlayViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,12 +275,14 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeMenuViewController/SwipeMenuViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/ZFPlayer/ZFPlayer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeMenuViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZFPlayer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -287,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83503E08211EE30300C50891 /* VideoPlayViewController.swift in Sources */,
 				83503E00211DFB8B00C50891 /* VideoCollectionViewCell.swift in Sources */,
 				8384630A211C6D2D00660098 /* VideoObject.swift in Sources */,
 				831A8A842114907600C4C695 /* ViewController.swift in Sources */,

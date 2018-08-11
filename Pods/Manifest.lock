@@ -18,23 +18,35 @@ PODS:
     - NVActivityIndicatorView/Presenter (= 4.3.0)
   - NVActivityIndicatorView/Presenter (4.3.0)
   - SwipeMenuViewController (2.2.0)
+  - ZFPlayer (3.1.5):
+    - ZFPlayer/Core (= 3.1.5)
+  - ZFPlayer/AVPlayer (3.1.5):
+    - ZFPlayer/Core
+  - ZFPlayer/ControlView (3.1.5):
+    - ZFPlayer/Core
+  - ZFPlayer/Core (3.1.5)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - NVActivityIndicatorView
   - SwipeMenuViewController
+  - ZFPlayer (~> 3.0)
+  - ZFPlayer/AVPlayer (~> 3.0)
+  - ZFPlayer/ControlView (~> 3.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - NVActivityIndicatorView
     - SwipeMenuViewController
+    - ZFPlayer
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   NVActivityIndicatorView: 963f62bf9f993fcf23218e55958e5b1761b9504c
   SwipeMenuViewController: 9f4c0a3e3ed63579662577f979585de422f053dc
+  ZFPlayer: 8273a62fcc76f451db043ce640434d5f8799c09a
 
-PODFILE CHECKSUM: 460e2fc536b491f8c5c55d04d2960656299d3aaa
+PODFILE CHECKSUM: 8dc3bbe51dd48b987bb8fb3d03771f046d8a2c60
 
 COCOAPODS: 1.5.3

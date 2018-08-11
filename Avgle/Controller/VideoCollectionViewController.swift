@@ -68,5 +68,12 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDataSourc
         return videoCell;
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "VideoPlayViewController", bundle: nil)
+        let videoPlayViewController = storyboard.instantiateViewController(withIdentifier: "VideoPlayViewController") as! VideoCollectionViewController
+        
+        videoCollectionViewController.currentCategory = self.categoryArray![i]
+        self.addChildViewController(videoCollectionViewController)
+    }
 
 }

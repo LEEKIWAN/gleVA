@@ -58,7 +58,6 @@ class VideoCollectionViewCell: UICollectionViewCell {
         }
         
         //
-//        let duration: TimeInterval = data.addtime! // 2 minutes, 30 seconds
         
         // registed Time
 
