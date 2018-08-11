@@ -7,7 +7,8 @@ target 'Avgle' do
 
   pod 'AFNetworking', '~> 3.0'
   pod 'SwipeMenuViewController'
-	
+  pod 'NVActivityIndicatorView'
+  
   # Pods for Avgle
 
 end

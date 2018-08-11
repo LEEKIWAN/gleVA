@@ -78,6 +78,10 @@ class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMen
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, willChangeIndexFrom fromIndex: Int, to toIndex: Int) {
         
         let videoCollectionViewController = childViewControllers[toIndex] as! VideoCollectionViewController
+        if videoCollectionViewController.videoArray.count > 0 {
+            return
+        }
+        
         videoCollectionViewController.requestVideoList()
         
     }

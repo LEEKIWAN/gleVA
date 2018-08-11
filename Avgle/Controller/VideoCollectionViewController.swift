@@ -8,45 +8,11 @@
 
 import UIKit
 import AFNetworking
+import NVActivityIndicatorView
 
-class VideoCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var coverImageView: UIImageView!
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var registedTimeLabel: UILabel!
-    @IBOutlet weak var playCountLabel: UILabel!
-    
-    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
-    
-    @IBOutlet weak var likePercentageLabel: UILabel!
-    
-    @IBOutlet weak var HDLabel: UILabel!
-    
-    override func awakeFromNib() {
-        HDLabel.layer.cornerRadius = 3
-    }
-    
-    func setData(data: VideoObject) {
-        self.coverImageView.image = nil
-        self.indicatorView.startAnimating()
-        
-        self.coverImageView.setImageWith(URLRequest.init(url: NSURL.init(string: data.preview_url!)! as URL), placeholderImage: nil, success: { (request, response, image) in
-            
-            self.indicatorView.stopAnimating()
-            self.coverImageView.image = image
-            
-        }) { (request, response, error) in
-            
-        }
-        
-//        self.
-        
-//        self.videoCountLabel.setTitle("\(data.total_videos!)", for: .normal)
-//        self.categoryNameLabel.text = data.name
-    }
-}
 
-class VideoCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+
+class VideoCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, NVActivityIndicatorViewable  {
 
     let url = "https://api.avgle.com/v1/videos/"
 
@@ -57,15 +23,13 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        0?type=public&c=1
-        
     }
     
+    
     func requestVideoList() {
-        let parameters: [String : String] = ["type" : "public" , "c" : "1"]
+        let parameters: [String : String] = ["type" : "public" , "c" : (currentCategory?.CHID)!]
         
-        
+        self.startAnimating()
         AFHTTPSessionManager().get("\(url)0", parameters: parameters, progress: nil, success: { (task, responseObject) in
             let dict = responseObject as! Dictionary<String, Any>
             
@@ -81,6 +45,7 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDataSourc
                 self.videoArray.append(video)
             }
             
+            self.stopAnimating()
             self.collectionView.reloadData()
             
         }) { (task, error) in
