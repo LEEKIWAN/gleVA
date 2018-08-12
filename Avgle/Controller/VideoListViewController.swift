@@ -17,6 +17,7 @@ class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMen
     
     var viewControllerArray: [VideoCollectionViewController] = []
     
+    
     @IBOutlet weak var swipeMenuView: SwipeMenuView! {
         didSet {
             swipeMenuView.delegate                        = self
@@ -30,22 +31,29 @@ class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMen
     }
     
     override func viewDidLoad() {
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         for i in 0 ..< categoryArray!.count {
             let storyboard = UIStoryboard.init(name: "VideoCollectionViewController", bundle: nil)
             let videoCollectionViewController = storyboard.instantiateViewController(withIdentifier: "VideoCollectionViewController") as! VideoCollectionViewController
-
+            
+            
             videoCollectionViewController.currentCategory = self.categoryArray![i]
             self.addChildViewController(videoCollectionViewController)
         }
+        
         
         
         self.swipeMenuView.reloadData()
         
         
         self.swipeMenuView.jump(to: selectedCategory!, animated: false)
+ 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
     
     //MARK - SwipeMenuViewDataSource
     func numberOfPages(in swipeMenuView: SwipeMenuView) -> Int {
@@ -61,14 +69,22 @@ class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMen
         let videoCollectionViewController = childViewControllers[index]
         videoCollectionViewController.didMove(toParentViewController: self)
         
-        
         return videoCollectionViewController
     }
     
     
     // MARK - SwipeMenuViewDelegate
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewWillSetupAt currentIndex: Int) {
-        // Codes
+        if selectedCategory == currentIndex {
+            let videoCollectionViewController = childViewControllers[currentIndex] as! VideoCollectionViewController
+            
+            
+            if videoCollectionViewController.videoArray.count > 0 {
+                return
+            }
+            
+            videoCollectionViewController.requestVideoList(isFirst: true)
+        }
     }
     
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewDidSetupAt currentIndex: Int) {
@@ -76,13 +92,14 @@ class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMen
     }
     
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, willChangeIndexFrom fromIndex: Int, to toIndex: Int) {
-        
         let videoCollectionViewController = childViewControllers[toIndex] as! VideoCollectionViewController
+        
+        
         if videoCollectionViewController.videoArray.count > 0 {
             return
         }
         
-        videoCollectionViewController.requestVideoList()
+        videoCollectionViewController.requestVideoList(isFirst: true)
         
     }
     

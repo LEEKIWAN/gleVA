@@ -8,7 +8,7 @@
 
 import UIKit
 import AFNetworking
-
+import SideMenu
 
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -71,10 +71,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let storyboard = UIStoryboard.init(name: "VideoListViewController", bundle: nil)
         let videoListViewController = storyboard.instantiateViewController(withIdentifier: "VideoListViewController") as! VideoListViewController
+
         videoListViewController.categoryArray = self.categoryArray
         videoListViewController.selectedCategory = indexPath.row
+
+        // sideMenuNavigationController
+//        let sideMenuNavigationController = UISideMenuNavigationController(rootViewController: videoListViewController)
+        
+//        sideMenuNavigationController.leftSide = true
+        
+        // leftMenu
+//        let leftMenustoryboard = UIStoryboard.init(name: "LeftMenuViewController", bundle: nil)
+//        let leftMenuViewController = leftMenustoryboard.instantiateViewController(withIdentifier: "LeftMenuViewController") as! LeftMenuViewController
+//
+//        let menuLeftNavigationController = UISideMenuNavigationController(rootViewController: leftMenuViewController)
+        
+        
+        //
+        
+//        SideMenuManager.default.menuLeftNavigationController = sideMenuNavigationController
+
+        let sideMenuNavigationController = UINavigationController(rootViewController: videoListViewController)
+        
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window!.rootViewController = videoListViewController
+        appDelegate.window!.rootViewController = sideMenuNavigationController
+        
         
     }
 }

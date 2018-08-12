@@ -13,7 +13,7 @@
         <!--Video List View Controller-->
         <scene sceneID="IrX-P8-o4v">
             <objects>
-                <viewController storyboardIdentifier="VideoListViewController" id="PHs-My-DDB" customClass="VideoListViewController" customModule="Avgle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoListViewController" automaticallyAdjustsScrollViewInsets="NO" id="PHs-My-DDB" customClass="VideoListViewController" customModule="Avgle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J5I-mw-WjI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,11 +26,8 @@
                         <constraints>
                             <constraint firstItem="eS7-U8-KoA" firstAttribute="leading" secondItem="2Dg-I0-WF0" secondAttribute="leading" id="59Z-EZ-jnv"/>
                             <constraint firstItem="2Dg-I0-WF0" firstAttribute="bottom" secondItem="eS7-U8-KoA" secondAttribute="bottom" id="ChR-Wb-mLA"/>
-                            <constraint firstItem="eS7-U8-KoA" firstAttribute="top" secondItem="2Dg-I0-WF0" secondAttribute="top" id="K3K-Yq-dIz"/>
                             <constraint firstItem="eS7-U8-KoA" firstAttribute="top" secondItem="2Dg-I0-WF0" secondAttribute="top" id="NBs-Pz-kie"/>
-                            <constraint firstItem="eS7-U8-KoA" firstAttribute="trailing" secondItem="2Dg-I0-WF0" secondAttribute="trailing" id="Wdw-sh-ajN"/>
                             <constraint firstItem="2Dg-I0-WF0" firstAttribute="trailing" secondItem="eS7-U8-KoA" secondAttribute="trailing" id="i4J-FF-cEU"/>
-                            <constraint firstItem="eS7-U8-KoA" firstAttribute="leading" secondItem="2Dg-I0-WF0" secondAttribute="leading" id="jZ5-nD-saM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2Dg-I0-WF0"/>
                     </view>
@@ -40,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrS-2g-F57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="137.18140929535232"/>
+            <point key="canvasLocation" x="3810.4000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>

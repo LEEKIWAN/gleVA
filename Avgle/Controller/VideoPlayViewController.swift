@@ -11,7 +11,7 @@ import ZFPlayer
 
 class VideoPlayViewController: UIViewController {
 
-
+    var videoData: VideoObject?
     var player: ZFPlayerController?
     
     var assetURL: URL?
@@ -20,11 +20,6 @@ class VideoPlayViewController: UIViewController {
     let playerManager = ZFAVPlayerManager()
 
     @IBOutlet weak var containerView: UIView!
-    
-//    @property (nonatomic, strong) ZFPlayerController *player;
-//    @property (nonatomic, strong) ZFPlayerControlView *controlView;
-//    @property (nonatomic, strong) NSArray <NSURL *>*assetURLs;
-//    @property (nonatomic, strong) NSURL *assetURL;
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         if (self.player?.isFullScreen)! {
@@ -51,19 +46,28 @@ class VideoPlayViewController: UIViewController {
         self.player = ZFPlayerController.player(withPlayerManager: playerManager, containerView: self.containerView!);
         self.player?.controlView = self.controlView
         
-        self.assetURL = URL(string: "https://www.apple.com/105/media/us/iphone-x/2017/01df5b43-28e4-4848-bf20-490c34a926a7/films/feature/iphone-x-feature-tpl-cc-us-20170912_1280x720h.mp4")
-        
-        self.player?.assetURL = self.assetURL!;
     }
     
     override func viewWillAppear(_ animated: Bool) {
+
+        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        self.navigationItem.title = videoData?.title
+        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = textAttributes
+        
         self.player?.isViewControllerDisappear = false;
+        
+        self.assetURL = URL(string: (videoData?.preview_video_url)!)
+        self.player?.assetURL = self.assetURL!
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         self.player?.playTheIndex(0)
-        self.controlView.showTitle("saef", coverURLString: "https://upload-images.jianshu.io/upload_images/635942-14593722fe3f0695.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240", fullScreenMode: .landscape)
+        self.controlView.showTitle("", coverURLString: videoData?.preview_url, fullScreenMode: .landscape)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -82,7 +86,7 @@ class VideoPlayViewController: UIViewController {
 //        self.player?.currentPlayerManager.isMuted = !self.player?.currentPlayerManager.isMuted
 //        self.player?.currentPlayerManager.isMuted = !(self.player?.currentPlayerManager.isMuted)
     }
-    
+
     
 }
 

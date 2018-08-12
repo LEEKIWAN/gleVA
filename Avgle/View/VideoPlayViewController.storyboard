@@ -13,7 +13,7 @@
         <!--Video Play View Controller-->
         <scene sceneID="feQ-hC-ZFI">
             <objects>
-                <viewController id="AcE-4T-4hQ" customClass="VideoPlayViewController" customModule="Avgle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VideoPlayViewController" id="AcE-4T-4hQ" customClass="VideoPlayViewController" customModule="Avgle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xHi-Iw-CRd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wb5-KZ-gGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="314" y="184"/>
+            <point key="canvasLocation" x="1252" y="183.95802098950526"/>
         </scene>
     </scenes>
 </document>

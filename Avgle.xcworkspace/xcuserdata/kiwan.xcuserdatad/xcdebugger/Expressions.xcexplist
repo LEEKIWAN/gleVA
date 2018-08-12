@@ -3,7 +3,29 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "VideoListViewController.swipeMenuView(_:viewControllerForPageAt:):VideoListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.categoryArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VideoCollectionViewController.previewingContext(_:viewControllerForLocation:):VideoCollectionViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "VideoPlayWebViewController.viewDidLoad():VideoPlayWebViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "ViewController.viewDidLoad():ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "VideoCollectionViewController.requestVideoList():VideoCollectionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

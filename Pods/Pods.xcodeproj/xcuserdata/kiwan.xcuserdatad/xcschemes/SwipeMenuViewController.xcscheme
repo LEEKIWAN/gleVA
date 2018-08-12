@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "07F2653B6505D7EB5F88E0D6E0B53BAB"
+               BlueprintIdentifier = "F5D944E524BC6127C209388D1351507E"
                BlueprintName = "SwipeMenuViewController"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "SwipeMenuViewController.framework">

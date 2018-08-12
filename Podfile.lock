@@ -14,9 +14,45 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - KafkaRefresh (1.2.3):
+    - KafkaRefresh/Category (= 1.2.3)
+    - KafkaRefresh/Configuration (= 1.2.3)
+    - KafkaRefresh/Core (= 1.2.3)
+    - KafkaRefresh/Default (= 1.2.3)
+    - KafkaRefresh/Style (= 1.2.3)
+    - KafkaRefresh/UIKit (= 1.2.3)
+  - KafkaRefresh/Category (1.2.3)
+  - KafkaRefresh/Configuration (1.2.3):
+    - KafkaRefresh/UIKit/FootKit
+    - KafkaRefresh/UIKit/HeadKit
+  - KafkaRefresh/Core (1.2.3):
+    - KafkaRefresh/Category
+  - KafkaRefresh/Default (1.2.3):
+    - KafkaRefresh/Style
+  - KafkaRefresh/Style (1.2.3)
+  - KafkaRefresh/UIKit (1.2.3):
+    - KafkaRefresh/UIKit/FootKit (= 1.2.3)
+    - KafkaRefresh/UIKit/HeadKit (= 1.2.3)
+    - KafkaRefresh/UIKit/LayerKit (= 1.2.3)
+  - KafkaRefresh/UIKit/FootKit (1.2.3):
+    - KafkaRefresh/Category
+    - KafkaRefresh/Core
+    - KafkaRefresh/Default
+    - KafkaRefresh/Style
+    - KafkaRefresh/UIKit/LayerKit
+  - KafkaRefresh/UIKit/HeadKit (1.2.3):
+    - KafkaRefresh/Category
+    - KafkaRefresh/Core
+    - KafkaRefresh/Default
+    - KafkaRefresh/Style
+    - KafkaRefresh/UIKit/LayerKit
+  - KafkaRefresh/UIKit/LayerKit (1.2.3):
+    - KafkaRefresh/Category
+    - KafkaRefresh/Default
   - NVActivityIndicatorView (4.3.0):
     - NVActivityIndicatorView/Presenter (= 4.3.0)
   - NVActivityIndicatorView/Presenter (4.3.0)
+  - SideMenu (4.0.0)
   - SwipeMenuViewController (2.2.0)
   - ZFPlayer (3.1.5):
     - ZFPlayer/Core (= 3.1.5)
@@ -28,7 +64,9 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - KafkaRefresh
   - NVActivityIndicatorView
+  - SideMenu
   - SwipeMenuViewController
   - ZFPlayer (~> 3.0)
   - ZFPlayer/AVPlayer (~> 3.0)
@@ -37,16 +75,20 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - KafkaRefresh
     - NVActivityIndicatorView
+    - SideMenu
     - SwipeMenuViewController
     - ZFPlayer
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  KafkaRefresh: c9794c5a696eaf00371c18ba385c8c3d114b5bff
   NVActivityIndicatorView: 963f62bf9f993fcf23218e55958e5b1761b9504c
+  SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
   SwipeMenuViewController: 9f4c0a3e3ed63579662577f979585de422f053dc
   ZFPlayer: 8273a62fcc76f451db043ce640434d5f8799c09a
 
-PODFILE CHECKSUM: 8dc3bbe51dd48b987bb8fb3d03771f046d8a2c60
+PODFILE CHECKSUM: 7b7a8297c764d255d5ce198bd4dd50d48e1c5e8e
 
 COCOAPODS: 1.5.3
