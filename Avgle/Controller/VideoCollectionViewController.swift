@@ -118,9 +118,11 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         
         videoPlayWebViewController.videoData = data
         
-        self.navigationController?.pushViewController(videoPlayWebViewController, animated: true)
-        
+//        self.navigationController?.pushViewController(videoPlayWebViewController, animated: true)
 //        self.presentingViewController?.navigationController?.pushViewController(videoPlayWebViewController, animated: true)
+        
+        self.present(videoPlayWebViewController, animated: false, completion: nil)
+        
     }
     
     //

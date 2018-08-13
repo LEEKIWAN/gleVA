@@ -16,6 +16,8 @@ target 'Avgle' do
   pod 'KafkaRefresh'
   pod 'SideMenu'
 
+  pod 'SKSplashView'
+  
   # Pods for Avgle
 
 end

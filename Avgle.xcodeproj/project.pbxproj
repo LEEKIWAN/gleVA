@@ -29,6 +29,8 @@
 		83A7E32A211C5F810041E94B /* VideoListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A7E329211C5F810041E94B /* VideoListViewController.storyboard */; };
 		83A7E32C211C650F0041E94B /* VideoCollectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A7E32B211C650F0041E94B /* VideoCollectionViewController.storyboard */; };
 		83A7E32E211C65970041E94B /* VideoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A7E32D211C65970041E94B /* VideoCollectionViewController.swift */; };
+		83EAE7DF2121BE9F00AD298F /* SplashView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EAE7DD2121BE9F00AD298F /* SplashView.storyboard */; };
+		83EAE7E02121BE9F00AD298F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EAE7DE2121BE9F00AD298F /* SplashView.swift */; };
 		A306047F02C09312F88A7D9B /* Pods_Avgle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDE0B4B355D4662E276D729 /* Pods_Avgle.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		83A7E329211C5F810041E94B /* VideoListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoListViewController.storyboard; sourceTree = "<group>"; };
 		83A7E32B211C650F0041E94B /* VideoCollectionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoCollectionViewController.storyboard; sourceTree = "<group>"; };
 		83A7E32D211C65970041E94B /* VideoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewController.swift; sourceTree = "<group>"; };
+		83EAE7DD2121BE9F00AD298F /* SplashView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashView.storyboard; sourceTree = "<group>"; };
+		83EAE7DE2121BE9F00AD298F /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		CD2A6D2AC8485EB0555EF5CC /* Pods-Avgle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avgle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Avgle/Pods-Avgle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +124,8 @@
 				83503DFE211DFB7400C50891 /* CellModel */,
 				831A8A882114907700C4C695 /* Assets.xcassets */,
 				831A8A8A2114907700C4C695 /* LaunchScreen.storyboard */,
+				83EAE7DD2121BE9F00AD298F /* SplashView.storyboard */,
+				83EAE7DE2121BE9F00AD298F /* SplashView.swift */,
 				8384630B211C7F3A00660098 /* ContentViewController.swift */,
 				831A8A8D2114907700C4C695 /* Info.plist */,
 			);
@@ -251,6 +257,7 @@
 				83A7E32C211C650F0041E94B /* VideoCollectionViewController.storyboard in Resources */,
 				839E582B211FA36D002158C9 /* VideoPlayWebViewController.storyboard in Resources */,
 				831A8A892114907700C4C695 /* Assets.xcassets in Resources */,
+				83EAE7DF2121BE9F00AD298F /* SplashView.storyboard in Resources */,
 				831A8A872114907600C4C695 /* Main.storyboard in Resources */,
 				839E582D21201B81002158C9 /* LeftMenuViewController.storyboard in Resources */,
 				83A7E32A211C5F810041E94B /* VideoListViewController.storyboard in Resources */,
@@ -289,6 +296,7 @@
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/KafkaRefresh/KafkaRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SKSplashView/SKSplashView.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeMenuViewController/SwipeMenuViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/ZFPlayer/ZFPlayer.framework",
@@ -298,6 +306,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KafkaRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKSplashView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeMenuViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZFPlayer.framework",
@@ -316,6 +325,7 @@
 			files = (
 				83503E08211EE30300C50891 /* VideoPlayViewController.swift in Sources */,
 				83503E00211DFB8B00C50891 /* VideoCollectionViewCell.swift in Sources */,
+				83EAE7E02121BE9F00AD298F /* SplashView.swift in Sources */,
 				8384630A211C6D2D00660098 /* VideoObject.swift in Sources */,
 				839E5829211FA345002158C9 /* VideoPlayWebViewController.swift in Sources */,
 				831A8A842114907600C4C695 /* ViewController.swift in Sources */,

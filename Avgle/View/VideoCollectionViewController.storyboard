@@ -156,7 +156,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lpz-1X-dTx" firstAttribute="trailing" secondItem="RRh-rI-TwH" secondAttribute="trailing" id="Lx2-4R-sTX"/>
                             <constraint firstItem="RRh-rI-TwH" firstAttribute="bottom" secondItem="lpz-1X-dTx" secondAttribute="bottom" id="mY1-YF-G0x"/>
@@ -177,7 +177,6 @@
         <!--Side Menu Navigation Controller-->
         <scene sceneID="LY6-lX-X3A">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZoR-DN-tvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P8p-q8-dab" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rQF-qH-73O">
@@ -189,6 +188,7 @@
                         <segue destination="Qmi-KG-LhH" kind="relationship" relationship="rootViewController" id="ose-vv-vkY"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZoR-DN-tvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="684" y="-527.58620689655174"/>
         </scene>

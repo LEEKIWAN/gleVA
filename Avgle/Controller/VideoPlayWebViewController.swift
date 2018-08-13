@@ -13,12 +13,16 @@ class VideoPlayWebViewController: UIViewController {
 
     var videoData: VideoObject?
     
-//    let url = URL(string: "https://avgle.com/embed/f13e55b73a8cf429bbc1")
-    
     @IBOutlet weak var webView: WKWebView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.titleLabel.text = videoData?.title
     }
     
     override func viewDidLoad() {
@@ -30,9 +34,6 @@ class VideoPlayWebViewController: UIViewController {
         self.navigationItem.title = videoData?.title
         let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
         self.navigationController?.navigationBar.titleTextAttributes = textAttributes
-        
-        
-
         
         
         let video_url = videoData?.embedded_url

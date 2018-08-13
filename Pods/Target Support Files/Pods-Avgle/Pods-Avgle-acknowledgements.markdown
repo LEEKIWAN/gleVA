@@ -74,6 +74,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+## SKSplashView
+
+Copyright 2014 Sachin Kesiraju
+
 ## SideMenu
 
 Copyright (c) 2015 Jonathan Kent <contact@jonkent.me>
