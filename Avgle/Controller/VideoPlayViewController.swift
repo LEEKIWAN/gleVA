@@ -20,7 +20,8 @@ class VideoPlayViewController: UIViewController {
     let playerManager = ZFAVPlayerManager()
 
     @IBOutlet weak var containerView: UIView!
-
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         if (self.player?.isFullScreen)! {
             return .lightContent;
@@ -46,6 +47,7 @@ class VideoPlayViewController: UIViewController {
         self.player = ZFPlayerController.player(withPlayerManager: playerManager, containerView: self.containerView!);
         self.player?.controlView = self.controlView
         
+        self.titleLabel.text = videoData?.title
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,6 +89,11 @@ class VideoPlayViewController: UIViewController {
 //        self.player?.currentPlayerManager.isMuted = !(self.player?.currentPlayerManager.isMuted)
     }
 
+    
+    @IBAction func onCloseTouched(_ sender: UIButton) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
     
 }
 

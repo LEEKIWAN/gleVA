@@ -89,7 +89,8 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         
-        self.navigationController?.pushViewController(viewControllerToCommit, animated: false)
+//        self.navigationController?.pushViewController(viewControllerToCommit, animated: false)
+        self.present(viewControllerToCommit, animated: false, completion: nil)
         
     }
     

@@ -49,6 +49,7 @@ PODS:
   - KafkaRefresh/UIKit/LayerKit (1.2.3):
     - KafkaRefresh/Category
     - KafkaRefresh/Default
+  - MarqueeLabel/Swift (3.1.6)
   - NVActivityIndicatorView (4.3.0):
     - NVActivityIndicatorView/Presenter (= 4.3.0)
   - NVActivityIndicatorView/Presenter (4.3.0)
@@ -66,6 +67,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - KafkaRefresh
+  - MarqueeLabel/Swift
   - NVActivityIndicatorView
   - SideMenu
   - SKSplashView
@@ -78,6 +80,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - KafkaRefresh
+    - MarqueeLabel
     - NVActivityIndicatorView
     - SideMenu
     - SKSplashView
@@ -87,12 +90,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   KafkaRefresh: c9794c5a696eaf00371c18ba385c8c3d114b5bff
+  MarqueeLabel: 0c41f08ef5773e29c0f71064a8fa788a2fd8b365
   NVActivityIndicatorView: 963f62bf9f993fcf23218e55958e5b1761b9504c
   SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
   SKSplashView: 8148a4893bf2d3dfe28750bc6fd71ae7cb0dda4a
   SwipeMenuViewController: 9f4c0a3e3ed63579662577f979585de422f053dc
   ZFPlayer: 8273a62fcc76f451db043ce640434d5f8799c09a
 
-PODFILE CHECKSUM: 72d133f527628fdfeea5f75eb7b83f1381255ea8
+PODFILE CHECKSUM: 5de12254c1db0b8d37e32a791314ac9a517a690d
 
 COCOAPODS: 1.5.3

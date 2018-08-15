@@ -13,10 +13,12 @@ target 'Avgle' do
   pod 'ZFPlayer', '~> 3.0'
   pod 'ZFPlayer/ControlView', '~> 3.0'
   pod 'ZFPlayer/AVPlayer', '~> 3.0'
+  
   pod 'KafkaRefresh'
   pod 'SideMenu'
 
   pod 'SKSplashView'
+  pod 'MarqueeLabel/Swift'
   
   # Pods for Avgle
 

@@ -22,11 +22,11 @@ class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMen
         didSet {
             swipeMenuView.delegate                        = self
             swipeMenuView.dataSource                      = self
-//            var options: SwipeMenuViewOptions             = .init()
-//            options.tabView.additionView.backgroundColor  = UIColor.blue
-//            options.tabView.itemView.textColor            = UIColor.darkGray
-//            options.tabView.itemView.selectedTextColor    = UIColor.white
-//            swipeMenuView.options = options
+            var options: SwipeMenuViewOptions             = .init()
+            options.tabView.additionView.backgroundColor  = UIColor.white
+            options.tabView.itemView.textColor            = UIColor.lightGray
+            options.tabView.itemView.selectedTextColor    = UIColor.white
+            swipeMenuView.options = options
         }
     }
     

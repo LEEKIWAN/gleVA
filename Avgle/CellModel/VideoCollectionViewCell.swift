@@ -7,12 +7,13 @@
 //
 
 import UIKit
-
+import MarqueeLabel
 
 class VideoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var coverImageView: UIImageView!
     
-    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var titleLabel: MarqueeLabel!
     @IBOutlet weak var registedTimeLabel: UILabel!
     @IBOutlet weak var playCountLabel: UILabel!
     
@@ -30,7 +31,7 @@ class VideoCollectionViewCell: UICollectionViewCell {
         
         self.layer.borderColor = UIColor(hexString: "e6e6e6").cgColor
         self.layer.borderWidth = 1
-        self.layer.cornerRadius = 3
+        self.layer.cornerRadius = 10
         
     }
     
@@ -46,38 +47,33 @@ class VideoCollectionViewCell: UICollectionViewCell {
         }) { (request, response, error) in
         }
         
-        
+        //title marquee
         self.titleLabel.text = data.title
+        self.titleLabel.speed = .rate(50)
+//        self.titleLabel.li
+        
+        self.titleLabel.animationCurve = .easeInOut
+//        self.titleLabel.fadeLength = 20.0
+        self.titleLabel.animationDelay = 2.5
+        self.titleLabel.trailingBuffer = 30.0
+        self.titleLabel.restartLabel()
         
         
+        // hd
         if data.hd == true {
             self.HDLabel.isHidden = false
         }
         else {
             self.HDLabel.isHidden = true
         }
-        
-        //
-        
-        // registed Time
-
+     
         //added Time
         
         let addedInterval = Double(data.addtime!)
-        
         let addedTime = Date(timeIntervalSince1970: addedInterval)
-        
-//        let formatter = DateFormatter()
-//        formatter.locale = Locale(identifier: "ko_kr")
-//        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
         let ageText = self.timeAgoStringFromDate(date: addedTime)
-        
-        
-//        let time = formatter.string(from: addedTime)
         self.registedTimeLabel.text = ageText
-        
-
+    
         
         // count number
         let numberFormatter = NumberFormatter()

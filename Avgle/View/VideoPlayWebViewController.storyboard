@@ -30,7 +30,8 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="257" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaQ-g8-uFi">
-                                        <rect key="frame" x="13" y="9" width="19" height="22"/>
+                                        <rect key="frame" x="0.0" y="-4" width="45" height="48"/>
+                                        <inset key="contentEdgeInsets" minX="13" minY="13" maxX="13" maxY="13"/>
                                         <state key="normal" image="sketchWhiteClose"/>
                                         <connections>
                                             <action selector="onCloseTouched:" destination="u11-W3-Z0w" eventType="touchUpInside" id="lJw-bl-uzk"/>
@@ -45,8 +46,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.12549019607843137" green="0.12549019607843137" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Ygu-J9-mfN" firstAttribute="leading" secondItem="jaQ-g8-uFi" secondAttribute="trailing" constant="13" id="2qu-le-zax"/>
-                                    <constraint firstItem="jaQ-g8-uFi" firstAttribute="leading" secondItem="DdG-fu-A6P" secondAttribute="leading" constant="13" id="454-UJ-jtv"/>
+                                    <constraint firstItem="Ygu-J9-mfN" firstAttribute="leading" secondItem="jaQ-g8-uFi" secondAttribute="trailing" id="2qu-le-zax"/>
+                                    <constraint firstItem="jaQ-g8-uFi" firstAttribute="leading" secondItem="DdG-fu-A6P" secondAttribute="leading" id="454-UJ-jtv"/>
                                     <constraint firstAttribute="height" constant="40" id="5GK-O7-uLC"/>
                                     <constraint firstItem="jaQ-g8-uFi" firstAttribute="centerY" secondItem="DdG-fu-A6P" secondAttribute="centerY" id="jsS-KV-Vnx"/>
                                     <constraint firstItem="Ygu-J9-mfN" firstAttribute="centerY" secondItem="DdG-fu-A6P" secondAttribute="centerY" id="k5v-yE-SH9"/>
