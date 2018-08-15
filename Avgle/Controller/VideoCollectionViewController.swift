@@ -18,6 +18,8 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
 
     var currentCategory: CategoryObject?
     var videoArray: Array<VideoObject> = []
+    var page = 0
+    var has_more = true
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -40,6 +42,7 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     
     func requestVideoList(isFirst: Bool) {
         if isFirst {
+            self.page = 0
             self.videoArray.removeAll()
             self.collectionView.reloadData()
         }
@@ -47,13 +50,14 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         let parameters: [String : String] = ["type" : "public" , "c" : (currentCategory?.CHID)!]
         
         self.startAnimating()
-        AFHTTPSessionManager().get("\(url)0", parameters: parameters, progress: nil, success: { (task, responseObject) in
+        
+        AFHTTPSessionManager().get("\(url)\(page)", parameters: parameters, progress: nil, success: { (task, responseObject) in
             let dict = responseObject as! Dictionary<String, Any>
             
             let response = dict["response"] as! Dictionary<String, Any>
             let array = response["videos"] as! NSArray
             
-            print(response)
+            self.has_more = (response["has_more"] != nil)
             
             for item in array {
                 let dataJson = try! JSONSerialization.data(withJSONObject: item, options: JSONSerialization.WritingOptions.prettyPrinted)
@@ -89,7 +93,6 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         
-//        self.navigationController?.pushViewController(viewControllerToCommit, animated: false)
         self.present(viewControllerToCommit, animated: false, completion: nil)
         
     }
@@ -110,6 +113,7 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         return videoCell;
     }
     
+    // MARK : - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let data = self.videoArray[indexPath.row]
@@ -119,14 +123,18 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         
         videoPlayWebViewController.videoData = data
         
-//        self.navigationController?.pushViewController(videoPlayWebViewController, animated: true)
-//        self.presentingViewController?.navigationController?.pushViewController(videoPlayWebViewController, animated: true)
-        
         self.present(videoPlayWebViewController, animated: false, completion: nil)
         
     }
     
-    //
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if (self.videoArray.count - 1 == indexPath.row && self.has_more) {
+            self.page = self.page + 1
+            self.requestVideoList(isFirst: false)
+        }
+    }
+    
+    // MARK : - UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.size.width - 30
         let height = width * 0.78
