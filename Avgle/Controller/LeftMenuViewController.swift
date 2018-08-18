@@ -9,8 +9,16 @@
 import UIKit
 import SideMenu
 
+
+protocol LeftMenuViewControllerDelegate {
+    func onCollectionTouched(viewController: UIViewController)
+    
+}
+
 class LeftMenuViewController: UIViewController {
 
+    var delegate: LeftMenuViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
@@ -33,6 +41,11 @@ class LeftMenuViewController: UIViewController {
         let pornstarCollectionViewController = storyboard.instantiateViewController(withIdentifier: "PornstarCollectionViewController") as! PornstarCollectionViewController
         
         self.present(pornstarCollectionViewController, animated: true, completion: nil)
+
+        
+        if delegate != nil {
+            delegate?.onCollectionTouched(viewController: self)
+        }
         
         
     }

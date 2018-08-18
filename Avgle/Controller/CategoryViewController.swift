@@ -10,7 +10,8 @@ import UIKit
 import SwipeMenuViewController
 import SideMenu
 
-class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenuViewDataSource {
+class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenuViewDataSource, LeftMenuViewControllerDelegate {
+    
 
     var selectedCategory: Int?
     var categoryArray: Array<CategoryObject>?
@@ -55,16 +56,18 @@ class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMen
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconmonstr-menu-1-64").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(onLeftTouched))
     }
     
+    
     func setupSideMenu() {
         // Define the menus
         SideMenuManager.default.menuFadeStatusBar = false
 
         let storyboard = UIStoryboard.init(name: "LeftMenuViewController", bundle: nil)
-        let leftMenuViewController = storyboard.instantiateViewController(withIdentifier: "LeftMenuViewController")  as! LeftMenuViewController
-
-        let leftNavigationController = UISideMenuNavigationController(rootViewController: leftMenuViewController)
-
-        SideMenuManager.default.menuLeftNavigationController = leftNavigationController
+        let leftMenuViewController = storyboard.instantiateViewController(withIdentifier: "LeftMenuViewController")  as! UISideMenuNavigationController
+        let leftMenu = leftMenuViewController.topViewController as! LeftMenuViewController
+        
+        leftMenu.delegate = self
+        
+        SideMenuManager.default.menuLeftNavigationController = leftMenuViewController
         
         SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
@@ -130,5 +133,11 @@ class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMen
         // Codes
     }
     
+    //MARK - LeftMenuViewControllerDelegate
+    
+    func onCollectionTouched(viewController: UIViewController) {
+        print("sdf")
+    }
+
     
 }

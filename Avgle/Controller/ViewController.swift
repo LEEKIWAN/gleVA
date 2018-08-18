@@ -69,16 +69,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.dismiss(animated: false, completion: nil)
         
-        let storyboard = UIStoryboard.init(name: "VideoListViewController", bundle: nil)
-        let videoListViewController = storyboard.instantiateInitialViewController() as! VideoListViewController
+        let storyboard = UIStoryboard.init(name: "CategoryViewController", bundle: nil)
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "CategoryViewController")
 
-        videoListViewController.categoryArray = self.categoryArray
-        videoListViewController.selectedCategory = indexPath.row
-
-
-        let navigationController = UINavigationController(rootViewController: videoListViewController)
-
-        
+        let categoryViewController = navigationController.childViewControllers[0] as! CategoryViewController
+        categoryViewController.categoryArray = self.categoryArray
+        categoryViewController.selectedCategory = indexPath.row
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window!.rootViewController = navigationController
