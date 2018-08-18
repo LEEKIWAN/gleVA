@@ -34,10 +34,10 @@ class SplashView: UIViewController, SKSplashDelegate {
     
     func splashViewDidEndAnimating(_ splashView: SKSplashView!) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let loginViewController = storyboard.instantiateViewController(withIdentifier: "Main")
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "Main")
         
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = loginViewController
+        appDelegate.window?.rootViewController = mainViewController
     }
     
     func splashView(_ splashView: SKSplashView!, didBeginAnimatingWithDuration duration: Float) {

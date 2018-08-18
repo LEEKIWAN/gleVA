@@ -70,15 +70,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.dismiss(animated: false, completion: nil)
         
         let storyboard = UIStoryboard.init(name: "VideoListViewController", bundle: nil)
-        let videoListViewController = storyboard.instantiateViewController(withIdentifier: "VideoListViewController") as! VideoListViewController
+        let videoListViewController = storyboard.instantiateInitialViewController() as! VideoListViewController
 
         videoListViewController.categoryArray = self.categoryArray
         videoListViewController.selectedCategory = indexPath.row
 
+
+        let navigationController = UINavigationController(rootViewController: videoListViewController)
+
         
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window!.rootViewController = videoListViewController
+        appDelegate.window!.rootViewController = navigationController
         
         
     }

@@ -30,8 +30,7 @@ class CategoryTableViewCell: UITableViewCell {
         }) { (request, response, error) in
             
         }
-        
-        self.coverImageView.setImageWith(NSURL.init(string: data.cover_url!)! as URL)
+    
         self.videoCountLabel.setTitle("\(data.total_videos!)", for: .normal)
         self.categoryNameLabel.text = data.name
     }

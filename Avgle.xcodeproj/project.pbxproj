@@ -21,6 +21,8 @@
 		8384630A211C6D2D00660098 /* VideoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83846309211C6D2D00660098 /* VideoObject.swift */; };
 		8384630C211C7F3B00660098 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8384630B211C7F3A00660098 /* ContentViewController.swift */; };
 		83846310211DBC7900660098 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8384630F211DBC7900660098 /* UIColor+Extension.swift */; };
+		838475442128225D00F8F53F /* PornstarCollectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 838475432128225D00F8F53F /* PornstarCollectionViewController.storyboard */; };
+		838475462128226F00F8F53F /* PornstarCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838475452128226F00F8F53F /* PornstarCollectionViewController.swift */; };
 		839E5829211FA345002158C9 /* VideoPlayWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839E5828211FA345002158C9 /* VideoPlayWebViewController.swift */; };
 		839E582B211FA36D002158C9 /* VideoPlayWebViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839E582A211FA36D002158C9 /* VideoPlayWebViewController.storyboard */; };
 		839E582D21201B81002158C9 /* LeftMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 839E582C21201B81002158C9 /* LeftMenuViewController.storyboard */; };
@@ -53,6 +55,8 @@
 		83846309211C6D2D00660098 /* VideoObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoObject.swift; sourceTree = "<group>"; };
 		8384630B211C7F3A00660098 /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		8384630F211DBC7900660098 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		838475432128225D00F8F53F /* PornstarCollectionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PornstarCollectionViewController.storyboard; sourceTree = "<group>"; };
+		838475452128226F00F8F53F /* PornstarCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PornstarCollectionViewController.swift; sourceTree = "<group>"; };
 		839E5828211FA345002158C9 /* VideoPlayWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayWebViewController.swift; sourceTree = "<group>"; };
 		839E582A211FA36D002158C9 /* VideoPlayWebViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoPlayWebViewController.storyboard; sourceTree = "<group>"; };
 		839E582C21201B81002158C9 /* LeftMenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LeftMenuViewController.storyboard; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				83503E07211EE30300C50891 /* VideoPlayViewController.swift */,
 				839E5828211FA345002158C9 /* VideoPlayWebViewController.swift */,
 				839E582E21201B8B002158C9 /* LeftMenuViewController.swift */,
+				838475452128226F00F8F53F /* PornstarCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				839E582A211FA36D002158C9 /* VideoPlayWebViewController.storyboard */,
 				83503E05211EE2F700C50891 /* VideoPlayViewController.storyboard */,
 				839E582C21201B81002158C9 /* LeftMenuViewController.storyboard */,
+				838475432128225D00F8F53F /* PornstarCollectionViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				838475442128225D00F8F53F /* PornstarCollectionViewController.storyboard in Resources */,
 				831A8A8C2114907700C4C695 /* LaunchScreen.storyboard in Resources */,
 				83A7E32C211C650F0041E94B /* VideoCollectionViewController.storyboard in Resources */,
 				839E582B211FA36D002158C9 /* VideoPlayWebViewController.storyboard in Resources */,
@@ -330,6 +337,7 @@
 				83EAE7E02121BE9F00AD298F /* SplashView.swift in Sources */,
 				8384630A211C6D2D00660098 /* VideoObject.swift in Sources */,
 				839E5829211FA345002158C9 /* VideoPlayWebViewController.swift in Sources */,
+				838475462128226F00F8F53F /* PornstarCollectionViewController.swift in Sources */,
 				831A8A842114907600C4C695 /* ViewController.swift in Sources */,
 				835DC4342118699F006BFEE3 /* CategoriesObject.swift in Sources */,
 				83A7E328211B27C00041E94B /* VideoListViewController.swift in Sources */,

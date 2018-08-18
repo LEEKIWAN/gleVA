@@ -8,7 +8,7 @@
 
 import UIKit
 import SwipeMenuViewController
-
+import SideMenu
 
 class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenuViewDataSource {
 
@@ -31,7 +31,8 @@ class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMen
     }
     
     override func viewDidLoad() {
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.setNavigtionUI()
+        self.setupSideMenu()
         
         for i in 0 ..< categoryArray!.count {
             let storyboard = UIStoryboard.init(name: "VideoCollectionViewController", bundle: nil)
@@ -42,18 +43,40 @@ class VideoListViewController: UIViewController, SwipeMenuViewDelegate, SwipeMen
             self.addChildViewController(videoCollectionViewController)
         }
         
-        
-        
         self.swipeMenuView.reloadData()
-        
-        
         self.swipeMenuView.jump(to: selectedCategory!, animated: false)
- 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    
+    func setNavigtionUI() {
+        navigationController?.navigationBar.barTintColor = UIColor(hexString: "202020")
+        navigationController?.navigationBar.isTranslucent = false
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconmonstr-menu-1-64").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(onLeftTouched))
     }
+    
+    func setupSideMenu() {
+        // Define the menus
+        SideMenuManager.default.menuFadeStatusBar = false
+
+        let storyboard = UIStoryboard.init(name: "LeftMenuViewController", bundle: nil)
+        let leftMenuViewController = storyboard.instantiateViewController(withIdentifier: "LeftMenuViewController")  as! LeftMenuViewController
+
+        let leftNavigationController = UISideMenuNavigationController(rootViewController: leftMenuViewController)
+
+        SideMenuManager.default.menuLeftNavigationController = leftNavigationController
+        
+        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+
+    }
+    
+    
+    // MARK: - Event
+    @objc func onLeftTouched(sender: UIButton) {
+        self.present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+    }
+    
     
     //MARK - SwipeMenuViewDataSource
     func numberOfPages(in swipeMenuView: SwipeMenuView) -> Int {

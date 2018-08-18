@@ -50,10 +50,8 @@ class VideoCollectionViewCell: UICollectionViewCell {
         //title marquee
         self.titleLabel.text = data.title
         self.titleLabel.speed = .rate(50)
-//        self.titleLabel.li
         
         self.titleLabel.animationCurve = .easeInOut
-//        self.titleLabel.fadeLength = 20.0
         self.titleLabel.animationDelay = 2.5
         self.titleLabel.trailingBuffer = 30.0
         self.titleLabel.restartLabel()

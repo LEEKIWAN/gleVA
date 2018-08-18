@@ -36,6 +36,7 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         }, themeColor: UIColor.lightGray, refreshStyle: .replicatorDot)
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         self.collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
@@ -125,6 +126,7 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         
         self.present(videoPlayWebViewController, animated: false, completion: nil)
         
+//        self.navigationController?.pushViewController(videoPlayWebViewController, animated: false)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

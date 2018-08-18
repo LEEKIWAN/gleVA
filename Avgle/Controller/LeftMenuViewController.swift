@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import SideMenu
 
 class LeftMenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationController?.navigationBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,4 +21,19 @@ class LeftMenuViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onCollectionTouched(_ sender: Any) {
+        
+//        self.dismiss(animated: true) {
+//
+//            self.presentingViewController?.present(pornstarCollectionViewController, animated: true, completion: nil)
+//            self.presentedViewController?.present(pornstarCollectionViewController, animated: true, completion: nil)
+//        }
+        
+        let storyboard = UIStoryboard.init(name: "PornstarCollectionViewController", bundle: nil)
+        let pornstarCollectionViewController = storyboard.instantiateViewController(withIdentifier: "PornstarCollectionViewController") as! PornstarCollectionViewController
+        
+        self.present(pornstarCollectionViewController, animated: true, completion: nil)
+        
+        
+    }
 }
