@@ -31,6 +31,7 @@
 		83A7E32A211C5F810041E94B /* CategoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A7E329211C5F810041E94B /* CategoryViewController.storyboard */; };
 		83A7E32C211C650F0041E94B /* VideoCollectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A7E32B211C650F0041E94B /* VideoCollectionViewController.storyboard */; };
 		83A7E32E211C65970041E94B /* VideoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A7E32D211C65970041E94B /* VideoCollectionViewController.swift */; };
+		83AEBF1D21299F540001695C /* PornstarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AEBF1C21299F540001695C /* PornstarCollectionViewCell.swift */; };
 		83EAE7DF2121BE9F00AD298F /* SplashView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EAE7DD2121BE9F00AD298F /* SplashView.storyboard */; };
 		83EAE7E02121BE9F00AD298F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EAE7DE2121BE9F00AD298F /* SplashView.swift */; };
 		A306047F02C09312F88A7D9B /* Pods_Avgle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDE0B4B355D4662E276D729 /* Pods_Avgle.framework */; };
@@ -65,6 +66,7 @@
 		83A7E329211C5F810041E94B /* CategoryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryViewController.storyboard; sourceTree = "<group>"; };
 		83A7E32B211C650F0041E94B /* VideoCollectionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = VideoCollectionViewController.storyboard; sourceTree = "<group>"; };
 		83A7E32D211C65970041E94B /* VideoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewController.swift; sourceTree = "<group>"; };
+		83AEBF1C21299F540001695C /* PornstarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PornstarCollectionViewCell.swift; sourceTree = "<group>"; };
 		83EAE7DD2121BE9F00AD298F /* SplashView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashView.storyboard; sourceTree = "<group>"; };
 		83EAE7DE2121BE9F00AD298F /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		CD2A6D2AC8485EB0555EF5CC /* Pods-Avgle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avgle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Avgle/Pods-Avgle.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				83503DFF211DFB8B00C50891 /* VideoCollectionViewCell.swift */,
 				83503E01211DFBBB00C50891 /* CategoryTableViewCell.swift */,
+				83AEBF1C21299F540001695C /* PornstarCollectionViewCell.swift */,
 			);
 			path = CellModel;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83503E08211EE30300C50891 /* VideoPlayViewController.swift in Sources */,
+				83AEBF1D21299F540001695C /* PornstarCollectionViewCell.swift in Sources */,
 				83503E00211DFB8B00C50891 /* VideoCollectionViewCell.swift in Sources */,
 				83EAE7E02121BE9F00AD298F /* SplashView.swift in Sources */,
 				8384630A211C6D2D00660098 /* VideoObject.swift in Sources */,

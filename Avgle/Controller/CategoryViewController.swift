@@ -18,6 +18,17 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     
     var viewControllerArray: [VideoCollectionViewController] = []
     
+    let categoryViewController = self
+    
+    private lazy var pornstarCollectionViewController: PornstarCollectionViewController = {
+        let storyboard = UIStoryboard(name: "PornstarCollectionViewController", bundle: Bundle.main)
+        var viewController = storyboard.instantiateViewController(withIdentifier: "PornstarCollectionViewController") as! PornstarCollectionViewController
+        
+        return viewController
+    }()
+    
+    
+ 
     
     @IBOutlet weak var swipeMenuView: SwipeMenuView! {
         didSet {
@@ -80,7 +91,6 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
         self.present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
-    
     //MARK - SwipeMenuViewDataSource
     func numberOfPages(in swipeMenuView: SwipeMenuView) -> Int {
         return categoryArray!.count
@@ -134,10 +144,31 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     }
     
     //MARK - LeftMenuViewControllerDelegate
+    func onCategoryTouched(viewController: UIViewController) {
+        self.remove(asChildViewController: pornstarCollectionViewController)
+        
+    }
     
     func onCollectionTouched(viewController: UIViewController) {
-        print("sdf")
+        self.add(asChildViewController: pornstarCollectionViewController)
     }
-
+    
+    
+    
+    private func add(asChildViewController viewController: UIViewController) {
+        view.addSubview(viewController.view)
+        viewController.view.frame = view.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        viewController.didMove(toParentViewController: self)
+        
+    }
+  
+    private func remove(asChildViewController viewController: UIViewController) {
+        viewController.willMove(toParentViewController: nil)
+        viewController.view.removeFromSuperview()
+        viewController.removeFromParentViewController()
+    }
+    
     
 }

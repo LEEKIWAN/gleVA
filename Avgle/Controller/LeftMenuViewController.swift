@@ -12,7 +12,7 @@ import SideMenu
 
 protocol LeftMenuViewControllerDelegate {
     func onCollectionTouched(viewController: UIViewController)
-    
+    func onCategoryTouched(viewController: UIViewController)
 }
 
 class LeftMenuViewController: UIViewController {
@@ -23,29 +23,21 @@ class LeftMenuViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    @IBAction func onCategoryTouched(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+        
+        delegate?.onCategoryTouched(viewController: self)
+        
     }
     
-    @IBAction func onCollectionTouched(_ sender: Any) {
+    
+    
+    @IBAction func onCollectionTouched(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
         
-//        self.dismiss(animated: true) {
-//
-//            self.presentingViewController?.present(pornstarCollectionViewController, animated: true, completion: nil)
-//            self.presentedViewController?.present(pornstarCollectionViewController, animated: true, completion: nil)
-//        }
-        
-        let storyboard = UIStoryboard.init(name: "PornstarCollectionViewController", bundle: nil)
-        let pornstarCollectionViewController = storyboard.instantiateViewController(withIdentifier: "PornstarCollectionViewController") as! PornstarCollectionViewController
-        
-        self.present(pornstarCollectionViewController, animated: true, completion: nil)
-
-        
-        if delegate != nil {
-            delegate?.onCollectionTouched(viewController: self)
-        }
+        delegate?.onCollectionTouched(viewController: self)
         
         
     }

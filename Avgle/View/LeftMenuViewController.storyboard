@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCs-zK-XLd">
-                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="160" width="375" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IMs-HU-p4D"/>
                                 </constraints>
@@ -31,12 +31,41 @@
                                     <action selector="onCollectionTouched:" destination="DaN-6a-oH5" eventType="touchUpInside" id="CT0-dt-TsI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NE3-Ut-Dfa">
+                                <rect key="frame" x="0.0" y="70" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="kSv-SR-m4n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Categories">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCategoryTouched:" destination="DaN-6a-oH5" eventType="touchUpInside" id="zkh-E7-SKX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukC-Gq-pf4">
+                                <rect key="frame" x="0.0" y="115" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="f4M-Zt-Mlq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="VR">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wJ6-RG-s0X" firstAttribute="trailing" secondItem="fCs-zK-XLd" secondAttribute="trailing" id="7Ph-ZO-6wJ"/>
-                            <constraint firstItem="fCs-zK-XLd" firstAttribute="top" secondItem="wJ6-RG-s0X" secondAttribute="top" id="AIL-UG-oLt"/>
+                            <constraint firstItem="ukC-Gq-pf4" firstAttribute="top" secondItem="NE3-Ut-Dfa" secondAttribute="bottom" constant="5" id="ChN-tC-uPN"/>
+                            <constraint firstAttribute="trailing" secondItem="ukC-Gq-pf4" secondAttribute="trailing" id="fiI-96-cNu"/>
+                            <constraint firstItem="NE3-Ut-Dfa" firstAttribute="trailing" secondItem="wJ6-RG-s0X" secondAttribute="trailing" id="hj1-Ne-uGI"/>
+                            <constraint firstItem="NE3-Ut-Dfa" firstAttribute="leading" secondItem="wJ6-RG-s0X" secondAttribute="leading" id="oYS-in-e03"/>
+                            <constraint firstItem="ukC-Gq-pf4" firstAttribute="leading" secondItem="wJ6-RG-s0X" secondAttribute="leading" id="oe5-Op-Emg"/>
                             <constraint firstItem="fCs-zK-XLd" firstAttribute="leading" secondItem="wJ6-RG-s0X" secondAttribute="leading" id="tS3-xS-D9i"/>
+                            <constraint firstItem="NE3-Ut-Dfa" firstAttribute="top" secondItem="wJ6-RG-s0X" secondAttribute="top" constant="50" id="v77-n2-X6d"/>
+                            <constraint firstItem="fCs-zK-XLd" firstAttribute="top" secondItem="ukC-Gq-pf4" secondAttribute="bottom" constant="5" id="zuH-Bn-Lkr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wJ6-RG-s0X"/>
                     </view>
@@ -45,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ok5-W3-4El" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2991.1999999999998" y="131.78410794602701"/>
+            <point key="canvasLocation" x="3230" y="143"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="m6l-ET-ePS">
