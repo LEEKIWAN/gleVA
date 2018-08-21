@@ -19,9 +19,16 @@ class PornstarCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         videoCountLabel.layer.cornerRadius = videoCountLabel.frame.size.height / 2
+        self.coverImageView.layer.cornerRadius = 3
+        
+        self.layer.borderColor = UIColor(hexString: "e6e6e6").cgColor
+        self.layer.borderWidth = 1
+        self.layer.cornerRadius = 10
+        
     }
     
-    func setData(data: CategoryObject) {
+    
+    func setData(data: CollectionObject) {
         self.coverImageView.image = nil
         self.indicatorView.startAnimating()
         
@@ -33,8 +40,10 @@ class PornstarCollectionViewCell: UICollectionViewCell {
             
         }
         
-        self.videoCountLabel.setTitle("\(data.total_videos!)", for: .normal)
-        self.categoryNameLabel.text = data.name
+        
+        self.playCountLabel.text = "\(data.total_views!)"
+        self.videoCountLabel.setTitle("\(data.video_count!)", for: .normal)
+        self.categoryNameLabel.text = data.title
     }
     
 }
