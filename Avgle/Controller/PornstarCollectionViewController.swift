@@ -27,6 +27,24 @@ class PornstarCollectionViewController: UIViewController, NVActivityIndicatorVie
         self.requestCollectionList(isFirst: true)
     }
 
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        
+        if UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation) {
+            
+        } else {
+            
+        }
+        
+        flowLayout.invalidateLayout()
+    }
+    
+    
     //MARK: - reqeust
     func requestCollectionList(isFirst: Bool) {
         if isFirst {
@@ -43,6 +61,8 @@ class PornstarCollectionViewController: UIViewController, NVActivityIndicatorVie
             
             var response = dict["response"] as! Dictionary<String, Any>
             let array = response["collections"] as! NSArray
+            
+            print(response)
             
             if "\(response["has_more"]!)" == "1" {
                 self.has_more = true
@@ -120,11 +140,6 @@ class PornstarCollectionViewController: UIViewController, NVActivityIndicatorVie
         return CGSize(width: width, height: height)
         
     }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        self.collectionView.reloadData()
-    }
-    
     
     
     

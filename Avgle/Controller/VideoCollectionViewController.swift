@@ -10,9 +10,9 @@ import UIKit
 import AFNetworking
 import NVActivityIndicatorView
 import KafkaRefresh
+import MKDropdownMenu
 
-
-class VideoCollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerPreviewingDelegate, NVActivityIndicatorViewable  {
+class VideoCollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerPreviewingDelegate, NVActivityIndicatorViewable, MKDropdownMenuDelegate, MKDropdownMenuDataSource  {
 
     let url = "https://api.avgle.com/v1/videos/"
 
@@ -22,6 +22,12 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     var has_more = true
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    let timelineArray: [String] = ["ALL", "Added Today", "Added This Week", "Added This Month"]
+    let orderArray: [String] = ["Being Watched", "Most Recent", "Most Viewed", "Most Commented", "Top Rated", "Top Favorites", "Longest"]
+    
+    @IBOutlet weak var dropDownView: MKDropdownMenu!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +40,39 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
             self.requestVideoList(isFirst: true)
             
         }, themeColor: UIColor.lightGray, refreshStyle: .replicatorDot)
+        
+        self.dropDownView.dataSource = self;
+        self.dropDownView.delegate = self;
+        
+        
+        self.dropDownView.dropdownBackgroundColor = UIColor(hexString: "202020")
+        self.dropDownView.selectedComponentBackgroundColor = UIColor(hexString: "202020")
+        
+        self.dropDownView.tintColor = UIColor.white
+        
+        self.dropDownView.rowSeparatorColor = UIColor.darkGray
+        self.dropDownView.componentSeparatorColor = UIColor(hexString: "202020")
+        
+        self.dropDownView.backgroundDimmingOpacity = 0.05
+        
+        self.dropDownView.dropdownShowsTopRowSeparator = false
+        self.dropDownView.dropdownShowsBottomRowSeparator = false
+        self.dropDownView.dropdownShowsBorder = true
+        self.dropDownView.dropdownBouncesScroll = false
+        
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         self.collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
+    
     }
+    
+    @IBAction func onTimelineTouched(_ sender: UIButton) {
+    
+    }
+    
     
     //MARK: - request
     func requestVideoList(isFirst: Bool) {
@@ -126,8 +159,6 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         videoPlayWebViewController.videoData = data
         
         self.present(videoPlayWebViewController, animated: false, completion: nil)
-        
-//        self.navigationController?.pushViewController(videoPlayWebViewController, animated: false)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -145,4 +176,66 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         
     }
 
+    
+    
+    
+    
+    
+    // MARK: - MKDropdownMenuDataSource
+    
+    func numberOfComponents(in dropdownMenu: MKDropdownMenu) -> Int {
+        return 2
+    }
+    
+    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, numberOfRowsInComponent component: Int) -> Int {
+        if component == 0 {
+            return timelineArray.count
+        }
+        else if component == 1 {
+            return orderArray.count
+        }
+        
+        
+        return 0
+    }
+    
+    // MARK: - MKDropdownMenuDelegate
+
+    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 0 {
+            return timelineArray[row]
+        }
+        else if component == 1 {
+            return orderArray[row]
+        }
+        return ""
+    }
+    
+    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, attributedTitleForComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: (self.timelineArray[component]), attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16, weight: .bold), NSAttributedStringKey.foregroundColor: UIColor.white])
+    }
+    
+    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, attributedTitleForSelectedComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: (self.timelineArray[component]), attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16, weight: .bold), NSAttributedStringKey.foregroundColor: UIColor.white])
+    }
+    
+    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        return NSAttributedString(string: (self.timelineArray[component]), attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16, weight: .bold), NSAttributedStringKey.foregroundColor: UIColor.white])
+    }
+    
+    
+    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, shouldUseFullRowWidthForComponent component: Int) -> Bool {
+        return false
+    }
+    
+    
+//    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, backgroundColorForRow row: Int, forComponent component: Int) -> UIColor? {
+//        return nil
+//    }
+//
+//    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, backgroundColorForHighlightedRowsInComponent component: Int) -> UIColor? {
+//        return UIColor.gray
+//    }
+    
+    
 }

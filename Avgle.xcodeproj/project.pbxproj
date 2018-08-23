@@ -182,10 +182,10 @@
 			children = (
 				831A8A832114907600C4C695 /* ViewController.swift */,
 				83A7E327211B27C00041E94B /* CategoryViewController.swift */,
-				83A7E32D211C65970041E94B /* VideoCollectionViewController.swift */,
 				83503E07211EE30300C50891 /* VideoPlayViewController.swift */,
 				839E5828211FA345002158C9 /* VideoPlayWebViewController.swift */,
 				839E582E21201B8B002158C9 /* LeftMenuViewController.swift */,
+				83A7E32D211C65970041E94B /* VideoCollectionViewController.swift */,
 				838475452128226F00F8F53F /* PornstarCollectionViewController.swift */,
 			);
 			path = Controller;
@@ -195,11 +195,11 @@
 			isa = PBXGroup;
 			children = (
 				831A8A852114907600C4C695 /* Main.storyboard */,
-				83A7E32B211C650F0041E94B /* VideoCollectionViewController.storyboard */,
 				83A7E329211C5F810041E94B /* CategoryViewController.storyboard */,
 				839E582A211FA36D002158C9 /* VideoPlayWebViewController.storyboard */,
 				83503E05211EE2F700C50891 /* VideoPlayViewController.storyboard */,
 				839E582C21201B81002158C9 /* LeftMenuViewController.storyboard */,
+				83A7E32B211C650F0041E94B /* VideoCollectionViewController.storyboard */,
 				838475432128225D00F8F53F /* PornstarCollectionViewController.storyboard */,
 			);
 			path = View;
@@ -308,6 +308,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Avgle/Pods-Avgle-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/KafkaRefresh/KafkaRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/MKDropdownMenu/MKDropdownMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/SKSplashView/SKSplashView.framework",
@@ -319,6 +320,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KafkaRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MKDropdownMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKSplashView.framework",

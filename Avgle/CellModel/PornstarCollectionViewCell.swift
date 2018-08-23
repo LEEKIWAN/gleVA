@@ -38,10 +38,21 @@ class PornstarCollectionViewCell: UICollectionViewCell {
             self.coverImageView.image = image
         }) { (request, response, error) in
             
+            print("\(data.cover_url!)")
+            print("\(data.collection_url!)")
+            self.indicatorView.stopAnimating()
         }
         
+        let numFormatter : NumberFormatter = NumberFormatter();
+        numFormatter.numberStyle = NumberFormatter.Style.decimal
         
-        self.playCountLabel.text = "\(data.total_views!)"
+        let value: Int = data.total_views!
+        let total_views: String = numFormatter.string(from: NSNumber(value: value))!
+        
+        
+        
+        
+        self.playCountLabel.text = total_views
         self.videoCountLabel.setTitle("\(data.video_count!)", for: .normal)
         self.categoryNameLabel.text = data.title
     }

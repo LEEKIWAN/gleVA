@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lpz-1X-dTx">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
                                 <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="0.0" id="4jn-Mx-rlf">
@@ -156,12 +156,22 @@
                                     <outlet property="delegate" destination="Qmi-KG-LhH" id="PoZ-Tm-5Vd"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d73-FF-u8P" customClass="MKDropdownMenu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="W4w-fc-fq9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="d73-FF-u8P" firstAttribute="top" secondItem="RRh-rI-TwH" secondAttribute="top" id="DxN-UV-n9R"/>
                             <constraint firstItem="lpz-1X-dTx" firstAttribute="trailing" secondItem="RRh-rI-TwH" secondAttribute="trailing" id="Lx2-4R-sTX"/>
+                            <constraint firstItem="lpz-1X-dTx" firstAttribute="top" secondItem="d73-FF-u8P" secondAttribute="bottom" id="aiU-ch-P4e"/>
+                            <constraint firstItem="RRh-rI-TwH" firstAttribute="trailing" secondItem="d73-FF-u8P" secondAttribute="trailing" id="jKx-Zu-FdM"/>
                             <constraint firstItem="RRh-rI-TwH" firstAttribute="bottom" secondItem="lpz-1X-dTx" secondAttribute="bottom" id="mY1-YF-G0x"/>
-                            <constraint firstItem="lpz-1X-dTx" firstAttribute="top" secondItem="RRh-rI-TwH" secondAttribute="top" id="pRO-pw-t92"/>
+                            <constraint firstItem="d73-FF-u8P" firstAttribute="leading" secondItem="RRh-rI-TwH" secondAttribute="leading" id="n1D-LN-5tN"/>
                             <constraint firstItem="lpz-1X-dTx" firstAttribute="leading" secondItem="RRh-rI-TwH" secondAttribute="leading" id="vcu-Hx-vjf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RRh-rI-TwH"/>
@@ -169,6 +179,7 @@
                     <navigationItem key="navigationItem" id="Gtn-dc-axm"/>
                     <connections>
                         <outlet property="collectionView" destination="lpz-1X-dTx" id="7Hm-yr-F4N"/>
+                        <outlet property="dropDownView" destination="d73-FF-u8P" id="anN-TR-wtj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TN2-YS-ebg" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -43,16 +43,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hUa-e1-N5j">
-                                                    <rect key="frame" x="0.0" y="94" width="229" height="35"/>
+                                                    <rect key="frame" x="0.0" y="104" width="229" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vj5-Gu-LPk">
-                                                            <rect key="frame" x="8" y="10" width="160" height="16"/>
+                                                            <rect key="frame" x="8" y="5" width="160" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgI-Vf-JDl">
-                                                            <rect key="frame" x="178" y="8.5" width="43" height="18"/>
+                                                            <rect key="frame" x="178" y="3.5" width="43" height="18"/>
                                                             <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                             <inset key="contentEdgeInsets" minX="5" minY="3" maxX="5" maxY="3"/>
@@ -68,7 +68,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="AgI-Vf-JDl" secondAttribute="trailing" constant="8" id="ZRf-0q-F43"/>
                                                         <constraint firstItem="AgI-Vf-JDl" firstAttribute="leading" secondItem="Vj5-Gu-LPk" secondAttribute="trailing" constant="10" id="i2c-fj-4oD"/>
                                                         <constraint firstItem="Vj5-Gu-LPk" firstAttribute="leading" secondItem="hUa-e1-N5j" secondAttribute="leading" constant="8" id="jFd-s5-Ube"/>
-                                                        <constraint firstAttribute="height" constant="35" id="jq3-gR-LT8"/>
+                                                        <constraint firstAttribute="height" constant="25" id="jq3-gR-LT8"/>
                                                     </constraints>
                                                 </view>
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="gm8-Hd-ioo">

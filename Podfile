@@ -19,6 +19,7 @@ target 'Avgle' do
 
   pod 'SKSplashView'
   pod 'MarqueeLabel/Swift'
+  pod 'MKDropdownMenu'
   
   # Pods for Avgle
 
