@@ -23,12 +23,9 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     private lazy var pornstarCollectionViewController: PornstarCollectionViewController = {
         let storyboard = UIStoryboard(name: "PornstarCollectionViewController", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "PornstarCollectionViewController") as! PornstarCollectionViewController
-        
         return viewController
     }()
     
-    
- 
     
     @IBOutlet weak var swipeMenuView: SwipeMenuView! {
         didSet {
@@ -42,6 +39,8 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
         }
     }
     
+    //MARK: - Life Cycle
+    
     override func viewDidLoad() {
         self.setNavigtionUI()
         self.setupSideMenu()
@@ -50,36 +49,42 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
             let storyboard = UIStoryboard.init(name: "VideoCollectionViewController", bundle: nil)
             let videoCollectionViewController = storyboard.instantiateViewController(withIdentifier: "VideoCollectionViewController") as! VideoCollectionViewController
             
-            
             videoCollectionViewController.currentCategory = self.categoryArray![i]
             self.addChildViewController(videoCollectionViewController)
         }
         
         self.swipeMenuView.reloadData()
         self.swipeMenuView.jump(to: selectedCategory!, animated: false)
+        
+        self.title = "Categories"
     }
     
     
     func setNavigtionUI() {
         navigationController?.navigationBar.barTintColor = UIColor(hexString: "202020")
         navigationController?.navigationBar.isTranslucent = false
-        
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconmonstr-menu-1-64").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(onLeftTouched))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "iconmonstr-magnifier-4-64").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(onRightTouched))
     }
     
     
     func setupSideMenu() {
-        // Define the menus
         SideMenuManager.default.menuFadeStatusBar = false
 
-        let storyboard = UIStoryboard.init(name: "LeftMenuViewController", bundle: nil)
-        let leftMenuViewController = storyboard.instantiateViewController(withIdentifier: "LeftMenuViewController")  as! UISideMenuNavigationController
+        let leftStoryboard = UIStoryboard.init(name: "LeftMenuViewController", bundle: nil)
+        let leftMenuViewController = leftStoryboard.instantiateViewController(withIdentifier: "LeftMenuViewController")  as! UISideMenuNavigationController
         let leftMenu = leftMenuViewController.topViewController as! LeftMenuViewController
-        
         leftMenu.delegate = self
         
+        let rightStoryboard = UIStoryboard.init(name: "RightMenuViewController", bundle: nil)
+        let rightMenuViewController = rightStoryboard.instantiateViewController(withIdentifier: "RightMenuViewController")  as! UISideMenuNavigationController
+
         SideMenuManager.default.menuLeftNavigationController = leftMenuViewController
+        SideMenuManager.default.menuRightNavigationController = rightMenuViewController
         
+        SideMenuManager.default.menuRightNavigationController?.menuWidth = self.view.frame.size.width
+        
+
         SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
 
@@ -91,6 +96,11 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
         self.present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
+    @objc func onRightTouched(sender: UIButton) {
+        self.present(SideMenuManager.default.menuRightNavigationController!, animated: true, completion: nil)
+    }
+    
+
     //MARK - SwipeMenuViewDataSource
     func numberOfPages(in swipeMenuView: SwipeMenuView) -> Int {
         return categoryArray!.count
@@ -130,7 +140,6 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, willChangeIndexFrom fromIndex: Int, to toIndex: Int) {
         let videoCollectionViewController = childViewControllers[toIndex] as! VideoCollectionViewController
         
-        
         if videoCollectionViewController.videoArray.count > 0 {
             return
         }
@@ -145,11 +154,13 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     
     //MARK - LeftMenuViewControllerDelegate
     func onCategoryTouched(viewController: UIViewController) {
+        self.title = "Categories"
         self.remove(asChildViewController: pornstarCollectionViewController)
         
     }
     
     func onCollectionTouched(viewController: UIViewController) {
+        self.title = "Collections"
         self.add(asChildViewController: pornstarCollectionViewController)
     }
     

@@ -35,6 +35,8 @@
 		83AEBF1D21299F540001695C /* PornstarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AEBF1C21299F540001695C /* PornstarCollectionViewCell.swift */; };
 		83EAE7DF2121BE9F00AD298F /* SplashView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EAE7DD2121BE9F00AD298F /* SplashView.storyboard */; };
 		83EAE7E02121BE9F00AD298F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EAE7DE2121BE9F00AD298F /* SplashView.swift */; };
+		83ECC815213424510043EC87 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ECC814213424510043EC87 /* RightMenuViewController.swift */; };
+		83ECC8192134246F0043EC87 /* RightMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83ECC8182134246F0043EC87 /* RightMenuViewController.storyboard */; };
 		A306047F02C09312F88A7D9B /* Pods_Avgle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDE0B4B355D4662E276D729 /* Pods_Avgle.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		83AEBF1C21299F540001695C /* PornstarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PornstarCollectionViewCell.swift; sourceTree = "<group>"; };
 		83EAE7DD2121BE9F00AD298F /* SplashView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashView.storyboard; sourceTree = "<group>"; };
 		83EAE7DE2121BE9F00AD298F /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		83ECC814213424510043EC87 /* RightMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuViewController.swift; sourceTree = "<group>"; };
+		83ECC8182134246F0043EC87 /* RightMenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RightMenuViewController.storyboard; sourceTree = "<group>"; };
 		CD2A6D2AC8485EB0555EF5CC /* Pods-Avgle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avgle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Avgle/Pods-Avgle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,9 +188,10 @@
 				83A7E327211B27C00041E94B /* CategoryViewController.swift */,
 				83503E07211EE30300C50891 /* VideoPlayViewController.swift */,
 				839E5828211FA345002158C9 /* VideoPlayWebViewController.swift */,
-				839E582E21201B8B002158C9 /* LeftMenuViewController.swift */,
 				83A7E32D211C65970041E94B /* VideoCollectionViewController.swift */,
 				838475452128226F00F8F53F /* PornstarCollectionViewController.swift */,
+				839E582E21201B8B002158C9 /* LeftMenuViewController.swift */,
+				83ECC814213424510043EC87 /* RightMenuViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,9 +203,10 @@
 				83A7E329211C5F810041E94B /* CategoryViewController.storyboard */,
 				839E582A211FA36D002158C9 /* VideoPlayWebViewController.storyboard */,
 				83503E05211EE2F700C50891 /* VideoPlayViewController.storyboard */,
-				839E582C21201B81002158C9 /* LeftMenuViewController.storyboard */,
 				83A7E32B211C650F0041E94B /* VideoCollectionViewController.storyboard */,
 				838475432128225D00F8F53F /* PornstarCollectionViewController.storyboard */,
+				839E582C21201B81002158C9 /* LeftMenuViewController.storyboard */,
+				83ECC8182134246F0043EC87 /* RightMenuViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -269,6 +275,7 @@
 				831A8A8C2114907700C4C695 /* LaunchScreen.storyboard in Resources */,
 				83A7E32C211C650F0041E94B /* VideoCollectionViewController.storyboard in Resources */,
 				839E582B211FA36D002158C9 /* VideoPlayWebViewController.storyboard in Resources */,
+				83ECC8192134246F0043EC87 /* RightMenuViewController.storyboard in Resources */,
 				831A8A892114907700C4C695 /* Assets.xcassets in Resources */,
 				83EAE7DF2121BE9F00AD298F /* SplashView.storyboard in Resources */,
 				831A8A872114907600C4C695 /* Main.storyboard in Resources */,
@@ -311,6 +318,7 @@
 				"${BUILT_PRODUCTS_DIR}/MKDropdownMenu/MKDropdownMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/PYSearch/PYSearch.framework",
 				"${BUILT_PRODUCTS_DIR}/SKSplashView/SKSplashView.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeMenuViewController/SwipeMenuViewController.framework",
@@ -323,6 +331,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MKDropdownMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PYSearch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKSplashView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeMenuViewController.framework",
@@ -358,6 +367,7 @@
 				839E582F21201B8B002158C9 /* LeftMenuViewController.swift in Sources */,
 				83061358212C3E69003AB92C /* CollectionObject.swift in Sources */,
 				83846310211DBC7900660098 /* UIColor+Extension.swift in Sources */,
+				83ECC815213424510043EC87 /* RightMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

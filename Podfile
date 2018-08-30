@@ -21,6 +21,8 @@ target 'Avgle' do
   pod 'MarqueeLabel/Swift'
   pod 'MKDropdownMenu'
   
+  pod 'PYSearch'
+  
   # Pods for Avgle
 
 end
