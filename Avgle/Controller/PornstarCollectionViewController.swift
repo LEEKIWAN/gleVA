@@ -106,7 +106,7 @@ class PornstarCollectionViewController: UIViewController, NVActivityIndicatorVie
     // MARK : - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let data = self.collectionArray[indexPath.row]
+//        let data = self.collectionArray[indexPath.row]
         
 //        let storyboard = UIStoryboard.init(name: "VideoPlayWebViewController", bundle: nil)
 //        let videoPlayWebViewController = storyboard.instantiateViewController(withIdentifier: "VideoPlayWebViewController") as! VideoPlayWebViewController
