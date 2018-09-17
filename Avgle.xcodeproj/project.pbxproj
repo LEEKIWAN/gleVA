@@ -13,6 +13,8 @@
 		831A8A872114907600C4C695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831A8A852114907600C4C695 /* Main.storyboard */; };
 		831A8A892114907700C4C695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831A8A882114907700C4C695 /* Assets.xcassets */; };
 		831A8A8C2114907700C4C695 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831A8A8A2114907700C4C695 /* LaunchScreen.storyboard */; };
+		834AFB40213D728200BDBCA2 /* SearchResultViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834AFB3F213D728200BDBCA2 /* SearchResultViewController.storyboard */; };
+		834AFB42213D728900BDBCA2 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AFB41213D728900BDBCA2 /* SearchResultViewController.swift */; };
 		83503E00211DFB8B00C50891 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83503DFF211DFB8B00C50891 /* VideoCollectionViewCell.swift */; };
 		83503E02211DFBBB00C50891 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83503E01211DFBBB00C50891 /* CategoryTableViewCell.swift */; };
 		83503E04211E79CC00C50891 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83503E03211E79CC00C50891 /* Int+Extension.swift */; };
@@ -51,6 +53,8 @@
 		831A8A882114907700C4C695 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		831A8A8B2114907700C4C695 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		831A8A8D2114907700C4C695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		834AFB3F213D728200BDBCA2 /* SearchResultViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResultViewController.storyboard; sourceTree = "<group>"; };
+		834AFB41213D728900BDBCA2 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		83503DFF211DFB8B00C50891 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		83503E01211DFBBB00C50891 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		83503E03211E79CC00C50891 /* Int+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				838475452128226F00F8F53F /* PornstarCollectionViewController.swift */,
 				839E582E21201B8B002158C9 /* LeftMenuViewController.swift */,
 				83ECC814213424510043EC87 /* RightMenuViewController.swift */,
+				834AFB41213D728900BDBCA2 /* SearchResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				838475432128225D00F8F53F /* PornstarCollectionViewController.storyboard */,
 				839E582C21201B81002158C9 /* LeftMenuViewController.storyboard */,
 				83ECC8182134246F0043EC87 /* RightMenuViewController.storyboard */,
+				834AFB3F213D728200BDBCA2 /* SearchResultViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -271,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834AFB40213D728200BDBCA2 /* SearchResultViewController.storyboard in Resources */,
 				838475442128225D00F8F53F /* PornstarCollectionViewController.storyboard in Resources */,
 				831A8A8C2114907700C4C695 /* LaunchScreen.storyboard in Resources */,
 				83A7E32C211C650F0041E94B /* VideoCollectionViewController.storyboard in Resources */,
@@ -351,6 +358,7 @@
 			files = (
 				83503E08211EE30300C50891 /* VideoPlayViewController.swift in Sources */,
 				83AEBF1D21299F540001695C /* PornstarCollectionViewCell.swift in Sources */,
+				834AFB42213D728900BDBCA2 /* SearchResultViewController.swift in Sources */,
 				83503E00211DFB8B00C50891 /* VideoCollectionViewCell.swift in Sources */,
 				83EAE7E02121BE9F00AD298F /* SplashView.swift in Sources */,
 				8384630A211C6D2D00660098 /* VideoObject.swift in Sources */,

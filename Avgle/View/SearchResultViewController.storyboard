@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yBh-UF-cmS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Result View Controller-->
+        <scene sceneID="1BK-e3-dSu">
+            <objects>
+                <viewController storyboardIdentifier="SearchResultViewController" id="yBh-UF-cmS" customClass="SearchResultViewController" customModule="Avgle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GtB-7q-MJV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eUM-1V-iId">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eUM-1V-iId" firstAttribute="leading" secondItem="L3A-VC-vx5" secondAttribute="leading" id="Mnw-eQ-unq"/>
+                            <constraint firstItem="eUM-1V-iId" firstAttribute="trailing" secondItem="L3A-VC-vx5" secondAttribute="trailing" id="NUv-pi-DWu"/>
+                            <constraint firstItem="eUM-1V-iId" firstAttribute="top" secondItem="L3A-VC-vx5" secondAttribute="top" id="ZYD-YA-hEc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L3A-VC-vx5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzy-OW-myU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-73" y="118"/>
+        </scene>
+    </scenes>
+</document>
