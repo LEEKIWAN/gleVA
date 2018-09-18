@@ -39,7 +39,6 @@
 		83EAE7E02121BE9F00AD298F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EAE7DE2121BE9F00AD298F /* SplashView.swift */; };
 		83ECC815213424510043EC87 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ECC814213424510043EC87 /* RightMenuViewController.swift */; };
 		83ECC8192134246F0043EC87 /* RightMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83ECC8182134246F0043EC87 /* RightMenuViewController.storyboard */; };
-		A306047F02C09312F88A7D9B /* Pods_Avgle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDE0B4B355D4662E276D729 /* Pods_Avgle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,17 +80,6 @@
 		83ECC8182134246F0043EC87 /* RightMenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RightMenuViewController.storyboard; sourceTree = "<group>"; };
 		CD2A6D2AC8485EB0555EF5CC /* Pods-Avgle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avgle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Avgle/Pods-Avgle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		831A8A7B2114907600C4C695 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A306047F02C09312F88A7D9B /* Pods_Avgle.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		16F7618327E6AF7965ED8347 /* Pods */ = {
@@ -226,7 +214,6 @@
 			buildPhases = (
 				6B7FBB1137017A44C985B77F /* [CP] Check Pods Manifest.lock */,
 				831A8A7A2114907600C4C695 /* Sources */,
-				831A8A7B2114907600C4C695 /* Frameworks */,
 				831A8A7C2114907600C4C695 /* Resources */,
 				A47994BCC42D17D9E042CA00 /* [CP] Embed Pods Frameworks */,
 			);
