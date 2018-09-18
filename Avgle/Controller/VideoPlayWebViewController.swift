@@ -32,7 +32,7 @@ class VideoPlayWebViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
         self.navigationItem.title = videoData?.title
-        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         self.navigationController?.navigationBar.titleTextAttributes = textAttributes
         
         

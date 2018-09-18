@@ -56,14 +56,14 @@ class RightMenuViewController: UIViewController, PYSearchViewControllerDelegate 
         searchViewController!.navigationController?.navigationBar.isTranslucent = false
         
         
-        self.addChildViewController(nav)
+        self.addChild(nav)
         
         
         view.addSubview(nav.view)
         nav.view.frame = view.bounds
         nav.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        nav.didMove(toParentViewController: self)
+        nav.didMove(toParent: self)
     }
     
     

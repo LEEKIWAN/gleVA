@@ -50,7 +50,7 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
             let videoCollectionViewController = storyboard.instantiateViewController(withIdentifier: "VideoCollectionViewController") as! VideoCollectionViewController
             
             videoCollectionViewController.currentCategory = self.categoryArray![i]
-            self.addChildViewController(videoCollectionViewController)
+            self.addChild(videoCollectionViewController)
         }
         
         self.swipeMenuView.reloadData()
@@ -112,8 +112,8 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewControllerForPageAt index: Int) -> UIViewController {
         
-        let videoCollectionViewController = childViewControllers[index]
-        videoCollectionViewController.didMove(toParentViewController: self)
+        let videoCollectionViewController = children[index]
+        videoCollectionViewController.didMove(toParent: self)
         
         return videoCollectionViewController
     }
@@ -122,7 +122,7 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     // MARK - SwipeMenuViewDelegate
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewWillSetupAt currentIndex: Int) {
         if selectedCategory == currentIndex {
-            let videoCollectionViewController = childViewControllers[currentIndex] as! VideoCollectionViewController
+            let videoCollectionViewController = children[currentIndex] as! VideoCollectionViewController
             
             
             if videoCollectionViewController.videoArray.count > 0 {
@@ -138,7 +138,7 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     }
     
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, willChangeIndexFrom fromIndex: Int, to toIndex: Int) {
-        let videoCollectionViewController = childViewControllers[toIndex] as! VideoCollectionViewController
+        let videoCollectionViewController = children[toIndex] as! VideoCollectionViewController
         
         if videoCollectionViewController.videoArray.count > 0 {
             return
@@ -171,14 +171,14 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
         viewController.view.frame = view.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        viewController.didMove(toParentViewController: self)
+        viewController.didMove(toParent: self)
         
     }
   
     private func remove(asChildViewController viewController: UIViewController) {
-        viewController.willMove(toParentViewController: nil)
+        viewController.willMove(toParent: nil)
         viewController.view.removeFromSuperview()
-        viewController.removeFromParentViewController()
+        viewController.removeFromParent()
     }
     
     
