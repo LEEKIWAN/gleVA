@@ -35,7 +35,7 @@ class PornstarCollectionViewController: UIViewController, NVActivityIndicatorVie
             return
         }
         
-        if UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation) {
+        if UIApplication.shared.statusBarOrientation.isLandscape {
             
         } else {
             

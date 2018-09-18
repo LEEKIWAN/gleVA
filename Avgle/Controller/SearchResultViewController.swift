@@ -18,4 +18,11 @@ class SearchResultViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
 
+    
+    
+    
+    
+    @IBAction func onBackTouched() {
+        self.navigationController?.popToRootViewController(animated: false)
+    }
 }

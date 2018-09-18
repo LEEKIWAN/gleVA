@@ -112,7 +112,7 @@ open class SideMenuManager : NSObject {
     open var menuFadeStatusBar = true
     
     /// The animation options when a menu is displayed. Ignored when displayed with a gesture.
-    open var menuAnimationOptions: UIViewAnimationOptions = .curveEaseInOut
+    open var menuAnimationOptions: UIView.AnimationOptions = .curveEaseInOut
     
     /// The animation spring damping when a menu is displayed. Ignored when displayed with a gesture.
     open var menuAnimationUsingSpringWithDamping: CGFloat = 1
@@ -153,7 +153,7 @@ open class SideMenuManager : NSObject {
      
      - Note: If you want cells in a UITableViewController menu to show vibrancy, make them a subclass of UITableViewVibrantCell.
      */
-    open var menuBlurEffectStyle: UIBlurEffectStyle? {
+    open var menuBlurEffectStyle: UIBlurEffect.Style? {
         didSet {
             if oldValue != menuBlurEffectStyle {
                 updateMenuBlurIfNecessary()
@@ -293,7 +293,7 @@ open class SideMenuManager : NSObject {
         guard let forMenu = forMenu,
             let menuBlurEffectStyle = menuBlurEffectStyle,
             let view = forMenu.topViewController?.view,
-            !UIAccessibilityIsReduceTransparencyEnabled() else {
+            !UIAccessibility.isReduceTransparencyEnabled else {
                 return
         }
         
@@ -548,7 +548,7 @@ extension SideMenuManager {
         }
     }
     @available(*, deprecated, renamed: "default.menuAnimationOptions", message: "SideMenuManager class methods deprecated.")
-    open static var menuAnimationOptions: UIViewAnimationOptions {
+    open static var menuAnimationOptions: UIView.AnimationOptions {
         get {
             return `default`.menuAnimationOptions
         }
@@ -620,7 +620,7 @@ extension SideMenuManager {
         }
     }
     @available(*, deprecated, renamed: "default.menuBlurEffectStyle", message: "SideMenuManager class methods deprecated.")
-    open static var menuBlurEffectStyle: UIBlurEffectStyle? {
+    open static var menuBlurEffectStyle: UIBlurEffect.Style? {
         get {
             return `default`.menuBlurEffectStyle
         }

@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         self.requestCategoryList()
         
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
     }
 
     func requestCategoryList() {
@@ -63,7 +63,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -72,7 +72,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let storyboard = UIStoryboard.init(name: "CategoryViewController", bundle: nil)
         let navigationController = storyboard.instantiateViewController(withIdentifier: "CategoryViewController")
 
-        let categoryViewController = navigationController.childViewControllers[0] as! CategoryViewController
+        let categoryViewController = navigationController.children[0] as! CategoryViewController
         categoryViewController.categoryArray = self.categoryArray
         categoryViewController.selectedCategory = indexPath.row
         

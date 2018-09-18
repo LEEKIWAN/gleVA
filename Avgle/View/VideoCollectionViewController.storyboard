@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P8p-q8-dab">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P8p-q8-dab">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lpz-1X-dTx">
-                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="0.0" id="4jn-Mx-rlf">
@@ -68,13 +67,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" image="iconmonstr-favorite-1-240" translatesAutoresizingMaskIntoConstraints="NO" id="uiw-hh-8Gt">
-                                                    <rect key="frame" x="236.5" y="252.5" width="11.5" height="11.5"/>
+                                                    <rect key="frame" x="237" y="252.5" width="11.5" height="11.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="uiw-hh-8Gt" secondAttribute="height" multiplier="1:1" id="dkJ-99-l38"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cv7-2a-eHp">
-                                                    <rect key="frame" x="253" y="249.5" width="32" height="15"/>
+                                                    <rect key="frame" x="253.5" y="249.5" width="32" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -90,16 +89,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="9PM-lc-RYf">
-                                                    <rect key="frame" x="167" y="93.5" width="20" height="20"/>
+                                                    <rect key="frame" x="167" y="94" width="20" height="20"/>
                                                 </activityIndicatorView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1" image="iconmonstr-defavorite-240" translatesAutoresizingMaskIntoConstraints="NO" id="Qkt-Qy-YaI">
-                                                    <rect key="frame" x="295" y="252" width="12" height="12"/>
+                                                    <rect key="frame" x="295.5" y="252.5" width="11.5" height="11.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Qkt-Qy-YaI" secondAttribute="height" multiplier="1:1" id="TNq-4A-GPH"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1h-7U-e7d">
-                                                    <rect key="frame" x="312" y="249" width="32" height="15"/>
+                                                    <rect key="frame" x="312" y="249.5" width="32" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -156,22 +155,12 @@
                                     <outlet property="delegate" destination="Qmi-KG-LhH" id="PoZ-Tm-5Vd"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d73-FF-u8P" customClass="MKDropdownMenu">
-                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
-                                <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="W4w-fc-fq9"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="d73-FF-u8P" firstAttribute="top" secondItem="RRh-rI-TwH" secondAttribute="top" id="DxN-UV-n9R"/>
                             <constraint firstItem="lpz-1X-dTx" firstAttribute="trailing" secondItem="RRh-rI-TwH" secondAttribute="trailing" id="Lx2-4R-sTX"/>
-                            <constraint firstItem="lpz-1X-dTx" firstAttribute="top" secondItem="d73-FF-u8P" secondAttribute="bottom" id="aiU-ch-P4e"/>
-                            <constraint firstItem="RRh-rI-TwH" firstAttribute="trailing" secondItem="d73-FF-u8P" secondAttribute="trailing" id="jKx-Zu-FdM"/>
                             <constraint firstItem="RRh-rI-TwH" firstAttribute="bottom" secondItem="lpz-1X-dTx" secondAttribute="bottom" id="mY1-YF-G0x"/>
-                            <constraint firstItem="d73-FF-u8P" firstAttribute="leading" secondItem="RRh-rI-TwH" secondAttribute="leading" id="n1D-LN-5tN"/>
+                            <constraint firstItem="lpz-1X-dTx" firstAttribute="top" secondItem="RRh-rI-TwH" secondAttribute="top" id="tyD-Hs-Of2"/>
                             <constraint firstItem="lpz-1X-dTx" firstAttribute="leading" secondItem="RRh-rI-TwH" secondAttribute="leading" id="vcu-Hx-vjf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RRh-rI-TwH"/>
@@ -179,7 +168,6 @@
                     <navigationItem key="navigationItem" id="Gtn-dc-axm"/>
                     <connections>
                         <outlet property="collectionView" destination="lpz-1X-dTx" id="7Hm-yr-F4N"/>
-                        <outlet property="dropDownView" destination="d73-FF-u8P" id="anN-TR-wtj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TN2-YS-ebg" userLabel="First Responder" sceneMemberID="firstResponder"/>
