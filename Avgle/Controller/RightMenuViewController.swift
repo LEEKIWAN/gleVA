@@ -22,27 +22,32 @@ class RightMenuViewController: UIViewController, PYSearchViewControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         let storyboard = UIStoryboard(name: "SearchResultViewController", bundle: Bundle.main)
         let viewController = storyboard.instantiateViewController(withIdentifier: "SearchResultViewController") as! SearchResultViewController
-      
+        
         self.searchResultViewController = viewController
         
-  
+        
         
         let searchViewController = PYSearchViewController(hotSearches: searchArray, searchBarPlaceholder: "") { (searchViewController, searchBar, searchText) in
             searchViewController?.navigationController?.pushViewController(self.searchResultViewController!, animated: false)
-            
+
         }
         
         searchViewController!.backButton.tintColor = UIColor.white
         searchViewController!.searchBar.backgroundColor = UIColor(hexString: "202020")
+        
         searchViewController!.view.backgroundColor = UIColor(hexString: "202020")
         
         searchViewController!.hotSearchStyle = .colorfulTag;
         searchViewController!.searchResultShowMode = .embed
-        searchViewController!.searchViewControllerShowMode = .modePush
         
         searchViewController?.delegate = self
+        
+        searchViewController!.searchViewControllerShowMode = .modePush
         
         self.nav = UINavigationController(rootViewController: searchViewController!)
         
@@ -53,17 +58,11 @@ class RightMenuViewController: UIViewController, PYSearchViewControllerDelegate 
         
         self.addChild(nav)
         
-        
         view.addSubview(nav.view)
         nav.view.frame = view.bounds
         nav.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         nav.didMove(toParent: self)
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
     }
     
     
@@ -72,4 +71,6 @@ class RightMenuViewController: UIViewController, PYSearchViewControllerDelegate 
     func didClickBack(_ searchViewController: PYSearchViewController!) {
          self.dismiss(animated: true, completion: nil)
     }
+    
+    
 }

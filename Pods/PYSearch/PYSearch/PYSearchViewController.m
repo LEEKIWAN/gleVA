@@ -401,6 +401,25 @@
     self.searchBarCornerRadius = 0.0;
     
     UIView *titleView = [[UIView alloc] init];
+//    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, self.navigationController.navigationBar.frame.size.height)];
+    
+//    let searchBar = UISearchBar.init(frame: CGRect.init(origin: .zero, size: CGSize.init(width: UIScreen.main.bounds.width, height: (navigationController?.navigationBar.frame.height)!)))
+//    navigationItem.titleView = searchBar
+//
+//    [titleView addSubview:searchBar];
+//
+//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0) { // iOS 11
+//        [NSLayoutConstraint activateConstraints:@[
+//                                                  [searchBar.topAnchor constraintEqualToAnchor:titleView.topAnchor],
+//                                                  [searchBar.leftAnchor constraintEqualToAnchor:titleView.leftAnchor],
+//                                                  [searchBar.rightAnchor constraintEqualToAnchor:titleView.rightAnchor constant:-PYSEARCH_MARGIN],
+//                                                  [searchBar.bottomAnchor constraintEqualToAnchor:titleView.bottomAnchor]
+//                                                  ]];
+//    } else {
+//        searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    }
+//    self.navigationItem.titleView = searchBar;
+    
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:titleView.bounds];
     [titleView addSubview:searchBar];
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0) { // iOS 11
@@ -414,6 +433,7 @@
         searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     }
     self.navigationItem.titleView = titleView;
+    
     searchBar.placeholder = [NSBundle py_localizedStringForKey:PYSearchSearchPlaceholderText];
     searchBar.backgroundImage = [NSBundle py_imageNamed:@"clearImage"];
     searchBar.delegate = self;

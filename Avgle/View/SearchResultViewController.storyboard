@@ -17,23 +17,7 @@
                     <view key="view" contentMode="scaleToFill" id="GtB-7q-MJV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUr-fk-9zi">
-                                <rect key="frame" x="2" y="28" width="64" height="25"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <state key="normal" title="Back" image="back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="onBackTouched" destination="yBh-UF-cmS" eventType="touchUpInside" id="pFc-f8-DAv"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.12549019610000001" green="0.12549019610000001" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="hUr-fk-9zi" firstAttribute="leading" secondItem="L3A-VC-vx5" secondAttribute="leading" constant="2" id="LCM-OY-uCS"/>
-                            <constraint firstItem="hUr-fk-9zi" firstAttribute="top" secondItem="L3A-VC-vx5" secondAttribute="top" constant="8" id="rA1-zV-v4D"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="L3A-VC-vx5"/>
                     </view>
                 </viewController>
@@ -42,7 +26,4 @@
             <point key="canvasLocation" x="-74.400000000000006" y="117.39130434782609"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="back" width="25" height="25"/>
-    </resources>
 </document>
