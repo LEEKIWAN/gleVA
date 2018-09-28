@@ -25,11 +25,7 @@
 #import "ZFPortraitControlView.h"
 #import "UIView+ZFFrame.h"
 #import "ZFUtilities.h"
-#if __has_include(<ZFPlayer/ZFPlayer.h>)
-#import <ZFPlayer/ZFPlayer.h>
-#else
 #import "ZFPlayer.h"
-#endif
 
 @interface ZFPortraitControlView () <ZFSliderViewDelegate>
 /// 底部工具栏
@@ -242,23 +238,23 @@
 }
 
 - (void)showControlView {
-    self.topToolView.alpha = 1;
-    self.bottomToolView.alpha = 1;
-    self.isShow = YES;
-    self.topToolView.y = 0;
-    self.bottomToolView.y = self.height - self.bottomToolView.height;
-    self.playOrPauseBtn.alpha = 1;
-    self.player.statusBarHidden = NO;
+    self.topToolView.alpha           = 1;
+    self.bottomToolView.alpha        = 1;
+    self.isShow                      = YES;
+    self.topToolView.y               = 0;
+    self.bottomToolView.y            = self.height - self.bottomToolView.height;
+    self.playOrPauseBtn.alpha        = 1;
+    self.player.statusBarHidden      = NO;
 }
 
 - (void)hideControlView {
-    self.isShow = NO;
-    self.topToolView.y = -self.topToolView.height;
-    self.bottomToolView.y = self.height;
-    self.playOrPauseBtn.alpha = 0;
-    self.player.statusBarHidden = NO;
-    self.topToolView.alpha = 0;
-    self.bottomToolView.alpha = 0;
+    self.isShow                      = NO;
+    self.topToolView.y               = -self.topToolView.height;
+    self.bottomToolView.y            = self.height;
+    self.playOrPauseBtn.alpha        = 0;
+    self.player.statusBarHidden      = NO;
+    self.topToolView.alpha           = 0;
+    self.bottomToolView.alpha        = 0;
 }
 
 - (BOOL)shouldResponseGestureWithPoint:(CGPoint)point withGestureType:(ZFPlayerGestureType)type touch:(nonnull UITouch *)touch {
@@ -289,6 +285,24 @@
 - (void)showTitle:(NSString *)title fullScreenMode:(ZFFullScreenMode)fullScreenMode {
     self.titleLabel.text = title;
     self.player.orientationObserver.fullScreenMode = fullScreenMode;
+}
+
+/// 调节播放进度slider和当前时间更新
+- (void)sliderValueChanged:(CGFloat)value currentTimeString:(NSString *)timeString {
+    self.slider.value = value;
+    self.currentTimeLabel.text = timeString;
+    self.slider.isdragging = YES;
+    [UIView animateWithDuration:0.3 animations:^{
+        self.slider.sliderBtn.transform = CGAffineTransformMakeScale(1.2, 1.2);
+    }];
+}
+
+/// 滑杆结束滑动
+- (void)sliderChangeEnded {
+    self.slider.isdragging = NO;
+    [UIView animateWithDuration:0.3 animations:^{
+        self.slider.sliderBtn.transform = CGAffineTransformIdentity;
+    }];
 }
 
 #pragma mark - getter

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D8FA8BB9D9536F44F72021B /* Pods_Avgle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDE0B4B355D4662E276D729 /* Pods_Avgle.framework */; };
 		83061358212C3E69003AB92C /* CollectionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83061357212C3E69003AB92C /* CollectionObject.swift */; };
 		831A8A822114907600C4C695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A8A812114907600C4C695 /* AppDelegate.swift */; };
 		831A8A842114907600C4C695 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A8A832114907600C4C695 /* ViewController.swift */; };
@@ -80,6 +81,17 @@
 		83ECC8182134246F0043EC87 /* RightMenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RightMenuViewController.storyboard; sourceTree = "<group>"; };
 		CD2A6D2AC8485EB0555EF5CC /* Pods-Avgle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Avgle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Avgle/Pods-Avgle.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C1FC010B9A3F205008383E8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8FA8BB9D9536F44F72021B /* Pods_Avgle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		16F7618327E6AF7965ED8347 /* Pods */ = {
@@ -216,6 +228,7 @@
 				831A8A7A2114907600C4C695 /* Sources */,
 				831A8A7C2114907600C4C695 /* Resources */,
 				A47994BCC42D17D9E042CA00 /* [CP] Embed Pods Frameworks */,
+				C1FC010B9A3F205008383E8B /* Frameworks */,
 			);
 			buildRules = (
 			);

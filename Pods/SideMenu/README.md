@@ -13,7 +13,7 @@
 > Hi, I'm Jon Kent and I am an iOS designer, developer, and mobile strategist. I love coffee and play the drums.
 > * [**Hire me**](mailto:yo@massappeal.co?subject=Let's%20build%20something%20amazing) to help you make cool stuff. *Note: If you're having a problem with SideMenu, please open an [issue](https://github.com/jonkykong/SideMenu/issues/new) and do not email me.*
 > * Check out my [website](http://massappeal.co) to see some of my other projects.
-> * Building and maintaining this **free** library takes a lot of my time and **saves you time**. Please consider paying it forward by supporting me with a small amount to my [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40jonkent%2eme&lc=US&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted). (only **2** people have donated since inception 😕 but **thank you** to those who have!)
+> * Building and maintaining this **free** library takes a lot of my time and **saves you time**. Please consider paying it forward by supporting me with a small amount to my [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=contact%40jonkent%2eme&lc=US&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted). (only **4** people have donated since inception 😕 but **thank you** to those who have!)
 
 * **[Overview](#overview)**
   * [Preview Samples](#preview-samples) 
@@ -52,8 +52,9 @@ Check out the example project to see it in action!
 | ![](https://raw.githubusercontent.com/jonkykong/SideMenu/master/etc/SlideOut.gif) | ![](https://raw.githubusercontent.com/jonkykong/SideMenu/master/etc/SlideIn.gif) | ![](https://raw.githubusercontent.com/jonkykong/SideMenu/master/etc/Dissolve.gif) | ![](https://raw.githubusercontent.com/jonkykong/SideMenu/master/etc/InOut.gif) |
 
 ## Requirements
-- [x] Xcode 9.
-- [x] iOS 9 or higher.
+- [x] Xcode 10.
+- [x] Swift 4.2.
+- [x] iOS 10 or higher.
 
 ## Installation
 ### CocoaPods
@@ -73,8 +74,11 @@ use_frameworks!
 
 pod 'SideMenu'
 
+# For Swift 4 (no longer maintained), use:
+# pod 'SideMenu', '~> 4.0.0'
+
 # For Swift 3 (no longer maintained), use:
-# pod 'SideMenu', '~> 3.1.7'
+# pod 'SideMenu', '~> 2.3.4'
 ```
 
 Then, run the following command:
@@ -231,6 +235,9 @@ open var menuFadeStatusBar = true
 
 /// The animation options when a menu is displayed. Ignored when displayed with a gesture.
 open var menuAnimationOptions: UIViewAnimationOptions = .curveEaseInOut
+
+///	Animation curve of the remaining animation when the menu is partially dismissed with gestures. Default is .easeIn.
+open var menuAnimationCompletionCurve: UIViewAnimationCurve = .easeIn
 
 /// The animation spring damping when a menu is displayed. Ignored when displayed with a gesture.
 open var menuAnimationUsingSpringWithDamping: CGFloat = 1

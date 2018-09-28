@@ -25,11 +25,7 @@
 #import "ZFAVPlayerManager.h"
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-#if __has_include(<ZFPlayer/ZFPlayer.h>)
-#import <ZFPlayer/ZFPlayer.h>
-#else
 #import "ZFPlayer.h"
-#endif
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
@@ -37,8 +33,7 @@
 /*!
  *  Refresh interval for timed observations of AVPlayer
  */
-static float const kTimeRefreshInterval = 0.5;
-
+static float const kTimeRefreshInterval          = 0.5;
 static NSString *const kStatus                   = @"status";
 static NSString *const kLoadedTimeRanges         = @"loadedTimeRanges";
 static NSString *const kPlaybackBufferEmpty      = @"playbackBufferEmpty";
@@ -113,6 +108,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
 @synthesize loadState                      = _loadState;
 @synthesize assetURL                       = _assetURL;
 @synthesize playerPrepareToPlay            = _playerPrepareToPlay;
+@synthesize playerReadyToPlay              = _playerReadyToPlay;
 @synthesize playerPlayStateChanged         = _playerPlayStateChanged;
 @synthesize playerLoadStateChanged         = _playerLoadStateChanged;
 @synthesize seekTime                       = _seekTime;
@@ -167,6 +163,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
 - (void)stop {
     [_playerItemKVO safelyRemoveAllObservers];
     self.playState = ZFPlayerPlayStatePlayStopped;
+    self.loadState = ZFPlayerLoadStateUnknown;
     if (self.player.rate != 0) [self.player pause];
     [self.player removeTimeObserver:_timeObserver];
     _timeObserver = nil;
@@ -342,10 +339,15 @@ static NSString *const kPresentationSize         = @"presentationSize";
     dispatch_async(dispatch_get_main_queue(), ^{
         if ([keyPath isEqualToString:kStatus]) {
             if (self.player.currentItem.status == AVPlayerItemStatusReadyToPlay) {
+                /// 第一次初始化
+                if (self.loadState == ZFPlayerLoadStatePrepare) {
+                    if (self.playerPrepareToPlay) self.playerReadyToPlay(self, self.assetURL);
+                }
+                
                 self.loadState = ZFPlayerLoadStatePlaythroughOK;
                 if (self.seekTime) {
                     [self seekToTime:self.seekTime completionHandler:nil];
-                    self.seekTime = 0; // 滞空, 防止下次播放出错
+                    self.seekTime = 0;
                 }
                 if (self.isPlaying) [self play];
                 self.player.muted = self.muted;
@@ -383,13 +385,11 @@ static NSString *const kPresentationSize         = @"presentationSize";
     });
 }
 
-
 #pragma mark - getter
 
 - (UIView *)view {
     if (!_view) {
         _view = [[ZFPlayerPresentView alloc] init];
-        _view.backgroundColor = [UIColor blackColor];
     }
     return _view;
 }
