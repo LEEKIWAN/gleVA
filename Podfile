@@ -11,9 +11,9 @@ target 'Avgle' do
   pod 'NVActivityIndicatorView'
   
   
-  pod 'ZFPlayer', '~> 3.0'
-  pod 'ZFPlayer/ControlView', '~> 3.0'
-  pod 'ZFPlayer/AVPlayer', '~> 3.0'
+  pod 'ZFPlayer', '3.1.8'
+  pod 'ZFPlayer/ControlView', '3.1.8'
+  pod 'ZFPlayer/AVPlayer', '3.1.8'
   
   pod 'KafkaRefresh'
   pod 'SideMenu'

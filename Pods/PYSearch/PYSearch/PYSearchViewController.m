@@ -9,7 +9,7 @@
 #import "PYSearchSuggestionViewController.h"
 
 #define PYRectangleTagMaxCol 3
-#define PYTextColor PYSEARCH_COLOR(255, 255, 255)
+#define PYTextColor PYSEARCH_COLOR(113, 113, 113)
 #define PYSEARCH_COLORPolRandomColor self.colorPol[arc4random_uniform((uint32_t)self.colorPol.count)]
 
 @interface PYSearchViewController () <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, PYSearchSuggestionViewDataSource>
@@ -328,7 +328,6 @@
         [self.headerView addSubview:searchHistoryView];
         _searchHistoryView = searchHistoryView;
     }
-    
     return _searchHistoryView;
 }
 
@@ -358,7 +357,6 @@
 {
     self.view.backgroundColor = [UIColor whiteColor];
     self.baseSearchTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
     self.navigationController.navigationBar.backIndicatorImage = nil;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     UIButton *cancleButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -401,25 +399,6 @@
     self.searchBarCornerRadius = 0.0;
     
     UIView *titleView = [[UIView alloc] init];
-//    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, self.navigationController.navigationBar.frame.size.height)];
-    
-//    let searchBar = UISearchBar.init(frame: CGRect.init(origin: .zero, size: CGSize.init(width: UIScreen.main.bounds.width, height: (navigationController?.navigationBar.frame.height)!)))
-//    navigationItem.titleView = searchBar
-//
-//    [titleView addSubview:searchBar];
-//
-//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0) { // iOS 11
-//        [NSLayoutConstraint activateConstraints:@[
-//                                                  [searchBar.topAnchor constraintEqualToAnchor:titleView.topAnchor],
-//                                                  [searchBar.leftAnchor constraintEqualToAnchor:titleView.leftAnchor],
-//                                                  [searchBar.rightAnchor constraintEqualToAnchor:titleView.rightAnchor constant:-PYSEARCH_MARGIN],
-//                                                  [searchBar.bottomAnchor constraintEqualToAnchor:titleView.bottomAnchor]
-//                                                  ]];
-//    } else {
-//        searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-//    }
-//    self.navigationItem.titleView = searchBar;
-    
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:titleView.bounds];
     [titleView addSubview:searchBar];
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0) { // iOS 11
@@ -433,7 +412,6 @@
         searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     }
     self.navigationItem.titleView = titleView;
-    
     searchBar.placeholder = [NSBundle py_localizedStringForKey:PYSearchSearchPlaceholderText];
     searchBar.backgroundImage = [NSBundle py_imageNamed:@"clearImage"];
     searchBar.delegate = self;
@@ -471,8 +449,8 @@
     UIView *footerView = [[UIView alloc] init];
     footerView.py_width = PYScreenW;
     UILabel *emptySearchHistoryLabel = [[UILabel alloc] init];
-    emptySearchHistoryLabel.textColor = [UIColor whiteColor];
-    emptySearchHistoryLabel.font = [UIFont systemFontOfSize:15];
+    emptySearchHistoryLabel.textColor = [UIColor darkGrayColor];
+    emptySearchHistoryLabel.font = [UIFont systemFontOfSize:13];
     emptySearchHistoryLabel.userInteractionEnabled = YES;
     emptySearchHistoryLabel.text = [NSBundle py_localizedStringForKey:PYSearchEmptySearchHistoryText];
     emptySearchHistoryLabel.textAlignment = NSTextAlignmentCenter;
@@ -494,7 +472,7 @@
     titleLabel.text = title;
     titleLabel.font = [UIFont systemFontOfSize:13];
     titleLabel.tag = 1;
-    titleLabel.textColor = UIColor.grayColor;
+    titleLabel.textColor = PYTextColor;
     [titleLabel sizeToFit];
     titleLabel.py_x = 0;
     titleLabel.py_y = 0;
@@ -1058,8 +1036,8 @@
     label.userInteractionEnabled = YES;
     label.font = [UIFont systemFontOfSize:12];
     label.text = title;
-    label.textColor = [UIColor whiteColor];
-//    label.backgroundColor = [UIColor py_colorWithHexString:@"#fafafa"];
+    label.textColor = [UIColor grayColor];
+    label.backgroundColor = [UIColor py_colorWithHexString:@"#fafafa"];
     label.layer.cornerRadius = 3;
     label.clipsToBounds = YES;
     label.textAlignment = NSTextAlignmentCenter;
@@ -1250,7 +1228,6 @@
         [cell.contentView addSubview:line];
     }
     
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.imageView.image = [NSBundle py_imageNamed:@"search_history"];
     cell.textLabel.text = self.searchHistories[indexPath.row];
     

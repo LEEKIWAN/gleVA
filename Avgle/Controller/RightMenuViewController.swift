@@ -25,15 +25,15 @@ class RightMenuViewController: UIViewController, PYSearchViewControllerDelegate 
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let storyboard = UIStoryboard(name: "SearchResultViewController", bundle: Bundle.main)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SearchResultViewController") as! SearchResultViewController
-        
-        self.searchResultViewController = viewController
-        
-        
         
         let searchViewController = PYSearchViewController(hotSearches: searchArray, searchBarPlaceholder: "") { (searchViewController, searchBar, searchText) in
-            searchViewController?.navigationController?.pushViewController(self.searchResultViewController!, animated: false)
+            
+            let storyboard = UIStoryboard(name: "SearchResultViewController", bundle: Bundle.main)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "SearchResultViewController") as! SearchResultViewController
+            
+            self.searchResultViewController = viewController
+            
+            searchViewController?.navigationController?.pushViewController(self.searchResultViewController!, animated: true)
 
         }
         
@@ -62,7 +62,6 @@ class RightMenuViewController: UIViewController, PYSearchViewControllerDelegate 
         nav.view.frame = view.bounds
         nav.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        nav.didMove(toParent: self)
     }
     
     
@@ -72,5 +71,5 @@ class RightMenuViewController: UIViewController, PYSearchViewControllerDelegate 
          self.dismiss(animated: true, completion: nil)
     }
     
-    
 }
+
