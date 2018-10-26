@@ -8,6 +8,8 @@
 
 import UIKit
 import SideMenu
+import Toast_Swift
+import MessageUI
 
 
 protocol LeftMenuViewControllerDelegate {
@@ -15,7 +17,7 @@ protocol LeftMenuViewControllerDelegate {
     func onCategoryTouched(viewController: UIViewController)
 }
 
-class LeftMenuViewController: UIViewController {
+class LeftMenuViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     var delegate: LeftMenuViewControllerDelegate?
     
@@ -38,7 +40,31 @@ class LeftMenuViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
         
         delegate?.onCollectionTouched(viewController: self)
-        
+    }
+    
+    
+    @IBAction func onQRTextTouched(_ sender: UIButton) {
+        let pasteBoard = UIPasteboard.general
+        pasteBoard.string = "3Jox73MN5gtZ1NnLSAQxhstNaF1rfEoH2w"
+        self.view.makeToast("Copied BTC Wallet")
         
     }
+    
+    @IBAction func onEmailTouched(_ sender: UIButton) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["kiwan0930@gmail.com"])
+            
+            present(mail, animated: true)
+        }
+    }
+    
+    
+    //MARK: - MFMailComposeViewControllerDelegate
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+    
 }

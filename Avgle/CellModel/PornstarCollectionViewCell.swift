@@ -14,6 +14,7 @@ class PornstarCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var videoCountLabel: UIButton!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
+    @IBOutlet weak var playCountView: UIView!
     @IBOutlet weak var playCountLabel: UILabel!
     
     
@@ -25,6 +26,8 @@ class PornstarCollectionViewCell: UICollectionViewCell {
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 10
         
+        
+        self.playCountView.layer.cornerRadius = 3
     }
     
     

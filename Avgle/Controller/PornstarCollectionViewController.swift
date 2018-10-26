@@ -128,15 +128,12 @@ class PornstarCollectionViewController: UIViewController, NVActivityIndicatorVie
     // MARK : - UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        
         let padding: CGFloat =  30
         let collectionViewSize = collectionView.frame.size.width - padding
 
-        
         let width = collectionViewSize / 2
         let height = width * 0.5625
         
-
         return CGSize(width: width, height: height)
         
     }

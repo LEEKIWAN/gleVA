@@ -69,6 +69,25 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     
     }
     
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
+        
+        if UIApplication.shared.statusBarOrientation.isLandscape {
+            
+        } else {
+            
+        }
+        
+        flowLayout.invalidateLayout()
+    }
+    
+    
+    
     @IBAction func onTimelineTouched(_ sender: UIButton) {
     
     }
@@ -170,10 +189,24 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     
     // MARK : - UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.size.width - 30
-        let height = width * 0.78
-        return CGSize(width: width, height: height)
+//        let orientation = UIDevice.current.orientation
+//        UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+        let orientation = UIApplication.shared.statusBarOrientation
         
+        if orientation == .portrait {
+            let width = collectionView.size.width - 30
+            let height = width * 0.78
+            return CGSize(width: width, height: height)
+        }
+        else {
+            let padding: CGFloat =  10
+            let collectionViewSize = collectionView.frame.size.width - padding
+            
+            let width = collectionViewSize / 2
+            let height = width * 0.78
+            
+            return CGSize(width: width, height: height)
+        }
     }
 
     

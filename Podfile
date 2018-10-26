@@ -9,7 +9,7 @@ target 'Avgle' do
   pod 'AFNetworking', '~> 3.0'
   pod 'SwipeMenuViewController'
   pod 'NVActivityIndicatorView'
-  
+  pod 'Toast-Swift', '~> 4.0.0'
   
   pod 'ZFPlayer', '3.1.8'
   pod 'ZFPlayer/ControlView', '3.1.8'
