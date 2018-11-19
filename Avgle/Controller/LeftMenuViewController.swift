@@ -56,7 +56,8 @@ class LeftMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
             mail.mailComposeDelegate = self
             mail.setToRecipients(["kiwan0930@gmail.com"])
             
-            present(mail, animated: true)
+            self.present(mail, animated: true, completion: nil)
+                        
         }
     }
     

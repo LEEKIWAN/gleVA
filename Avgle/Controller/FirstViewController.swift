@@ -11,7 +11,7 @@ import AFNetworking
 import SideMenu
 
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
