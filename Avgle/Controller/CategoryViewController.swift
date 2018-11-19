@@ -54,11 +54,19 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
         }
         
         self.swipeMenuView.reloadData()
-        self.swipeMenuView.jump(to: selectedCategory!, animated: false)
-        
+   
         self.title = "Categories"
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        
+        
+//        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + .milliseconds(1000), qos: .background) {
+            self.swipeMenuView.jump(to: self.selectedCategory!, animated: true)
+//        }
+        
+    }
     
     func setNavigtionUI() {
         navigationController?.navigationBar.barTintColor = UIColor(hexString: "202020")
@@ -111,7 +119,6 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     }
     
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewControllerForPageAt index: Int) -> UIViewController {
-        
         let videoCollectionViewController = children[index]
         videoCollectionViewController.didMove(toParent: self)
         
@@ -120,23 +127,6 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     
     
     // MARK - SwipeMenuViewDelegate
-    func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewWillSetupAt currentIndex: Int) {
-        if selectedCategory == currentIndex {
-            let videoCollectionViewController = children[currentIndex] as! VideoCollectionViewController
-            
-            
-            if videoCollectionViewController.videoArray.count > 0 {
-                return
-            }
-            
-            videoCollectionViewController.requestVideoList(isFirst: true)
-        }
-    }
-    
-    func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewDidSetupAt currentIndex: Int) {
-        // Codes
-    }
-    
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, willChangeIndexFrom fromIndex: Int, to toIndex: Int) {
         let videoCollectionViewController = children[toIndex] as! VideoCollectionViewController
         
