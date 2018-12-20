@@ -54,18 +54,12 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
         }
         
         self.swipeMenuView.reloadData()
-   
+        self.swipeMenuView.jump(to: self.selectedCategory!, animated: true)
         self.title = "Categories"
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        
-        
-//        DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + .milliseconds(1000), qos: .background) {
-            self.swipeMenuView.jump(to: self.selectedCategory!, animated: true)
-//        }
-        
+        self.swipeMenuView.jump(to: self.selectedCategory!, animated: true)
     }
     
     func setNavigtionUI() {

@@ -85,8 +85,6 @@ class VideoPlayViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-//        self.player?.currentPlayerManager.isMuted = !self.player?.currentPlayerManager.isMuted
-//        self.player?.currentPlayerManager.isMuted = !(self.player?.currentPlayerManager.isMuted)
     }
 
     

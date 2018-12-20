@@ -26,7 +26,7 @@ class VideoObject: Codable {
     var vid: String?
     var uid: String?
     
-//    "private": false,
+    var `private`: Bool?
 
 }
 
