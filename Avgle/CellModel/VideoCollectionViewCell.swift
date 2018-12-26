@@ -11,10 +11,16 @@ import MarqueeLabel
 import ZFPlayer
 
 
+protocol VideoCollectionViewCellDelegate {
+    func onPlayTouched(cell: UICollectionViewCell)
+}
+
+
 class VideoCollectionViewCell: UICollectionViewCell {
+    
+    var delegate: VideoCollectionViewCellDelegate?
+    
     @IBOutlet weak var coverImageView: UIImageView!
-    
-    
     @IBOutlet weak var titleLabel: MarqueeLabel!
     @IBOutlet weak var registedTimeLabel: UILabel!
     @IBOutlet weak var playCountLabel: UILabel!
@@ -31,11 +37,10 @@ class VideoCollectionViewCell: UICollectionViewCell {
     var player: ZFPlayerController?
     let controlView = ZFPlayerControlView()
     let playerManager = ZFAVPlayerManager()
-    
+    var indexPath: IndexPath?
     
     override func awakeFromNib() {
-        HDLabel.layer.cornerRadius = 3
-        
+        self.HDLabel.layer.cornerRadius = 3
         self.coverImageView.layer.cornerRadius = 3
         
         self.layer.borderColor = UIColor(hexString: "e6e6e6").cgColor
@@ -56,7 +61,6 @@ class VideoCollectionViewCell: UICollectionViewCell {
         self.indicatorView.startAnimating()
         
         self.coverImageView.setImageWith(URLRequest.init(url: NSURL.init(string: data.preview_url!)! as URL), placeholderImage: nil, success: { (request, response, image) in
-            
             self.indicatorView.stopAnimating()
             self.coverImageView.image = image
             

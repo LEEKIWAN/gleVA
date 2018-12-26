@@ -10,9 +10,10 @@ import UIKit
 import AFNetworking
 import NVActivityIndicatorView
 import KafkaRefresh
-import MKDropdownMenu
+//import MKDropdownMenu
+import ZFPlayer
 
-class VideoCollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerPreviewingDelegate, NVActivityIndicatorViewable {
+class VideoCollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerPreviewingDelegate, NVActivityIndicatorViewable, VideoCollectionViewCellDelegate, UIScrollViewDelegate {
 
     let url = "https://api.avgle.com/v1/videos/"
 
@@ -29,6 +30,11 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
 //    @IBOutlet weak var dropDownView: MKDropdownMenu!
     
     
+    var player: ZFPlayerController?
+    var controlView: ZFPlayerControlView = ZFPlayerControlView()
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,8 +44,23 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         
         self.collectionView.bindHeadRefreshHandler({
             self.requestVideoList(isFirst: true)
-            
         }, themeColor: UIColor.lightGray, refreshStyle: .replicatorDot)
+        
+        
+        let playerManager = ZFAVPlayerManager()
+        
+        //    KSMediaPlayerManager *playerManager = [[KSMediaPlayerManager alloc] init];
+        //    ZFIJKPlayerManager *playerManager = [[ZFIJKPlayerManager alloc] init];
+        
+        /// player的tag值必须在cell里设置
+//        self.player = [ZFPlayerController playerWithScrollView:self.collectionView playerManager:playerManager containerViewTag:100];
+        
+        self.player = ZFPlayerController.player(with: self.collectionView, playerManager: playerManager, containerViewTag: 100)
+        
+        self.player?.controlView = self.controlView;
+//        self.player?.assetURLs = self.urls;
+        self.player?.shouldAutoPlay = true;
+        
         
 //        self.dropDownView.dataSource = self;
 //        self.dropDownView.delegate = self;
@@ -66,7 +87,14 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     override func viewDidAppear(_ animated: Bool) {
         self.collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 
-    
+//        [self.collectionView zf_filterShouldPlayCellWhileScrolled:^(NSIndexPath *indexPath) {
+//            @strongify(self)
+//            [self playTheVideoAtIndexPath:indexPath scrollToTop:NO];
+//            }];
+        
+        self.collectionView.zf_filterShouldPlayCellWhileScrolled { (indexPath) in
+//            self.
+        }
     }
     
     
@@ -86,10 +114,20 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         flowLayout.invalidateLayout()
     }
     
+    /// play the video
+//    - (void)playTheVideoAtIndexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop {
+//    [self.player playTheIndexPath:indexPath scrollToTop:scrollToTop];
+//    ZFTableData *data = self.dataSource[indexPath.row];
+//    [self.controlView showTitle:data.title
+//    coverURLString:data.thumbnail_url
+//    fullScreenMode:ZFFullScreenModeLandscape];
+//    }
+
     
-    
-    @IBAction func onTimelineTouched(_ sender: UIButton) {
-    
+    func playTheVideoAtIndexPath(indexPath: IndexPath, scrollToTop: Bool) {
+        self.player?.playTheIndexPath(indexPath, scrollToTop: scrollToTop)
+        let data = self.videoArray[indexPath.row]
+        self.controlView.showTitle(data.title, cover: nil, fullScreenMode: .landscape)
     }
     
     
@@ -129,6 +167,29 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         }
     }
     
+    
+    // MARK: - UIScrollViewDelegate
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollView.zf_scrollViewDidEndDecelerating()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        scrollView.zf_scrollViewDidEndDraggingWillDecelerate(decelerate)
+    }
+    
+    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        scrollView.zf_scrollViewDidScrollToTop()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollView.zf_scrollViewDidScroll()
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        scrollView.zf_scrollViewWillBeginDragging()
+    }
+    
+    
     // MARK: - UIViewControllerPreviewingDelegate
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         
@@ -159,11 +220,10 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let data = self.videoArray[indexPath.row]
-        
-        let videoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideoIdentifier", for: indexPath) as! VideoCollectionViewCell
-        
+        let videoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideoIdentifier", for: indexPath) as! VideoCollectionViewCell        
         videoCell.setData(data: data)
-        
+        videoCell.indexPath = indexPath
+        videoCell.delegate = self
         return videoCell;
     }
     
@@ -210,6 +270,9 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     }
 
     
+    //MARK: - VideoCollectionViewCellDelegate
+    func onPlayTouched(cell: UICollectionViewCell) {
+    }
     
     
 //
