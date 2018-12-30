@@ -11,14 +11,7 @@ import MarqueeLabel
 import ZFPlayer
 
 
-protocol VideoCollectionViewCellDelegate {
-    func onPlayTouched(cell: UICollectionViewCell)
-}
-
-
 class VideoCollectionViewCell: UICollectionViewCell {
-    
-    var delegate: VideoCollectionViewCellDelegate?
     
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: MarqueeLabel!
@@ -31,29 +24,18 @@ class VideoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var disLikeCountLabel: UILabel!
     
     @IBOutlet weak var HDLabel: UILabel!
-    
     @IBOutlet weak var videoContainerView: UIView!
     
-    var player: ZFPlayerController?
-    let controlView = ZFPlayerControlView()
-    let playerManager = ZFAVPlayerManager()
-    var indexPath: IndexPath?
+    var playHandler: (() -> Void)?
     
     override func awakeFromNib() {
+        self.coverImageView.tag = 100
         self.HDLabel.layer.cornerRadius = 3
         self.coverImageView.layer.cornerRadius = 3
         
         self.layer.borderColor = UIColor(hexString: "e6e6e6").cgColor
         self.layer.borderWidth = 1
         self.layer.cornerRadius = 10
-        
-        
-        if self.player == nil {
-            self.player = ZFPlayerController.player(withPlayerManager: playerManager, containerView: self.videoContainerView!);
-            self.player?.controlView = self.controlView
-            self.controlView.isUserInteractionEnabled = false
-            
-        }
     }
     
     func setData(data: VideoObject) {
@@ -106,12 +88,6 @@ class VideoCollectionViewCell: UICollectionViewCell {
         
         // dislike percentage
         self.disLikeCountLabel.text = "\(String(describing: data.dislikes!))"
-        
-        // video
-        self.videoContainerView.isHidden = true
-        self.playerManager.stop()
-        self.player?.assetURL = URL(string: (data.preview_video_url)!)!
-        self.controlView.showTitle("", coverURLString: data.preview_url, fullScreenMode: .landscape)
     }
     
     func timeAgoStringFromDate(date: Date) -> String? {
@@ -150,9 +126,9 @@ class VideoCollectionViewCell: UICollectionViewCell {
     
     
     @IBAction func onPreviewTouched(_ sender: UIButton) {
-        self.videoContainerView.isHidden = false
-        self.player?.playTheIndex(0)
-
+        if let playHandler = playHandler {
+            playHandler()
+        }
     }
     
 }

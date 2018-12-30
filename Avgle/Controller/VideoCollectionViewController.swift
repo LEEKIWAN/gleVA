@@ -13,7 +13,7 @@ import KafkaRefresh
 //import MKDropdownMenu
 import ZFPlayer
 
-class VideoCollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerPreviewingDelegate, NVActivityIndicatorViewable, VideoCollectionViewCellDelegate, UIScrollViewDelegate {
+class VideoCollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerPreviewingDelegate, NVActivityIndicatorViewable, UIScrollViewDelegate {
 
     let url = "https://api.avgle.com/v1/videos/"
 
@@ -29,7 +29,7 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
 //
 //    @IBOutlet weak var dropDownView: MKDropdownMenu!
     
-    
+    var urls: [URL] = []
     var player: ZFPlayerController?
     var controlView: ZFPlayerControlView = ZFPlayerControlView()
 
@@ -45,6 +45,8 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         self.collectionView.bindHeadRefreshHandler({
             self.requestVideoList(isFirst: true)
         }, themeColor: UIColor.lightGray, refreshStyle: .replicatorDot)
+//        self.collectionView.zf_scrollViewDidStopScrollCallback =
+        
         
         
         let playerManager = ZFAVPlayerManager()
@@ -58,10 +60,32 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         self.player = ZFPlayerController.player(with: self.collectionView, playerManager: playerManager, containerViewTag: 100)
         
         self.player?.controlView = self.controlView;
-//        self.player?.assetURLs = self.urls;
+        self.player?.assetURLs = self.urls;
         self.player?.shouldAutoPlay = true;
         
         
+        self.player?.orientationWillChange = { player, isFullScreen in
+            self.setNeedsStatusBarAppearanceUpdate()
+            self.collectionView.scrollsToTop = !isFullScreen
+        }
+        
+        self.player?.playerDidToEnd = { asset in
+            if (self.player!.playingIndexPath?.row)! < self.urls.count - 1 && !self.player!.isFullScreen {
+                let indexPath = IndexPath(row: (self.player?.playingIndexPath?.row)! + 1, section: 0)
+                self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: true)
+            } else if self.player!.isFullScreen {
+                self.player!.enterFullScreen(false, animated: true)
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(self.player!.orientationObserver.duration * Float(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+                    self.player!.stopCurrentPlayingCell()
+                })
+            }
+        }
+
+        
+        self.collectionView.zf_scrollViewDidStopScrollCallback = { indexPath in
+            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+        }
+
 //        self.dropDownView.dataSource = self;
 //        self.dropDownView.delegate = self;
 //
@@ -92,9 +116,10 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
 //            [self playTheVideoAtIndexPath:indexPath scrollToTop:NO];
 //            }];
         
-        self.collectionView.zf_filterShouldPlayCellWhileScrolled { (indexPath) in
-//            self.
-        }
+        
+        collectionView.zf_filterShouldPlayCellWhileScrolled({ indexPath in
+            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+        })
     }
     
     
@@ -114,20 +139,11 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         flowLayout.invalidateLayout()
     }
     
-    /// play the video
-//    - (void)playTheVideoAtIndexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop {
-//    [self.player playTheIndexPath:indexPath scrollToTop:scrollToTop];
-//    ZFTableData *data = self.dataSource[indexPath.row];
-//    [self.controlView showTitle:data.title
-//    coverURLString:data.thumbnail_url
-//    fullScreenMode:ZFFullScreenModeLandscape];
-//    }
-
-    
     func playTheVideoAtIndexPath(indexPath: IndexPath, scrollToTop: Bool) {
         self.player?.playTheIndexPath(indexPath, scrollToTop: scrollToTop)
         let data = self.videoArray[indexPath.row]
-        self.controlView.showTitle(data.title, cover: nil, fullScreenMode: .landscape)
+        
+        self.controlView.showTitle(data.title, coverURLString: data.preview_url, fullScreenMode: .landscape)
     }
     
     
@@ -135,6 +151,7 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     func requestVideoList(isFirst: Bool) {
         if isFirst {
             self.page = 0
+            self.urls.removeAll()
             self.videoArray.removeAll()
             self.collectionView.reloadData()
         }
@@ -156,6 +173,7 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
                 let video = try! JSONDecoder().decode(VideoObject.self, from: dataJson)
                 
                 self.videoArray.append(video)
+                self.urls.append(URL(string: video.preview_video_url!)!)
             }
             
             self.stopAnimating()
@@ -221,9 +239,14 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let data = self.videoArray[indexPath.row]
         let videoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideoIdentifier", for: indexPath) as! VideoCollectionViewCell        
+        
         videoCell.setData(data: data)
-        videoCell.indexPath = indexPath
-        videoCell.delegate = self
+        videoCell.playHandler = {
+            
+             self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+        }
+        
+        
         return videoCell;
     }
     
