@@ -229,6 +229,7 @@
 				831A8A7C2114907600C4C695 /* Resources */,
 				C1FC010B9A3F205008383E8B /* Frameworks */,
 				A78A93FF4C75249AE00E6485 /* [CP] Embed Pods Frameworks */,
+				A8AE2B7C6FDC10C8CE4EEA03 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,6 +330,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Avgle/Pods-Avgle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8AE2B7C6FDC10C8CE4EEA03 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Avgle/Pods-Avgle-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Avgle/Pods-Avgle-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Avgle/Pods-Avgle-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

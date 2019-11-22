@@ -33,86 +33,71 @@
 
 @interface UIScrollView ()
 
-@property (nonatomic, assign) CGFloat zf_lastOffsetY;
+@property (nonatomic) CGFloat zf_lastOffsetY;
+@property (nonatomic) CGFloat zf_lastOffsetX;
+@property (nonatomic) ZFPlayerScrollDirection zf_scrollDirection;
 
 @end
 
 @implementation UIScrollView (ZFPlayer)
 
-#pragma mark - Replace_Method
-
-- (void)zf_scrollViewDidEndDecelerating {
-    BOOL scrollToScrollStop = !self.tracking && !self.dragging && !self.decelerating;
-    if (scrollToScrollStop) {
-        [self _scrollViewDidStopScroll];
-    }
-}
-
-- (void)zf_scrollViewDidEndDraggingWillDecelerate:(BOOL)decelerate {
-    if (!decelerate) {
-        BOOL dragToDragStop = self.tracking && !self.dragging && !self.decelerating;
-        if (dragToDragStop) {
-            [self _scrollViewDidStopScroll];
-        }
-    }
-}
-
-- (void)zf_scrollViewDidScrollToTop {
-    [self _scrollViewDidStopScroll];
-}
-
-- (void)zf_scrollViewDidScroll {
-    [self _scrollViewScrolling];
-}
-
-- (void)zf_scrollViewWillBeginDragging {
-    [self _scrollViewBeginDragging];
-}
-
-#pragma mark - scrollView did stop scroll
+#pragma mark - private method
 
 - (void)_scrollViewDidStopScroll {
-     @weakify(self)
-      [self zf_filterShouldPlayCellWhileScrolled:^(NSIndexPath * _Nonnull indexPath) {
-          @strongify(self)
-          if (self.zf_scrollViewDidStopScrollCallback) {
-              self.zf_scrollViewDidStopScrollCallback(indexPath);
-          }
-      }];
+    @weakify(self)
+    [self zf_filterShouldPlayCellWhileScrolled:^(NSIndexPath * _Nonnull indexPath) {
+        @strongify(self)
+        if (self.zf_scrollViewDidStopScrollCallback) self.zf_scrollViewDidStopScrollCallback(indexPath);
+    }];
 }
 
 - (void)_scrollViewBeginDragging {
-    self.zf_lastOffsetY = self.contentOffset.y;
+    if (self.zf_scrollViewDirection == ZFPlayerScrollViewDirectionVertical) {
+        self.zf_lastOffsetY = self.contentOffset.y;
+    } else {
+        self.zf_lastOffsetX = self.contentOffset.x;
+    }
 }
 
-- (void)_scrollViewScrolling {
+/**
+  The percentage of scrolling processed in vertical scrolling.
+ */
+- (void)_scrollViewScrollingDirectionVertical {
     CGFloat offsetY = self.contentOffset.y;
-    self.zf_scrollDerection = (offsetY - self.zf_lastOffsetY > 0) ? ZFPlayerScrollDerectionUp : ZFPlayerScrollDerectionDown;
+    self.zf_scrollDirection = (offsetY - self.zf_lastOffsetY > 0) ? ZFPlayerScrollDirectionUp : ZFPlayerScrollDirectionDown;
     self.zf_lastOffsetY = offsetY;
+    if (self.zf_stopPlay) return;
     
-    // Avoid being paused the first time you play it.
-    if (self.contentOffset.y < 0) return;
-    if (!self.zf_playingIndexPath) return;
-    
-    UIView *cell = [self zf_getCellForIndexPath:self.zf_playingIndexPath];
-    if (!cell) {
-        if (self.zf_playerDidDisappearInScrollView) self.zf_playerDidDisappearInScrollView(self.zf_playingIndexPath);
-        return;
+    UIView *playerView;
+    if (self.zf_containerType == ZFPlayerContainerTypeCell) {
+        // Avoid being paused the first time you play it.
+        if (self.contentOffset.y < 0) return;
+        if (!self.zf_playingIndexPath) return;
+        
+        UIView *cell = [self zf_getCellForIndexPath:self.zf_playingIndexPath];
+        if (!cell) {
+            if (self.zf_playerDidDisappearInScrollView) self.zf_playerDidDisappearInScrollView(self.zf_playingIndexPath);
+            return;
+        }
+        playerView = [cell viewWithTag:self.zf_containerViewTag];
+    } else if (self.zf_containerType == ZFPlayerContainerTypeView) {
+        if (!self.zf_containerView) return;
+        playerView = self.zf_containerView;
     }
-    UIView *playerView = [cell viewWithTag:self.zf_containerViewTag];
+    
     CGRect rect1 = [playerView convertRect:playerView.frame toView:self];
     CGRect rect = [self convertRect:rect1 toView:self.superview];
     /// playerView top to scrollView top space.
-    CGFloat topSpacing = CGRectGetMinY(rect) - CGRectGetMinY(self.frame) - CGRectGetMinY(playerView.frame) - self.contentInset.top;
+    CGFloat topSpacing = CGRectGetMinY(rect) - CGRectGetMinY(self.frame) - CGRectGetMinY(playerView.frame);
     /// playerView bottom to scrollView bottom space.
-    CGFloat bottomSpacing = CGRectGetMaxY(self.frame) - CGRectGetMaxY(rect) + CGRectGetMinY(playerView.frame) - self.contentInset.bottom;
+    CGFloat bottomSpacing = CGRectGetMaxY(self.frame) - CGRectGetMaxY(rect) + CGRectGetMinY(playerView.frame);
     /// The height of the content area.
-    CGFloat contentInsetHeight = CGRectGetMaxY(self.frame) - CGRectGetMinY(self.frame) - self.contentInset.top - self.contentInset.bottom;
+    CGFloat contentInsetHeight = CGRectGetMaxY(self.frame) - CGRectGetMinY(self.frame);
     
     CGFloat playerDisapperaPercent = 0;
     CGFloat playerApperaPercent = 0;
     
-    if (self.zf_scrollDerection == ZFPlayerScrollDerectionUp) { /// Scroll up
+    if (self.zf_scrollDirection == ZFPlayerScrollDirectionUp) { /// Scroll up
         /// Player is disappearing.
         if (topSpacing <= 0 && CGRectGetHeight(rect) != 0) {
             playerDisapperaPercent = -topSpacing/CGRectGetHeight(rect);
@@ -144,7 +129,7 @@
             }
         }
         
-    } else if (self.zf_scrollDerection == ZFPlayerScrollDerectionDown) { /// Scroll Down
+    } else if (self.zf_scrollDirection == ZFPlayerScrollDirectionDown) { /// Scroll Down
         /// Player is disappearing.
         if (bottomSpacing <= 0 && CGRectGetHeight(rect) != 0) {
             playerDisapperaPercent = -bottomSpacing/CGRectGetHeight(rect);
@@ -178,14 +163,123 @@
     }
 }
 
-- (void)zf_filterShouldPlayCellWhileScrolling:(void (^ __nullable)(NSIndexPath *indexPath))handler {
+/**
+ The percentage of scrolling processed in horizontal scrolling.
+ */
+- (void)_scrollViewScrollingDirectionHorizontal {
+    CGFloat offsetX = self.contentOffset.x;
+    self.zf_scrollDirection = (offsetX - self.zf_lastOffsetX > 0) ? ZFPlayerScrollDirectionLeft : ZFPlayerScrollDirectionRight;
+    self.zf_lastOffsetX = offsetX;
+    if (self.zf_stopPlay) return;
+    
+    UIView *playerView;
+    if (self.zf_containerType == ZFPlayerContainerTypeCell) {
+        // Avoid being paused the first time you play it.
+        if (self.contentOffset.x < 0) return;
+        if (!self.zf_playingIndexPath) return;
+        
+        UIView *cell = [self zf_getCellForIndexPath:self.zf_playingIndexPath];
+        if (!cell) {
+            if (self.zf_playerDidDisappearInScrollView) self.zf_playerDidDisappearInScrollView(self.zf_playingIndexPath);
+            return;
+        }
+       playerView = [cell viewWithTag:self.zf_containerViewTag];
+    } else if (self.zf_containerType == ZFPlayerContainerTypeView) {
+        if (!self.zf_containerView) return;
+        playerView = self.zf_containerView;
+    }
+    
+    CGRect rect1 = [playerView convertRect:playerView.frame toView:self];
+    CGRect rect = [self convertRect:rect1 toView:self.superview];
+    /// playerView left to scrollView left space.
+    CGFloat leftSpacing = CGRectGetMinX(rect) - CGRectGetMinX(self.frame) - CGRectGetMinX(playerView.frame);
+    /// playerView bottom to scrollView right space.
+    CGFloat rightSpacing = CGRectGetMaxX(self.frame) - CGRectGetMaxX(rect) + CGRectGetMinX(playerView.frame);
+    /// The height of the content area.
+    CGFloat contentInsetWidth = CGRectGetMaxX(self.frame) - CGRectGetMinX(self.frame);
+    
+    CGFloat playerDisapperaPercent = 0;
+    CGFloat playerApperaPercent = 0;
+    
+    if (self.zf_scrollDirection == ZFPlayerScrollDirectionLeft) { /// Scroll left
+        /// Player is disappearing.
+        if (leftSpacing <= 0 && CGRectGetWidth(rect) != 0) {
+            playerDisapperaPercent = -leftSpacing/CGRectGetWidth(rect);
+            if (playerDisapperaPercent > 1.0) playerDisapperaPercent = 1.0;
+            if (self.zf_playerDisappearingInScrollView) self.zf_playerDisappearingInScrollView(self.zf_playingIndexPath, playerDisapperaPercent);
+        }
+        
+        /// Top area
+        if (leftSpacing <= 0 && leftSpacing > -CGRectGetWidth(rect)/2) {
+            /// When the player will disappear.
+            if (self.zf_playerWillDisappearInScrollView) self.zf_playerWillDisappearInScrollView(self.zf_playingIndexPath);
+        } else if (leftSpacing <= -CGRectGetWidth(rect)) {
+            /// When the player did disappeared.
+            if (self.zf_playerDidDisappearInScrollView) self.zf_playerDidDisappearInScrollView(self.zf_playingIndexPath);
+        } else if (leftSpacing > 0 && leftSpacing <= contentInsetWidth) {
+            /// Player is appearing.
+            if (CGRectGetWidth(rect) != 0) {
+                playerApperaPercent = -(leftSpacing-contentInsetWidth)/CGRectGetWidth(rect);
+                if (playerApperaPercent > 1.0) playerApperaPercent = 1.0;
+                if (self.zf_playerAppearingInScrollView) self.zf_playerAppearingInScrollView(self.zf_playingIndexPath, playerApperaPercent);
+            }
+            /// In visable area
+            if (leftSpacing <= contentInsetWidth && leftSpacing > contentInsetWidth-CGRectGetWidth(rect)/2) {
+                /// When the player will appear.
+                if (self.zf_playerWillAppearInScrollView) self.zf_playerWillAppearInScrollView(self.zf_playingIndexPath);
+            } else {
+                /// When the player did appeared.
+                if (self.zf_playerDidAppearInScrollView) self.zf_playerDidAppearInScrollView(self.zf_playingIndexPath);
+            }
+        }
+        
+    } else if (self.zf_scrollDirection == ZFPlayerScrollDirectionRight) { /// Scroll right
+        /// Player is disappearing.
+        if (rightSpacing <= 0 && CGRectGetWidth(rect) != 0) {
+            playerDisapperaPercent = -rightSpacing/CGRectGetWidth(rect);
+            if (playerDisapperaPercent > 1.0) playerDisapperaPercent = 1.0;
+            if (self.zf_playerDisappearingInScrollView) self.zf_playerDisappearingInScrollView(self.zf_playingIndexPath, playerDisapperaPercent);
+        }
+        
+        /// Bottom area
+        if (rightSpacing <= 0 && rightSpacing > -CGRectGetWidth(rect)/2) {
+            /// When the player will disappear.
+            if (self.zf_playerWillDisappearInScrollView) self.zf_playerWillDisappearInScrollView(self.zf_playingIndexPath);
+        } else if (rightSpacing <= -CGRectGetWidth(rect)) {
+            /// When the player did disappeared.
+            if (self.zf_playerDidDisappearInScrollView) self.zf_playerDidDisappearInScrollView(self.zf_playingIndexPath);
+        } else if (rightSpacing > 0 && rightSpacing <= contentInsetWidth) {
+            /// Player is appearing.
+            if (CGRectGetWidth(rect) != 0) {
+                playerApperaPercent = -(rightSpacing-contentInsetWidth)/CGRectGetWidth(rect);
+                if (playerApperaPercent > 1.0) playerApperaPercent = 1.0;
+                if (self.zf_playerAppearingInScrollView) self.zf_playerAppearingInScrollView(self.zf_playingIndexPath, playerApperaPercent);
+            }
+            /// In visable area
+            if (rightSpacing <= contentInsetWidth && rightSpacing > contentInsetWidth-CGRectGetWidth(rect)/2) {
+                /// When the player will appear.
+                if (self.zf_playerWillAppearInScrollView) self.zf_playerWillAppearInScrollView(self.zf_playingIndexPath);
+            } else {
+                /// When the player did appeared.
+                if (self.zf_playerDidAppearInScrollView) self.zf_playerDidAppearInScrollView(self.zf_playingIndexPath);
+            }
+        }
+    }
+}
+
+/**
+ Find the playing cell while the scrollDirection is vertical.
+ */
+- (void)_findCorrectCellWhenScrollViewDirectionVertical:(void (^ __nullable)(NSIndexPath *indexPath))handler {
     if (!self.zf_shouldAutoPlay) return;
+    if (self.zf_containerType == ZFPlayerContainerTypeView) return;
+
     NSArray *visiableCells = nil;
     NSIndexPath *indexPath = nil;
-    if ([self isKindOfClass:[UITableView class]]) {
+    if ([self isTableView]) {
         UITableView *tableView = (UITableView *)self;
         visiableCells = [tableView visibleCells];
-        // Top
+        // First visible cell indexPath
         indexPath = tableView.indexPathsForVisibleRows.firstObject;
         if (self.contentOffset.y <= 0 && (!self.zf_playingIndexPath || [indexPath compare:self.zf_playingIndexPath] == NSOrderedSame)) {
             UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -197,7 +291,7 @@
             }
         }
         
-        // Bottom
+        // Last visible cell indexPath
         indexPath = tableView.indexPathsForVisibleRows.lastObject;
         if (self.contentOffset.y + self.frame.size.height >= self.contentSize.height && (!self.zf_playingIndexPath || [indexPath compare:self.zf_playingIndexPath] == NSOrderedSame)) {
             UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -208,7 +302,7 @@
                 return;
             }
         }
-    } else if ([self isKindOfClass:[UICollectionView class]]) {
+    } else if ([self isCollectionView]) {
         UICollectionView *collectionView = (UICollectionView *)self;
         visiableCells = [collectionView visibleCells];
         NSArray *sortedIndexPaths = [collectionView.indexPathsForVisibleItems sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -221,7 +315,7 @@
             return [path1 compare:path2];
         }];
         
-        // Top
+        // First visible cell indexPath
         indexPath = sortedIndexPaths.firstObject;
         if (self.contentOffset.y <= 0 && (!self.zf_playingIndexPath || [indexPath compare:self.zf_playingIndexPath] == NSOrderedSame)) {
             UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
@@ -233,8 +327,8 @@
             }
         }
         
-        // Bottom
-        indexPath = collectionView.indexPathsForVisibleItems.lastObject;
+        // Last visible cell indexPath
+        indexPath = sortedIndexPaths.lastObject;
         if (self.contentOffset.y + self.frame.size.height >= self.contentSize.height && (!self.zf_playingIndexPath || [indexPath compare:self.zf_playingIndexPath] == NSOrderedSame)) {
             UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
             UIView *playerView = [cell viewWithTag:self.zf_containerViewTag];
@@ -246,32 +340,36 @@
         }
     }
     
-    NSArray *cellsArray = nil;
-    if (self.zf_scrollDerection == ZFPlayerScrollDerectionUp) {
-        cellsArray = visiableCells;
+    NSArray *cells = nil;
+    if (self.zf_scrollDirection == ZFPlayerScrollDirectionUp) {
+        cells = visiableCells;
     } else {
-        cellsArray = [visiableCells reverseObjectEnumerator].allObjects;
+        cells = [visiableCells reverseObjectEnumerator].allObjects;
     }
-    /// 中线
-    CGFloat scrollViewMidY = (CGRectGetHeight(self.frame) - self.contentInset.top - self.contentInset.bottom)/2;
-    /// 最终播放的indexPath
+    
+    /// Mid line.
+    CGFloat scrollViewMidY = CGRectGetHeight(self.frame)/2;
+    /// The final playing indexPath.
     __block NSIndexPath *finalIndexPath = nil;
-    /// 最终距离中线的间距
+    /// The final distance from the center line.
     __block CGFloat finalSpace = 0;
     @weakify(self)
-    [cellsArray enumerateObjectsUsingBlock:^(UIView *cell, NSUInteger idx, BOOL * _Nonnull stop) {
+    [cells enumerateObjectsUsingBlock:^(UIView *cell, NSUInteger idx, BOOL * _Nonnull stop) {
         @strongify(self)
         UIView *playerView = [cell viewWithTag:self.zf_containerViewTag];
         if (!playerView) return;
         CGRect rect1 = [playerView convertRect:playerView.frame toView:self];
         CGRect rect = [self convertRect:rect1 toView:self.superview];
-        CGFloat topSpacing = CGRectGetMinY(rect) - CGRectGetMinY(self.frame) - CGRectGetMinY(playerView.frame) - self.contentInset.bottom;
-        CGFloat bottomSpacing = CGRectGetMaxY(self.frame) - CGRectGetMaxY(rect) + CGRectGetMinY(self.frame) + self.contentInset.top;
+        /// playerView top to scrollView top space.
+        CGFloat topSpacing = CGRectGetMinY(rect) - CGRectGetMinY(self.frame) - CGRectGetMinY(playerView.frame);
+        /// playerView bottom to scrollView bottom space.
+        CGFloat bottomSpacing = CGRectGetMaxY(self.frame) - CGRectGetMaxY(rect) + CGRectGetMinY(playerView.frame);
         CGFloat centerSpacing = ABS(scrollViewMidY - CGRectGetMidY(rect));
         NSIndexPath *indexPath = [self zf_getIndexPathForCell:cell];
+        
         /// Play when the video playback section is visible.
-        if ((topSpacing >= -CGRectGetHeight(rect)/2) && (bottomSpacing >= -CGRectGetHeight(rect)/2)) {
-            /// 如果有正在播放的cell，直接停止遍历
+        if ((topSpacing >= -(1 - self.zf_playerApperaPercent) * CGRectGetHeight(rect)) && (bottomSpacing >= -(1 - self.zf_playerApperaPercent) * CGRectGetHeight(rect))) {
+            /// If you have a cell that is playing, stop the traversal.
             if (self.zf_playingIndexPath) {
                 indexPath = self.zf_playingIndexPath;
                 finalIndexPath = indexPath;
@@ -284,10 +382,150 @@
             }
         }
     }];
-    /// 如果找到播放的indexPath
+    /// if find the playing indexPath.
     if (finalIndexPath) {
         if (handler) handler(finalIndexPath);
         self.zf_shouldPlayIndexPath = finalIndexPath;
+    }
+}
+
+/**
+ Find the playing cell while the scrollDirection is horizontal.
+ */
+- (void)_findCorrectCellWhenScrollViewDirectionHorizontal:(void (^ __nullable)(NSIndexPath *indexPath))handler {
+    if (!self.zf_shouldAutoPlay) return;
+    if (self.zf_containerType == ZFPlayerContainerTypeView) return;
+    
+    NSArray *visiableCells = nil;
+    NSIndexPath *indexPath = nil;
+    if ([self isTableView]) {
+        UITableView *tableView = (UITableView *)self;
+        visiableCells = [tableView visibleCells];
+        // First visible cell indexPath
+        indexPath = tableView.indexPathsForVisibleRows.firstObject;
+        if (self.contentOffset.x <= 0 && (!self.zf_playingIndexPath || [indexPath compare:self.zf_playingIndexPath] == NSOrderedSame)) {
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            UIView *playerView = [cell viewWithTag:self.zf_containerViewTag];
+            if (playerView) {
+                if (handler) handler(indexPath);
+                self.zf_shouldPlayIndexPath = indexPath;
+                return;
+            }
+        }
+        
+        // Last visible cell indexPath
+        indexPath = tableView.indexPathsForVisibleRows.lastObject;
+        if (self.contentOffset.x + self.frame.size.width >= self.contentSize.width && (!self.zf_playingIndexPath || [indexPath compare:self.zf_playingIndexPath] == NSOrderedSame)) {
+            UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+            UIView *playerView = [cell viewWithTag:self.zf_containerViewTag];
+            if (playerView) {
+                if (handler) handler(indexPath);
+                self.zf_shouldPlayIndexPath = indexPath;
+                return;
+            }
+        }
+    } else if ([self isCollectionView]) {
+        UICollectionView *collectionView = (UICollectionView *)self;
+        visiableCells = [collectionView visibleCells];
+        NSArray *sortedIndexPaths = [collectionView.indexPathsForVisibleItems sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            return [obj1 compare:obj2];
+        }];
+        
+        visiableCells = [visiableCells sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            NSIndexPath *path1 = (NSIndexPath *)[collectionView indexPathForCell:obj1];
+            NSIndexPath *path2 = (NSIndexPath *)[collectionView indexPathForCell:obj2];
+            return [path1 compare:path2];
+        }];
+        
+        // First visible cell indexPath
+        indexPath = sortedIndexPaths.firstObject;
+        if (self.contentOffset.x <= 0 && (!self.zf_playingIndexPath || [indexPath compare:self.zf_playingIndexPath] == NSOrderedSame)) {
+            UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+            UIView *playerView = [cell viewWithTag:self.zf_containerViewTag];
+            if (playerView) {
+                if (handler) handler(indexPath);
+                self.zf_shouldPlayIndexPath = indexPath;
+                return;
+            }
+        }
+        
+        // Last visible cell indexPath
+        indexPath = sortedIndexPaths.lastObject;
+        if (self.contentOffset.x + self.frame.size.width >= self.contentSize.width && (!self.zf_playingIndexPath || [indexPath compare:self.zf_playingIndexPath] == NSOrderedSame)) {
+            UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+            UIView *playerView = [cell viewWithTag:self.zf_containerViewTag];
+            if (playerView) {
+                if (handler) handler(indexPath);
+                self.zf_shouldPlayIndexPath = indexPath;
+                return;
+            }
+        }
+    }
+    
+    NSArray *cells = nil;
+    if (self.zf_scrollDirection == ZFPlayerScrollDirectionUp) {
+        cells = visiableCells;
+    } else {
+        cells = [visiableCells reverseObjectEnumerator].allObjects;
+    }
+    
+    /// Mid line.
+    CGFloat scrollViewMidX = CGRectGetWidth(self.frame)/2;
+    /// The final playing indexPath.
+    __block NSIndexPath *finalIndexPath = nil;
+    /// The final distance from the center line.
+    __block CGFloat finalSpace = 0;
+    @weakify(self)
+    [cells enumerateObjectsUsingBlock:^(UIView *cell, NSUInteger idx, BOOL * _Nonnull stop) {
+        @strongify(self)
+        UIView *playerView = [cell viewWithTag:self.zf_containerViewTag];
+        if (!playerView) return;
+        CGRect rect1 = [playerView convertRect:playerView.frame toView:self];
+        CGRect rect = [self convertRect:rect1 toView:self.superview];
+        /// playerView left to scrollView top space.
+        CGFloat leftSpacing = CGRectGetMinX(rect) - CGRectGetMinX(self.frame) - CGRectGetMinX(playerView.frame);
+        /// playerView right to scrollView top space.
+        CGFloat rightSpacing = CGRectGetMaxX(self.frame) - CGRectGetMaxX(rect) + CGRectGetMinX(playerView.frame);
+        CGFloat centerSpacing = ABS(scrollViewMidX - CGRectGetMidX(rect));
+        NSIndexPath *indexPath = [self zf_getIndexPathForCell:cell];
+        
+        /// Play when the video playback section is visible.
+        if ((leftSpacing >= -(1 - self.zf_playerApperaPercent) * CGRectGetWidth(rect)) && (rightSpacing >= -(1 - self.zf_playerApperaPercent) * CGRectGetWidth(rect))) {
+            /// If you have a cell that is playing, stop the traversal.
+            if (self.zf_playingIndexPath) {
+                indexPath = self.zf_playingIndexPath;
+                finalIndexPath = indexPath;
+                *stop = YES;
+                return;
+            }
+            if (!finalIndexPath || centerSpacing < finalSpace) {
+                finalIndexPath = indexPath;
+                finalSpace = centerSpacing;
+            }
+        }
+    }];
+    /// if find the playing indexPath.
+    if (finalIndexPath) {
+        if (handler) handler(finalIndexPath);
+        self.zf_shouldPlayIndexPath = finalIndexPath;
+    }
+}
+
+- (BOOL)isTableView {
+    return [self isKindOfClass:[UITableView class]];
+}
+
+- (BOOL)isCollectionView {
+    return [self isKindOfClass:[UICollectionView class]];
+}
+
+#pragma mark - public method
+
+- (void)zf_filterShouldPlayCellWhileScrolling:(void (^ __nullable)(NSIndexPath *indexPath))handler {
+    if (self.zf_scrollViewDirection == ZFPlayerScrollViewDirectionVertical) {
+        [self _findCorrectCellWhenScrollViewDirectionVertical:handler];
+    } else {
+        [self _findCorrectCellWhenScrollViewDirectionHorizontal:handler];
     }
 }
 
@@ -296,25 +534,25 @@
     @weakify(self)
     [self zf_filterShouldPlayCellWhileScrolling:^(NSIndexPath *indexPath) {
         @strongify(self)
+        /// 如果当前控制器已经消失，直接return
+        if (self.zf_viewControllerDisappear) return;
 //        if ([ZFReachabilityManager sharedManager].isReachableViaWWAN && !self.zf_WWANAutoPlay) {
             /// 移动网络
             self.zf_shouldPlayIndexPath = indexPath;
 //            return;
 //        }
-//        if (!self.zf_playingIndexPath) {
-            if (handler)
-                handler(indexPath);
-            self.zf_playingIndexPath = indexPath;
-//        }
+        if (handler)
+            handler(indexPath);
+        self.zf_playingIndexPath = indexPath;
     }];
 }
 
 - (UIView *)zf_getCellForIndexPath:(NSIndexPath *)indexPath {
-    if ([self isKindOfClass:[UITableView class]]) {
+    if ([self isTableView]) {
         UITableView *tableView = (UITableView *)self;
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         return cell;
-    } else if ([self isKindOfClass:[UICollectionView class]]) {
+    } else if ([self isCollectionView]) {
         UICollectionView *collectionView = (UICollectionView *)self;
         UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
         return cell;
@@ -323,11 +561,11 @@
 }
 
 - (NSIndexPath *)zf_getIndexPathForCell:(UIView *)cell {
-    if ([self isKindOfClass:[UITableView class]]) {
+    if ([self isTableView]) {
         UITableView *tableView = (UITableView *)self;
         NSIndexPath *indexPath = [tableView indexPathForCell:(UITableViewCell *)cell];
         return indexPath;
-    } else if ([self isKindOfClass:[UICollectionView class]]) {
+    } else if ([self isCollectionView]) {
         UICollectionView *collectionView = (UICollectionView *)self;
         NSIndexPath *indexPath = [collectionView indexPathForCell:(UICollectionViewCell *)cell];
         return indexPath;
@@ -336,17 +574,58 @@
 }
 
 - (void)zf_scrollToRowAtIndexPath:(NSIndexPath *)indexPath completionHandler:(void (^ __nullable)(void))completionHandler {
-    [UIView animateWithDuration:0.6 animations:^{
-        if ([self isKindOfClass:[UITableView class]]) {
-            UITableView *tableView = (UITableView *)self;
-            [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
-        } else if ([self isKindOfClass:[UICollectionView class]]) {
-            UICollectionView *collectionView = (UICollectionView *)self;
-            [collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
-        }
-    } completion:^(BOOL finished) {
+    [self zf_scrollToRowAtIndexPath:indexPath animated:YES completionHandler:completionHandler];
+}
+
+- (void)zf_scrollToRowAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated completionHandler:(void (^ __nullable)(void))completionHandler {
+    [self zf_scrollToRowAtIndexPath:indexPath animateWithDuration:animated ? 0.4 : 0.0 completionHandler:completionHandler];
+}
+
+/// Scroll to indexPath with animations duration.
+- (void)zf_scrollToRowAtIndexPath:(NSIndexPath *)indexPath animateWithDuration:(NSTimeInterval)duration completionHandler:(void (^ __nullable)(void))completionHandler {
+    BOOL animated = duration > 0.0;
+    if ([self isTableView]) {
+        UITableView *tableView = (UITableView *)self;
+        [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:animated];
+    } else if ([self isCollectionView]) {
+        UICollectionView *collectionView = (UICollectionView *)self;
+        [collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:animated];
+    }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (completionHandler) completionHandler();
-    }];
+    });
+}
+
+- (void)zf_scrollViewDidEndDecelerating {
+    BOOL scrollToScrollStop = !self.tracking && !self.dragging && !self.decelerating;
+    if (scrollToScrollStop) {
+        [self _scrollViewDidStopScroll];
+    }
+}
+
+- (void)zf_scrollViewDidEndDraggingWillDecelerate:(BOOL)decelerate {
+    if (!decelerate) {
+        BOOL dragToDragStop = self.tracking && !self.dragging && !self.decelerating;
+        if (dragToDragStop) {
+            [self _scrollViewDidStopScroll];
+        }
+    }
+}
+
+- (void)zf_scrollViewDidScrollToTop {
+    [self _scrollViewDidStopScroll];
+}
+
+- (void)zf_scrollViewDidScroll {
+    if (self.zf_scrollViewDirection == ZFPlayerScrollViewDirectionVertical) {
+        [self _scrollViewScrollingDirectionVertical];
+    } else {
+        [self _scrollViewScrollingDirectionHorizontal];
+    }
+}
+
+- (void)zf_scrollViewWillBeginDragging {
+    [self _scrollViewBeginDragging];
 }
 
 #pragma mark - getter
@@ -363,7 +642,7 @@
     return [objc_getAssociatedObject(self, _cmd) integerValue];
 }
 
-- (ZFPlayerScrollDerection)zf_scrollDerection {
+- (ZFPlayerScrollDirection)zf_scrollDirection {
     return [objc_getAssociatedObject(self, _cmd) integerValue];
 }
 
@@ -382,7 +661,27 @@
     return YES;
 }
 
+- (ZFPlayerScrollViewDirection)zf_scrollViewDirection {
+    return [objc_getAssociatedObject(self, _cmd) integerValue];
+}
+
+- (BOOL)zf_stopPlay {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (ZFPlayerContainerType)zf_containerType {
+    return [objc_getAssociatedObject(self, _cmd) integerValue];
+}
+
+- (UIView *)zf_containerView {
+    return objc_getAssociatedObject(self, _cmd);
+}
+
 - (CGFloat)zf_lastOffsetY {
+    return [objc_getAssociatedObject(self, _cmd) floatValue];
+}
+
+- (CGFloat)zf_lastOffsetX {
     return [objc_getAssociatedObject(self, _cmd) floatValue];
 }
 
@@ -404,15 +703,14 @@
 - (void)setZf_shouldPlayIndexPath:(NSIndexPath *)zf_shouldPlayIndexPath {
     if (self.zf_shouldPlayIndexPathCallback) self.zf_shouldPlayIndexPathCallback(zf_shouldPlayIndexPath);
     objc_setAssociatedObject(self, @selector(zf_shouldPlayIndexPath), zf_shouldPlayIndexPath, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    self.shouldPlayIndexPath = zf_shouldPlayIndexPath;
 }
 
 - (void)setZf_containerViewTag:(NSInteger)zf_containerViewTag {
     objc_setAssociatedObject(self, @selector(zf_containerViewTag), @(zf_containerViewTag), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)setZf_scrollDerection:(ZFPlayerScrollDerection)zf_scrollDerection {
-    objc_setAssociatedObject(self, @selector(zf_scrollDerection), @(zf_scrollDerection), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setZf_scrollDirection:(ZFPlayerScrollDirection)zf_scrollDirection {
+    objc_setAssociatedObject(self, @selector(zf_scrollDirection), @(zf_scrollDirection), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (void)setZf_stopWhileNotVisible:(BOOL)zf_stopWhileNotVisible {
@@ -423,12 +721,32 @@
     objc_setAssociatedObject(self, @selector(zf_isWWANAutoPlay), @(zf_WWANAutoPlay), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
+- (void)setZf_scrollViewDirection:(ZFPlayerScrollViewDirection)zf_scrollViewDirection {
+    objc_setAssociatedObject(self, @selector(zf_scrollViewDirection), @(zf_scrollViewDirection), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setZf_stopPlay:(BOOL)zf_stopPlay {
+    objc_setAssociatedObject(self, @selector(zf_stopPlay), @(zf_stopPlay), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setZf_containerType:(ZFPlayerContainerType)zf_containerType {
+    objc_setAssociatedObject(self, @selector(zf_containerType), @(zf_containerType), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setZf_containerView:(UIView *)zf_containerView {
+    objc_setAssociatedObject(self, @selector(zf_containerView), zf_containerView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (void)setZf_shouldAutoPlay:(BOOL)zf_shouldAutoPlay {
     objc_setAssociatedObject(self, @selector(zf_shouldAutoPlay), @(zf_shouldAutoPlay), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (void)setZf_lastOffsetY:(CGFloat)zf_lastOffsetY {
     objc_setAssociatedObject(self, @selector(zf_lastOffsetY), @(zf_lastOffsetY), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)setZf_lastOffsetX:(CGFloat)zf_lastOffsetX {
+    objc_setAssociatedObject(self, @selector(zf_lastOffsetX), @(zf_lastOffsetX), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (void)setZf_scrollViewDidStopScrollCallback:(void (^)(NSIndexPath * _Nonnull))zf_scrollViewDidStopScrollCallback {
@@ -469,6 +787,18 @@
     return objc_getAssociatedObject(self, _cmd);
 }
 
+- (CGFloat)zf_playerApperaPercent {
+    return [objc_getAssociatedObject(self, _cmd) floatValue];
+}
+
+- (CGFloat)zf_playerDisapperaPercent {
+    return [objc_getAssociatedObject(self, _cmd) floatValue];
+}
+
+- (BOOL)zf_viewControllerDisappear {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
 #pragma mark - setter
 
 - (void)setZf_playerDisappearingInScrollView:(void (^)(NSIndexPath * _Nonnull, CGFloat))zf_playerDisappearingInScrollView {
@@ -495,28 +825,16 @@
     objc_setAssociatedObject(self, @selector(zf_playerDidDisappearInScrollView), zf_playerDidDisappearInScrollView, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-@end
-
-@implementation UIScrollView (ZFPlayerDeprecated)
-
-#pragma mark - getter
-
-- (NSIndexPath *)shouldPlayIndexPath {
-    return objc_getAssociatedObject(self, _cmd);
+- (void)setZf_playerApperaPercent:(CGFloat)zf_playerApperaPercent {
+    objc_setAssociatedObject(self, @selector(zf_playerApperaPercent), @(zf_playerApperaPercent), OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (void (^)(NSIndexPath * _Nonnull))scrollViewDidStopScroll {
-    return objc_getAssociatedObject(self, _cmd);
+- (void)setZf_playerDisapperaPercent:(CGFloat)zf_playerDisapperaPercent {
+    objc_setAssociatedObject(self, @selector(zf_playerDisapperaPercent), @(zf_playerDisapperaPercent), OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-#pragma mark - setter
-
-- (void)setShouldPlayIndexPath:(NSIndexPath *)shouldPlayIndexPath {
-    objc_setAssociatedObject(self, @selector(shouldPlayIndexPath), shouldPlayIndexPath, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-- (void)setScrollViewDidStopScroll:(void (^)(NSIndexPath * _Nonnull))scrollViewDidStopScroll {
-    objc_setAssociatedObject(self, @selector(scrollViewDidStopScroll), scrollViewDidStopScroll, OBJC_ASSOCIATION_COPY_NONATOMIC);
+- (void)setZf_viewControllerDisappear:(BOOL)zf_viewControllerDisappear {
+    objc_setAssociatedObject(self, @selector(zf_viewControllerDisappear), @(zf_viewControllerDisappear), OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 @end

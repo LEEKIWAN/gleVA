@@ -56,32 +56,8 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         let playerManager = ZFAVPlayerManager()
         self.player = ZFPlayerController.player(with: self.collectionView, playerManager: playerManager, containerViewTag: 100)
         self.player!.controlView = self.controlView;
-    }
-    
-    func setConfigureVideoView() {
-
-        
         self.player!.assetURLs = self.urls;
         self.player!.shouldAutoPlay = true;
-        
-        
-//        self.player?.orientationWillChange = { player, isFullScreen in
-//            self.setNeedsStatusBarAppearanceUpdate()
-//            self.collectionView.scrollsToTop = !isFullScreen
-//        }
-//
-//        self.player?.playerDidToEnd = { asset in
-//            if (self.player!.playingIndexPath?.row)! < self.urls.count - 1 && !self.player!.isFullScreen {
-//                let indexPath = IndexPath(row: (self.player?.playingIndexPath?.row)! + 1, section: 0)
-//                self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: true)
-//            } else if self.player!.isFullScreen {
-//                self.player!.enterFullScreen(false, animated: true)
-//                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(self.player!.orientationObserver.duration * Float(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
-//                    self.player!.stopCurrentPlayingCell()
-//                })
-//            }
-//        }
-    
     }
     
     
@@ -145,7 +121,6 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
             self.stopAnimating()
             self.collectionView.headRefreshControl.endRefreshing()
             self.collectionView.reloadData()
-            self.setConfigureVideoView()
         }) { (task, error) in
             
         }
@@ -240,7 +215,7 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         let orientation = UIApplication.shared.statusBarOrientation
         
         if orientation == .portrait {
-            let width = collectionView.size.width - 30
+            let width = collectionView.frame.size.width - 30
             let height = width * 0.78
             return CGSize(width: width, height: height)
         }

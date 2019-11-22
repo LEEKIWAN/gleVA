@@ -31,96 +31,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CF846145-6DCD-4F79-899B-47A8D35A75FA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Avgle/Controller/VideoCollectionViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "636DC9D1-D18A-408F-858C-743C286B145D"
+            uuid = "9EFF87C6-845B-443A-9805-DECEF97B2B7A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/ZFPlayer/ZFPlayer/Classes/Core/UIScrollView+ZFPlayer.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
-            landmarkName = "-zf_filterShouldPlayCellWhileScrolled:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "636DC9D1-D18A-408F-858C-743C286B145D - b0c755346ac88656"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__63-[UIScrollView(ZFPlayer) zf_filterShouldPlayCellWhileScrolled:]_block_invoke"
-                  moduleName = "ZFPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kiwan/Documents/Swift/Avgle/Pods/ZFPlayer/ZFPlayer/Classes/Core/UIScrollView+ZFPlayer.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "307"
-                  endingLineNumber = "307"
-                  offsetFromSymbolStart = "368">
-               </Location>
-               <Location
-                  uuid = "636DC9D1-D18A-408F-858C-743C286B145D - 1c76382ce93f3206"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_e8_32b40w"
-                  moduleName = "ZFPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kiwan/Documents/Swift/Avgle/Pods/ZFPlayer/ZFPlayer/Classes/Core/UIScrollView+ZFPlayer.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "296"
-                  endingLineNumber = "296"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "61420592-E3E6-4C99-BC88-80CA8EDA9C46"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/ZFPlayer/ZFPlayer/Classes/Core/UIScrollView+ZFPlayer.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "304"
-            endingLineNumber = "304"
-            landmarkName = "-zf_filterShouldPlayCellWhileScrolled:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8DBB3281-05DD-4706-A125-A6D7B868289F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/ZFPlayer/ZFPlayer/Classes/Core/UIScrollView+ZFPlayer.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
-            landmarkName = "-zf_filterShouldPlayCellWhileScrolled:"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
+            landmarkName = "-_findCorrectCellWhenScrollViewDirectionVertical:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

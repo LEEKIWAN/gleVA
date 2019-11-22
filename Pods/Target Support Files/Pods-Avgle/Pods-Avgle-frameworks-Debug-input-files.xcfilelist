@@ -9,4 +9,3 @@ ${BUILT_PRODUCTS_DIR}/SKSplashView/SKSplashView.framework
 ${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework
 ${BUILT_PRODUCTS_DIR}/SwipeMenuViewController/SwipeMenuViewController.framework
 ${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework
-${BUILT_PRODUCTS_DIR}/ZFPlayer/ZFPlayer.framework

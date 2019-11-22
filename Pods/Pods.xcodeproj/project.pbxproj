@@ -9,132 +9,120 @@
 /* Begin PBXBuildFile section */
 		00640013C91346449891CEAAC4F5C689 /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5174396C1573AE2FBEAA93C2EA19CF /* NVActivityIndicatorAnimationBallTrianglePath.swift */; };
 		00C250907C31BD7CD6F6FBCF6C160979 /* NVActivityIndicatorAnimationPacman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644FE2A4FE27D93A8FDF556EA4883E15 /* NVActivityIndicatorAnimationPacman.swift */; };
-		017B40BDFD98B854225D17001C06E879 /* ZFLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4E70F80F4566947ED95C0E2FEE9ED /* ZFLoadingView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		017EF74439A3F808B0F0EA5DF8B82C70 /* ZFLandScapeControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4218E76B4A06D044BE0E8154E2712333 /* ZFLandScapeControlView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		019CD7F09DCB858D7BADE3A832803574 /* KafkaRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AFABD3CC82ABAFF200659EF76216F85 /* KafkaRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		022C49A963ADC49870A434AA6E669D78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B56E0C85004DE7E72BCA9F2ACFB895D /* Foundation.framework */; };
-		0254EABA2D0AACFBFA5E2BAD753C5E2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B56E0C85004DE7E72BCA9F2ACFB895D /* Foundation.framework */; };
+		022C49A963ADC49870A434AA6E669D78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40530560F251DB72F14EF0410752835D /* Foundation.framework */; };
+		0254EABA2D0AACFBFA5E2BAD753C5E2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40530560F251DB72F14EF0410752835D /* Foundation.framework */; };
 		0264AD1A5DC608A5A2DA09AC7C032D93 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FE4BF058693892A1FBE8C156F2AF63 /* AFURLSessionManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		0332CF2FA18CDBDD9DB83F50017E5705 /* KafkaRefresh-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5572B73E72500F11D7F7930556FF0FEE /* KafkaRefresh-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		033825875FC6F64720D288730E73E6E2 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD88290368947771C46499330DED752 /* UIButton+AFNetworking.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		05DF6DA786650CE9EC7A190D15C30820 /* ZFLandScapeControlView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E7C0D895A38D460429F1367BB872B0E /* ZFLandScapeControlView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		063E0A231A62F5D1B7AEFA52F61CBE8C /* NVActivityIndicatorViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C125D2E20F07BD4789FCE5EECA51BA /* NVActivityIndicatorViewable.swift */; };
-		087F5C8345A26B16564C5CA486F5117F /* ZFPlayerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2048E01CC8B42977B5577F190FD41698 /* ZFPlayerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		06F6A9FF47399D9FBBCC378958DEDED1 /* ZFLoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = CFDCA39C61753FEB7E1CB128CFDFA059 /* ZFLoadingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		088D1B4FFBF195E2C5F971CE6E01F306 /* NVActivityIndicatorAnimationSemiCircleSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E796203DA3EEEA7AD5CB6790F9FDDA31 /* NVActivityIndicatorAnimationSemiCircleSpin.swift */; };
 		08B5B89F28224381711F45A680C292D9 /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CAD4EDDE7E9DD5CF48DF4C8D7459A7B /* SideMenu-dummy.m */; };
 		09A0A5D3733F69E93F553ABBCF02FB77 /* SideMenuTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3402F7223DAEB4649E3B850A66517C76 /* SideMenuTransitionController.swift */; };
 		09E2F57C3C2B897ACC8AF5C49F1E9592 /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 994FD63036F2F9C55D0B4F5AC411D851 /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		09E785555B549DE5974C744DB8324B91 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = CE0BE06B699FBD596C41DFD7C33911C0 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A97285AE72E2BD2E2E21C0A9B278292 /* UIScrollView+KafkaRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 62199DB758CD44B6D2C8DAEB6464AB2C /* UIScrollView+KafkaRefreshControl.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		0D6FD2B2751CE84EE4EFB98E3AA2F718 /* ZFLoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = CFDCA39C61753FEB7E1CB128CFDFA059 /* ZFLoadingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0BD66A09F8BF32766F4733AECDDFE998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40530560F251DB72F14EF0410752835D /* Foundation.framework */; };
 		0E23FDE8934944DB60E48C1602DF01E1 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAB08CC9E3215FB4A9FAC3C77EB6459 /* UIRefreshControl+AFNetworking.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		0EDAB026576F597D4CECC17B5DD8E5D8 /* ZFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DA7F67818C419D8F7E0B851AC9172F /* ZFUtilities.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0EAD356A20EC7D812F1A852129E25CA7 /* ZFPortraitControlView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3327313B5342E2AF717300CEDF082173 /* ZFPortraitControlView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		12BFC37458775DBBB0B2DF02285C4272 /* KafkaRefreshStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = BF57B8C5F11A767EF62098C619122DB8 /* KafkaRefreshStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1364E6CDA99F4F222949EFEB53E89950 /* ZFPlayerMediaControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 30DBCEAAC5EF34AE65C2E0684443185A /* ZFPlayerMediaControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		155BC5B238768837658CF7FEBDED8E04 /* UIView+ZFFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 792D482034AF1BC016DC3FBE59D7B5D7 /* UIView+ZFFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		169B3FC2BD33B8FBC2D4C35A1C1DC6BF /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 656FBBA1FD50805FF656FD27CBE52C36 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17A544669711659B243BA35E9921C0AA /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF18955A0F588C0002E8A2BC17AAE9C5 /* MarqueeLabel.swift */; };
 		17D6A066C5F987FEFF8B89D7EFDFD375 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A3C48778D5683A0EFC4A6AA2B6BF0DC /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18D3B316ACCF21376DE24F8E443355FF /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0534866BCEA41EAB72D92A85C6ED94A7 /* NVActivityIndicatorAnimationBallPulseSync.swift */; };
-		18E1603D11636303413FEACE84EE3B5C /* UIScrollView+ZFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCFD9DA91FF108038F0FBDB047A2EEB /* UIScrollView+ZFPlayer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		191538F09816AE3DB5F2BB8E44C42FBC /* ZFNetworkSpeedMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 720A459B6D1EACD71EFAD7D6D8C23846 /* ZFNetworkSpeedMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A69331F19B0EE0AB5E9F73E67FF508E /* SKSplashIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = 276D3BE3B0047DD293CB2A8AE6DB0A1B /* SKSplashIcon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1AC36159DEDD4452C304D5B1FFB688D1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 145731A3CA35A987B97442B194FD8B17 /* MobileCoreServices.framework */; };
-		1BE1887359163FEFE73D70F4C4A07BCB /* Pods-Avgle-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A15805F865EC760803A513E71F00598 /* Pods-Avgle-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BF2A69F138A6114CEB6613EB923DFA9 /* ZFPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E05220FDAEE04F4C0026210945FC4EDC /* ZFPlayer-dummy.m */; };
-		1C5E904ABBF5F736FF99E9EDF75C9471 /* ZFPlayerGestureControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C730C5146427BC7A1E1B9B2F674988B /* ZFPlayerGestureControl.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		1C827429A2E0D40481BB7D7C36A59E2B /* ZFPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1CF9AECC3A2E5405B388D284A484A0 /* ZFPlayerController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1AC36159DEDD4452C304D5B1FFB688D1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187340C0E9BA267D7818D4B34C68FEB8 /* MobileCoreServices.framework */; };
+		1BE1887359163FEFE73D70F4C4A07BCB /* Pods-Avgle-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D5BE8D06C6E6DCE2BEE517C03E7984BA /* Pods-Avgle-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C9103144B28F59E426A153B3617DDC1 /* KafkaReplicatorLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CCB15032072BF5B9E45DA810B6E4F1B /* KafkaReplicatorLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1E0BAB86EF7B403EDE68EEAB8F371DC5 /* UIScrollView+KafkaConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0D709DCDD4839E3662936EEF5D625F /* UIScrollView+KafkaConfiguration.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		1FB30932D11139775FBC7855A3E667F7 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C970FB84304CAA38B336DBA83B16B15C /* AFURLRequestSerialization.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		1FC3B04E11E5B63C7238F01E91E170C5 /* ZFSpeedLoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4238423FB79158D452E184178A0A1AE8 /* ZFSpeedLoadingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2024EE5E265681137A9FEBC630E6E0F1 /* Toast-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 051FEE9CF8BF73896FFAE602412E712A /* Toast-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		20DB52CAA53AA84B60D8B9693F507285 /* NSBundle+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FFAB5E408CAAB210CFD44F44E5B5F7A /* NSBundle+PYSearchExtension.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		217DEBA21F088EA48BC937ADDCD109DD /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A714E686D6C74A16DF3DAEF69CF90E43 /* UIProgressView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		219628DDFF4B6049565188F2B870DA58 /* ZFPlayerLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0903665A6A7F89EEB1E9EF995316F054 /* ZFPlayerLogManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		22F5B337BD9B0DABE76F9633F08B2C53 /* UIView+ZFFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 792D482034AF1BC016DC3FBE59D7B5D7 /* UIView+ZFFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		235953003BAFDDA4E61C8DD52625AF05 /* UIScrollView+KafkaRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = AC3FF9CD24B89D6ACA100CB9A742C359 /* UIScrollView+KafkaRefreshControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		23663C9525DA269A383637A670FFB683 /* ZFOrientationObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = E0DFF01299111E1EB19FE6FE338914BD /* ZFOrientationObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		23927711895669357A624B6274C7B486 /* SwipeMenuViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C52F15DAFC692A79C856A0F2EC6892F8 /* SwipeMenuViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		23CFCA220D10319B40A4A7AFB16205E7 /* NVActivityIndicatorAnimationBallScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88FA4C09A9752253A9887AF2FDE0980 /* NVActivityIndicatorAnimationBallScale.swift */; };
 		267887859AC5ED9F88594D2E8B7B28CC /* MKDropdownMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = C4426B9C86A50C8B09C0687EA5EB2F6B /* MKDropdownMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		27952B46F79D4653ED36993A92A58CC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379D2FBCF5F924A6A737DEB6D25B6270 /* UIKit.framework */; };
 		27D830F1CAC60B99CC0A135F583BFFF2 /* SideMenuPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B4E5AB98A03EF9853E707A3F20B542 /* SideMenuPresentationController.swift */; };
-		28FF2DD2E26316CA3F053BEA685AD6A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379D2FBCF5F924A6A737DEB6D25B6270 /* UIKit.framework */; };
+		28FF2DD2E26316CA3F053BEA685AD6A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8D1E45A6A4D4594B42AD7E361B2D2C /* UIKit.framework */; };
 		296147801CBAE5BCB7C957FF68CBFFF2 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = D27CF7380A94DDC6659F64C839CBBE49 /* UIWebView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		29D2D3E7CF0F6DC0CD3AF37B5ACD9C9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B56E0C85004DE7E72BCA9F2ACFB895D /* Foundation.framework */; };
-		2A6A0A9F52CF526A5C8AD4266F595CDF /* ZFVolumeBrightnessView.h in Headers */ = {isa = PBXBuildFile; fileRef = 164385AC0F21F3C99F6A221CEA72B380 /* ZFVolumeBrightnessView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29D2D3E7CF0F6DC0CD3AF37B5ACD9C9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40530560F251DB72F14EF0410752835D /* Foundation.framework */; };
+		2A9D3596425A7E90F1E77CF2BFA977B0 /* ZFKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECA8F4CAE0DE8B7BF8D731038BB4B17 /* ZFKVOController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		2AE1F29F045D02727E815DBBAC8C7B4F /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CFCE80BE1DFE453871C19F56706F76CC /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2ED518A3FA8DCBE08E621AC5C32844A9 /* SideMenuPushCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAC956E0F5563D85EDA9086F94D1881 /* SideMenuPushCoordinator.swift */; };
-		325BA69A1881ED0F610714A630739449 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B56E0C85004DE7E72BCA9F2ACFB895D /* Foundation.framework */; };
+		2EEF899E99ED0001F2EBFCEBF90416BE /* ZFReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 59ADAB7FFBD41FA0FB46ADBB8CA89CF1 /* ZFReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		325BA69A1881ED0F610714A630739449 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40530560F251DB72F14EF0410752835D /* Foundation.framework */; };
 		325CCD10225D70492E63455B878087ED /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F707302614A2BE2C74BC986349E8FEA /* AFNetworking-dummy.m */; };
 		32D7A52371319C58332BBA4E24C6DC1C /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE941D66D09055FBD7625E5749CCBF7 /* AFNetworkReachabilityManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		34798F1AF2593E71F37D22B860D1AA6B /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3A8D5D22CC78E00E2125B11A00C654 /* NVActivityIndicatorAnimationLineScaleParty.swift */; };
-		35683939E2B87077E460F55D11F1AD5D /* ZFFloatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47F1F165EDA36A44E67034EF57090B /* ZFFloatView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		361D2154FE676E9EE1F9F4D8BBC1A641 /* ZFOrientationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C7FE03C597D8F1C22ACFEE6D7B5784 /* ZFOrientationObserver.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		37E636228CA9B6FBED6F9D4228D9C0F4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7458233167072026510C0112EFF555D /* MediaPlayer.framework */; };
-		3824920511D4260142C6EC08BA6567AC /* ZFSliderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CDFA903D22BDC03C30F896D8A7E2902 /* ZFSliderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3846AFE38D1B63A9F0D9073C4ABC6DAA /* SideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D793AB0E88B9D36583027071254DC53 /* SideMenuNavigationController.swift */; };
-		3899BE428FAAFB8BAE78D5B6813FF735 /* ZFReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 59ADAB7FFBD41FA0FB46ADBB8CA89CF1 /* ZFReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38BB4CA7DC4C632D8A40A1A62CD4F88A /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A525778AAF1E65751F708C8A693BB /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift */; };
-		38F3E0CAE1368CFA23055227038DEA24 /* ZFVolumeBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A4AED77F9459EA37E227C4382BBB24 /* ZFVolumeBrightnessView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3A186F3A7711FAAB8C60562D63FF0D9F /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = C1F4D18728ACF1EB99B08E2F0955F3F2 /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AD4640DCDE281756EDA0320CE729261 /* PYSearchViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 412BD0631C9984C6022A13CB2B6967F9 /* PYSearchViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3CAA013D458421653C8D235C29F356E2 /* ZFSmallFloatControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB54CDB1FDDCE4B2A502C62E3BD33E /* ZFSmallFloatControlView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		3E112DA53DD725C9A3185A54EB342EAF /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DFF969854090FA1C25F7F78E314D017 /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E18B004D34ED5441A193684EEB25BD3 /* SideMenuPresentationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B108E1C983BF4B63DD0479647357D3 /* SideMenuPresentationStyle.swift */; };
-		3EE02CEDEB3BDD844DA86269805D5809 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B56E0C85004DE7E72BCA9F2ACFB895D /* Foundation.framework */; };
+		3E58ED8EF59F37A6355DF5B49C7231EF /* UIImageView+ZFCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AB988F0E1CE6489EC53FB4251B198EC /* UIImageView+ZFCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		416918B444A7851A512E19512F9FEA56 /* KafkaArrowHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F6099FFE6F360618D1D9897A1ED28C0 /* KafkaArrowHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		422C1104F9DF9C6FD7C3FA441E9FF31C /* ZFPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40896D31FBA8CE672326CDA47A9540A6 /* ZFPlayerView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		4368A14D4B2BA4E71DF8B096EA85BB06 /* KafkaRingIndicatorHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D9DCD94E45AB835E8F48C0962FB2AD0F /* KafkaRingIndicatorHeader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		45AD6149EEB2883EAC09063B5FDD6F5B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457182405AEC0060C3A6CDE3954A33D3 /* CoreGraphics.framework */; };
-		461BE5A3713A1B27F26DC45B33765989 /* UIViewController+ZFPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FE4454CDFE78C2A13F5B58DFEC859 /* UIViewController+ZFPlayerRotation.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		438FF46FE793A4A7CC57D4336EA0B3B3 /* UIImageView+ZFCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEAEB7D172A6B1EBF4AAFB17D1197B7 /* UIImageView+ZFCache.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		45AD6149EEB2883EAC09063B5FDD6F5B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C54AB5B556F0D210339D71C6F64AD383 /* CoreGraphics.framework */; };
 		4753716AE7A1AB22FB6BA61AA74D942F /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DB62F9070D7D7AEDE54A0BC73910DA /* Toast.swift */; };
 		47FF1D17418AB1144FDE0E46427F4877 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 78D1DAB798282EA85CC094E38B7CCD27 /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48D887159DD2AFA336A36C4DF5ACC049 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DB96D2DC7843489C165FFA485B93E2FC /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		49CD0AF62D26E8B691207DA6E47E6249 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCACDF7CDE8D8AF18C41ABDB2B41145 /* NVActivityIndicatorAnimationBallClipRotate.swift */; };
+		4B387D5604583D0BC5ABF3327D15E851 /* ZFPlayerNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 33D24B5AC73781389E814671F17B910E /* ZFPlayerNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CDC3719339EBA1307A123843618D310 /* KafkaAnimatableProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C86427A54B52399E95D3E76CBE250E8 /* KafkaAnimatableProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E88B70410F6837FBD463EA4B6C33155 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FDB31FA7B13FCB32CE1464DCE36E40 /* Extensions.swift */; };
-		4F94C59E1ADC878B0DD7A5918FF49110 /* ZFSmallFloatControlView.h in Headers */ = {isa = PBXBuildFile; fileRef = 479CFB6DEE34032DC39BB83770F93C44 /* ZFSmallFloatControlView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FEF425AA81B02F1CF80C80AA103AF7B /* NVActivityIndicatorView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E76DC1252CAED850D15C4A47FF2BC2F5 /* NVActivityIndicatorView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5036C1D6D87D4DA731C972A410C17ABC /* AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D33722D635A1EA052D23AB00AEEA237 /* AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51242E2728608E002A4B970B8FF5CC73 /* KafkaCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = DAE03415F56CB9ABF86138B35D6B1B8C /* KafkaCategories.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		51FE7E85345F8CD814F2F9DF94847063 /* ZFNetworkSpeedMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B66C85717262877E95655D6FD040C5 /* ZFNetworkSpeedMonitor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		54A247DC19A0C1453369E573C9D613C9 /* KafkaNativeFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = F059B181886F987CEFF10BB3528D7794 /* KafkaNativeFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		54C5CC95513F4B361BA0F784818DD6E4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A91EE69F87006B5BEAE194552168331 /* QuartzCore.framework */; };
-		55016D9005E8AF61628E57D966A9B70E /* ZFKVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4AF7AB068159BDE3BC82A189DD4D621 /* ZFKVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54C5CC95513F4B361BA0F784818DD6E4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC01FE183E816190122E8EDE5B166127 /* QuartzCore.framework */; };
+		54CE5710DD82FC99B17C6F44165D8A65 /* ZFPortraitControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAECB355B9A7D7161A8FB35678E5F48A /* ZFPortraitControlView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		55602BE8A67E44301481597D8DE5B677 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC2A201F2D57DFC50946D5833289A62 /* NVActivityIndicatorAnimationBallRotate.swift */; };
-		55F8D3DC5F4C06FED05DF09F3D9F8338 /* ZFPlayerMediaPlayback.h in Headers */ = {isa = PBXBuildFile; fileRef = 1774FFE391CA40C30D3CDFBD36CB975E /* ZFPlayerMediaPlayback.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		563125098955F5B4259F9E8631AE5127 /* KafkaArrowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9367138BC7070F90F626050A9C8C0911 /* KafkaArrowHeader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5964291290D00A6EF1E3A4E381B306C4 /* KafkaRingIndicatorFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 965970751CBC1405D9C417A6126D9CDF /* KafkaRingIndicatorFooter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		5A9D10973514A574AEAEAC85C525DF76 /* ZFPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C87299645BF30EB729EB8A45219226A /* ZFPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5AA8A189B36E301EEBD80544B007BB9A /* ZFPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 21E3587A55663E1A2288CBCBBCD34089 /* ZFPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5E032DBD2AA9D81BF359722D7E8B655F /* UIView+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A4E0E6B8C77DFB7A4BB643A8710DE4 /* UIView+PYSearchExtension.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		5E83A81465CB917AD6338D7AF1853F3E /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF069ABDA625305BAF541F871E109784 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift */; };
-		5F5F4C5BB5966260CE589C789F03A386 /* ZFAVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E382D2111796A7D57D9834783551B8BD /* ZFAVPlayerManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		6033B51021E10F40310F40645A99EC65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379D2FBCF5F924A6A737DEB6D25B6270 /* UIKit.framework */; };
+		6033B51021E10F40310F40645A99EC65 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8D1E45A6A4D4594B42AD7E361B2D2C /* UIKit.framework */; };
+		64751E00A7CA09A45D0E3FCFF0B0E56C /* ZFPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BA2B338E58D31843637155FD421D34E /* ZFPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6592D8A8EFDC188BFD5D361EB426DED6 /* ZFPlayerControlView.h in Headers */ = {isa = PBXBuildFile; fileRef = C6A6C466E7E491A1C007096B5F3C4662 /* ZFPlayerControlView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69BF4B71FF5D9974FEA12A55FEFCFF8F /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4A287FAD619BFE396F27C92D05A2EF /* NVActivityIndicatorAnimationTriangleSkewSpin.swift */; };
-		6AB2C59E196940A8D6CB9B523E9E327B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B56E0C85004DE7E72BCA9F2ACFB895D /* Foundation.framework */; };
+		6A417DB4AA54644A928E876C12BD1296 /* ZFPlayerNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 952266B75BD93E48342CA9A1E48FB982 /* ZFPlayerNotification.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6A9A822FED5BC137B71D6B9C7BF3FF80 /* UIView+ZFFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BD68CAF6ABA3DBA6395E244D36BE40 /* UIView+ZFFrame.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6AB2C59E196940A8D6CB9B523E9E327B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40530560F251DB72F14EF0410752835D /* Foundation.framework */; };
 		6B326644BB08AEDF697A82A0F1A66D68 /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA056728452C9A2AE673DF20CCAE81D /* Toast-Swift-dummy.m */; };
 		6B5B5FF02CC4CBA32FA73ADA181CE0A4 /* PYSearch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 318B24B7B5F16E8A38456232A86E3F5E /* PYSearch.bundle */; };
 		6C14AB970BB1DDAF58E38E6611214C3F /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D607007FA3F058F687B3B79AACEA4D40 /* AFNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6D0E31F66D869990F13F435DEF83A979 /* UIScrollView+ZFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCFD9DA91FF108038F0FBDB047A2EEB /* UIScrollView+ZFPlayer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6EA976D04CAF797D05B77741150A5073 /* ZFPlayerMediaControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 30DBCEAAC5EF34AE65C2E0684443185A /* ZFPlayerMediaControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F6C4414DE96E08267712DA4C17C3CBB /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 9968EDBB65E3242B680A277EFBD8E813 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		70183866B04C9DE23C0B0B3CD170354D /* PYSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 1293E03058B66C64AA61BD1E5943B75D /* PYSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		721C2933C4381D5DA0015564DE7D5F87 /* KafkaReplicatorHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1C00501C16C4FCA5231881212A1679 /* KafkaReplicatorHeader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		739AA69BF3B6A9747201587D067DC14C /* NVActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F82AFC18EE8BA930348FDF9836C899E /* NVActivityIndicatorAnimationAudioEqualizer.swift */; };
 		73DBBAE81F16E7200AA3FDC8D5857E9A /* KafkaReplicatorFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = E3B07BC08D0EB85BCC4A4843E2206147 /* KafkaReplicatorFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		73F366235A97A2AF6CD0ABD36B8C3918 /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C0C27B0DE204D3506357E368761BAE /* NVActivityIndicatorAnimationBallGridPulse.swift */; };
+		773AFE05EBB5DA8DBBC46260567D4009 /* ZFFloatView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD4084BF1C1900D6D0CF40BF75C9114 /* ZFFloatView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77AF2098DDCCAAE0CE4A20725C466905 /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B2481C0508BA1917BA1A50CA0353E2 /* SideMenuManager.swift */; };
 		77B9153709D33EEAC012E34D88C1E142 /* TabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBE185623D0B4CEDE1BDCDFCB0AD9E6 /* TabItemView.swift */; };
 		7863B58684257254503BADAAFAE25116 /* UIColor+PYSearchExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 98BD8C0C8E899F3101171A81A7A0B030 /* UIColor+PYSearchExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		797FC27F92CB14544D03CF0E00BE0822 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198EAA6398D5718EBE4EC149460001FD /* NVActivityIndicatorAnimationBallScaleMultiple.swift */; };
 		79EA9CF6A5858CEA5972A7199723C8B5 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = EFB092F985C44067BF86B5DCB7E98079 /* AFSecurityPolicy.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7B591B8A291E5B3C7CC7102D8DDC0AC5 /* ZFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DA7F67818C419D8F7E0B851AC9172F /* ZFUtilities.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7BBAC554770A798B7D5BA1C302C096C7 /* ZFSmallFloatControlView.h in Headers */ = {isa = PBXBuildFile; fileRef = 479CFB6DEE34032DC39BB83770F93C44 /* ZFSmallFloatControlView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7CAA65050EAE8A3D320E0B33DD17305B /* NVActivityIndicatorAnimationLineScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B084A2BFCB5025843B519AC10325675 /* NVActivityIndicatorAnimationLineScale.swift */; };
-		7DFD0B8410DBE25BD9E0FF4505D5AFAC /* UIView+ZFFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BD68CAF6ABA3DBA6395E244D36BE40 /* UIView+ZFFrame.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		7F372985CE80B69B5524CC3277E1C1AF /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CB4538BDC6D8E952BAA66DAAF1AA39B /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7F951F953FF766260092C56CA066DF98 /* KafkaRingIndicatorFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 49FFC6EA3B8E163C78DFED4EBA162255 /* KafkaRingIndicatorFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		80790383D4AC4172346ADD8C3437F390 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C63CE49043BE619ACBABADA23F75ADED /* AFURLResponseSerialization.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		81A471FDE02FAFB07E33BEB1B81D549B /* NSBundle+PYSearchExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 1455FE7A25384A70D59EAD46C385A3A6 /* NSBundle+PYSearchExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81DAF62D21712670F61159BC27951341 /* NVActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA15ED8E4A34FFFC193AE9C201376C8 /* NVActivityIndicatorAnimationBallBeat.swift */; };
+		83A6810FAA6E6BD1AC8EB8ACEC3030F7 /* ZFPlayerLogManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BE1AA5E244630212A605321D5AFAC6C2 /* ZFPlayerLogManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83A70043417E06302E109A60DBB119AA /* KafkaNativeHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FD344B49BC151B251553E6117208CC6 /* KafkaNativeHeader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		83CF29777A3E0A751922D1E68DB87306 /* ZFUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F1F5D65E764C48E64C7A968D3BCF41E /* ZFUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8569228109A4F0F57E351260819BB910 /* ZFSmallFloatControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40DB54CDB1FDDCE4B2A502C62E3BD33E /* ZFSmallFloatControlView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		85EE677C8757712A703AFD3824FB0153 /* NVActivityIndicatorAnimationLineScalePulseOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97A0BBDCF321DE15721124117E39C13 /* NVActivityIndicatorAnimationLineScalePulseOut.swift */; };
 		870044029B3BA449A0932AAE3A495DE9 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E6A85EFD0E99B2F929FA6295521EEF3 /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88715FC702C0CF88A1386DC0BBC0ECBD /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1E7877EEFDC0EE4C9B9CBEC3B10F4D /* AFAutoPurgingImageCache.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
@@ -142,85 +130,92 @@
 		8C06632AA14D12278B1277AC0CC6A0B2 /* SideMenuInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D3AC1770A996446DB25A6E4ED41A28 /* SideMenuInteractionController.swift */; };
 		8D1CE5000597A547F432AE840A388D95 /* UIEdgeInsetsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA78C71E14AB9CB05864ED46833E3B5 /* UIEdgeInsetsExtension.swift */; };
 		8F1370A0C8E5D1A5C043FC58FCBAC455 /* KafkaArcLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D56A9BD49606D64F3D433CA7C3E69ED9 /* KafkaArcLayer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9026F24A82BF2A50270D6BE5A52228A9 /* ZFPlayerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2048E01CC8B42977B5577F190FD41698 /* ZFPlayerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		905A503F069C27E841BAD9F4EFD4F1AF /* Protected.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A72BC81683256510014AAB1A74EDC4 /* Protected.swift */; };
 		9209EF6A87C503DF3C409E91924DACDD /* NVActivityIndicatorAnimationBallPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD6CE97057573F4586F873BD2E4B6DC /* NVActivityIndicatorAnimationBallPulse.swift */; };
-		92AC7EAA3CE5ECEECEA9384EF282F96A /* ZFAVPlayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E54B818B3B93D0DCB4B7FBFDEC9EA33D /* ZFAVPlayerManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		92BA936D6C69F1867D840D1B16DC4AFF /* KafkaRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A1678EB108CCE68F50F9E126916A2A /* KafkaRefreshControl.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		93B64D4ACF3665DD3768857758FE5554 /* KafkaRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 618FB3F9C0DD45E66ACBA894F719671C /* KafkaRefreshControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95ACABC71585D657249CC92BA7731A8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B56E0C85004DE7E72BCA9F2ACFB895D /* Foundation.framework */; };
+		95ACABC71585D657249CC92BA7731A8F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40530560F251DB72F14EF0410752835D /* Foundation.framework */; };
+		95B494327E7E081D8C9DF1A33A36DEBC /* UIViewController+ZFPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2FE4454CDFE78C2A13F5B58DFEC859 /* UIViewController+ZFPlayerRotation.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		964B3F81AE0DC580E47EAF5E546201DF /* ZFVolumeBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A4AED77F9459EA37E227C4382BBB24 /* ZFVolumeBrightnessView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		975CEF6364BB319E8C40133442EE9C50 /* SKSplashView.h in Headers */ = {isa = PBXBuildFile; fileRef = 160D5A4B5439C5704386B63BF5AA6B7F /* SKSplashView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		97C43D30E5B95E1216B0A03FDAC1D9BC /* KafkaRefreshDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = BC56F709068CD5196BACF35B0E883CC6 /* KafkaRefreshDefaults.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		980B4C5DC6FE08F467A241DB8C831B56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B56E0C85004DE7E72BCA9F2ACFB895D /* Foundation.framework */; };
-		986BADDBD93FDF7D6002BD4FDC9C3192 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B56E0C85004DE7E72BCA9F2ACFB895D /* Foundation.framework */; };
+		980B4C5DC6FE08F467A241DB8C831B56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40530560F251DB72F14EF0410752835D /* Foundation.framework */; };
+		986BADDBD93FDF7D6002BD4FDC9C3192 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40530560F251DB72F14EF0410752835D /* Foundation.framework */; };
 		9949F4C822F89A3BA5AA75C0C0165E32 /* NVActivityIndicatorAnimationBallRotateChase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD17C00F5C068E2451548594CF81CC2 /* NVActivityIndicatorAnimationBallRotateChase.swift */; };
+		9B0C2F6A29623131CE10645A36794B68 /* ZFReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6AA024C32BC952E0788726E4F419F6 /* ZFReachabilityManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		9B41316D2DE09092FA0143B33A74B769 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 31D53A48B1B06F3A8054D811D30AA2C9 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CDF43DCEC37128A8A315E6BFC9506D8 /* KafkaRefreshProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = ACAE6F95FD44C2E5EB6E4A8BB3517B14 /* KafkaRefreshProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E97897CB645D4A0ED10AF87A1226193 /* SwipeMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63BCEF97B3588A4C33D01459D99AF63 /* SwipeMenuViewController.swift */; };
 		9FC1C863E4F4279B2F875C1F863E04A3 /* NVActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92CDFCA1B11E852560BBAD726D87991 /* NVActivityIndicatorAnimationCircleStrokeSpin.swift */; };
-		9FE36B1DD2E5B545BA822B851428A05A /* ZFPlayerGestureControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FA411A6C4E127CE05742865BC2F2D09 /* ZFPlayerGestureControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A3FEC5AAEF5841875C90EAA04A824277 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B56E0C85004DE7E72BCA9F2ACFB895D /* Foundation.framework */; };
+		A3FEC5AAEF5841875C90EAA04A824277 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40530560F251DB72F14EF0410752835D /* Foundation.framework */; };
 		A54422D64A06F3B8C07FF01FE18D256F /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5792D1EA6E41013E4784BF41B01559B /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift */; };
 		A5777968A81BF3B97CA7B989A0BF1673 /* KafkaFootRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 346A318945F8CF71DE96312B84E865D3 /* KafkaFootRefreshControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6B3E9F11A906175752CA96E61B04534 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E00EF78623A300ACA55BB4A95D0F51 /* AVFoundation.framework */; };
 		A7BE272E6C1B1E8A39C6B2F6B842CEAF /* SKSplashView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6006BFB832EA0B5BA89B19785F60604 /* SKSplashView-dummy.m */; };
-		A93BD560DD062BA5B515267570761CBE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80E86047B978809041CF2707BD493C2 /* Security.framework */; };
-		A9C23268CD9CA1DD11A5DB90C5851B09 /* ZFPlayerLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0903665A6A7F89EEB1E9EF995316F054 /* ZFPlayerLogManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A888C3830795F07FB2FC14573147FB58 /* ZFNetworkSpeedMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = 720A459B6D1EACD71EFAD7D6D8C23846 /* ZFNetworkSpeedMonitor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A93BD560DD062BA5B515267570761CBE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5938C90D75288D1E306558549F59C0A1 /* Security.framework */; };
 		A9E429ECAF059D9D471F3AE5C1BAC2B0 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B889AF13BAE4955A9D43737496BFF6D /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AAD5C3E3D012840567519A682DD3D3CD /* ZFSpeedLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A1B073A8E30D1EC9FB0897464140C7 /* ZFSpeedLoadingView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		AB42DCEFB34F2D8A46CC14B6462A1DC0 /* ZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF439C59CD7544B6CEC622949720B22A /* ZFPlayerControlView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		AAEC35A2F0357DF1E9EE22FFEF5D71C5 /* ZFAVPlayerManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E54B818B3B93D0DCB4B7FBFDEC9EA33D /* ZFAVPlayerManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABA473719507A2CA0D5693EE2F344936 /* KafkaCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = CB07ED765670325891A11CB2FF5E19F7 /* KafkaCategories.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		ADD38C0756E27BB4642DB99474346BFD /* ZFLandScapeControlView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E7C0D895A38D460429F1367BB872B0E /* ZFLandScapeControlView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ADE8E38AE2FC314562F857E3D97467C4 /* MarqueeLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 609A8D1B0B5F9535863906B8EA1D03BF /* MarqueeLabel-dummy.m */; };
 		AEA4CF8EE7E08C13B4A71A634F9F3B5B /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 80C23F17E17E68C2AC8DA08A67D5CACC /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B26EDD2D9A9BC8CDDEADEA8DBEC606A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A46F4C5258EEE16A1B81A9DCA20B8FA /* SystemConfiguration.framework */; };
-		B27B12C5D2EF1BE7B3CBBBC8FA98110E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B56E0C85004DE7E72BCA9F2ACFB895D /* Foundation.framework */; };
+		B26EDD2D9A9BC8CDDEADEA8DBEC606A7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 140C9A229C671B799C2299A18DA96CC9 /* SystemConfiguration.framework */; };
+		B2799B1AC6D0352884F506693A846BD0 /* UIScrollView+ZFPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = E617ED541BB6D438FC153410F543B9CD /* UIScrollView+ZFPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B27B12C5D2EF1BE7B3CBBBC8FA98110E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40530560F251DB72F14EF0410752835D /* Foundation.framework */; };
 		B2D1EDBCBEE9417A6E8CD34D64A8535F /* PYSearch-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B4632F6FFD7B1A6EAADA5750A834FB98 /* PYSearch-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B46682AFD3AF846DE969FCFAEB90BEC0 /* SwipeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96956C606812EF14F585A1FB25987E57 /* SwipeMenuView.swift */; };
 		B55E5F7C3559316ABBAD12774DD9E7F3 /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDEB1434CFE2DE9AC6AFC541160B97C /* NVActivityIndicatorAnimationBallZigZagDeflect.swift */; };
 		B57DBC7B46C8157562F485433347450B /* KafkaReplicatorLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A3C694ECA40B97A2DFFC595A4632D99F /* KafkaReplicatorLayer.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B5AD0B8F0F9304975A01978B2908B62F /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ACFD12B90ED7BB16C383D9AD69452B8 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B64D07267C9F00F9B9A4E67392000CA4 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C5CE38930DF9A146ED4E648CF7E232 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift */; };
-		B6610827CDFFAF8C8808328D405CB5FB /* ZFKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECA8F4CAE0DE8B7BF8D731038BB4B17 /* ZFKVOController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B665EADA20EA1422B06C0EEF5BC562D6 /* ZFSliderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CDFA903D22BDC03C30F896D8A7E2902 /* ZFSliderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B71D77BA9831652B9A8DCF130B8649BE /* MKDropdownMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBAB1AA69B1926A02A2D50A6ED7F52 /* MKDropdownMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7567BC26A37A5274618E41E098DDF82 /* ZFUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F1F5D65E764C48E64C7A968D3BCF41E /* ZFUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7AF5996F219420F6D8E23F34B48E9FD /* KafkaArrowFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5AAD7C67B07C82805C3E9EF23BB3FE /* KafkaArrowFooter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B7D6E19D2269DB4D1A64E41799E57209 /* ZFVolumeBrightnessView.h in Headers */ = {isa = PBXBuildFile; fileRef = 164385AC0F21F3C99F6A221CEA72B380 /* ZFVolumeBrightnessView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B85E304CA0A5606088AC3AC084E40E17 /* ZFOrientationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C7FE03C597D8F1C22ACFEE6D7B5784 /* ZFOrientationObserver.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		B8BCD21052B6E65DD4E1C1CB00969721 /* ContentScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01A046DC5C89E41800DE60C3F3706F8 /* ContentScrollView.swift */; };
+		B947B013A5E49C6A74932FA3A7B6EA54 /* ZFAVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E382D2111796A7D57D9834783551B8BD /* ZFAVPlayerManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BA2006A3254C4457B46E46B93C11DFBE /* ZFPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1CF9AECC3A2E5405B388D284A484A0 /* ZFPlayerController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		BA40588701247416D36537D1EC065931 /* NVActivityIndicatorAnimationBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB91575862F5E9F6D2ED3C126AFC14DC /* NVActivityIndicatorAnimationBlank.swift */; };
 		BA5D029B0EB9D152BB0A11ECC9732DD5 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B489595E5DE73CA380BC33C18DACC4 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift */; };
-		BB7B6B2DBAC1CEC1B2119D3C810411EC /* Pods-Avgle-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37C1F69FB7FC55C7E76413CB9B4D66E5 /* Pods-Avgle-dummy.m */; };
+		BB7B6B2DBAC1CEC1B2119D3C810411EC /* Pods-Avgle-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6216DEAD481B3D9851D81FE0998C22D /* Pods-Avgle-dummy.m */; };
 		BD503BE4798FC30D23AC747146D39FE2 /* MarqueeLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9CF689F09BE0D45B8A7224C937811F7 /* MarqueeLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BE85FCB95572E5B423C5AA3FC501BC91 /* UIImageView+ZFCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AB988F0E1CE6489EC53FB4251B198EC /* UIImageView+ZFCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BEC80EB83428B429F429B2C3D4C38FC7 /* SKSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A720614F6D58785B6EE6E02C6F52E2D /* SKSplashView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BF2E8303AD9ACA039E3556E41171617D /* ZFPlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E05220FDAEE04F4C0026210945FC4EDC /* ZFPlayer-dummy.m */; };
 		BF4107A462C6AA1C2D361B17B67C3BC3 /* NVActivityIndicatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB9476FB28E40B8CEAE485B24F802C0 /* NVActivityIndicatorPresenter.swift */; };
 		BF9E30025CF0D786A102F577C3DDD387 /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49081A961C5A011E4231F9269DCA2183 /* NVActivityIndicatorAnimationBallGridBeat.swift */; };
 		C06909BBDAAD9A6C31D3FB2FD3BAD93E /* NVActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0441A3DFB39E6072B278E5047A385F /* NVActivityIndicatorView.swift */; };
-		C06D290B9216533843023A0BF93F5927 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A91EE69F87006B5BEAE194552168331 /* QuartzCore.framework */; };
+		C06D290B9216533843023A0BF93F5927 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC01FE183E816190122E8EDE5B166127 /* QuartzCore.framework */; };
 		C12C442F02640B0EDAC03E58F9C81F75 /* KafkaFootRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F26CEAC0FEC7ED3621FD6F5C60316EE /* KafkaFootRefreshControl.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		C5F833D7EF426B75087BA9C7ACA3EEEB /* ZFPlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BA2B338E58D31843637155FD421D34E /* ZFPlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C71F960C409A05AD656B316232FCEFB7 /* PYSearchSuggestionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 882844E0885D94C37A92459A9CA49718 /* PYSearchSuggestionViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C798DA148F7F666F393F2009DDF73E35 /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884FE5C4980F44BB46CB96210CEE1CE2 /* Initializable.swift */; };
 		C88A32755F7CA9B0F0DE0E43B58BDB54 /* KafkaReplicatorFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 518BF6EB486D9A388DB57AACCE847919 /* KafkaReplicatorFooter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		C96A55C2A869A97AC4CA628A7F2A2A21 /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2489DC7023563A987B4CCA3A2921ED /* UITableViewVibrantCell.swift */; };
-		CA22022BE23FCFCAA3EBB23220BF6D7B /* ZFPlayerNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 952266B75BD93E48342CA9A1E48FB982 /* ZFPlayerNotification.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CA40DB89394085FBBBE4B0D5A40DA340 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1355AB109607FF5DD005061EC8438ED /* NVActivityIndicatorAnimationBallScaleRipple.swift */; };
 		CA45673EB06D2BC3165456F2BBAC8E9D /* KafkaRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 05431DF6D1352EFAB14F84784BB8246A /* KafkaRefresh-dummy.m */; };
 		CAD3EA6AB72EAB20BC8B526A9037FBD3 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CF8C6C1F50B0BF5F63B3FCAE8B626D /* NVActivityIndicatorAnimationBallClipRotatePulse.swift */; };
 		CB08C4C4639ED06BD4635B128F7FBBE3 /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A360F8E136391501671E091F6144037 /* AFImageDownloader.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		CBF463E1DDF83F4622EBFB748443F6E0 /* ZFSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A291B1E9D414B0C0CB8E1EA741C1D5AD /* ZFSliderView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		CCD8A49CE3DF2BEE88338D15FF63357B /* PYSearch-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D02D6C7F83B216DED214A7FCEAB6DA5 /* PYSearch-dummy.m */; };
-		CE34B8F2F0635C3C13BC4ED6A7B231E8 /* ZFPlayerLogManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BE1AA5E244630212A605321D5AFAC6C2 /* ZFPlayerLogManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE4CC2301A717EDFE1881D6C958BF791 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DB23566A40F9197B26B504A0BBDC6C /* NVActivityIndicatorAnimationBallPulseRise.swift */; };
-		D09EBD3A3BA843D663D3D03BCCE955C2 /* UIScrollView+ZFPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = E617ED541BB6D438FC153410F543B9CD /* UIScrollView+ZFPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF9D92439E9F752D2E22F26407813062 /* ZFLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4E70F80F4566947ED95C0E2FEE9ED /* ZFLoadingView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D0DF1537AB580F07F70150D97A748593 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4695E7CB4BD6D7B9216F950CC6B05D1E /* AFHTTPSessionManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		D1BD7393C7934049B3E51D9C5A5CD8A0 /* Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD58926256CAA5FD334E5EDCCD7E7B00 /* Print.swift */; };
 		D3D22BB8C279DC03EA91BFE3F5412477 /* Deprecations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE835D49AD81A5031F2BB01A865C3F /* Deprecations.swift */; };
+		D3F4FFE2A4024F3DE7FD0947147B8F06 /* ZFPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C87299645BF30EB729EB8A45219226A /* ZFPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D41F196B37E9B098F0B9F6CE036868A9 /* Image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3F226B4BA77DFDE77664583E0E600841 /* Image.bundle */; };
 		D59E2A517A48D101120EB57F90F140A5 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B52957D8E6714142CF7EC2AAECE1610A /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D61A927192306AB47EA14455FD5E0F51 /* ZFPlayerNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 33D24B5AC73781389E814671F17B910E /* ZFPlayerNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D6514302C2FB2F7C20D8FEE2BD3ABF66 /* KafkaReplicatorHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = B0E708102D498C05864BC42D2C977796 /* KafkaReplicatorHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D777716F0B6C0754B7B0230531743BC4 /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A35E4EF5060BEF109369B8055932F3F2 /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D77940534D852306F0AA49501ED330BC /* KafkaHeadRefreshControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 72B72160057E5FD302C4A70DD7DE80D6 /* KafkaHeadRefreshControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D94DF1C279EC18567A685E434EB711EA /* ZFPlayerMediaPlayback.h in Headers */ = {isa = PBXBuildFile; fileRef = 1774FFE391CA40C30D3CDFBD36CB975E /* ZFPlayerMediaPlayback.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9E16D9FE1493CCFF7C4AEC554F3B914 /* ZFSpeedLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53A1B073A8E30D1EC9FB0897464140C7 /* ZFSpeedLoadingView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		DB7593AB5274054D057D9CF6544BB37D /* ZFSpeedLoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4238423FB79158D452E184178A0A1AE8 /* ZFSpeedLoadingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBB42A457B50EA3C79FC2AB450B0AD4D /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EBDCF84AFAFE677914684C591AFAC4 /* UIActivityIndicatorView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DBC908168E6099E6842155A7E5F1E328 /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD0A4797F78EF1FFF3F725E918C946 /* NVActivityIndicatorAnimationCubeTransition.swift */; };
 		DC1C8D92451F81AF2AB512205C43D68F /* UIView+PYSearchExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 500F4C8CE83A5BDA8416A265D3AEFD0F /* UIView+PYSearchExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC7103C04E6104F6670F8F8B1551EB8B /* ZFPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB407E7097BAEE78D4DDEECC17F35576 /* ZFPlayer.bundle */; };
 		DC8119F5221A0AD82E7BFEB5FB0A9C96 /* KafkaRingIndicatorHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = F879D64A78D3C1CBFD3B7104CBFE1B8E /* KafkaRingIndicatorHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDC9F487294C308C5FBD93A41F742193 /* MKDropdownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 354099A8C0D66F059209C7DE0EAD9C94 /* MKDropdownMenu.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		DDD8609251AFED79B8F7532E3A206F05 /* SwipeMenuViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BB825F2F74DAE0A9312E8E8F32F1DE /* SwipeMenuViewController-dummy.m */; };
@@ -228,37 +223,39 @@
 		E058420E139C45F11C6220810F9F89BC /* NVActivityIndicatorView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 752C6A82BE34A056B36CE59016C2FDAA /* NVActivityIndicatorView-dummy.m */; };
 		E1D169DD2A73355BB87CFC7EBC69716E /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F054CB00E1F79846AA15EB031036253 /* NVActivityIndicatorAnimationSquareSpin.swift */; };
 		E235043951A82BF949762434A2B280E7 /* NVActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB585AF8AC3FD2F4D48C78CF1E2A59 /* NVActivityIndicatorShape.swift */; };
+		E24EA82D6F9CD17CA998EB9926C473BB /* ZFNetworkSpeedMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B66C85717262877E95655D6FD040C5 /* ZFNetworkSpeedMonitor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E261B82A0EEFE0EA897EA1A36C69C1CE /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 333E1A812004E3345113E417D864D5FA /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E37362A781482A2993DC681CFA753306 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36938BE2D563DF9D3F8B48747BA3786E /* UIViewExtension.swift */; };
 		E3A14FF4500401EA7E5C1B101571120F /* SKSplashIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B19BFC44D58C5F8C30F7322D13DFDB /* SKSplashIcon.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		E3FC6CABEDE105D12B749EBAF41FB7F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B56E0C85004DE7E72BCA9F2ACFB895D /* Foundation.framework */; };
+		E3FC6CABEDE105D12B749EBAF41FB7F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40530560F251DB72F14EF0410752835D /* Foundation.framework */; };
+		E41761B8FD865BD6759B85E171B1348D /* ZFPlayerGestureControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FA411A6C4E127CE05742865BC2F2D09 /* ZFPlayerGestureControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E44AFC826A422C4174321E77E259B676 /* UIColor+PYSearchExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9DB83C353A4FF7F38A02FAA8928CE /* UIColor+PYSearchExtension.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		E4B9CD6F4D8BBE8624C6E297AC49B546 /* ZFSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A291B1E9D414B0C0CB8E1EA741C1D5AD /* ZFSliderView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E502DC2E48917F549BBA6AAFB5715BB2 /* PYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7366813AB70D8880E91F50BFB05D4A5D /* PYSearchViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E5142417768830198A20782C907D2D80 /* PYSearchSuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C08F9485FFF5D3CB8A91E5CF53A1D43 /* PYSearchSuggestionViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		E6EC5CB2F93E5F38D115785F0DB83440 /* SKSplashView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FD3D889BF3ABD77267D5646B345DCD1 /* SKSplashView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E84617755B54A88162BE5C0F86D97F76 /* ZFPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CB407E7097BAEE78D4DDEECC17F35576 /* ZFPlayer.bundle */; };
 		E958B4A049EE0B62FBD2B0B6F001A660 /* NVActivityIndicatorAnimationOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCABA5BE8DEE612079641C9B7659DBFA /* NVActivityIndicatorAnimationOrbit.swift */; };
-		EBBF712A79FE3A47003588C5BCC1FAFE /* UIImageView+ZFCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEAEB7D172A6B1EBF4AAFB17D1197B7 /* UIImageView+ZFCache.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EAD90FCA6C33C5C56B7905CD639AC4DF /* ZFFloatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C47F1F165EDA36A44E67034EF57090B /* ZFFloatView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		EC954CE6BB5A344733318A4E5E91975F /* KafkaRefreshDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = E18E5D484A44F5AB77E85711D26130A6 /* KafkaRefreshDefaults.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED74F695D7BA58528D20DF325878753E /* MKDropdownMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3026173FDBFC68A49AB40AC8E6322FA0 /* MKDropdownMenu-dummy.m */; };
 		ED837F96403A20322FAED9C51542F666 /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59B97E87436481D40F7BD13906D3108 /* NVActivityIndicatorAnimationBallZigZag.swift */; };
-		EDB23EA0C52985C704DA9249CD267CAF /* ZFLandScapeControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4218E76B4A06D044BE0E8154E2712333 /* ZFLandScapeControlView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		F25A505BDD8BF7F9558AB0F5716A31A1 /* ZFPlayerControlView.h in Headers */ = {isa = PBXBuildFile; fileRef = C6A6C466E7E491A1C007096B5F3C4662 /* ZFPlayerControlView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F388F3D9B79499CA4844F16546D4CC5B /* ZFPortraitControlView.h in Headers */ = {isa = PBXBuildFile; fileRef = 3327313B5342E2AF717300CEDF082173 /* ZFPortraitControlView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F407B4E0B40A8AA4CA7443563F105E40 /* AFCompatibilityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = DE706D74DD30D1DBEDE6EADAFE338ED6 /* AFCompatibilityMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F422465125810C5E115B1A3D1A3BE3C6 /* ZFKVOController.h in Headers */ = {isa = PBXBuildFile; fileRef = C4AF7AB068159BDE3BC82A189DD4D621 /* ZFKVOController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F475D0C14B56BE82E2E7CC07A82D3694 /* ZFPlayerGestureControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C730C5146427BC7A1E1B9B2F674988B /* ZFPlayerGestureControl.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F4AB070792FBEFFBFAA96D2EA18BD3E1 /* NVActivityIndicatorAnimationBallDoubleBounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E52CCFF9A6C0FE05E3DB231EE928F7 /* NVActivityIndicatorAnimationBallDoubleBounce.swift */; };
 		F4FED6C37367BC46B92BB3FE18D233B8 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 68AEA63A64BCB030E4110DD5004A7932 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F63DD332196682CEBC396A1020DEC572 /* ZFReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6AA024C32BC952E0788726E4F419F6 /* ZFReachabilityManager.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F59FBA0E6DDE4C346AC45F3459165E0F /* ZFPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40896D31FBA8CE672326CDA47A9540A6 /* ZFPlayerView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		F6E4DEF530C0DBAE6EDCA9A721976F26 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A09DCE56D826FB748431FB200C4CBF /* TabView.swift */; };
-		F6EE88A649A3B9DF5B6023AE9D4AC6B3 /* ZFFloatView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD4084BF1C1900D6D0CF40BF75C9114 /* ZFFloatView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F75F510F630F5F885BA5C0CD4C47C6B6 /* KafkaNativeHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EC2A58C0FBCBC44A91EC94DF640BA3 /* KafkaNativeHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F93437B73D6BC3CD5E03B23FA78E2030 /* PYSearchConst.h in Headers */ = {isa = PBXBuildFile; fileRef = BEA1DA3BB1885A41F0103814C7C8AA7C /* PYSearchConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9804CC0F10C7CCDE5A8ECC0FD4A5190 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A91EE69F87006B5BEAE194552168331 /* QuartzCore.framework */; };
+		F9804CC0F10C7CCDE5A8ECC0FD4A5190 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC01FE183E816190122E8EDE5B166127 /* QuartzCore.framework */; };
 		FAE0AE25DB4C0976E721C31C25DF1518 /* KafkaNativeFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 160A0133E0C02071669B1D1463A25036 /* KafkaNativeFooter.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FAF7188B637F94C7D22DDCF5C3C2E3C0 /* KafkaHeadRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E7C0C434A42FC0E9FF41A593E3C31C /* KafkaHeadRefreshControl.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FBF1DE5FE73DA546EBED02B79FF6E9A1 /* PYSearchConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12F2AB8CDE033400BB612BFC15A1AA /* PYSearchConst.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FC424F3BE1C5E3258FE456F6D35391D1 /* NVActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100C5992ECA76D5EC163390BB14ABFF9 /* NVActivityIndicatorAnimationDelegate.swift */; };
-		FD7B1F8F0D55442B1A6BB54362180905 /* ZFPortraitControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = CAECB355B9A7D7161A8FB35678E5F48A /* ZFPortraitControlView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FDFC963EB9C7853C70589F9D6E64196F /* ZFOrientationObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = E0DFF01299111E1EB19FE6FE338914BD /* ZFOrientationObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE63DCEA3F94427171B9B94DBAA07D74 /* ZFPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 21E3587A55663E1A2288CBCBBCD34089 /* ZFPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE910AD6C956B227D5CCCCFA0A822859 /* ZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF439C59CD7544B6CEC622949720B22A /* ZFPlayerControlView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
 		FF63FD182889BE28C253A8D1019982BD /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C7E804B258A6C84AF363526965D780 /* UIColorExtension.swift */; };
 		FFBEDBBA0C00C046BD9A9CBBAE4D824C /* UIScrollView+KafkaConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 651B2AB21808EE2CD3C6372875D4AC97 /* UIScrollView+KafkaConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FFDB49EAD611E9E5E8EE7E3D1AD0B32F /* KafkaArrowFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = A5BF37C1EA10D3AA06E1C7146A886DAD /* KafkaArrowFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -346,10 +343,12 @@
 
 /* Begin PBXFileReference section */
 		014A099AA7CB0734FAC72D9161140B70 /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
+		035BA603EEF672A3CAB991EF52D8487F /* Pods-Avgle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Avgle.release.xcconfig"; sourceTree = "<group>"; };
 		04A3643FCCBB931F30C5BB34956EBCF7 /* SideMenuAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuAnimationController.swift; path = Pod/Classes/SideMenuAnimationController.swift; sourceTree = "<group>"; };
 		051FEE9CF8BF73896FFAE602412E712A /* Toast-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-umbrella.h"; sourceTree = "<group>"; };
 		0534866BCEA41EAB72D92A85C6ED94A7 /* NVActivityIndicatorAnimationBallPulseSync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallPulseSync.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallPulseSync.swift; sourceTree = "<group>"; };
 		05431DF6D1352EFAB14F84784BB8246A /* KafkaRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KafkaRefresh-dummy.m"; sourceTree = "<group>"; };
+		0776B7B85B95ACFDB36FCD519DE1A3FF /* Pods-Avgle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Avgle.debug.xcconfig"; sourceTree = "<group>"; };
 		0903665A6A7F89EEB1E9EF995316F054 /* ZFPlayerLogManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFPlayerLogManager.m; path = ZFPlayer/Classes/Core/ZFPlayerLogManager.m; sourceTree = "<group>"; };
 		0A36371ED9FA47E8774B79E30B8498B6 /* NVActivityIndicatorView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NVActivityIndicatorView.modulemap; sourceTree = "<group>"; };
 		0AC9319AE1EFFBBBD6F48049F3B73AED /* NVActivityIndicatorView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NVActivityIndicatorView.xcconfig; sourceTree = "<group>"; };
@@ -364,8 +363,8 @@
 		100C5992ECA76D5EC163390BB14ABFF9 /* NVActivityIndicatorAnimationDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationDelegate.swift; path = Source/NVActivityIndicatorView/NVActivityIndicatorAnimationDelegate.swift; sourceTree = "<group>"; };
 		10C125D2E20F07BD4789FCE5EECA51BA /* NVActivityIndicatorViewable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorViewable.swift; path = Source/NVActivityIndicatorView/Presenter/NVActivityIndicatorViewable.swift; sourceTree = "<group>"; };
 		1293E03058B66C64AA61BD1E5943B75D /* PYSearch.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PYSearch.h; path = PYSearch/PYSearch.h; sourceTree = "<group>"; };
+		140C9A229C671B799C2299A18DA96CC9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		1455FE7A25384A70D59EAD46C385A3A6 /* NSBundle+PYSearchExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+PYSearchExtension.h"; path = "PYSearch/NSBundle+PYSearchExtension.h"; sourceTree = "<group>"; };
-		145731A3CA35A987B97442B194FD8B17 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		159FCE55076FF55EAD0CE682EDEBDFCD /* MarqueeLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MarqueeLabel.modulemap; sourceTree = "<group>"; };
 		15BD68CAF6ABA3DBA6395E244D36BE40 /* UIView+ZFFrame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ZFFrame.m"; path = "ZFPlayer/Classes/ControlView/UIView+ZFFrame.m"; sourceTree = "<group>"; };
 		160A0133E0C02071669B1D1463A25036 /* KafkaNativeFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KafkaNativeFooter.m; path = KafkaRefresh/UIKit/FootKit/KafkaNativeFooter.m; sourceTree = "<group>"; };
@@ -373,11 +372,11 @@
 		164385AC0F21F3C99F6A221CEA72B380 /* ZFVolumeBrightnessView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZFVolumeBrightnessView.h; path = ZFPlayer/Classes/ControlView/ZFVolumeBrightnessView.h; sourceTree = "<group>"; };
 		1774FFE391CA40C30D3CDFBD36CB975E /* ZFPlayerMediaPlayback.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZFPlayerMediaPlayback.h; path = ZFPlayer/Classes/Core/ZFPlayerMediaPlayback.h; sourceTree = "<group>"; };
 		17E9C9ABBF043F7501696FFD9EE67CB1 /* ZFPlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZFPlayer.xcconfig; sourceTree = "<group>"; };
+		187340C0E9BA267D7818D4B34C68FEB8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		18B66C85717262877E95655D6FD040C5 /* ZFNetworkSpeedMonitor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFNetworkSpeedMonitor.m; path = ZFPlayer/Classes/ControlView/ZFNetworkSpeedMonitor.m; sourceTree = "<group>"; };
 		198EAA6398D5718EBE4EC149460001FD /* NVActivityIndicatorAnimationBallScaleMultiple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScaleMultiple.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScaleMultiple.swift; sourceTree = "<group>"; };
 		1A720614F6D58785B6EE6E02C6F52E2D /* SKSplashView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SKSplashView.m; path = SKSplashView/SKSplashView.m; sourceTree = "<group>"; };
 		1B3A8D5D22CC78E00E2125B11A00C654 /* NVActivityIndicatorAnimationLineScaleParty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScaleParty.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScaleParty.swift; sourceTree = "<group>"; };
-		1B56E0C85004DE7E72BCA9F2ACFB895D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		1BA2B338E58D31843637155FD421D34E /* ZFPlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZFPlayer-umbrella.h"; sourceTree = "<group>"; };
 		1D33722D635A1EA052D23AB00AEEA237 /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
 		1D3F9F13A679B35815A735F0C3CDBE1D /* Toast-Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.xcconfig"; sourceTree = "<group>"; };
@@ -398,7 +397,7 @@
 		3026173FDBFC68A49AB40AC8E6322FA0 /* MKDropdownMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MKDropdownMenu-dummy.m"; sourceTree = "<group>"; };
 		30DBCEAAC5EF34AE65C2E0684443185A /* ZFPlayerMediaControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZFPlayerMediaControl.h; path = ZFPlayer/Classes/Core/ZFPlayerMediaControl.h; sourceTree = "<group>"; };
 		318B24B7B5F16E8A38456232A86E3F5E /* PYSearch.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = PYSearch.bundle; path = PYSearch/PYSearch.bundle; sourceTree = "<group>"; };
-		319D06AA0D1D0BA345459C039040A1ED /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		319D06AA0D1D0BA345459C039040A1ED /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31CF8C6C1F50B0BF5F63B3FCAE8B626D /* NVActivityIndicatorAnimationBallClipRotatePulse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallClipRotatePulse.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallClipRotatePulse.swift; sourceTree = "<group>"; };
 		31D53A48B1B06F3A8054D811D30AA2C9 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
 		31FDB31FA7B13FCB32CE1464DCE36E40 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Pod/Classes/Extensions.swift; sourceTree = "<group>"; };
@@ -411,13 +410,12 @@
 		346A318945F8CF71DE96312B84E865D3 /* KafkaFootRefreshControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KafkaFootRefreshControl.h; path = KafkaRefresh/Core/KafkaFootRefreshControl.h; sourceTree = "<group>"; };
 		354099A8C0D66F059209C7DE0EAD9C94 /* MKDropdownMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKDropdownMenu.m; path = MKDropdownMenu/MKDropdownMenu.m; sourceTree = "<group>"; };
 		36938BE2D563DF9D3F8B48747BA3786E /* UIViewExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIViewExtension.swift; path = Sources/Classes/UIViewExtension.swift; sourceTree = "<group>"; };
-		379D2FBCF5F924A6A737DEB6D25B6270 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		37C1F69FB7FC55C7E76413CB9B4D66E5 /* Pods-Avgle-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Avgle-dummy.m"; sourceTree = "<group>"; };
 		3B3B48B48812BB9C80DADD92B07FA436 /* SwipeMenuViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwipeMenuViewController-Info.plist"; sourceTree = "<group>"; };
 		3BAC956E0F5563D85EDA9086F94D1881 /* SideMenuPushCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPushCoordinator.swift; path = Pod/Classes/SideMenuPushCoordinator.swift; sourceTree = "<group>"; };
 		3C86427A54B52399E95D3E76CBE250E8 /* KafkaAnimatableProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KafkaAnimatableProtocol.h; path = KafkaRefresh/UIKit/LayerKit/KafkaAnimatableProtocol.h; sourceTree = "<group>"; };
 		3DC2A201F2D57DFC50946D5833289A62 /* NVActivityIndicatorAnimationBallRotate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallRotate.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallRotate.swift; sourceTree = "<group>"; };
 		3F226B4BA77DFDE77664583E0E600841 /* Image.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = Image.bundle; path = KafkaRefresh/Resource/Image.bundle; sourceTree = "<group>"; };
+		40530560F251DB72F14EF0410752835D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		40896D31FBA8CE672326CDA47A9540A6 /* ZFPlayerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFPlayerView.m; path = ZFPlayer/Classes/Core/ZFPlayerView.m; sourceTree = "<group>"; };
 		40DB54CDB1FDDCE4B2A502C62E3BD33E /* ZFSmallFloatControlView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFSmallFloatControlView.m; path = ZFPlayer/Classes/ControlView/ZFSmallFloatControlView.m; sourceTree = "<group>"; };
 		40E01DDE429CC83029D5CDCF0632BD85 /* Toast-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Toast-Swift.modulemap"; sourceTree = "<group>"; };
@@ -426,15 +424,12 @@
 		4218E76B4A06D044BE0E8154E2712333 /* ZFLandScapeControlView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFLandScapeControlView.m; path = ZFPlayer/Classes/ControlView/ZFLandScapeControlView.m; sourceTree = "<group>"; };
 		4238423FB79158D452E184178A0A1AE8 /* ZFSpeedLoadingView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZFSpeedLoadingView.h; path = ZFPlayer/Classes/ControlView/ZFSpeedLoadingView.h; sourceTree = "<group>"; };
 		43B108E1C983BF4B63DD0479647357D3 /* SideMenuPresentationStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuPresentationStyle.swift; path = Pod/Classes/SideMenuPresentationStyle.swift; sourceTree = "<group>"; };
-		457182405AEC0060C3A6CDE3954A33D3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		45A608781C9B0B52DD6052FBF6B62698 /* Pods-Avgle-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Avgle-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4695E7CB4BD6D7B9216F950CC6B05D1E /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		479CFB6DEE34032DC39BB83770F93C44 /* ZFSmallFloatControlView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZFSmallFloatControlView.h; path = ZFPlayer/Classes/ControlView/ZFSmallFloatControlView.h; sourceTree = "<group>"; };
 		49081A961C5A011E4231F9269DCA2183 /* NVActivityIndicatorAnimationBallGridBeat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallGridBeat.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallGridBeat.swift; sourceTree = "<group>"; };
 		49EC2A58C0FBCBC44A91EC94DF640BA3 /* KafkaNativeHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KafkaNativeHeader.h; path = KafkaRefresh/UIKit/HeadKit/KafkaNativeHeader.h; sourceTree = "<group>"; };
 		49FFC6EA3B8E163C78DFED4EBA162255 /* KafkaRingIndicatorFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KafkaRingIndicatorFooter.h; path = KafkaRefresh/UIKit/FootKit/KafkaRingIndicatorFooter.h; sourceTree = "<group>"; };
-		4A15805F865EC760803A513E71F00598 /* Pods-Avgle-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Avgle-umbrella.h"; sourceTree = "<group>"; };
-		4A3459F444ED3774E0795237E1BC95B7 /* MKDropdownMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKDropdownMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A3459F444ED3774E0795237E1BC95B7 /* MKDropdownMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MKDropdownMenu.framework; path = MKDropdownMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4EBF4DA74B4240313E341E448560A7 /* AFNetworking-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AFNetworking-Info.plist"; sourceTree = "<group>"; };
 		4AB988F0E1CE6489EC53FB4251B198EC /* UIImageView+ZFCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+ZFCache.h"; path = "ZFPlayer/Classes/ControlView/UIImageView+ZFCache.h"; sourceTree = "<group>"; };
 		4B084A2BFCB5025843B519AC10325675 /* NVActivityIndicatorAnimationLineScale.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScale.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScale.swift; sourceTree = "<group>"; };
@@ -445,13 +440,16 @@
 		4D5AAD7C67B07C82805C3E9EF23BB3FE /* KafkaArrowFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KafkaArrowFooter.m; path = KafkaRefresh/UIKit/FootKit/KafkaArrowFooter.m; sourceTree = "<group>"; };
 		500F4C8CE83A5BDA8416A265D3AEFD0F /* UIView+PYSearchExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+PYSearchExtension.h"; path = "PYSearch/UIView+PYSearchExtension.h"; sourceTree = "<group>"; };
 		518BF6EB486D9A388DB57AACCE847919 /* KafkaReplicatorFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KafkaReplicatorFooter.m; path = KafkaRefresh/UIKit/FootKit/KafkaReplicatorFooter.m; sourceTree = "<group>"; };
+		5291772EC476DBDB0209E6F608ABE997 /* Pods-Avgle-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Avgle-Info.plist"; sourceTree = "<group>"; };
 		53A1B073A8E30D1EC9FB0897464140C7 /* ZFSpeedLoadingView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFSpeedLoadingView.m; path = ZFPlayer/Classes/ControlView/ZFSpeedLoadingView.m; sourceTree = "<group>"; };
 		5572B73E72500F11D7F7930556FF0FEE /* KafkaRefresh-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KafkaRefresh-umbrella.h"; sourceTree = "<group>"; };
 		55BB825F2F74DAE0A9312E8E8F32F1DE /* SwipeMenuViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwipeMenuViewController-dummy.m"; sourceTree = "<group>"; };
-		5667D56FF69EA8921A31AABB19F7CFA0 /* SwipeMenuViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwipeMenuViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5667D56FF69EA8921A31AABB19F7CFA0 /* SwipeMenuViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwipeMenuViewController.framework; path = SwipeMenuViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5938C90D75288D1E306558549F59C0A1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		59ADAB7FFBD41FA0FB46ADBB8CA89CF1 /* ZFReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZFReachabilityManager.h; path = ZFPlayer/Classes/Core/ZFReachabilityManager.h; sourceTree = "<group>"; };
 		5ACFD12B90ED7BB16C383D9AD69452B8 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
 		5B12F2AB8CDE033400BB612BFC15A1AA /* PYSearchConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PYSearchConst.m; path = PYSearch/PYSearchConst.m; sourceTree = "<group>"; };
+		5C09958234E92AAAAE65FE6C36DD24B6 /* Pods-Avgle-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Avgle-resources.sh"; sourceTree = "<group>"; };
 		5CB4538BDC6D8E952BAA66DAAF1AA39B /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
 		5FE941D66D09055FBD7625E5749CCBF7 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		609A8D1B0B5F9535863906B8EA1D03BF /* MarqueeLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MarqueeLabel-dummy.m"; sourceTree = "<group>"; };
@@ -460,13 +458,11 @@
 		644FE2A4FE27D93A8FDF556EA4883E15 /* NVActivityIndicatorAnimationPacman.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationPacman.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationPacman.swift; sourceTree = "<group>"; };
 		651B2AB21808EE2CD3C6372875D4AC97 /* UIScrollView+KafkaConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+KafkaConfiguration.h"; path = "KafkaRefresh/Configuration/UIScrollView+KafkaConfiguration.h"; sourceTree = "<group>"; };
 		656FBBA1FD50805FF656FD27CBE52C36 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		65FA45D7E1791A4DA939573645C1F462 /* KafkaRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KafkaRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		66E00EF78623A300ACA55BB4A95D0F51 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		65FA45D7E1791A4DA939573645C1F462 /* KafkaRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KafkaRefresh.framework; path = KafkaRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67B2481C0508BA1917BA1A50CA0353E2 /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
 		68AEA63A64BCB030E4110DD5004A7932 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		68DB62F9070D7D7AEDE54A0BC73910DA /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Toast/Toast.swift; sourceTree = "<group>"; };
 		6A360F8E136391501671E091F6144037 /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
-		6A46F4C5258EEE16A1B81A9DCA20B8FA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		6CCB15032072BF5B9E45DA810B6E4F1B /* KafkaReplicatorLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KafkaReplicatorLayer.h; path = KafkaRefresh/UIKit/LayerKit/KafkaReplicatorLayer.h; sourceTree = "<group>"; };
 		6DBB585AF8AC3FD2F4D48C78CF1E2A59 /* NVActivityIndicatorShape.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorShape.swift; path = Source/NVActivityIndicatorView/NVActivityIndicatorShape.swift; sourceTree = "<group>"; };
 		6DD88290368947771C46499330DED752 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
@@ -486,7 +482,6 @@
 		7DFF969854090FA1C25F7F78E314D017 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
 		7E6A85EFD0E99B2F929FA6295521EEF3 /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAutoPurgingImageCache.h; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.h"; sourceTree = "<group>"; };
 		7ECA8F4CAE0DE8B7BF8D731038BB4B17 /* ZFKVOController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFKVOController.m; path = ZFPlayer/Classes/Core/ZFKVOController.m; sourceTree = "<group>"; };
-		7FE6F8704177A7CC9136FFA500E91C7F /* Pods-Avgle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Avgle.debug.xcconfig"; sourceTree = "<group>"; };
 		7FEAF0DED2757AE054C70D77BBCC87F6 /* KafkaRefresh.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KafkaRefresh.xcconfig; sourceTree = "<group>"; };
 		80A06C79AF12648A4A78EEA77D5EAAE5 /* SideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.xcconfig; sourceTree = "<group>"; };
 		80C23F17E17E68C2AC8DA08A67D5CACC /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
@@ -498,7 +493,6 @@
 		884FE5C4980F44BB46CB96210CEE1CE2 /* Initializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Initializable.swift; path = Pod/Classes/Initializable.swift; sourceTree = "<group>"; };
 		89C7FE03C597D8F1C22ACFEE6D7B5784 /* ZFOrientationObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFOrientationObserver.m; path = ZFPlayer/Classes/Core/ZFOrientationObserver.m; sourceTree = "<group>"; };
 		8A6B109CAD0C977BA7DE0039321DA8D6 /* SwipeMenuViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwipeMenuViewController.xcconfig; sourceTree = "<group>"; };
-		8A91EE69F87006B5BEAE194552168331 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		8AE48816F72A870CBADD6153CB12D428 /* MKDropdownMenu-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MKDropdownMenu-Info.plist"; sourceTree = "<group>"; };
 		8AFABD3CC82ABAFF200659EF76216F85 /* KafkaRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KafkaRefresh.h; path = KafkaRefresh/KafkaRefresh.h; sourceTree = "<group>"; };
 		8CAD4EDDE7E9DD5CF48DF4C8D7459A7B /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
@@ -515,22 +509,22 @@
 		99C5CE38930DF9A146ED4E648CF7E232 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallSpinFadeLoader.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallSpinFadeLoader.swift; sourceTree = "<group>"; };
 		9B4A287FAD619BFE396F27C92D05A2EF /* NVActivityIndicatorAnimationTriangleSkewSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationTriangleSkewSpin.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationTriangleSkewSpin.swift; sourceTree = "<group>"; };
 		9C87299645BF30EB729EB8A45219226A /* ZFPlayerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZFPlayerView.h; path = ZFPlayer/Classes/Core/ZFPlayerView.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DA056728452C9A2AE673DF20CCAE81D /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
 		9DC9DB83C353A4FF7F38A02FAA8928CE /* UIColor+PYSearchExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PYSearchExtension.m"; path = "PYSearch/UIColor+PYSearchExtension.m"; sourceTree = "<group>"; };
 		9E151AA01E938493674BE7FC78AC18CA /* SwipeMenuViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeMenuViewController-prefix.pch"; sourceTree = "<group>"; };
 		9EDEB1434CFE2DE9AC6AFC541160B97C /* NVActivityIndicatorAnimationBallZigZagDeflect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallZigZagDeflect.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallZigZagDeflect.swift; sourceTree = "<group>"; };
 		9F6099FFE6F360618D1D9897A1ED28C0 /* KafkaArrowHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KafkaArrowHeader.h; path = KafkaRefresh/UIKit/HeadKit/KafkaArrowHeader.h; sourceTree = "<group>"; };
-		9F70653056F0836C44D3E3A5CB6624FD /* SKSplashView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKSplashView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F70653056F0836C44D3E3A5CB6624FD /* SKSplashView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SKSplashView.framework; path = SKSplashView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F707302614A2BE2C74BC986349E8FEA /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
 		9F82AFC18EE8BA930348FDF9836C899E /* NVActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationAudioEqualizer.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = "<group>"; };
 		A0C7E804B258A6C84AF363526965D780 /* UIColorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = Sources/Classes/UIColorExtension.swift; sourceTree = "<group>"; };
-		A1B9F27862201CD82B398E0B35B14128 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B9F27862201CD82B398E0B35B14128 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NVActivityIndicatorView.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A291B1E9D414B0C0CB8E1EA741C1D5AD /* ZFSliderView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFSliderView.m; path = ZFPlayer/Classes/ControlView/ZFSliderView.m; sourceTree = "<group>"; };
 		A35E4EF5060BEF109369B8055932F3F2 /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
 		A3BBAB1AA69B1926A02A2D50A6ED7F52 /* MKDropdownMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKDropdownMenu-umbrella.h"; sourceTree = "<group>"; };
 		A3C694ECA40B97A2DFFC595A4632D99F /* KafkaReplicatorLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KafkaReplicatorLayer.m; path = KafkaRefresh/UIKit/LayerKit/KafkaReplicatorLayer.m; sourceTree = "<group>"; };
-		A4FA15D44DF6BAC7550EDEED10862AA3 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4FA15D44DF6BAC7550EDEED10862AA3 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5792D1EA6E41013E4784BF41B01559B /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallClipRotateMultiple.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallClipRotateMultiple.swift; sourceTree = "<group>"; };
 		A5BF37C1EA10D3AA06E1C7146A886DAD /* KafkaArrowFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KafkaArrowFooter.h; path = KafkaRefresh/UIKit/FootKit/KafkaArrowFooter.h; sourceTree = "<group>"; };
 		A6006BFB832EA0B5BA89B19785F60604 /* SKSplashView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SKSplashView-dummy.m"; sourceTree = "<group>"; };
@@ -549,7 +543,6 @@
 		AE1CF9AECC3A2E5405B388D284A484A0 /* ZFPlayerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFPlayerController.m; path = ZFPlayer/Classes/Core/ZFPlayerController.m; sourceTree = "<group>"; };
 		B0E708102D498C05864BC42D2C977796 /* KafkaReplicatorHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KafkaReplicatorHeader.h; path = KafkaRefresh/UIKit/HeadKit/KafkaReplicatorHeader.h; sourceTree = "<group>"; };
 		B1355AB109607FF5DD005061EC8438ED /* NVActivityIndicatorAnimationBallScaleRipple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScaleRipple.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScaleRipple.swift; sourceTree = "<group>"; };
-		B23E9EDAD005C175EB2BEC3E6C2D72B0 /* Pods-Avgle-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Avgle-Info.plist"; sourceTree = "<group>"; };
 		B4632F6FFD7B1A6EAADA5750A834FB98 /* PYSearch-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PYSearch-umbrella.h"; sourceTree = "<group>"; };
 		B52957D8E6714142CF7EC2AAECE1610A /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
 		B9B489595E5DE73CA380BC33C18DACC4 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScalePulseOutRapid.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScalePulseOutRapid.swift; sourceTree = "<group>"; };
@@ -558,9 +551,7 @@
 		BC56F709068CD5196BACF35B0E883CC6 /* KafkaRefreshDefaults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KafkaRefreshDefaults.m; path = KafkaRefresh/Default/KafkaRefreshDefaults.m; sourceTree = "<group>"; };
 		BCA93AD3FED667A1C05EE24B756FEB83 /* NVActivityIndicatorView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NVActivityIndicatorView-prefix.pch"; sourceTree = "<group>"; };
 		BCABA5BE8DEE612079641C9B7659DBFA /* NVActivityIndicatorAnimationOrbit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationOrbit.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationOrbit.swift; sourceTree = "<group>"; };
-		BCF63D08A143F6333742235096B5A8DE /* Pods-Avgle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Avgle.release.xcconfig"; sourceTree = "<group>"; };
-		BD0554CF296DD424D0EA847DE6A4D69D /* Pods-Avgle-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Avgle-acknowledgements.plist"; sourceTree = "<group>"; };
-		BD9F969B2C87CE1AFBFCC2170AD024C4 /* PYSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PYSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD9F969B2C87CE1AFBFCC2170AD024C4 /* PYSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PYSearch.framework; path = PYSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDB9476FB28E40B8CEAE485B24F802C0 /* NVActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorPresenter.swift; path = Source/NVActivityIndicatorView/Presenter/NVActivityIndicatorPresenter.swift; sourceTree = "<group>"; };
 		BE1AA5E244630212A605321D5AFAC6C2 /* ZFPlayerLogManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZFPlayerLogManager.h; path = ZFPlayer/Classes/Core/ZFPlayerLogManager.h; sourceTree = "<group>"; };
 		BEA1DA3BB1885A41F0103814C7C8AA7C /* PYSearchConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PYSearchConst.h; path = PYSearch/PYSearchConst.h; sourceTree = "<group>"; };
@@ -573,21 +564,23 @@
 		C4426B9C86A50C8B09C0687EA5EB2F6B /* MKDropdownMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKDropdownMenu.h; path = MKDropdownMenu/MKDropdownMenu.h; sourceTree = "<group>"; };
 		C4AF7AB068159BDE3BC82A189DD4D621 /* ZFKVOController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZFKVOController.h; path = ZFPlayer/Classes/Core/ZFKVOController.h; sourceTree = "<group>"; };
 		C52F15DAFC692A79C856A0F2EC6892F8 /* SwipeMenuViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeMenuViewController-umbrella.h"; sourceTree = "<group>"; };
+		C54AB5B556F0D210339D71C6F64AD383 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		C59B97E87436481D40F7BD13906D3108 /* NVActivityIndicatorAnimationBallZigZag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallZigZag.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallZigZag.swift; sourceTree = "<group>"; };
 		C63CE49043BE619ACBABADA23F75ADED /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		C6A09DCE56D826FB748431FB200C4CBF /* TabView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabView.swift; path = Sources/Classes/TabView.swift; sourceTree = "<group>"; };
 		C6A6C466E7E491A1C007096B5F3C4662 /* ZFPlayerControlView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZFPlayerControlView.h; path = ZFPlayer/Classes/ControlView/ZFPlayerControlView.h; sourceTree = "<group>"; };
-		C891E2FD0F96FDED0546B0FBD49AC3F7 /* Pods-Avgle.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Avgle.modulemap"; sourceTree = "<group>"; };
 		C92CDFCA1B11E852560BBAD726D87991 /* NVActivityIndicatorAnimationCircleStrokeSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationCircleStrokeSpin.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationCircleStrokeSpin.swift; sourceTree = "<group>"; };
 		C970FB84304CAA38B336DBA83B16B15C /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
 		CAECB355B9A7D7161A8FB35678E5F48A /* ZFPortraitControlView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFPortraitControlView.m; path = ZFPlayer/Classes/ControlView/ZFPortraitControlView.m; sourceTree = "<group>"; };
 		CB07ED765670325891A11CB2FF5E19F7 /* KafkaCategories.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KafkaCategories.m; path = KafkaRefresh/Category/KafkaCategories.m; sourceTree = "<group>"; };
 		CB407E7097BAEE78D4DDEECC17F35576 /* ZFPlayer.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = ZFPlayer.bundle; path = ZFPlayer/Classes/ControlView/ZFPlayer.bundle; sourceTree = "<group>"; };
+		CB552398CF0C340473FF99143DE41282 /* Pods-Avgle-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Avgle-frameworks.sh"; sourceTree = "<group>"; };
+		CB72E79698B6F7FA6352FC1FAC0CCF72 /* Pods-Avgle.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Avgle.modulemap"; sourceTree = "<group>"; };
 		CB91575862F5E9F6D2ED3C126AFC14DC /* NVActivityIndicatorAnimationBlank.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBlank.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBlank.swift; sourceTree = "<group>"; };
 		CE0BE06B699FBD596C41DFD7C33911C0 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
 		CECD0A4797F78EF1FFF3F725E918C946 /* NVActivityIndicatorAnimationCubeTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationCubeTransition.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationCubeTransition.swift; sourceTree = "<group>"; };
 		CF069ABDA625305BAF541F871E109784 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScaleRippleMultiple.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScaleRippleMultiple.swift; sourceTree = "<group>"; };
-		CF0AA9FBFBDB70858C030769541505ED /* MarqueeLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarqueeLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0AA9FBFBDB70858C030769541505ED /* MarqueeLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MarqueeLabel.framework; path = MarqueeLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF5ECEC81FBD37A086FEC5BBE79509D7 /* PYSearch-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PYSearch-Info.plist"; sourceTree = "<group>"; };
 		CFA3E7E35A1958A6F8AC304EAF2920BA /* MKDropdownMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MKDropdownMenu.xcconfig; sourceTree = "<group>"; };
 		CFCE80BE1DFE453871C19F56706F76CC /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
@@ -595,7 +588,8 @@
 		D27CF7380A94DDC6659F64C839CBBE49 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		D2DA7F67818C419D8F7E0B851AC9172F /* ZFUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFUtilities.m; path = ZFPlayer/Classes/ControlView/ZFUtilities.m; sourceTree = "<group>"; };
 		D56A9BD49606D64F3D433CA7C3E69ED9 /* KafkaArcLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KafkaArcLayer.m; path = KafkaRefresh/UIKit/LayerKit/KafkaArcLayer.m; sourceTree = "<group>"; };
-		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5BE8D06C6E6DCE2BEE517C03E7984BA /* Pods-Avgle-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Avgle-umbrella.h"; sourceTree = "<group>"; };
+		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toast_Swift.framework; path = "Toast-Swift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D607007FA3F058F687B3B79AACEA4D40 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		D9DCD94E45AB835E8F48C0962FB2AD0F /* KafkaRingIndicatorHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KafkaRingIndicatorHeader.m; path = KafkaRefresh/UIKit/HeadKit/KafkaRingIndicatorHeader.m; sourceTree = "<group>"; };
 		DAD6CE97057573F4586F873BD2E4B6DC /* NVActivityIndicatorAnimationBallPulse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallPulse.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallPulse.swift; sourceTree = "<group>"; };
@@ -612,23 +606,28 @@
 		E05220FDAEE04F4C0026210945FC4EDC /* ZFPlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZFPlayer-dummy.m"; sourceTree = "<group>"; };
 		E0DFF01299111E1EB19FE6FE338914BD /* ZFOrientationObserver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZFOrientationObserver.h; path = ZFPlayer/Classes/Core/ZFOrientationObserver.h; sourceTree = "<group>"; };
 		E18E5D484A44F5AB77E85711D26130A6 /* KafkaRefreshDefaults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KafkaRefreshDefaults.h; path = KafkaRefresh/Default/KafkaRefreshDefaults.h; sourceTree = "<group>"; };
+		E197FB17C43F849418F953A62218F8CC /* Pods-Avgle-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Avgle-acknowledgements.plist"; sourceTree = "<group>"; };
 		E1F0FB10C4451B1B6FAD8826619EC9FE /* SwipeMenuViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwipeMenuViewController.modulemap; sourceTree = "<group>"; };
+		E2F95AA46069BD1F1C53DA019394F4E6 /* Pods-Avgle-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Avgle-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E382D2111796A7D57D9834783551B8BD /* ZFAVPlayerManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFAVPlayerManager.m; path = ZFPlayer/Classes/AVPlayer/ZFAVPlayerManager.m; sourceTree = "<group>"; };
 		E3B07BC08D0EB85BCC4A4843E2206147 /* KafkaReplicatorFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KafkaReplicatorFooter.h; path = KafkaRefresh/UIKit/FootKit/KafkaReplicatorFooter.h; sourceTree = "<group>"; };
 		E4CE835D49AD81A5031F2BB01A865C3F /* Deprecations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecations.swift; path = Pod/Classes/Deprecations.swift; sourceTree = "<group>"; };
 		E54B818B3B93D0DCB4B7FBFDEC9EA33D /* ZFAVPlayerManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZFAVPlayerManager.h; path = ZFPlayer/Classes/AVPlayer/ZFAVPlayerManager.h; sourceTree = "<group>"; };
 		E5A1678EB108CCE68F50F9E126916A2A /* KafkaRefreshControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KafkaRefreshControl.m; path = KafkaRefresh/Core/KafkaRefreshControl.m; sourceTree = "<group>"; };
 		E617ED541BB6D438FC153410F543B9CD /* UIScrollView+ZFPlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+ZFPlayer.h"; path = "ZFPlayer/Classes/Core/UIScrollView+ZFPlayer.h"; sourceTree = "<group>"; };
+		E6216DEAD481B3D9851D81FE0998C22D /* Pods-Avgle-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Avgle-dummy.m"; sourceTree = "<group>"; };
 		E73BB51347A2292186767CC58A29E44A /* MarqueeLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MarqueeLabel.xcconfig; sourceTree = "<group>"; };
 		E76DC1252CAED850D15C4A47FF2BC2F5 /* NVActivityIndicatorView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NVActivityIndicatorView-umbrella.h"; sourceTree = "<group>"; };
 		E796203DA3EEEA7AD5CB6790F9FDDA31 /* NVActivityIndicatorAnimationSemiCircleSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationSemiCircleSpin.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationSemiCircleSpin.swift; sourceTree = "<group>"; };
 		E88FA4C09A9752253A9887AF2FDE0980 /* NVActivityIndicatorAnimationBallScale.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScale.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScale.swift; sourceTree = "<group>"; };
 		EB1E7877EEFDC0EE4C9B9CBEC3B10F4D /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAutoPurgingImageCache.m; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.m"; sourceTree = "<group>"; };
 		EB2CAB384196A45FD6B33CBEE5359A10 /* SKSplashView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SKSplashView-prefix.pch"; sourceTree = "<group>"; };
+		EB8D1E45A6A4D4594B42AD7E361B2D2C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		EC01FE183E816190122E8EDE5B166127 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		EC0441A3DFB39E6072B278E5047A385F /* NVActivityIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorView.swift; path = Source/NVActivityIndicatorView/NVActivityIndicatorView.swift; sourceTree = "<group>"; };
 		ECEAEB7D172A6B1EBF4AAFB17D1197B7 /* UIImageView+ZFCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+ZFCache.m"; path = "ZFPlayer/Classes/ControlView/UIImageView+ZFCache.m"; sourceTree = "<group>"; };
-		ED363DD89BB17FB9F31F94524BA59CBB /* ZFPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZFPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDE97B98D6CF2D1B33BB8055E4258532 /* Pods_Avgle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Avgle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED363DD89BB17FB9F31F94524BA59CBB /* ZFPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZFPlayer.framework; path = ZFPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDE97B98D6CF2D1B33BB8055E4258532 /* Pods_Avgle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Avgle.framework; path = "Pods-Avgle.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE6AA024C32BC952E0788726E4F419F6 /* ZFReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZFReachabilityManager.m; path = ZFPlayer/Classes/Core/ZFReachabilityManager.m; sourceTree = "<group>"; };
 		EF18955A0F588C0002E8A2BC17AAE9C5 /* MarqueeLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MarqueeLabel.swift; path = Sources/Swift/MarqueeLabel.swift; sourceTree = "<group>"; };
 		EFB092F985C44067BF86B5DCB7E98079 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
@@ -637,10 +636,7 @@
 		F1A72BC81683256510014AAB1A74EDC4 /* Protected.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protected.swift; path = Pod/Classes/Protected.swift; sourceTree = "<group>"; };
 		F28BFEB6C6C530576F3CDAA741A72BE0 /* PYSearch-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PYSearch-prefix.pch"; sourceTree = "<group>"; };
 		F2E52CCFF9A6C0FE05E3DB231EE928F7 /* NVActivityIndicatorAnimationBallDoubleBounce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallDoubleBounce.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallDoubleBounce.swift; sourceTree = "<group>"; };
-		F3B0122AEDAC3296D7016AECDF154C62 /* Pods-Avgle-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Avgle-frameworks.sh"; sourceTree = "<group>"; };
 		F63BCEF97B3588A4C33D01459D99AF63 /* SwipeMenuViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeMenuViewController.swift; path = Sources/Classes/SwipeMenuViewController.swift; sourceTree = "<group>"; };
-		F7458233167072026510C0112EFF555D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
-		F80E86047B978809041CF2707BD493C2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		F879D64A78D3C1CBFD3B7104CBFE1B8E /* KafkaRingIndicatorHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KafkaRingIndicatorHeader.h; path = KafkaRefresh/UIKit/HeadKit/KafkaRingIndicatorHeader.h; sourceTree = "<group>"; };
 		F8FE4BF058693892A1FBE8C156F2AF63 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
 		F97A0BBDCF321DE15721124117E39C13 /* NVActivityIndicatorAnimationLineScalePulseOut.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScalePulseOut.swift; path = Source/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScalePulseOut.swift; sourceTree = "<group>"; };
@@ -665,6 +661,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				980B4C5DC6FE08F467A241DB8C831B56 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0EC058833F0F2C9B56E54AFAB1926BA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BD66A09F8BF32766F4733AECDDFE998 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,17 +711,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AB2C59E196940A8D6CB9B523E9E327B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5C456EF4E3BFF4C9468D6F9D39136007 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A6B3E9F11A906175752CA96E61B04534 /* AVFoundation.framework in Frameworks */,
-				3EE02CEDEB3BDD844DA86269805D5809 /* Foundation.framework in Frameworks */,
-				37E636228CA9B6FBED6F9D4228D9C0F4 /* MediaPlayer.framework in Frameworks */,
-				27952B46F79D4653ED36993A92A58CC7 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,6 +784,7 @@
 				9FB2B35736FD0D93AAACBF0C04B4858C /* Support Files */,
 				49AD014A25AD095DA646DE16A4CA9FF7 /* UIKit */,
 			);
+			name = KafkaRefresh;
 			path = KafkaRefresh;
 			sourceTree = "<group>";
 		};
@@ -813,6 +807,7 @@
 				BF2489DC7023563A987B4CCA3A2921ED /* UITableViewVibrantCell.swift */,
 				0A6F990BF55148DDD1337E80B697D462 /* Support Files */,
 			);
+			name = SideMenu;
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
@@ -862,14 +857,6 @@
 			name = Presenter;
 			sourceTree = "<group>";
 		};
-		0656CE04288357F0748AB498835BA03E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D2FEDAA9B73BBAB368CB2D89458B2BAD /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		0A6F990BF55148DDD1337E80B697D462 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -916,6 +903,7 @@
 				B27561D356A4923E4460164788BDBD75 /* Support Files */,
 				D2BB798EE7CB0B701699844C71DA5B5B /* Swift */,
 			);
+			name = MarqueeLabel;
 			path = MarqueeLabel;
 			sourceTree = "<group>";
 		};
@@ -1028,6 +1016,7 @@
 				1A8CC387153104A961A48547A45D8594 /* Support Files */,
 				16460109D42FC25D4CAB71EBFF802A23 /* UIKit */,
 			);
+			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -1038,6 +1027,7 @@
 				354099A8C0D66F059209C7DE0EAD9C94 /* MKDropdownMenu.m */,
 				1C60EB2284ED9FE00C85A79846E4199C /* Support Files */,
 			);
+			name = MKDropdownMenu;
 			path = MKDropdownMenu;
 			sourceTree = "<group>";
 		};
@@ -1064,6 +1054,7 @@
 				05659B5BE906BFF5D1A20C598AF36844 /* Presenter */,
 				262137A28168E21E2088D6EA1646A10D /* Support Files */,
 			);
+			name = NVActivityIndicatorView;
 			path = NVActivityIndicatorView;
 			sourceTree = "<group>";
 		};
@@ -1132,23 +1123,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		6D52712D33F18EEF952885DABB28072C /* Pods-Avgle */ = {
-			isa = PBXGroup;
-			children = (
-				C891E2FD0F96FDED0546B0FBD49AC3F7 /* Pods-Avgle.modulemap */,
-				45A608781C9B0B52DD6052FBF6B62698 /* Pods-Avgle-acknowledgements.markdown */,
-				BD0554CF296DD424D0EA847DE6A4D69D /* Pods-Avgle-acknowledgements.plist */,
-				37C1F69FB7FC55C7E76413CB9B4D66E5 /* Pods-Avgle-dummy.m */,
-				F3B0122AEDAC3296D7016AECDF154C62 /* Pods-Avgle-frameworks.sh */,
-				B23E9EDAD005C175EB2BEC3E6C2D72B0 /* Pods-Avgle-Info.plist */,
-				4A15805F865EC760803A513E71F00598 /* Pods-Avgle-umbrella.h */,
-				7FE6F8704177A7CC9136FFA500E91C7F /* Pods-Avgle.debug.xcconfig */,
-				BCF63D08A143F6333742235096B5A8DE /* Pods-Avgle.release.xcconfig */,
-			);
-			name = "Pods-Avgle";
-			path = "Target Support Files/Pods-Avgle";
-			sourceTree = "<group>";
-		};
 		6D7C48E916B25DAF87C0DBAA4CAF52C9 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1184,7 +1158,24 @@
 				36938BE2D563DF9D3F8B48747BA3786E /* UIViewExtension.swift */,
 				5EBF8112A607025C5BE899AE1063FF79 /* Support Files */,
 			);
+			name = SwipeMenuViewController;
 			path = SwipeMenuViewController;
+			sourceTree = "<group>";
+		};
+		8275CCB4E8732497B1021FCBC240F3C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B66620152349E2E9729439FD3AFBA834 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8353FA27B41C6C3D28A7EE713B12C383 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC2C4A264E5D491F8B6F4DC746ABCD3F /* Pods-Avgle */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		835D0F67DEF51D54698756F113425734 /* ControlView */ = {
@@ -1228,6 +1219,7 @@
 				1A720614F6D58785B6EE6E02C6F52E2D /* SKSplashView.m */,
 				0D6E41FB39A7AB15186DCA11B7DED300 /* Support Files */,
 			);
+			name = SKSplashView;
 			path = SKSplashView;
 			sourceTree = "<group>";
 		};
@@ -1237,6 +1229,7 @@
 				68DB62F9070D7D7AEDE54A0BC73910DA /* Toast.swift */,
 				E4AB51E808DB0431B9CE29FF9C35FF79 /* Support Files */,
 			);
+			name = "Toast-Swift";
 			path = "Toast-Swift";
 			sourceTree = "<group>";
 		};
@@ -1316,6 +1309,7 @@
 				3B7EE942D393986BD518793A5596D962 /* Resources */,
 				6D7C48E916B25DAF87C0DBAA4CAF52C9 /* Support Files */,
 			);
+			name = PYSearch;
 			path = PYSearch;
 			sourceTree = "<group>";
 		};
@@ -1356,12 +1350,18 @@
 			path = "../Target Support Files/MarqueeLabel";
 			sourceTree = "<group>";
 		};
-		BF2130346985C1E60ACC66E8A32DF464 /* Targets Support Files */ = {
+		B66620152349E2E9729439FD3AFBA834 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				6D52712D33F18EEF952885DABB28072C /* Pods-Avgle */,
+				C54AB5B556F0D210339D71C6F64AD383 /* CoreGraphics.framework */,
+				40530560F251DB72F14EF0410752835D /* Foundation.framework */,
+				187340C0E9BA267D7818D4B34C68FEB8 /* MobileCoreServices.framework */,
+				EC01FE183E816190122E8EDE5B166127 /* QuartzCore.framework */,
+				5938C90D75288D1E306558549F59C0A1 /* Security.framework */,
+				140C9A229C671B799C2299A18DA96CC9 /* SystemConfiguration.framework */,
+				EB8D1E45A6A4D4594B42AD7E361B2D2C /* UIKit.framework */,
 			);
-			name = "Targets Support Files";
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		C8B429F9B979A9613F9DF21B61EF8738 /* Core */ = {
@@ -1384,10 +1384,10 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				0656CE04288357F0748AB498835BA03E /* Frameworks */,
+				8275CCB4E8732497B1021FCBC240F3C2 /* Frameworks */,
 				6AFB7424917A7531B01111C81E056619 /* Pods */,
 				DFEF77A9B59322AD746F019D48D3952D /* Products */,
-				BF2130346985C1E60ACC66E8A32DF464 /* Targets Support Files */,
+				8353FA27B41C6C3D28A7EE713B12C383 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1397,22 +1397,6 @@
 				EF18955A0F588C0002E8A2BC17AAE9C5 /* MarqueeLabel.swift */,
 			);
 			name = Swift;
-			sourceTree = "<group>";
-		};
-		D2FEDAA9B73BBAB368CB2D89458B2BAD /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				66E00EF78623A300ACA55BB4A95D0F51 /* AVFoundation.framework */,
-				457182405AEC0060C3A6CDE3954A33D3 /* CoreGraphics.framework */,
-				1B56E0C85004DE7E72BCA9F2ACFB895D /* Foundation.framework */,
-				F7458233167072026510C0112EFF555D /* MediaPlayer.framework */,
-				145731A3CA35A987B97442B194FD8B17 /* MobileCoreServices.framework */,
-				8A91EE69F87006B5BEAE194552168331 /* QuartzCore.framework */,
-				F80E86047B978809041CF2707BD493C2 /* Security.framework */,
-				6A46F4C5258EEE16A1B81A9DCA20B8FA /* SystemConfiguration.framework */,
-				379D2FBCF5F924A6A737DEB6D25B6270 /* UIKit.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		DC30A3B0AA2C2FE61C8129584C4E59A0 /* Security */ = {
@@ -1473,6 +1457,7 @@
 				A5274B4101E8BBEB25EB51DB9EB67DC0 /* Core */,
 				5611C98F325EC812A1A51539B9174236 /* Support Files */,
 			);
+			name = ZFPlayer;
 			path = ZFPlayer;
 			sourceTree = "<group>";
 		};
@@ -1483,6 +1468,24 @@
 				7D0D709DCDD4839E3662936EEF5D625F /* UIScrollView+KafkaConfiguration.m */,
 			);
 			name = Configuration;
+			sourceTree = "<group>";
+		};
+		FC2C4A264E5D491F8B6F4DC746ABCD3F /* Pods-Avgle */ = {
+			isa = PBXGroup;
+			children = (
+				CB72E79698B6F7FA6352FC1FAC0CCF72 /* Pods-Avgle.modulemap */,
+				E2F95AA46069BD1F1C53DA019394F4E6 /* Pods-Avgle-acknowledgements.markdown */,
+				E197FB17C43F849418F953A62218F8CC /* Pods-Avgle-acknowledgements.plist */,
+				E6216DEAD481B3D9851D81FE0998C22D /* Pods-Avgle-dummy.m */,
+				CB552398CF0C340473FF99143DE41282 /* Pods-Avgle-frameworks.sh */,
+				5291772EC476DBDB0209E6F608ABE997 /* Pods-Avgle-Info.plist */,
+				5C09958234E92AAAAE65FE6C36DD24B6 /* Pods-Avgle-resources.sh */,
+				D5BE8D06C6E6DCE2BEE517C03E7984BA /* Pods-Avgle-umbrella.h */,
+				0776B7B85B95ACFDB36FCD519DE1A3FF /* Pods-Avgle.debug.xcconfig */,
+				035BA603EEF672A3CAB991EF52D8487F /* Pods-Avgle.release.xcconfig */,
+			);
+			name = "Pods-Avgle";
+			path = "Target Support Files/Pods-Avgle";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1521,6 +1524,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52B8062733ECED0A5F29A2A1C99DD2B7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E58ED8EF59F37A6355DF5B49C7231EF /* UIImageView+ZFCache.h in Headers */,
+				B2799B1AC6D0352884F506693A846BD0 /* UIScrollView+ZFPlayer.h in Headers */,
+				22F5B337BD9B0DABE76F9633F08B2C53 /* UIView+ZFFrame.h in Headers */,
+				AAEC35A2F0357DF1E9EE22FFEF5D71C5 /* ZFAVPlayerManager.h in Headers */,
+				773AFE05EBB5DA8DBBC46260567D4009 /* ZFFloatView.h in Headers */,
+				F422465125810C5E115B1A3D1A3BE3C6 /* ZFKVOController.h in Headers */,
+				ADD38C0756E27BB4642DB99474346BFD /* ZFLandScapeControlView.h in Headers */,
+				06F6A9FF47399D9FBBCC378958DEDED1 /* ZFLoadingView.h in Headers */,
+				A888C3830795F07FB2FC14573147FB58 /* ZFNetworkSpeedMonitor.h in Headers */,
+				FDFC963EB9C7853C70589F9D6E64196F /* ZFOrientationObserver.h in Headers */,
+				64751E00A7CA09A45D0E3FCFF0B0E56C /* ZFPlayer-umbrella.h in Headers */,
+				FE63DCEA3F94427171B9B94DBAA07D74 /* ZFPlayer.h in Headers */,
+				9026F24A82BF2A50270D6BE5A52228A9 /* ZFPlayerController.h in Headers */,
+				6592D8A8EFDC188BFD5D361EB426DED6 /* ZFPlayerControlView.h in Headers */,
+				E41761B8FD865BD6759B85E171B1348D /* ZFPlayerGestureControl.h in Headers */,
+				83A6810FAA6E6BD1AC8EB8ACEC3030F7 /* ZFPlayerLogManager.h in Headers */,
+				6EA976D04CAF797D05B77741150A5073 /* ZFPlayerMediaControl.h in Headers */,
+				D94DF1C279EC18567A685E434EB711EA /* ZFPlayerMediaPlayback.h in Headers */,
+				4B387D5604583D0BC5ABF3327D15E851 /* ZFPlayerNotification.h in Headers */,
+				D3F4FFE2A4024F3DE7FD0947147B8F06 /* ZFPlayerView.h in Headers */,
+				0EAD356A20EC7D812F1A852129E25CA7 /* ZFPortraitControlView.h in Headers */,
+				2EEF899E99ED0001F2EBFCEBF90416BE /* ZFReachabilityManager.h in Headers */,
+				B665EADA20EA1422B06C0EEF5BC562D6 /* ZFSliderView.h in Headers */,
+				7BBAC554770A798B7D5BA1C302C096C7 /* ZFSmallFloatControlView.h in Headers */,
+				DB7593AB5274054D057D9CF6544BB37D /* ZFSpeedLoadingView.h in Headers */,
+				B7567BC26A37A5274618E41E098DDF82 /* ZFUtilities.h in Headers */,
+				B7D6E19D2269DB4D1A64E41799E57209 /* ZFVolumeBrightnessView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		541A0721D8D26374CF7CF04B1473A45A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1534,40 +1571,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BE1887359163FEFE73D70F4C4A07BCB /* Pods-Avgle-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8025CF297ED5578F0332C6C9BF9D964F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BE85FCB95572E5B423C5AA3FC501BC91 /* UIImageView+ZFCache.h in Headers */,
-				D09EBD3A3BA843D663D3D03BCCE955C2 /* UIScrollView+ZFPlayer.h in Headers */,
-				155BC5B238768837658CF7FEBDED8E04 /* UIView+ZFFrame.h in Headers */,
-				92AC7EAA3CE5ECEECEA9384EF282F96A /* ZFAVPlayerManager.h in Headers */,
-				F6EE88A649A3B9DF5B6023AE9D4AC6B3 /* ZFFloatView.h in Headers */,
-				55016D9005E8AF61628E57D966A9B70E /* ZFKVOController.h in Headers */,
-				05DF6DA786650CE9EC7A190D15C30820 /* ZFLandScapeControlView.h in Headers */,
-				0D6FD2B2751CE84EE4EFB98E3AA2F718 /* ZFLoadingView.h in Headers */,
-				191538F09816AE3DB5F2BB8E44C42FBC /* ZFNetworkSpeedMonitor.h in Headers */,
-				23663C9525DA269A383637A670FFB683 /* ZFOrientationObserver.h in Headers */,
-				C5F833D7EF426B75087BA9C7ACA3EEEB /* ZFPlayer-umbrella.h in Headers */,
-				5AA8A189B36E301EEBD80544B007BB9A /* ZFPlayer.h in Headers */,
-				087F5C8345A26B16564C5CA486F5117F /* ZFPlayerController.h in Headers */,
-				F25A505BDD8BF7F9558AB0F5716A31A1 /* ZFPlayerControlView.h in Headers */,
-				9FE36B1DD2E5B545BA822B851428A05A /* ZFPlayerGestureControl.h in Headers */,
-				CE34B8F2F0635C3C13BC4ED6A7B231E8 /* ZFPlayerLogManager.h in Headers */,
-				1364E6CDA99F4F222949EFEB53E89950 /* ZFPlayerMediaControl.h in Headers */,
-				55F8D3DC5F4C06FED05DF09F3D9F8338 /* ZFPlayerMediaPlayback.h in Headers */,
-				D61A927192306AB47EA14455FD5E0F51 /* ZFPlayerNotification.h in Headers */,
-				5A9D10973514A574AEAEAC85C525DF76 /* ZFPlayerView.h in Headers */,
-				F388F3D9B79499CA4844F16546D4CC5B /* ZFPortraitControlView.h in Headers */,
-				3899BE428FAAFB8BAE78D5B6813FF735 /* ZFReachabilityManager.h in Headers */,
-				3824920511D4260142C6EC08BA6567AC /* ZFSliderView.h in Headers */,
-				4F94C59E1ADC878B0DD7A5918FF49110 /* ZFSmallFloatControlView.h in Headers */,
-				1FC3B04E11E5B63C7238F01E91E170C5 /* ZFSpeedLoadingView.h in Headers */,
-				83CF29777A3E0A751922D1E68DB87306 /* ZFUtilities.h in Headers */,
-				2A6A0A9F52CF526A5C8AD4266F595CDF /* ZFVolumeBrightnessView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1748,12 +1751,12 @@
 		};
 		93FD1F93E0C30B2749BD8A6EC148F233 /* ZFPlayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D3B31C3D0C4122FF4F0E1850E88E6672 /* Build configuration list for PBXNativeTarget "ZFPlayer" */;
+			buildConfigurationList = 4BA924EE884E165B99EE1C132587B4EF /* Build configuration list for PBXNativeTarget "ZFPlayer" */;
 			buildPhases = (
-				8025CF297ED5578F0332C6C9BF9D964F /* Headers */,
-				319482921DCD0EED21B4FDF9F257C3AD /* Sources */,
-				5C456EF4E3BFF4C9468D6F9D39136007 /* Frameworks */,
-				AED4111B72299A83AC4D057DE7C0BFFD /* Resources */,
+				52B8062733ECED0A5F29A2A1C99DD2B7 /* Headers */,
+				DC23002FE375F28D78C437D44F3709CA /* Sources */,
+				0EC058833F0F2C9B56E54AFAB1926BA6 /* Frameworks */,
+				A0DF759522EB601A39902E018043F60F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1898,14 +1901,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
-				TargetAttributes = {
-					B990BD87169C76A3ED3FE8A9258D91A3 = {
-						LastSwiftMigration = 1120;
-					};
-					C23DB88E45B0ED14F0C8827BE9C46C95 = {
-						LastSwiftMigration = 1120;
-					};
-				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -1913,6 +1908,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = DFEF77A9B59322AD746F019D48D3952D /* Products */;
@@ -1993,19 +1989,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0DF759522EB601A39902E018043F60F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E84617755B54A88162BE5C0F86D97F76 /* ZFPlayer.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A14C796907D9D6C89BB2899966034070 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6B5B5FF02CC4CBA32FA73ADA181CE0A4 /* PYSearch.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AED4111B72299A83AC4D057DE7C0BFFD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DC7103C04E6104F6670F8F8B1551EB8B /* ZFPlayer.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2070,38 +2066,6 @@
 				E058420E139C45F11C6220810F9F89BC /* NVActivityIndicatorView-dummy.m in Sources */,
 				C06909BBDAAD9A6C31D3FB2FD3BAD93E /* NVActivityIndicatorView.swift in Sources */,
 				063E0A231A62F5D1B7AEFA52F61CBE8C /* NVActivityIndicatorViewable.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		319482921DCD0EED21B4FDF9F257C3AD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EBBF712A79FE3A47003588C5BCC1FAFE /* UIImageView+ZFCache.m in Sources */,
-				18E1603D11636303413FEACE84EE3B5C /* UIScrollView+ZFPlayer.m in Sources */,
-				7DFD0B8410DBE25BD9E0FF4505D5AFAC /* UIView+ZFFrame.m in Sources */,
-				461BE5A3713A1B27F26DC45B33765989 /* UIViewController+ZFPlayerRotation.m in Sources */,
-				5F5F4C5BB5966260CE589C789F03A386 /* ZFAVPlayerManager.m in Sources */,
-				35683939E2B87077E460F55D11F1AD5D /* ZFFloatView.m in Sources */,
-				B6610827CDFFAF8C8808328D405CB5FB /* ZFKVOController.m in Sources */,
-				EDB23EA0C52985C704DA9249CD267CAF /* ZFLandScapeControlView.m in Sources */,
-				017B40BDFD98B854225D17001C06E879 /* ZFLoadingView.m in Sources */,
-				51FE7E85345F8CD814F2F9DF94847063 /* ZFNetworkSpeedMonitor.m in Sources */,
-				361D2154FE676E9EE1F9F4D8BBC1A641 /* ZFOrientationObserver.m in Sources */,
-				1BF2A69F138A6114CEB6613EB923DFA9 /* ZFPlayer-dummy.m in Sources */,
-				1C827429A2E0D40481BB7D7C36A59E2B /* ZFPlayerController.m in Sources */,
-				AB42DCEFB34F2D8A46CC14B6462A1DC0 /* ZFPlayerControlView.m in Sources */,
-				1C5E904ABBF5F736FF99E9EDF75C9471 /* ZFPlayerGestureControl.m in Sources */,
-				A9C23268CD9CA1DD11A5DB90C5851B09 /* ZFPlayerLogManager.m in Sources */,
-				CA22022BE23FCFCAA3EBB23220BF6D7B /* ZFPlayerNotification.m in Sources */,
-				422C1104F9DF9C6FD7C3FA441E9FF31C /* ZFPlayerView.m in Sources */,
-				FD7B1F8F0D55442B1A6BB54362180905 /* ZFPortraitControlView.m in Sources */,
-				F63DD332196682CEBC396A1020DEC572 /* ZFReachabilityManager.m in Sources */,
-				E4B9CD6F4D8BBE8624C6E297AC49B546 /* ZFSliderView.m in Sources */,
-				3CAA013D458421653C8D235C29F356E2 /* ZFSmallFloatControlView.m in Sources */,
-				AAD5C3E3D012840567519A682DD3D3CD /* ZFSpeedLoadingView.m in Sources */,
-				0EDAB026576F597D4CECC17B5DD8E5D8 /* ZFUtilities.m in Sources */,
-				38F3E0CAE1368CFA23055227038DEA24 /* ZFVolumeBrightnessView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2223,6 +2187,38 @@
 			files = (
 				ADE8E38AE2FC314562F857E3D97467C4 /* MarqueeLabel-dummy.m in Sources */,
 				17A544669711659B243BA35E9921C0AA /* MarqueeLabel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC23002FE375F28D78C437D44F3709CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				438FF46FE793A4A7CC57D4336EA0B3B3 /* UIImageView+ZFCache.m in Sources */,
+				6D0E31F66D869990F13F435DEF83A979 /* UIScrollView+ZFPlayer.m in Sources */,
+				6A9A822FED5BC137B71D6B9C7BF3FF80 /* UIView+ZFFrame.m in Sources */,
+				95B494327E7E081D8C9DF1A33A36DEBC /* UIViewController+ZFPlayerRotation.m in Sources */,
+				B947B013A5E49C6A74932FA3A7B6EA54 /* ZFAVPlayerManager.m in Sources */,
+				EAD90FCA6C33C5C56B7905CD639AC4DF /* ZFFloatView.m in Sources */,
+				2A9D3596425A7E90F1E77CF2BFA977B0 /* ZFKVOController.m in Sources */,
+				017EF74439A3F808B0F0EA5DF8B82C70 /* ZFLandScapeControlView.m in Sources */,
+				CF9D92439E9F752D2E22F26407813062 /* ZFLoadingView.m in Sources */,
+				E24EA82D6F9CD17CA998EB9926C473BB /* ZFNetworkSpeedMonitor.m in Sources */,
+				B85E304CA0A5606088AC3AC084E40E17 /* ZFOrientationObserver.m in Sources */,
+				BF2E8303AD9ACA039E3556E41171617D /* ZFPlayer-dummy.m in Sources */,
+				BA2006A3254C4457B46E46B93C11DFBE /* ZFPlayerController.m in Sources */,
+				FE910AD6C956B227D5CCCCFA0A822859 /* ZFPlayerControlView.m in Sources */,
+				F475D0C14B56BE82E2E7CC07A82D3694 /* ZFPlayerGestureControl.m in Sources */,
+				219628DDFF4B6049565188F2B870DA58 /* ZFPlayerLogManager.m in Sources */,
+				6A417DB4AA54644A928E876C12BD1296 /* ZFPlayerNotification.m in Sources */,
+				F59FBA0E6DDE4C346AC45F3459165E0F /* ZFPlayerView.m in Sources */,
+				54CE5710DD82FC99B17C6F44165D8A65 /* ZFPortraitControlView.m in Sources */,
+				9B0C2F6A29623131CE10645A36794B68 /* ZFReachabilityManager.m in Sources */,
+				CBF463E1DDF83F4622EBFB748443F6E0 /* ZFSliderView.m in Sources */,
+				8569228109A4F0F57E351260819BB910 /* ZFSmallFloatControlView.m in Sources */,
+				D9E16D9FE1493CCFF7C4AEC554F3B914 /* ZFSpeedLoadingView.m in Sources */,
+				7B591B8A291E5B3C7CC7102D8DDC0AC5 /* ZFUtilities.m in Sources */,
+				964B3F81AE0DC580E47EAF5E546201DF /* ZFVolumeBrightnessView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2350,7 +2346,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2394,7 +2390,7 @@
 			};
 			name = Release;
 		};
-		32FCF42FF6269483723B4B85E51EDEDD /* Debug */ = {
+		2C1C2F05369608812DDC2C20EE07E2C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 17E9C9ABBF043F7501696FFD9EE67CB1 /* ZFPlayer.xcconfig */;
 			buildSettings = {
@@ -2416,6 +2412,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/ZFPlayer/ZFPlayer.modulemap";
 				PRODUCT_MODULE_NAME = ZFPlayer;
 				PRODUCT_NAME = ZFPlayer;
@@ -2589,52 +2586,16 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		4A88325D48C8A513369407FE8CA2C107 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17E9C9ABBF043F7501696FFD9EE67CB1 /* ZFPlayer.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ZFPlayer/ZFPlayer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ZFPlayer/ZFPlayer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/ZFPlayer/ZFPlayer.modulemap";
-				PRODUCT_MODULE_NAME = ZFPlayer;
-				PRODUCT_NAME = ZFPlayer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		5C815030EFD138FAF301AE23737D7322 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7FE6F8704177A7CC9136FFA500E91C7F /* Pods-Avgle.debug.xcconfig */;
+			baseConfigurationReference = 0776B7B85B95ACFDB36FCD519DE1A3FF /* Pods-Avgle.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -2730,6 +2691,43 @@
 				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
 				PRODUCT_MODULE_NAME = Toast_Swift;
 				PRODUCT_NAME = Toast_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		743B6FBC69158DDD127204156156B403 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17E9C9ABBF043F7501696FFD9EE67CB1 /* ZFPlayer.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZFPlayer/ZFPlayer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZFPlayer/ZFPlayer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/ZFPlayer/ZFPlayer.modulemap";
+				PRODUCT_MODULE_NAME = ZFPlayer;
+				PRODUCT_NAME = ZFPlayer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -2912,7 +2910,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -3128,7 +3126,7 @@
 		};
 		CA8AB3A916961DC85E63EEB813D9FFF8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCF63D08A143F6333742235096B5A8DE /* Pods-Avgle.release.xcconfig */;
+			baseConfigurationReference = 035BA603EEF672A3CAB991EF52D8487F /* Pods-Avgle.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -3363,6 +3361,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		4BA924EE884E165B99EE1C132587B4EF /* Build configuration list for PBXNativeTarget "ZFPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C1C2F05369608812DDC2C20EE07E2C3 /* Debug */,
+				743B6FBC69158DDD127204156156B403 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4E14CD187BAD7E05C30AD38B70B58A1E /* Build configuration list for PBXNativeTarget "Pods-Avgle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -3404,15 +3411,6 @@
 			buildConfigurations = (
 				470E7D5AFABA1DA2E9A6EECE8A32E381 /* Debug */,
 				6B7940BEAED9F0CE732642905F7A096B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D3B31C3D0C4122FF4F0E1850E88E6672 /* Build configuration list for PBXNativeTarget "ZFPlayer" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				32FCF42FF6269483723B4B85E51EDEDD /* Debug */,
-				4A88325D48C8A513369407FE8CA2C107 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
