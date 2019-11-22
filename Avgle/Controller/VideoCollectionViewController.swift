@@ -46,14 +46,23 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
             self.requestVideoList(isFirst: true)
         }, themeColor: UIColor.lightGray, refreshStyle: .replicatorDot)
         
-
+        
+        
+        self.collectionView.zf_scrollViewDidStopScrollCallback = { indexPath in
+            print(indexPath)
+//            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+        }
+        
         let playerManager = ZFAVPlayerManager()
-        
         self.player = ZFPlayerController.player(with: self.collectionView, playerManager: playerManager, containerViewTag: 100)
+        self.player!.controlView = self.controlView;
+    }
+    
+    func setConfigureVideoView() {
+
         
-        self.player?.controlView = self.controlView;
-        self.player?.assetURLs = self.urls;
-        self.player?.shouldAutoPlay = true;
+        self.player!.assetURLs = self.urls;
+        self.player!.shouldAutoPlay = true;
         
         
 //        self.player?.orientationWillChange = { player, isFullScreen in
@@ -72,40 +81,16 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
 //                })
 //            }
 //        }
-
-        
-//        self.collectionView.zf_scrollViewDidStopScrollCallback = { indexPath in
-//            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
-//        }
-
-//        self.dropDownView.dataSource = self;
-//        self.dropDownView.delegate = self;
-//
-//
-//        self.dropDownView.dropdownBackgroundColor = UIColor(hexString: "202020")
-//        self.dropDownView.selectedComponentBackgroundColor = UIColor(hexString: "202020")
-//
-//        self.dropDownView.tintColor = UIColor.white
-//
-//        self.dropDownView.rowSeparatorColor = UIColor.darkGray
-//        self.dropDownView.componentSeparatorColor = UIColor(hexString: "202020")
-//
-//        self.dropDownView.backgroundDimmingOpacity = 0.05
-//
-//        self.dropDownView.dropdownShowsTopRowSeparator = false
-//        self.dropDownView.dropdownShowsBottomRowSeparator = false
-//        self.dropDownView.dropdownShowsBorder = true
-//        self.dropDownView.dropdownBouncesScroll = false
-        
+    
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         self.collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
-        collectionView.zf_filterShouldPlayCellWhileScrolled({ indexPath in
-            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
-        })
+//        collectionView.zf_filterShouldPlayCellWhileScrolled({ indexPath in
+//            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+//        })
     }
     
     
@@ -120,10 +105,11 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     }
     
     func playTheVideoAtIndexPath(indexPath: IndexPath, scrollToTop: Bool) {
-        self.player?.playTheIndexPath(indexPath, scrollToTop: scrollToTop)
-        let data = self.videoArray[indexPath.row]
-
-        self.controlView.showTitle(data.title, coverURLString: data.preview_url, fullScreenMode: .landscape)
+        print(indexPath)
+//        self.player!.playTheIndexPath(indexPath, scrollToTop: scrollToTop)
+//        let data = self.videoArray[indexPath.row]
+//
+//        self.controlView.showTitle(data.title, coverURLString: data.preview_url, fullScreenMode: .landscape)
     }
     
     
@@ -159,7 +145,7 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
             self.stopAnimating()
             self.collectionView.headRefreshControl.endRefreshing()
             self.collectionView.reloadData()
-            
+            self.setConfigureVideoView()
         }) { (task, error) in
             
         }
@@ -205,9 +191,7 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        
         self.present(viewControllerToCommit, animated: false, completion: nil)
-        
     }
     
     // MARK: - UICollectionViewDataSource
@@ -218,13 +202,12 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let data = self.videoArray[indexPath.row]
-        let videoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideoIdentifier", for: indexPath) as! VideoCollectionViewCell        
-        
+        let videoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideoIdentifier", for: indexPath) as! VideoCollectionViewCell
         videoCell.setData(data: data)
-        videoCell.playHandler = {
-            
-             self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
-        }
+        
+//        videoCell.playHandler = {
+//             self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+//        }
         
         
         return videoCell;

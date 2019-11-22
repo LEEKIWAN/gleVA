@@ -71,35 +71,35 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     
     
     func setupSideMenu() {
-        SideMenuManager.default.menuFadeStatusBar = false
-
+//        SideMenuManager.default.menuFadeStatusBar = false
+//
+//
         let leftStoryboard = UIStoryboard.init(name: "LeftMenuViewController", bundle: nil)
-        let leftMenuViewController = leftStoryboard.instantiateViewController(withIdentifier: "LeftMenuViewController")  as! UISideMenuNavigationController
+        let leftMenuViewController = leftStoryboard.instantiateInitialViewController() as! SideMenuNavigationController
         let leftMenu = leftMenuViewController.topViewController as! LeftMenuViewController
         leftMenu.delegate = self
-        
+
         let rightStoryboard = UIStoryboard.init(name: "RightMenuViewController", bundle: nil)
-        let rightMenuViewController = rightStoryboard.instantiateViewController(withIdentifier: "RightMenuViewController")  as! UISideMenuNavigationController
+        let rightMenuViewController = rightStoryboard.instantiateInitialViewController() as! SideMenuNavigationController
 
-        SideMenuManager.default.menuLeftNavigationController = leftMenuViewController
-        SideMenuManager.default.menuRightNavigationController = rightMenuViewController
-        
-        SideMenuManager.default.menuRightNavigationController?.menuWidth = self.view.frame.size.width
-        
+        SideMenuManager.default.leftMenuNavigationController = leftMenuViewController
+        SideMenuManager.default.rightMenuNavigationController = rightMenuViewController
 
-        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
-        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+        SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
+        SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
 
+        leftMenuViewController.statusBarEndAlpha = 0
+        rightMenuViewController.settings = leftMenuViewController.settings
     }
     
     
     // MARK: - Event
     @objc func onLeftTouched(sender: UIButton) {
-        self.present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+        self.present(SideMenuManager.default.leftMenuNavigationController!, animated: true, completion: nil)
     }
     
     @objc func onRightTouched(sender: UIButton) {
-        self.present(SideMenuManager.default.menuRightNavigationController!, animated: true, completion: nil)
+        self.present(SideMenuManager.default.rightMenuNavigationController!, animated: true, completion: nil)        
     }
     
 

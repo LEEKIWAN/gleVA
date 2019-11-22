@@ -14,6 +14,9 @@
          contextName = "ViewController.viewDidLoad():ViewController.swift">
       </ContextState>
       <ContextState
+         contextName = "CategoryViewController.setupSideMenu():CategoryViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "VideoPlayWebViewController.viewDidLoad():VideoPlayWebViewController.swift">
       </ContextState>
       <ContextState
@@ -23,6 +26,12 @@
                value = "self.categoryArray">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VideoCollectionViewController.playTheVideoAtIndexPath(indexPath:scrollToTop:):VideoCollectionViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "VideoCollectionViewController.setConfigureVideoView():VideoCollectionViewController.swift">
       </ContextState>
       <ContextState
          contextName = "VideoCollectionViewController.requestVideoList():VideoCollectionViewController.swift">

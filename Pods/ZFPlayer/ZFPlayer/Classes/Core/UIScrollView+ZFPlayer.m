@@ -72,12 +72,13 @@
 #pragma mark - scrollView did stop scroll
 
 - (void)_scrollViewDidStopScroll {
-    @weakify(self)
-    [self zf_filterShouldPlayCellWhileScrolled:^(NSIndexPath * _Nonnull indexPath) {
-        @strongify(self)
-        if (self.zf_scrollViewDidStopScrollCallback) self.zf_scrollViewDidStopScrollCallback(indexPath);
-        if (self.scrollViewDidStopScroll) self.scrollViewDidStopScroll(indexPath);
-    }];
+     @weakify(self)
+      [self zf_filterShouldPlayCellWhileScrolled:^(NSIndexPath * _Nonnull indexPath) {
+          @strongify(self)
+          if (self.zf_scrollViewDidStopScrollCallback) {
+              self.zf_scrollViewDidStopScrollCallback(indexPath);
+          }
+      }];
 }
 
 - (void)_scrollViewBeginDragging {
@@ -295,15 +296,16 @@
     @weakify(self)
     [self zf_filterShouldPlayCellWhileScrolling:^(NSIndexPath *indexPath) {
         @strongify(self)
-        if ([ZFReachabilityManager sharedManager].isReachableViaWWAN && !self.zf_WWANAutoPlay) {
+//        if ([ZFReachabilityManager sharedManager].isReachableViaWWAN && !self.zf_WWANAutoPlay) {
             /// 移动网络
             self.zf_shouldPlayIndexPath = indexPath;
-            return;
-        }
-        if (!self.zf_playingIndexPath) {
-            if (handler) handler(indexPath);
+//            return;
+//        }
+//        if (!self.zf_playingIndexPath) {
+            if (handler)
+                handler(indexPath);
             self.zf_playingIndexPath = indexPath;
-        }
+//        }
     }];
 }
 
