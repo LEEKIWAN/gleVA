@@ -45,17 +45,9 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         self.collectionView.bindHeadRefreshHandler({
             self.requestVideoList(isFirst: true)
         }, themeColor: UIColor.lightGray, refreshStyle: .replicatorDot)
-//        self.collectionView.zf_scrollViewDidStopScrollCallback =
         
-        
-        
+
         let playerManager = ZFAVPlayerManager()
-        
-        //    KSMediaPlayerManager *playerManager = [[KSMediaPlayerManager alloc] init];
-        //    ZFIJKPlayerManager *playerManager = [[ZFIJKPlayerManager alloc] init];
-        
-        /// player的tag值必须在cell里设置
-//        self.player = [ZFPlayerController playerWithScrollView:self.collectionView playerManager:playerManager containerViewTag:100];
         
         self.player = ZFPlayerController.player(with: self.collectionView, playerManager: playerManager, containerViewTag: 100)
         
@@ -64,27 +56,27 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         self.player?.shouldAutoPlay = true;
         
         
-        self.player?.orientationWillChange = { player, isFullScreen in
-            self.setNeedsStatusBarAppearanceUpdate()
-            self.collectionView.scrollsToTop = !isFullScreen
-        }
-        
-        self.player?.playerDidToEnd = { asset in
-            if (self.player!.playingIndexPath?.row)! < self.urls.count - 1 && !self.player!.isFullScreen {
-                let indexPath = IndexPath(row: (self.player?.playingIndexPath?.row)! + 1, section: 0)
-                self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: true)
-            } else if self.player!.isFullScreen {
-                self.player!.enterFullScreen(false, animated: true)
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(self.player!.orientationObserver.duration * Float(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
-                    self.player!.stopCurrentPlayingCell()
-                })
-            }
-        }
+//        self.player?.orientationWillChange = { player, isFullScreen in
+//            self.setNeedsStatusBarAppearanceUpdate()
+//            self.collectionView.scrollsToTop = !isFullScreen
+//        }
+//
+//        self.player?.playerDidToEnd = { asset in
+//            if (self.player!.playingIndexPath?.row)! < self.urls.count - 1 && !self.player!.isFullScreen {
+//                let indexPath = IndexPath(row: (self.player?.playingIndexPath?.row)! + 1, section: 0)
+//                self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: true)
+//            } else if self.player!.isFullScreen {
+//                self.player!.enterFullScreen(false, animated: true)
+//                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(self.player!.orientationObserver.duration * Float(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
+//                    self.player!.stopCurrentPlayingCell()
+//                })
+//            }
+//        }
 
         
-        self.collectionView.zf_scrollViewDidStopScrollCallback = { indexPath in
-            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
-        }
+//        self.collectionView.zf_scrollViewDidStopScrollCallback = { indexPath in
+//            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+//        }
 
 //        self.dropDownView.dataSource = self;
 //        self.dropDownView.delegate = self;
@@ -110,12 +102,6 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     
     override func viewDidAppear(_ animated: Bool) {
         self.collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-
-//        [self.collectionView zf_filterShouldPlayCellWhileScrolled:^(NSIndexPath *indexPath) {
-//            @strongify(self)
-//            [self playTheVideoAtIndexPath:indexPath scrollToTop:NO];
-//            }];
-        
         
         collectionView.zf_filterShouldPlayCellWhileScrolled({ indexPath in
             self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
@@ -130,19 +116,13 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
             return
         }
         
-        if UIApplication.shared.statusBarOrientation.isLandscape {
-            
-        } else {
-            
-        }
-        
         flowLayout.invalidateLayout()
     }
     
     func playTheVideoAtIndexPath(indexPath: IndexPath, scrollToTop: Bool) {
         self.player?.playTheIndexPath(indexPath, scrollToTop: scrollToTop)
         let data = self.videoArray[indexPath.row]
-        
+
         self.controlView.showTitle(data.title, coverURLString: data.preview_url, fullScreenMode: .landscape)
     }
     

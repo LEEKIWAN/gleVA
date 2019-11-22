@@ -36,7 +36,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="354" height="272"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f0v-Yn-2ZX">
+                                                <imageView clipsSubviews="YES" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f0v-Yn-2ZX">
                                                     <rect key="frame" x="10" y="10" width="334" height="188"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="f0v-Yn-2ZX" secondAttribute="height" multiplier="320:180" id="t5b-WI-NnP"/>
@@ -120,8 +120,8 @@
                                         <constraints>
                                             <constraint firstItem="fqT-Ky-1gm" firstAttribute="leading" secondItem="f0v-Yn-2ZX" secondAttribute="leading" id="2s5-7w-MEu"/>
                                             <constraint firstItem="Qkt-Qy-YaI" firstAttribute="leading" secondItem="cv7-2a-eHp" secondAttribute="trailing" constant="10" id="6l4-FL-zeg"/>
+                                            <constraint firstItem="vVE-o0-Po1" firstAttribute="centerY" secondItem="f0v-Yn-2ZX" secondAttribute="centerY" id="8rn-uk-Jm4"/>
                                             <constraint firstItem="f0v-Yn-2ZX" firstAttribute="top" secondItem="V5Y-Lw-gxv" secondAttribute="top" constant="10" id="9ff-Ph-iLS"/>
-                                            <constraint firstItem="vVE-o0-Po1" firstAttribute="centerX" secondItem="3xT-p4-idd" secondAttribute="centerX" id="Czo-Vt-ROv"/>
                                             <constraint firstItem="jC2-SH-EiF" firstAttribute="top" secondItem="f0v-Yn-2ZX" secondAttribute="top" constant="5" id="Fxu-oK-zEK"/>
                                             <constraint firstItem="cv7-2a-eHp" firstAttribute="leading" secondItem="uiw-hh-8Gt" secondAttribute="trailing" constant="5" id="ILc-Mn-lQ7"/>
                                             <constraint firstItem="3xT-p4-idd" firstAttribute="bottom" secondItem="f0v-Yn-2ZX" secondAttribute="bottom" id="JwB-V7-zzS"/>
@@ -142,8 +142,8 @@
                                             <constraint firstItem="f0v-Yn-2ZX" firstAttribute="leading" secondItem="V5Y-Lw-gxv" secondAttribute="leading" constant="10" id="c3F-KO-E4A"/>
                                             <constraint firstItem="cv7-2a-eHp" firstAttribute="top" secondItem="aYw-Jp-gzS" secondAttribute="top" id="c5f-3j-gAA"/>
                                             <constraint firstItem="Qkt-Qy-YaI" firstAttribute="top" secondItem="uiw-hh-8Gt" secondAttribute="top" id="dw7-an-pTS"/>
-                                            <constraint firstItem="vVE-o0-Po1" firstAttribute="centerY" secondItem="3xT-p4-idd" secondAttribute="centerY" id="e1s-1n-HBs"/>
                                             <constraint firstItem="Qkt-Qy-YaI" firstAttribute="width" secondItem="Qkt-Qy-YaI" secondAttribute="height" multiplier="1:1" id="ek2-bz-dHp"/>
+                                            <constraint firstItem="vVE-o0-Po1" firstAttribute="centerX" secondItem="f0v-Yn-2ZX" secondAttribute="centerX" id="etv-QH-AcH"/>
                                             <constraint firstItem="Z6s-Se-SxL" firstAttribute="leading" secondItem="aYw-Jp-gzS" secondAttribute="trailing" constant="3" id="ijr-K6-WP4"/>
                                             <constraint firstItem="aYw-Jp-gzS" firstAttribute="leading" secondItem="fqT-Ky-1gm" secondAttribute="leading" id="koN-ZD-2OL"/>
                                             <constraint firstItem="aYw-Jp-gzS" firstAttribute="top" secondItem="Uow-dM-Pnk" secondAttribute="bottom" constant="5" id="lCX-g1-mPP"/>
@@ -164,7 +164,6 @@
                                             <outlet property="playCountLabel" destination="aYw-Jp-gzS" id="ecA-6q-JpE"/>
                                             <outlet property="registedTimeLabel" destination="Uow-dM-Pnk" id="UrG-31-QUI"/>
                                             <outlet property="titleLabel" destination="fqT-Ky-1gm" id="z3t-qU-Y0y"/>
-                                            <outlet property="videoContainerView" destination="3xT-p4-idd" id="YNl-D9-NAQ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
