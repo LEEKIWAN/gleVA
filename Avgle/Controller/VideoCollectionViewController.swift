@@ -49,15 +49,9 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         
         
         self.collectionView.zf_scrollViewDidStopScrollCallback = { indexPath in
-            print(indexPath)
-//            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
         }
-        
-        let playerManager = ZFAVPlayerManager()
-        self.player = ZFPlayerController.player(with: self.collectionView, playerManager: playerManager, containerViewTag: 100)
-        self.player!.controlView = self.controlView;
-        self.player!.assetURLs = self.urls;
-        self.player!.shouldAutoPlay = true;
+    
     }
     
     
@@ -81,11 +75,8 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     }
     
     func playTheVideoAtIndexPath(indexPath: IndexPath, scrollToTop: Bool) {
-        print(indexPath)
-//        self.player!.playTheIndexPath(indexPath, scrollToTop: scrollToTop)
-//        let data = self.videoArray[indexPath.row]
-//
-//        self.controlView.showTitle(data.title, coverURLString: data.preview_url, fullScreenMode: .landscape)
+        print("\(indexPath.row) - \(String(describing: videoArray[indexPath.row].title!))")
+        self.player!.playTheIndexPath(indexPath, scrollToTop: scrollToTop)
     }
     
     
@@ -121,6 +112,13 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
             self.stopAnimating()
             self.collectionView.headRefreshControl.endRefreshing()
             self.collectionView.reloadData()
+            
+            
+            let playerManager = ZFAVPlayerManager()
+            self.player = ZFPlayerController.player(with: self.collectionView, playerManager: playerManager, containerViewTag: 100)
+            self.player!.controlView = self.controlView;
+            self.player!.assetURLs = self.urls;
+            self.player!.shouldAutoPlay = true;
         }) { (task, error) in
             
         }
@@ -180,9 +178,9 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         let videoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideoIdentifier", for: indexPath) as! VideoCollectionViewCell
         videoCell.setData(data: data)
         
-//        videoCell.playHandler = {
-//             self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
-//        }
+        videoCell.playHandler = {
+             self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+        }
         
         
         return videoCell;

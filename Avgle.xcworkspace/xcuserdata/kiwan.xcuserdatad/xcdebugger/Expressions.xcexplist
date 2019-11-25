@@ -11,7 +11,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "ViewController.viewDidLoad():ViewController.swift">
+         contextName = "VideoCollectionViewController.playTheVideoAtIndexPath(indexPath:scrollToTop:):VideoCollectionViewController.swift">
       </ContextState>
       <ContextState
          contextName = "CategoryViewController.setupSideMenu():CategoryViewController.swift">
@@ -28,20 +28,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "VideoCollectionViewController.playTheVideoAtIndexPath(indexPath:scrollToTop:):VideoCollectionViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "VideoCollectionViewController.setConfigureVideoView():VideoCollectionViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "VideoCollectionViewController.requestVideoList():VideoCollectionViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.view">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "-[PYSearchViewController setup]:PYSearchViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -51,6 +37,20 @@
       </ContextState>
       <ContextState
          contextName = "VideoCollectionViewController.previewingContext(_:viewControllerForLocation:):VideoCollectionViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "VideoCollectionViewController.setConfigureVideoView():VideoCollectionViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewDidLoad():ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "VideoCollectionViewController.requestVideoList():VideoCollectionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

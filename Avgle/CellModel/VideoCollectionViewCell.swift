@@ -24,7 +24,8 @@ class VideoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var disLikeCountLabel: UILabel!
     
     @IBOutlet weak var HDLabel: UILabel!
-
+    @IBOutlet weak var videoView: UIView!
+    
     
     var playHandler: (() -> Void)?
     

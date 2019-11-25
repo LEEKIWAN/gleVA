@@ -105,20 +105,12 @@
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVE-o0-Po1">
-                                                    <rect key="frame" x="162" y="89" width="30" height="30"/>
-                                                    <state key="normal" title="play"/>
-                                                    <connections>
-                                                        <action selector="onPreviewTouched:" destination="V5Y-Lw-gxv" eventType="touchUpInside" id="gUE-GA-6l0"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="fqT-Ky-1gm" firstAttribute="leading" secondItem="f0v-Yn-2ZX" secondAttribute="leading" id="2s5-7w-MEu"/>
                                             <constraint firstItem="Qkt-Qy-YaI" firstAttribute="leading" secondItem="cv7-2a-eHp" secondAttribute="trailing" constant="10" id="6l4-FL-zeg"/>
-                                            <constraint firstItem="vVE-o0-Po1" firstAttribute="centerY" secondItem="f0v-Yn-2ZX" secondAttribute="centerY" id="8rn-uk-Jm4"/>
                                             <constraint firstItem="f0v-Yn-2ZX" firstAttribute="top" secondItem="V5Y-Lw-gxv" secondAttribute="top" constant="10" id="9ff-Ph-iLS"/>
                                             <constraint firstItem="jC2-SH-EiF" firstAttribute="top" secondItem="f0v-Yn-2ZX" secondAttribute="top" constant="5" id="Fxu-oK-zEK"/>
                                             <constraint firstItem="cv7-2a-eHp" firstAttribute="leading" secondItem="uiw-hh-8Gt" secondAttribute="trailing" constant="5" id="ILc-Mn-lQ7"/>
@@ -141,7 +133,6 @@
                                             <constraint firstItem="cv7-2a-eHp" firstAttribute="top" secondItem="aYw-Jp-gzS" secondAttribute="top" id="c5f-3j-gAA"/>
                                             <constraint firstItem="Qkt-Qy-YaI" firstAttribute="top" secondItem="uiw-hh-8Gt" secondAttribute="top" id="dw7-an-pTS"/>
                                             <constraint firstItem="Qkt-Qy-YaI" firstAttribute="width" secondItem="Qkt-Qy-YaI" secondAttribute="height" multiplier="1:1" id="ek2-bz-dHp"/>
-                                            <constraint firstItem="vVE-o0-Po1" firstAttribute="centerX" secondItem="f0v-Yn-2ZX" secondAttribute="centerX" id="etv-QH-AcH"/>
                                             <constraint firstItem="Z6s-Se-SxL" firstAttribute="leading" secondItem="aYw-Jp-gzS" secondAttribute="trailing" constant="3" id="ijr-K6-WP4"/>
                                             <constraint firstItem="aYw-Jp-gzS" firstAttribute="leading" secondItem="fqT-Ky-1gm" secondAttribute="leading" id="koN-ZD-2OL"/>
                                             <constraint firstItem="aYw-Jp-gzS" firstAttribute="top" secondItem="Uow-dM-Pnk" secondAttribute="bottom" constant="5" id="lCX-g1-mPP"/>
@@ -162,6 +153,7 @@
                                             <outlet property="playCountLabel" destination="aYw-Jp-gzS" id="ecA-6q-JpE"/>
                                             <outlet property="registedTimeLabel" destination="Uow-dM-Pnk" id="UrG-31-QUI"/>
                                             <outlet property="titleLabel" destination="fqT-Ky-1gm" id="z3t-qU-Y0y"/>
+                                            <outlet property="videoView" destination="3xT-p4-idd" id="WHJ-PY-VkW"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
