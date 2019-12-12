@@ -51,16 +51,16 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         self.collectionView.zf_scrollViewDidStopScrollCallback = { indexPath in
             self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
         }
-    
+        
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         self.collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
-//        collectionView.zf_filterShouldPlayCellWhileScrolled({ indexPath in
-//            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
-//        })
+        self.collectionView.zf_filterShouldPlayCellWhileScrolled({ indexPath in
+            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+        })
     }
     
     
@@ -119,6 +119,25 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
             self.player!.controlView = self.controlView;
             self.player!.assetURLs = self.urls;
             self.player!.shouldAutoPlay = true;
+
+            self.player!.isMuted = true
+            self.player!.playerDisapperaPercent = 0.8
+            self.player!.allowOrentitaionRotation = false
+            self.player!.disableGestureTypes = .all
+            
+           
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                self.collectionView.zf_filterShouldPlayCellWhileScrolled({ indexPath in
+//                    self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+//                })
+//            }
+            
+            self.player!.playerDidToEnd = { [weak self] asset in
+                self?.player!.stopCurrentPlayingCell()
+            }
+            
+            
+            
         }) { (task, error) in
             
         }

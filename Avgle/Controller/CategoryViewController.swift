@@ -88,6 +88,12 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
         SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
 
+//        SideMenuManager.default.menuRightNavigationController
+//         SideMenuManager.default.menuRightNavigationController?.menuWidth = self.view.frame.size.width
+        
+        SideMenuManager.default.rightMenuNavigationController?.menuWidth = self.view.frame.size.width
+        
+        
         leftMenuViewController.statusBarEndAlpha = 0
         rightMenuViewController.settings = leftMenuViewController.settings
     }

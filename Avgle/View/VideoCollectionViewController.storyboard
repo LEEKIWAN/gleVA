@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P8p-q8-dab">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P8p-q8-dab">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,16 +34,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="354" height="272"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView hidden="YES" clipsSubviews="YES" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f0v-Yn-2ZX">
+                                                <imageView clipsSubviews="YES" tag="100" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f0v-Yn-2ZX">
                                                     <rect key="frame" x="10" y="10" width="334" height="188"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="f0v-Yn-2ZX" secondAttribute="height" multiplier="320:180" id="t5b-WI-NnP"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xT-p4-idd">
-                                                    <rect key="frame" x="10" y="10" width="334" height="188"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqT-Ky-1gm" customClass="MarqueeLabel" customModule="MarqueeLabel">
                                                     <rect key="frame" x="10" y="203" width="334" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -114,9 +110,7 @@
                                             <constraint firstItem="f0v-Yn-2ZX" firstAttribute="top" secondItem="V5Y-Lw-gxv" secondAttribute="top" constant="10" id="9ff-Ph-iLS"/>
                                             <constraint firstItem="jC2-SH-EiF" firstAttribute="top" secondItem="f0v-Yn-2ZX" secondAttribute="top" constant="5" id="Fxu-oK-zEK"/>
                                             <constraint firstItem="cv7-2a-eHp" firstAttribute="leading" secondItem="uiw-hh-8Gt" secondAttribute="trailing" constant="5" id="ILc-Mn-lQ7"/>
-                                            <constraint firstItem="3xT-p4-idd" firstAttribute="bottom" secondItem="f0v-Yn-2ZX" secondAttribute="bottom" id="JwB-V7-zzS"/>
                                             <constraint firstItem="fqT-Ky-1gm" firstAttribute="top" secondItem="f0v-Yn-2ZX" secondAttribute="bottom" constant="5" id="Kvc-ql-2OR"/>
-                                            <constraint firstItem="3xT-p4-idd" firstAttribute="leading" secondItem="f0v-Yn-2ZX" secondAttribute="leading" id="Lj4-x1-Vcq"/>
                                             <constraint firstItem="jC2-SH-EiF" firstAttribute="trailing" secondItem="f0v-Yn-2ZX" secondAttribute="trailing" constant="-5" id="PTj-Oo-S7f"/>
                                             <constraint firstItem="Uow-dM-Pnk" firstAttribute="leading" secondItem="fqT-Ky-1gm" secondAttribute="leading" id="RaN-oJ-eAL"/>
                                             <constraint firstItem="R1h-7U-e7d" firstAttribute="top" secondItem="aYw-Jp-gzS" secondAttribute="top" id="Rb6-tz-L0F"/>
@@ -127,7 +121,6 @@
                                             <constraint firstItem="jC2-SH-EiF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V5Y-Lw-gxv" secondAttribute="leading" symbolic="YES" id="Wwd-v6-yuy"/>
                                             <constraint firstItem="9PM-lc-RYf" firstAttribute="centerY" secondItem="f0v-Yn-2ZX" secondAttribute="centerY" id="Xjw-FY-KW6"/>
                                             <constraint firstItem="uiw-hh-8Gt" firstAttribute="bottom" secondItem="Qkt-Qy-YaI" secondAttribute="bottom" id="YeR-Je-z8g"/>
-                                            <constraint firstItem="3xT-p4-idd" firstAttribute="trailing" secondItem="f0v-Yn-2ZX" secondAttribute="trailing" id="ZKJ-zQ-Kyv"/>
                                             <constraint firstItem="uiw-hh-8Gt" firstAttribute="bottom" secondItem="aYw-Jp-gzS" secondAttribute="bottom" id="ZNd-uV-Eab"/>
                                             <constraint firstItem="f0v-Yn-2ZX" firstAttribute="leading" secondItem="V5Y-Lw-gxv" secondAttribute="leading" constant="10" id="c3F-KO-E4A"/>
                                             <constraint firstItem="cv7-2a-eHp" firstAttribute="top" secondItem="aYw-Jp-gzS" secondAttribute="top" id="c5f-3j-gAA"/>
@@ -137,7 +130,6 @@
                                             <constraint firstItem="aYw-Jp-gzS" firstAttribute="leading" secondItem="fqT-Ky-1gm" secondAttribute="leading" id="koN-ZD-2OL"/>
                                             <constraint firstItem="aYw-Jp-gzS" firstAttribute="top" secondItem="Uow-dM-Pnk" secondAttribute="bottom" constant="5" id="lCX-g1-mPP"/>
                                             <constraint firstItem="Z6s-Se-SxL" firstAttribute="bottom" secondItem="aYw-Jp-gzS" secondAttribute="bottom" constant="-1" id="nK9-4x-tPM"/>
-                                            <constraint firstItem="3xT-p4-idd" firstAttribute="top" secondItem="f0v-Yn-2ZX" secondAttribute="top" id="nje-CP-qA0"/>
                                             <constraint firstItem="fqT-Ky-1gm" firstAttribute="trailing" secondItem="f0v-Yn-2ZX" secondAttribute="trailing" id="omO-tu-rqU"/>
                                             <constraint firstItem="Uow-dM-Pnk" firstAttribute="top" secondItem="fqT-Ky-1gm" secondAttribute="bottom" constant="5" id="rav-lk-Sob"/>
                                             <constraint firstAttribute="trailing" secondItem="f0v-Yn-2ZX" secondAttribute="trailing" constant="10" id="v7F-QY-PNz"/>
@@ -153,7 +145,6 @@
                                             <outlet property="playCountLabel" destination="aYw-Jp-gzS" id="ecA-6q-JpE"/>
                                             <outlet property="registedTimeLabel" destination="Uow-dM-Pnk" id="UrG-31-QUI"/>
                                             <outlet property="titleLabel" destination="fqT-Ky-1gm" id="z3t-qU-Y0y"/>
-                                            <outlet property="videoView" destination="3xT-p4-idd" id="WHJ-PY-VkW"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

@@ -59,7 +59,7 @@ class PornstarCollectionViewController: UIViewController, NVActivityIndicatorVie
         AFHTTPSessionManager().get("\(url)\(page)", parameters: nil, progress: nil, success: { (task, responseObject) in
             let dict = responseObject as! Dictionary<String, Any>
             
-            var response = dict["response"] as! Dictionary<String, Any>
+            let response = dict["response"] as! Dictionary<String, Any>
             let array = response["collections"] as! NSArray
             
             print(response)
@@ -137,9 +137,6 @@ class PornstarCollectionViewController: UIViewController, NVActivityIndicatorVie
         return CGSize(width: width, height: height)
         
     }
-    
-    
-    
     
 
 }
