@@ -16,7 +16,7 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     var selectedCategoryIndex: Int?
     var categoryArray: Array<CategoryObject>?
     
-    var viewControllerArray: [VideoCollectionViewController] = []
+    var viewControllerArray: [VideoListViewController] = []
     
     let categoryViewController = self
     
@@ -46,11 +46,11 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
         self.setupSideMenu()
         
         for i in 0 ..< categoryArray!.count {
-            let storyboard = UIStoryboard.init(name: "VideoCollectionViewController", bundle: nil)
-            let videoCollectionViewController = storyboard.instantiateViewController(withIdentifier: "VideoCollectionViewController") as! VideoCollectionViewController
+            let storyboard = UIStoryboard.init(name: "VideoListViewController", bundle: nil)
+            let videoListViewController = storyboard.instantiateViewController(withIdentifier: "VideoListViewController") as! VideoListViewController
             
-            videoCollectionViewController.currentCategory = self.categoryArray![i]
-            self.addChild(videoCollectionViewController)
+            videoListViewController.currentCategory = self.categoryArray![i]
+            self.addChild(videoListViewController)
         }
         
         self.swipeMenuView.reloadData()
@@ -138,23 +138,23 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     }
     
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewControllerForPageAt index: Int) -> UIViewController {
-        let videoCollectionViewController = children[index]
-        videoCollectionViewController.didMove(toParent: self)
+        let videoListViewController = children[index]
+        videoListViewController.didMove(toParent: self)
         
-        return videoCollectionViewController
+        return videoListViewController
     }
     
     
     // MARK - SwipeMenuViewDelegate
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, willChangeIndexFrom fromIndex: Int, to toIndex: Int) {
-        let videoCollectionViewController = children[toIndex] as! VideoCollectionViewController
+        let videoListViewController = children[toIndex] as! VideoListViewController
         
-        if videoCollectionViewController.videoArray.count > 0 {
+        if videoListViewController.videoArray.count > 0 {
             return
         }
         print(toIndex , "requsetse!!!!!!!!!!!!!!")
         
-        videoCollectionViewController.requestVideoList(isFirst: true)
+        videoListViewController.requestVideoList(isFirst: true)
         
     }
     
