@@ -13,41 +13,37 @@ import KafkaRefresh
 //import MKDropdownMenu
 import ZFPlayer
 
-class VideoCollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate, UIViewControllerPreviewingDelegate, NVActivityIndicatorViewable, UIScrollViewDelegate {
-
+class VideoCollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout, NVActivityIndicatorViewable {
+    
     let url = "https://api.avgle.com/v1/videos/"
-
+    
     var currentCategory: CategoryObject?
     var videoArray: Array<VideoObject> = []
     var page = 0
     var has_more = true
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-//    let timelineArray: [String] = ["ALL", "Added Today", "Added This Week", "Added This Month"]
-//    let orderArray: [String] = ["Being Watched", "Most Recent", "Most Viewed", "Most Commented", "Top Rated", "Top Favorites", "Longest"]
-//
-//    @IBOutlet weak var dropDownView: MKDropdownMenu!
+    //    let timelineArray: [String] = ["ALL", "Added Today", "Added This Week", "Added This Month"]
+    //    let orderArray: [String] = ["Being Watched", "Most Recent", "Most Viewed", "Most Commented", "Top Rated", "Top Favorites", "Longest"]
+    //
+    //    @IBOutlet weak var dropDownView: MKDropdownMenu!
     
     var urls: [URL] = []
     var player: ZFPlayerController?
     var controlView: ZFPlayerControlView = ZFPlayerControlView()
-
     
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if(traitCollection.forceTouchCapability == .available){
-            registerForPreviewing(with: self, sourceView: self.collectionView)
-        }
         
         self.collectionView.bindHeadRefreshHandler({
             self.requestVideoList(isFirst: true)
         }, themeColor: UIColor.lightGray, refreshStyle: .replicatorDot)
         
-        
-        
+                
         self.collectionView.zf_scrollViewDidStopScrollCallback = { indexPath in
             self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
         }
@@ -77,6 +73,9 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     func playTheVideoAtIndexPath(indexPath: IndexPath, scrollToTop: Bool) {
         print("\(indexPath.row) - \(String(describing: videoArray[indexPath.row].title!))")
         self.player!.playTheIndexPath(indexPath, scrollToTop: scrollToTop)
+        
+        let cell = collectionView.cellForItem(at: indexPath) as! VideoCollectionViewCell
+        self.controlView.showTitle("", cover: cell.coverImageView!.image, fullScreenMode: .landscape)
     }
     
     
@@ -119,22 +118,22 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
             self.player!.controlView = self.controlView;
             self.player!.assetURLs = self.urls;
             self.player!.shouldAutoPlay = true;
-
+            
             self.player!.isMuted = true
             self.player!.playerDisapperaPercent = 0.8
             self.player!.allowOrentitaionRotation = false
             self.player!.disableGestureTypes = .all
             
-           
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//                self.collectionView.zf_filterShouldPlayCellWhileScrolled({ indexPath in
-//                    self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
-//                })
-//            }
             
-            self.player!.playerDidToEnd = { [weak self] asset in
-                self?.player!.stopCurrentPlayingCell()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.collectionView.zf_filterShouldPlayCellWhileScrolled({ indexPath in
+                    self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+                })
             }
+            
+//            self.player!.playerDidToEnd = { [weak self] asset in
+//                self?.player!.stopCurrentPlayingCell()
+//            }
             
             
             
@@ -145,6 +144,88 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     
     
     // MARK: - UIScrollViewDelegate
+    
+    
+    
+    // MARK: - UIViewControllerPreviewingDelegate
+    //    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+    //
+    //        let indexPath = collectionView?.indexPathForItem(at: location)
+    //
+    //        let data = self.videoArray[(indexPath?.row)!]
+    //
+    //        let storyboard = UIStoryboard.init(name: "VideoPlayViewController", bundle: nil)
+    //        let videoPlayViewController = storyboard.instantiateViewController(withIdentifier: "VideoPlayViewController") as! VideoPlayViewController
+    //
+    //        videoPlayViewController.videoData = data
+    //
+    //        return videoPlayViewController
+    //
+    //    }
+    //    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+    //        self.present(viewControllerToCommit, animated: false, completion: nil)
+    //    }
+    //
+    //
+    //    // MARK: - MKDropdownMenuDataSource
+    //
+    //    func numberOfComponents(in dropdownMenu: MKDropdownMenu) -> Int {
+    //        return 2
+    //    }
+    //
+    //    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, numberOfRowsInComponent component: Int) -> Int {
+    //        if component == 0 {
+    //            return timelineArray.count
+    //        }
+    //        else if component == 1 {
+    //            return orderArray.count
+    //        }
+    //
+    //
+    //        return 0
+    //    }
+    //
+    //    // MARK: - MKDropdownMenuDelegate
+    //
+    //    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, titleForRow row: Int, forComponent component: Int) -> String? {
+    //        if component == 0 {
+    //            return timelineArray[row]
+    //        }
+    //        else if component == 1 {
+    //            return orderArray[row]
+    //        }
+    //        return ""
+    //    }
+    //
+    //    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, attributedTitleForComponent component: Int) -> NSAttributedString? {
+    //        return NSAttributedString(string: (self.timelineArray[component]), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.white])
+    //    }
+    //
+    //    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, attributedTitleForSelectedComponent component: Int) -> NSAttributedString? {
+    //        return NSAttributedString(string: (self.timelineArray[component]), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.white])
+    //    }
+    //
+    //    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+    //        return NSAttributedString(string: (self.timelineArray[component]), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.white])
+    //    }
+    //
+    //
+    //    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, shouldUseFullRowWidthForComponent component: Int) -> Bool {
+    //        return false
+    //    }
+    
+    
+    //    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, backgroundColorForRow row: Int, forComponent component: Int) -> UIColor? {
+    //        return nil
+    //    }
+    //
+    //    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, backgroundColorForHighlightedRowsInComponent component: Int) -> UIColor? {
+    //        return UIColor.gray
+    //    }
+        
+}
+
+extension VideoCollectionViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollView.zf_scrollViewDidEndDecelerating()
     }
@@ -164,30 +245,12 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         scrollView.zf_scrollViewWillBeginDragging()
     }
-    
-    
-    // MARK: - UIViewControllerPreviewingDelegate
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        
-        let indexPath = collectionView?.indexPathForItem(at: location)
-        
-        let data = self.videoArray[(indexPath?.row)!]
-        
-        let storyboard = UIStoryboard.init(name: "VideoPlayViewController", bundle: nil)
-        let videoPlayViewController = storyboard.instantiateViewController(withIdentifier: "VideoPlayViewController") as! VideoPlayViewController
+}
 
-        videoPlayViewController.videoData = data
-        
-        return videoPlayViewController
-        
-    }
-    
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        self.present(viewControllerToCommit, animated: false, completion: nil)
-    }
-    
+
+extension VideoCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     // MARK: - UICollectionViewDataSource
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.videoArray.count
     }
@@ -198,7 +261,7 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
         videoCell.setData(data: data)
         
         videoCell.playHandler = {
-             self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
+            self.playTheVideoAtIndexPath(indexPath: indexPath, scrollToTop: false)
         }
         
         
@@ -227,8 +290,6 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
     
     // MARK : - UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let orientation = UIDevice.current.orientation
-//        UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
         let orientation = UIApplication.shared.statusBarOrientation
         
         if orientation == .portrait {
@@ -246,70 +307,5 @@ class VideoCollectionViewController: UIViewController, UICollectionViewDelegateF
             return CGSize(width: width, height: height)
         }
     }
-
-    
-    //MARK: - VideoCollectionViewCellDelegate
-    func onPlayTouched(cell: UICollectionViewCell) {
-    }
-    
-    
-//
-//
-//    // MARK: - MKDropdownMenuDataSource
-//
-//    func numberOfComponents(in dropdownMenu: MKDropdownMenu) -> Int {
-//        return 2
-//    }
-//
-//    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, numberOfRowsInComponent component: Int) -> Int {
-//        if component == 0 {
-//            return timelineArray.count
-//        }
-//        else if component == 1 {
-//            return orderArray.count
-//        }
-//
-//
-//        return 0
-//    }
-//
-//    // MARK: - MKDropdownMenuDelegate
-//
-//    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, titleForRow row: Int, forComponent component: Int) -> String? {
-//        if component == 0 {
-//            return timelineArray[row]
-//        }
-//        else if component == 1 {
-//            return orderArray[row]
-//        }
-//        return ""
-//    }
-//
-//    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, attributedTitleForComponent component: Int) -> NSAttributedString? {
-//        return NSAttributedString(string: (self.timelineArray[component]), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.white])
-//    }
-//
-//    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, attributedTitleForSelectedComponent component: Int) -> NSAttributedString? {
-//        return NSAttributedString(string: (self.timelineArray[component]), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.white])
-//    }
-//
-//    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-//        return NSAttributedString(string: (self.timelineArray[component]), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.white])
-//    }
-//
-//
-//    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, shouldUseFullRowWidthForComponent component: Int) -> Bool {
-//        return false
-//    }
-    
-    
-//    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, backgroundColorForRow row: Int, forComponent component: Int) -> UIColor? {
-//        return nil
-//    }
-//
-//    func dropdownMenu(_ dropdownMenu: MKDropdownMenu, backgroundColorForHighlightedRowsInComponent component: Int) -> UIColor? {
-//        return UIColor.gray
-//    }
-    
     
 }

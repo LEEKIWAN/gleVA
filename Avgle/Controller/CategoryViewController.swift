@@ -123,6 +123,7 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     }
     
     @objc func onRightTouched(sender: UIButton) {
+//        (SideMenuManager.default.rightMenuNavigationController?.children.first as! RightMenuViewController).searchViewController?.searchBar.tex
         self.present(SideMenuManager.default.rightMenuNavigationController!, animated: true, completion: nil)
     }
     

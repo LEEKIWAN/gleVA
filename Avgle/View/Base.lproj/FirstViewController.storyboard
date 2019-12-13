@@ -27,7 +27,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yGz-GB-zeS">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yGz-GB-zeS">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="yGz-GB-zeS" secondAttribute="height" multiplier="384:216" priority="750" id="edf-EL-Jew"/>
