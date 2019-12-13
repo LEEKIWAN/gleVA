@@ -10,7 +10,7 @@ import UIKit
 import SwipeMenuViewController
 import SideMenu
 
-class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenuViewDataSource, LeftMenuViewControllerDelegate {
+class CategoryViewController: UIViewController, LeftMenuViewControllerDelegate {
     
 
     var selectedCategory: Int?
@@ -26,19 +26,6 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
         return viewController
     }()
     
-    
-    @IBOutlet weak var swipeMenuView: SwipeMenuView! {
-        didSet {
-            swipeMenuView.delegate                        = self
-            swipeMenuView.dataSource                      = self
-            var options: SwipeMenuViewOptions             = .init()
-            options.tabView.additionView.backgroundColor  = UIColor.white
-            options.tabView.itemView.textColor            = UIColor.lightGray
-            options.tabView.itemView.selectedTextColor    = UIColor.white
-            swipeMenuView.options = options
-        }
-    }
-    
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -53,13 +40,13 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
             self.addChild(videoCollectionViewController)
         }
         
-        self.swipeMenuView.reloadData()
-        self.swipeMenuView.jump(to: self.selectedCategory!, animated: true)
-        self.title = "Categories"
+//        self.swipeMenuView.reloadData()
+//        self.swipeMenuView.jump(to: self.selectedCategory!, animated: true)
+//        self.title = "Categories"
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.swipeMenuView.jump(to: self.selectedCategory!, animated: true)
+        
     }
     
     func setNavigtionUI() {
@@ -71,9 +58,6 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     
     
     func setupSideMenu() {
-//        SideMenuManager.default.menuFadeStatusBar = false
-//
-//
         let leftStoryboard = UIStoryboard.init(name: "LeftMenuViewController", bundle: nil)
         let leftMenuViewController = leftStoryboard.instantiateInitialViewController() as! SideMenuNavigationController
         let leftMenu = leftMenuViewController.topViewController as! LeftMenuViewController
@@ -88,9 +72,6 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
         SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
 
-//        SideMenuManager.default.menuRightNavigationController
-//         SideMenuManager.default.menuRightNavigationController?.menuWidth = self.view.frame.size.width
-        
         SideMenuManager.default.rightMenuNavigationController?.menuWidth = self.view.frame.size.width
         
         
@@ -110,33 +91,8 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     
 
     //MARK - SwipeMenuViewDataSource
-    func numberOfPages(in swipeMenuView: SwipeMenuView) -> Int {
-        return categoryArray!.count
-    }
-    
-    func swipeMenuView(_ swipeMenuView: SwipeMenuView, titleForPageAt index: Int) -> String {
-        return categoryArray![index].name!
-    }
-    
-    func swipeMenuView(_ swipeMenuView: SwipeMenuView, viewControllerForPageAt index: Int) -> UIViewController {
-        let videoCollectionViewController = children[index]
-        videoCollectionViewController.didMove(toParent: self)
-        
-        return videoCollectionViewController
-    }
     
     
-    // MARK - SwipeMenuViewDelegate
-    func swipeMenuView(_ swipeMenuView: SwipeMenuView, willChangeIndexFrom fromIndex: Int, to toIndex: Int) {
-        let videoCollectionViewController = children[toIndex] as! VideoCollectionViewController
-        
-        if videoCollectionViewController.videoArray.count > 0 {
-            return
-        }
-        
-        videoCollectionViewController.requestVideoList(isFirst: true)
-        
-    }
     
     func swipeMenuView(_ swipeMenuView: SwipeMenuView, didChangeIndexFrom fromIndex: Int, to toIndex: Int) {
         // Codes
