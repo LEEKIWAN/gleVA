@@ -7,5 +7,5 @@ ${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework
 ${BUILT_PRODUCTS_DIR}/PYSearch/PYSearch.framework
 ${BUILT_PRODUCTS_DIR}/SKSplashView/SKSplashView.framework
 ${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework
-${BUILT_PRODUCTS_DIR}/SwipeMenuViewController/SwipeMenuViewController.framework
 ${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework
+${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework

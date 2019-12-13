@@ -536,13 +536,12 @@
         @strongify(self)
         /// 如果当前控制器已经消失，直接return
         if (self.zf_viewControllerDisappear) return;
-//        if ([ZFReachabilityManager sharedManager].isReachableViaWWAN && !self.zf_WWANAutoPlay) {
+        if ([ZFReachabilityManager sharedManager].isReachableViaWWAN && !self.zf_WWANAutoPlay) {
             /// 移动网络
             self.zf_shouldPlayIndexPath = indexPath;
-//            return;
-//        }
-        if (handler)
-            handler(indexPath);
+            return;
+        }
+        if (handler) handler(indexPath);
         self.zf_playingIndexPath = indexPath;
     }];
 }

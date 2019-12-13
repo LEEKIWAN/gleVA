@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwipeMenuViewController
 import SideMenu
 
 class CategoryViewController: UIViewController, LeftMenuViewControllerDelegate {
@@ -90,13 +89,6 @@ class CategoryViewController: UIViewController, LeftMenuViewControllerDelegate {
     }
     
 
-    //MARK - SwipeMenuViewDataSource
-    
-    
-    
-    func swipeMenuView(_ swipeMenuView: SwipeMenuView, didChangeIndexFrom fromIndex: Int, to toIndex: Int) {
-        // Codes
-    }
     
     //MARK - LeftMenuViewControllerDelegate
     func onCategoryTouched(viewController: UIViewController) {

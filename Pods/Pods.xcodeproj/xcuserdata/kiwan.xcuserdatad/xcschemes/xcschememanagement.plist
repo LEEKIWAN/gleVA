@@ -49,12 +49,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwipeMenuViewController.xcscheme</key>
+		<key>Toast-Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Toast-Swift.xcscheme</key>
+		<key>XLPagerTabStrip-XLPagerTabStrip.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>XLPagerTabStrip.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
