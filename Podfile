@@ -7,8 +7,7 @@ target 'Avgle' do
   inhibit_all_warnings!
   
   pod 'AFNetworking', '~> 3.0'
-  pod 'XLPagerTabStrip', '~> 9.0'
-
+  pod 'SwipeMenuViewController'
   pod 'NVActivityIndicatorView'
   pod 'Toast-Swift', '~> 4.0.0'
   

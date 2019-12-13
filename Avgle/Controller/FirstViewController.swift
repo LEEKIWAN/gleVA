@@ -74,7 +74,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
 
         let categoryViewController = navigationController.children[0] as! CategoryViewController
         categoryViewController.categoryArray = self.categoryArray
-        categoryViewController.selectedCategory = indexPath.row
+        categoryViewController.selectedCategoryIndex = indexPath.row
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window!.rootViewController = navigationController
