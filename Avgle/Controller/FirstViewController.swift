@@ -24,6 +24,11 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.rowHeight = UITableView.automaticDimension
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AppUtility.lockOrientation(.portrait)
+    }
+    
     func requestCategoryList() {
         AFHTTPSessionManager().get("https://api.avgle.com/v1/categories", parameters: nil, progress: nil, success: { (task, responseObject) in
             let dict = responseObject as! Dictionary<String, Any>

@@ -9,9 +9,15 @@
 import UIKit
 import AFNetworking
 import NVActivityIndicatorView
+import SideMenu
+
+protocol PornstarCollectionViewControllerDelegate: class {
+    func onCollectionCellTouched(viewController: UIViewController, selectedItem: CollectionObject)
+}
 
 class PornstarCollectionViewController: UIViewController, NVActivityIndicatorViewable, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
+    weak var delegate: PornstarCollectionViewControllerDelegate?
     var page = 0
     var has_more = true
     let url = "https://api.avgle.com/v1/collections/"
@@ -105,17 +111,7 @@ class PornstarCollectionViewController: UIViewController, NVActivityIndicatorVie
     
     // MARK : - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-//        let data = self.collectionArray[indexPath.row]
-        
-//        let storyboard = UIStoryboard.init(name: "VideoPlayWebViewController", bundle: nil)
-//        let videoPlayWebViewController = storyboard.instantiateViewController(withIdentifier: "VideoPlayWebViewController") as! VideoPlayWebViewController
-//
-//        videoPlayWebViewController.videoData = data
-//
-//        self.present(videoPlayWebViewController, animated: false, completion: nil)
-        
-        //        self.navigationController?.pushViewController(videoPlayWebViewController, animated: false)
+        delegate?.onCollectionCellTouched(viewController: self, selectedItem: collectionArray[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

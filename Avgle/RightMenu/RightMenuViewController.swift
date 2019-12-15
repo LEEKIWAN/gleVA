@@ -32,14 +32,18 @@ class RightMenuViewController: UIViewController, PYSearchViewControllerDelegate 
         
     }
     
+    public func search(text: String) {
+        let storyboard = UIStoryboard(name: "SearchResultViewController", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SearchResultViewController") as! SearchResultViewController
+        
+        self.searchResultViewController = viewController
+        viewController.searchText = text
+        searchViewController?.navigationController?.pushViewController(self.searchResultViewController!, animated: true)
+    }
+    
     func createSearchViewController() {
         searchViewController = PYSearchViewController(hotSearches: searchArray, searchBarPlaceholder: "") { (searchViewController, searchBar, searchText) in
-            let storyboard = UIStoryboard(name: "SearchResultViewController", bundle: Bundle.main)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "SearchResultViewController") as! SearchResultViewController
-            
-            self.searchResultViewController = viewController
-            viewController.searchText = searchText
-            searchViewController?.navigationController?.pushViewController(self.searchResultViewController!, animated: true)
+            self.search(text: searchText!)
         }
         
         searchViewController!.backButton.tintColor = UIColor.white
@@ -57,7 +61,7 @@ class RightMenuViewController: UIViewController, PYSearchViewControllerDelegate 
         self.nav = UINavigationController(rootViewController: searchViewController!)
         searchViewController!.navigationController?.navigationBar.barTintColor = UIColor(hexString: "202020")
         searchViewController!.navigationController?.navigationBar.isTranslucent = false
-
+        
         searchViewController?.searchHistoryHeader.textColor = .white
         searchViewController?.searchHistoryStyle = .cell
         

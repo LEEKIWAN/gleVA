@@ -12,14 +12,14 @@ import Toast_Swift
 import MessageUI
 
 
-protocol LeftMenuViewControllerDelegate {
+protocol LeftMenuViewControllerDelegate: class {
     func onCollectionTouched(viewController: UIViewController)
     func onCategoryTouched(viewController: UIViewController)
 }
 
 class LeftMenuViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
-    var delegate: LeftMenuViewControllerDelegate?
+    weak var delegate: LeftMenuViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,14 +51,16 @@ class LeftMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
     }
     
     @IBAction func onEmailTouched(_ sender: UIButton) {
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            mail.setToRecipients(["kiwan0930@gmail.com"])
-            
-            self.present(mail, animated: true, completion: nil)
-                        
+        self.dismiss(animated: true) {
+            if MFMailComposeViewController.canSendMail() {
+                let mail = MFMailComposeViewController()
+                mail.mailComposeDelegate = self
+                mail.setToRecipients(["kiwan0930@gmail.com"])
+                
+                self.present(mail, animated: true, completion: nil)
+            }
         }
+            
     }
     
     

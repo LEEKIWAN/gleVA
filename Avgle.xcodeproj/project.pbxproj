@@ -38,6 +38,7 @@
 		83AEBF1D21299F540001695C /* PornstarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AEBF1C21299F540001695C /* PornstarCollectionViewCell.swift */; };
 		83C941E523A3EE3E00DAB200 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C941E323A3EE3E00DAB200 /* VideoTableViewCell.swift */; };
 		83C941E623A3EE3E00DAB200 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83C941E423A3EE3E00DAB200 /* VideoTableViewCell.xib */; };
+		83CFE51C23A4937400F1FCF3 /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CFE51B23A4937400F1FCF3 /* AppUtility.swift */; };
 		83EAE7DF2121BE9F00AD298F /* SplashView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83EAE7DD2121BE9F00AD298F /* SplashView.storyboard */; };
 		83EAE7E02121BE9F00AD298F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EAE7DE2121BE9F00AD298F /* SplashView.swift */; };
 		83ECC815213424510043EC87 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ECC814213424510043EC87 /* RightMenuViewController.swift */; };
@@ -77,6 +78,7 @@
 		83AEBF1C21299F540001695C /* PornstarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PornstarCollectionViewCell.swift; sourceTree = "<group>"; };
 		83C941E323A3EE3E00DAB200 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		83C941E423A3EE3E00DAB200 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
+		83CFE51B23A4937400F1FCF3 /* AppUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppUtility.swift; path = Avgle/LeftMenu/AppUtility.swift; sourceTree = SOURCE_ROOT; };
 		83EAE7DD2121BE9F00AD298F /* SplashView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashView.storyboard; sourceTree = "<group>"; };
 		83EAE7DE2121BE9F00AD298F /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		83ECC814213424510043EC87 /* RightMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		8301342E23A3259500094ABC /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				83CFE51B23A4937400F1FCF3 /* AppUtility.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				83A7E328211B27C00041E94B /* CategoryViewController.swift in Sources */,
 				83503E04211E79CC00C50891 /* Int+Extension.swift in Sources */,
 				83503E02211DFBBB00C50891 /* CategoryTableViewCell.swift in Sources */,
+				83CFE51C23A4937400F1FCF3 /* AppUtility.swift in Sources */,
 				831A8A822114907600C4C695 /* AppDelegate.swift in Sources */,
 				83A7E32E211C65970041E94B /* VideoListViewController.swift in Sources */,
 				8384630C211C7F3B00660098 /* ContentViewController.swift in Sources */,
@@ -563,6 +567,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77F6X5R2CN;
 				INFOPLIST_FILE = Avgle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -582,6 +587,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 77F6X5R2CN;
 				INFOPLIST_FILE = Avgle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

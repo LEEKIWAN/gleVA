@@ -22,6 +22,7 @@ class VideoTableViewCell: UITableViewCell {
     @IBOutlet weak var disLikeCountLabel: UILabel!
     
     @IBOutlet weak var HDLabel: UILabel!
+    @IBOutlet weak var layoutView: UIView!
     
     
     var playHandler: (() -> Void)?
@@ -31,9 +32,9 @@ class VideoTableViewCell: UITableViewCell {
         self.HDLabel.layer.cornerRadius = 3
         self.coverImageView.layer.cornerRadius = 3
         
-        self.layer.borderColor = UIColor(hexString: "e6e6e6").cgColor
-        self.layer.borderWidth = 1
-        self.layer.cornerRadius = 10
+        self.layoutView.layer.borderColor = UIColor(hexString: "e6e6e6").cgColor
+        self.layoutView.layer.borderWidth = 1
+        self.layoutView.layer.cornerRadius = 10
     }
     
     func setData(data: VideoObject) {

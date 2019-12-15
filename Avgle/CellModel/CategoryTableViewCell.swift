@@ -30,8 +30,14 @@ class CategoryTableViewCell: UITableViewCell {
         }) { (request, response, error) in
             
         }
+        
+        let total_videos = data.total_videos
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let formattedNumber = numberFormatter.string(from: NSNumber(value:total_videos!))
+        
     
-        self.videoCountLabel.setTitle("\(data.total_videos!)", for: .normal)
+        self.videoCountLabel.setTitle("\(formattedNumber!)", for: .normal)
         self.categoryNameLabel.text = data.name
     }
 }

@@ -23,6 +23,7 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     private lazy var pornstarCollectionViewController: PornstarCollectionViewController = {
         let storyboard = UIStoryboard(name: "PornstarCollectionViewController", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "PornstarCollectionViewController") as! PornstarCollectionViewController
+        viewController.delegate = self
         return viewController
     }()
     
@@ -55,6 +56,11 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
         
         self.swipeMenuView.reloadData()
         self.title = "Categories"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AppUtility.lockOrientation(.portrait)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -123,7 +129,6 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     }
     
     @objc func onRightTouched(sender: UIButton) {
-//        (SideMenuManager.default.rightMenuNavigationController?.children.first as! RightMenuViewController).searchViewController?.searchBar.tex
         self.present(SideMenuManager.default.rightMenuNavigationController!, animated: true, completion: nil)
     }
     
@@ -192,4 +197,15 @@ class CategoryViewController: UIViewController, SwipeMenuViewDelegate, SwipeMenu
     }
     
     
+}
+
+extension CategoryViewController: PornstarCollectionViewControllerDelegate {
+    func onCollectionCellTouched(viewController: UIViewController, selectedItem: CollectionObject) {
+        let storyboard = UIStoryboard(name: "SearchResultViewController", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SearchResultViewController") as! SearchResultViewController
+        
+        viewController.searchText = selectedItem.keyword
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+    }
 }
