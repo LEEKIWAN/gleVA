@@ -40,12 +40,7 @@ class PornstarCollectionViewController: UIViewController, NVActivityIndicatorVie
         guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
             return
         }
-        
-        if UIApplication.shared.statusBarOrientation.isLandscape {
-            
-        } else {
-            
-        }
+    
         
         flowLayout.invalidateLayout()
     }

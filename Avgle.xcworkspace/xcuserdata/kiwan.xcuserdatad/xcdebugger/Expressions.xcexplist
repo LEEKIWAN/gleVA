@@ -18,6 +18,11 @@
       </ContextState>
       <ContextState
          contextName = "VideoPlayWebViewController.viewDidLoad():VideoPlayWebViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "videoData">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "VideoListViewController.swipeMenuView(_:viewControllerForPageAt:):VideoListViewController.swift">
@@ -26,20 +31,6 @@
                value = "self.categoryArray">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[PYSearchViewController setup]:PYSearchViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "titleLabel.text">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "VideoCollectionViewController.previewingContext(_:viewControllerForLocation:):VideoCollectionViewController.swift">
-      </ContextState>
-      <ContextState
-         contextName = "VideoCollectionViewController.setConfigureVideoView():VideoCollectionViewController.swift">
       </ContextState>
       <ContextState
          contextName = "ViewController.viewDidLoad():ViewController.swift">
@@ -51,6 +42,20 @@
                value = "self.view">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VideoCollectionViewController.setConfigureVideoView():VideoCollectionViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "-[PYSearchViewController setup]:PYSearchViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "titleLabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VideoCollectionViewController.previewingContext(_:viewControllerForLocation:):VideoCollectionViewController.swift">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

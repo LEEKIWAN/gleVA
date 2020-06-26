@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EWv-DL-1eP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EWv-DL-1eP">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,6 +41,25 @@
                                     <action selector="onCategoryTouched:" destination="DaN-6a-oH5" eventType="touchUpInside" id="zkh-E7-SKX"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aUl-FE-Ymj">
+                                <rect key="frame" x="74.666666666666686" y="259" width="151" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEf-PD-FXZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="82" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="yA2-92-dgc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title=" Auto Play">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WvS-ia-bmi">
+                                        <rect key="frame" x="101.99999999999999" y="4.6666666666666856" width="51.000000000000014" height="31"/>
+                                        <color key="onTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PTn-us-vDm">
                                 <rect key="frame" x="20" y="620" width="260" height="34"/>
                                 <attributedString key="attributedText">
@@ -82,6 +100,7 @@
                             <constraint firstItem="fCs-zK-XLd" firstAttribute="top" secondItem="NE3-Ut-Dfa" secondAttribute="bottom" constant="5" id="DxD-8Q-nni"/>
                             <constraint firstItem="wJ6-RG-s0X" firstAttribute="bottom" secondItem="4vI-V3-vOS" secondAttribute="bottom" constant="13" id="HAE-Nf-2wA"/>
                             <constraint firstItem="PTn-us-vDm" firstAttribute="bottom" secondItem="4vI-V3-vOS" secondAttribute="bottom" id="HKa-CV-ZpE"/>
+                            <constraint firstItem="aUl-FE-Ymj" firstAttribute="top" secondItem="fCs-zK-XLd" secondAttribute="bottom" constant="5" id="L8G-so-Ly7"/>
                             <constraint firstItem="6Th-FJ-GdB" firstAttribute="leading" secondItem="wJ6-RG-s0X" secondAttribute="leading" constant="20" id="LpY-mJ-e05"/>
                             <constraint firstItem="PTn-us-vDm" firstAttribute="leading" secondItem="4vI-V3-vOS" secondAttribute="leading" id="WdN-8h-i21"/>
                             <constraint firstItem="PTn-us-vDm" firstAttribute="top" secondItem="4vI-V3-vOS" secondAttribute="top" id="Z6M-bV-Bbd"/>
@@ -92,6 +111,7 @@
                             <constraint firstItem="PTn-us-vDm" firstAttribute="leading" secondItem="wJ6-RG-s0X" secondAttribute="leading" constant="20" id="sKF-wT-Be1"/>
                             <constraint firstItem="PTn-us-vDm" firstAttribute="trailing" secondItem="4vI-V3-vOS" secondAttribute="trailing" id="t9m-OC-oZl"/>
                             <constraint firstItem="fCs-zK-XLd" firstAttribute="leading" secondItem="wJ6-RG-s0X" secondAttribute="leading" id="tS3-xS-D9i"/>
+                            <constraint firstItem="aUl-FE-Ymj" firstAttribute="centerX" secondItem="S1S-ri-CIP" secondAttribute="centerX" id="tU9-jl-A5x"/>
                             <constraint firstItem="6Th-FJ-GdB" firstAttribute="top" secondItem="wJ6-RG-s0X" secondAttribute="top" constant="15" id="x5B-VL-OcH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wJ6-RG-s0X"/>

@@ -43,13 +43,6 @@ class LeftMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
     }
     
     
-    @IBAction func onQRTextTouched(_ sender: UIButton) {
-        let pasteBoard = UIPasteboard.general
-        pasteBoard.string = "3Jox73MN5gtZ1NnLSAQxhstNaF1rfEoH2w"
-        self.view.makeToast("Copied BTC Wallet")
-        
-    }
-    
     @IBAction func onEmailTouched(_ sender: UIButton) {
         self.dismiss(animated: true) {
             if MFMailComposeViewController.canSendMail() {
@@ -57,7 +50,8 @@ class LeftMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
                 mail.mailComposeDelegate = self
                 mail.setToRecipients(["kiwan0930@gmail.com"])
                 
-                self.present(mail, animated: true, completion: nil)
+//                self.present(mail, animated: true, completion: nil)
+                UIApplication.topViewController()?.present(mail, animated: true, completion: nil)
             }
         }
             
@@ -70,4 +64,21 @@ class LeftMenuViewController: UIViewController, MFMailComposeViewControllerDeleg
         controller.dismiss(animated: true)
     }
     
+}
+
+extension UIApplication {
+    class func topViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+        if let nav = base as? UINavigationController {
+            return topViewController(base: nav.visibleViewController)
+        }
+        if let tab = base as? UITabBarController {
+            if let selected = tab.selectedViewController {
+                return topViewController(base: selected)
+            }
+        }
+        if let presented = base?.presentedViewController {
+            return topViewController(base: presented)
+        }
+        return base
+    }
 }

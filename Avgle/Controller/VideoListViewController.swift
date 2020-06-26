@@ -271,6 +271,7 @@ extension VideoListViewController: UITableViewDelegate, UITableViewDataSource {
         
         videoPlayWebViewController.videoData = data
         
+        videoPlayWebViewController.modalPresentationStyle = .fullScreen
         self.present(videoPlayWebViewController, animated: false, completion: nil)
     }
     

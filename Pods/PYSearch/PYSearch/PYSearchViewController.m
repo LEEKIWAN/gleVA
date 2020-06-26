@@ -9,8 +9,7 @@
 #import "PYSearchSuggestionViewController.h"
 
 #define PYRectangleTagMaxCol 3
-//#define PYTextColor PYSEARCH_COLOR(113, 113, 113)
-#define PYTextColor [UIColor whiteColor]
+#define PYTextColor PYSEARCH_COLOR(113, 113, 113)
 #define PYSEARCH_COLORPolRandomColor self.colorPol[arc4random_uniform((uint32_t)self.colorPol.count)]
 
 @interface PYSearchViewController () <UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, PYSearchSuggestionViewDataSource, UIGestureRecognizerDelegate> {
@@ -218,9 +217,9 @@
     }
 
     if (NULL == self.searchResultController.parentViewController) {
-//        [self.searchBar becomeFirstResponder];
+        [self.searchBar becomeFirstResponder];
     } else if (YES == self.showKeyboardWhenReturnSearchResult) {
-//        [self.searchBar becomeFirstResponder];
+        [self.searchBar becomeFirstResponder];
     }
     // 修复滑动返回功能
     if (_searchViewControllerShowMode == PYSearchViewControllerShowModePush) {
@@ -505,7 +504,6 @@
     [emptySearchHistoryLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(emptySearchHistoryDidClick)]];
     emptySearchHistoryLabel.py_width = footerView.py_width;
     emptySearchHistoryLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    emptySearchHistoryLabel.textColor = PYTextColor;
     self.emptySearchHistoryLabel = emptySearchHistoryLabel;
     [footerView addSubview:emptySearchHistoryLabel];
     footerView.py_height = emptySearchHistoryLabel.py_height;

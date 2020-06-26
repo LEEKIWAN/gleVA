@@ -36,7 +36,7 @@ class VideoPlayWebViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = textAttributes
         
         
-        let video_url = videoData?.embedded_url
+        let video_url = videoData?.video_url
         
         if let encoded  = video_url?.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), let url = URL(string: encoded){
             

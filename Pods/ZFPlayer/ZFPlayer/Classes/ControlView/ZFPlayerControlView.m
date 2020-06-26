@@ -332,7 +332,7 @@
         return [self.landScapeControlView shouldResponseGestureWithPoint:point withGestureType:gestureType touch:touch];
     } else {
         if (!self.customDisablePanMovingDirection) {
-            if (self.player.scrollView) {  /// 列表时候禁止左右滑动
+            if (self.player.scrollView) {  /// 列表时候禁止上下滑动（防止和列表滑动冲突）
                 self.player.disablePanMovingDirection = ZFPlayerDisablePanMovingDirectionVertical;
             } else { /// 不禁用滑动方向
                 self.player.disablePanMovingDirection = ZFPlayerDisablePanMovingDirectionNone;
@@ -411,6 +411,7 @@
             /// 左右滑动调节播放进度
             [self.portraitControlView sliderChangeEnded];
             [self.landScapeControlView sliderChangeEnded];
+            self.bottomPgrogress.isdragging = NO;
             if (self.controlViewAppeared) {
                 [self autoFadeOutControlView];
             }
@@ -488,7 +489,9 @@
 - (void)videoPlayer:(ZFPlayerController *)videoPlayer currentTime:(NSTimeInterval)currentTime totalTime:(NSTimeInterval)totalTime {
     [self.portraitControlView videoPlayer:videoPlayer currentTime:currentTime totalTime:totalTime];
     [self.landScapeControlView videoPlayer:videoPlayer currentTime:currentTime totalTime:totalTime];
-    self.bottomPgrogress.value = videoPlayer.progress;
+    if (!self.bottomPgrogress.isdragging) {
+        self.bottomPgrogress.value = videoPlayer.progress;
+    }
 }
 
 /// 缓冲改变回调
@@ -585,6 +588,8 @@
     /// 更新滑杆
     [self.portraitControlView sliderValueChanged:value currentTimeString:draggedTime];
     [self.landScapeControlView sliderValueChanged:value currentTimeString:draggedTime];
+    self.bottomPgrogress.isdragging = YES;
+    self.bottomPgrogress.value = value;
 
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideFastView) object:nil];
     [self performSelector:@selector(hideFastView) withObject:nil afterDelay:0.1];
@@ -674,10 +679,20 @@
         _portraitControlView = [[ZFPortraitControlView alloc] init];
         _portraitControlView.sliderValueChanging = ^(CGFloat value, BOOL forward) {
             @strongify(self)
+            NSString *draggedTime = [ZFUtilities convertTimeSecond:self.player.totalTime*value];
+            /// 更新滑杆和时间
+            [self.landScapeControlView sliderValueChanged:value currentTimeString:draggedTime];
+            self.fastProgressView.value = value;
+            self.bottomPgrogress.isdragging = YES;
+            self.bottomPgrogress.value = value;
             [self cancelAutoFadeOutControlView];
         };
         _portraitControlView.sliderValueChanged = ^(CGFloat value) {
             @strongify(self)
+            [self.landScapeControlView sliderChangeEnded];
+            self.fastProgressView.value = value;
+            self.bottomPgrogress.isdragging = NO;
+            self.bottomPgrogress.value = value;
             [self autoFadeOutControlView];
         };
     }
@@ -690,10 +705,20 @@
         _landScapeControlView = [[ZFLandScapeControlView alloc] init];
         _landScapeControlView.sliderValueChanging = ^(CGFloat value, BOOL forward) {
             @strongify(self)
+            NSString *draggedTime = [ZFUtilities convertTimeSecond:self.player.totalTime*value];
+            /// 更新滑杆和时间
+            [self.portraitControlView sliderValueChanged:value currentTimeString:draggedTime];
+            self.fastProgressView.value = value;
+            self.bottomPgrogress.isdragging = YES;
+            self.bottomPgrogress.value = value;
             [self cancelAutoFadeOutControlView];
         };
         _landScapeControlView.sliderValueChanged = ^(CGFloat value) {
             @strongify(self)
+            [self.portraitControlView sliderChangeEnded];
+            self.fastProgressView.value = value;
+            self.bottomPgrogress.isdragging = NO;
+            self.bottomPgrogress.value = value;
             [self autoFadeOutControlView];
         };
     }
@@ -802,6 +827,7 @@
     if (!_volumeBrightnessView) {
         _volumeBrightnessView = [[ZFVolumeBrightnessView alloc] init];
         _volumeBrightnessView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+        _volumeBrightnessView.hidden = YES;
     }
     return _volumeBrightnessView;
 }
