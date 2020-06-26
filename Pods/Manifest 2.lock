@@ -1,0 +1,114 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - KafkaRefresh (1.4.7):
+    - KafkaRefresh/Category (= 1.4.7)
+    - KafkaRefresh/Configuration (= 1.4.7)
+    - KafkaRefresh/Core (= 1.4.7)
+    - KafkaRefresh/Default (= 1.4.7)
+    - KafkaRefresh/Style (= 1.4.7)
+    - KafkaRefresh/UIKit (= 1.4.7)
+  - KafkaRefresh/Category (1.4.7)
+  - KafkaRefresh/Configuration (1.4.7):
+    - KafkaRefresh/UIKit/FootKit
+    - KafkaRefresh/UIKit/HeadKit
+  - KafkaRefresh/Core (1.4.7):
+    - KafkaRefresh/Category
+  - KafkaRefresh/Default (1.4.7):
+    - KafkaRefresh/Style
+  - KafkaRefresh/Style (1.4.7)
+  - KafkaRefresh/UIKit (1.4.7):
+    - KafkaRefresh/UIKit/FootKit (= 1.4.7)
+    - KafkaRefresh/UIKit/HeadKit (= 1.4.7)
+    - KafkaRefresh/UIKit/LayerKit (= 1.4.7)
+  - KafkaRefresh/UIKit/FootKit (1.4.7):
+    - KafkaRefresh/Category
+    - KafkaRefresh/Core
+    - KafkaRefresh/Default
+    - KafkaRefresh/Style
+    - KafkaRefresh/UIKit/LayerKit
+  - KafkaRefresh/UIKit/HeadKit (1.4.7):
+    - KafkaRefresh/Category
+    - KafkaRefresh/Core
+    - KafkaRefresh/Default
+    - KafkaRefresh/Style
+    - KafkaRefresh/UIKit/LayerKit
+  - KafkaRefresh/UIKit/LayerKit (1.4.7):
+    - KafkaRefresh/Category
+    - KafkaRefresh/Default
+  - MarqueeLabel/Swift (3.2.1)
+  - MKDropdownMenu (1.4)
+  - NVActivityIndicatorView (4.8.0):
+    - NVActivityIndicatorView/Presenter (= 4.8.0)
+  - NVActivityIndicatorView/Presenter (4.8.0)
+  - PYSearch (0.9.1)
+  - SideMenu (6.4.7)
+  - SKSplashView (0.1.3)
+  - SwipeMenuViewController (4.0.0)
+  - Toast-Swift (4.0.1)
+  - ZFPlayer (3.2.15):
+    - ZFPlayer/Core (= 3.2.15)
+  - ZFPlayer/AVPlayer (3.2.15):
+    - ZFPlayer/Core
+  - ZFPlayer/ControlView (3.2.15):
+    - ZFPlayer/Core
+  - ZFPlayer/Core (3.2.15)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.0)
+  - KafkaRefresh
+  - MarqueeLabel/Swift
+  - MKDropdownMenu
+  - NVActivityIndicatorView
+  - PYSearch
+  - SideMenu
+  - SKSplashView
+  - SwipeMenuViewController
+  - Toast-Swift (~> 4.0.0)
+  - ZFPlayer
+  - ZFPlayer/AVPlayer
+  - ZFPlayer/ControlView
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - KafkaRefresh
+    - MarqueeLabel
+    - MKDropdownMenu
+    - NVActivityIndicatorView
+    - PYSearch
+    - SideMenu
+    - SKSplashView
+    - SwipeMenuViewController
+    - Toast-Swift
+    - ZFPlayer
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  KafkaRefresh: a7962ea8f03f384c1b545d8c27ac419aa0d5b055
+  MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
+  MKDropdownMenu: 269df4a41d21a1db684ce8bc709befe419fc5bae
+  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  PYSearch: 76dee18eea3309b60921a5d6a69390a63a5dda15
+  SideMenu: 928a015669c3afc201e1fe3a87f1b0bc8993a664
+  SKSplashView: 8148a4893bf2d3dfe28750bc6fd71ae7cb0dda4a
+  SwipeMenuViewController: c2c1f9b62022ce6b904b2553f0fa340c9008becd
+  Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
+  ZFPlayer: b56371acefedad94678503a28a6d34820cfd0da3
+
+PODFILE CHECKSUM: 32771d7adca121771f5686de2e7a09deb29467a4
+
+COCOAPODS: 1.8.4
