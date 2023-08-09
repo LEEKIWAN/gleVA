@@ -25,12 +25,15 @@
 #import "ZFAVPlayerManager.h"
 #import <UIKit/UIKit.h>
 #if __has_include(<ZFPlayer/ZFPlayer.h>)
-#import <ZFPlayer/ZFPlayer.h>
+#import <ZFPlayer/ZFKVOController.h>
+#import <ZFPlayer/ZFPlayerConst.h>
 #import <ZFPlayer/ZFReachabilityManager.h>
 #else
-#import "ZFPlayer.h"
+#import "ZFKVOController.h"
+#import "ZFPlayerConst.h"
 #import "ZFReachabilityManager.h"
 #endif
+
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
@@ -44,7 +47,7 @@ static NSString *const kPlaybackBufferEmpty      = @"playbackBufferEmpty";
 static NSString *const kPlaybackLikelyToKeepUp   = @"playbackLikelyToKeepUp";
 static NSString *const kPresentationSize         = @"presentationSize";
 
-@interface ZFPlayerPresentView : ZFPlayerView
+@interface ZFPlayerPresentView : UIView
 
 @property (nonatomic, strong) AVPlayer *player;
 /// default is AVLayerVideoGravityResizeAspect.
@@ -60,14 +63,6 @@ static NSString *const kPresentationSize         = @"presentationSize";
 
 - (AVPlayerLayer *)avLayer {
     return (AVPlayerLayer *)self.layer;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.backgroundColor = [UIColor blackColor];
-    }
-    return self;
 }
 
 - (void)setPlayer:(AVPlayer *)player {
@@ -94,6 +89,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
 @property (nonatomic, strong) AVPlayerLayer *playerLayer;
 @property (nonatomic, assign) BOOL isBuffering;
 @property (nonatomic, assign) BOOL isReadyToPlay;
+@property (nonatomic, strong) AVAssetImageGenerator *imageGenerator;
 
 @end
 
@@ -174,8 +170,11 @@ static NSString *const kPresentationSize         = @"presentationSize";
     self.loadState = ZFPlayerLoadStateUnknown;
     self.playState = ZFPlayerPlayStatePlayStopped;
     if (self.player.rate != 0) [self.player pause];
+    [_playerItem cancelPendingSeeks];
+    [_asset cancelLoading];
     [self.player removeTimeObserver:_timeObserver];
     [self.player replaceCurrentItemWithPlayerItem:nil];
+    self.presentationSize = CGSizeZero;
     _timeObserver = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:_itemEndObserver name:AVPlayerItemDidPlayToEndTimeNotification object:self.playerItem];
     _itemEndObserver = nil;
@@ -191,16 +190,20 @@ static NSString *const kPresentationSize         = @"presentationSize";
 }
 
 - (void)replay {
-    @weakify(self)
+    @zf_weakify(self)
     [self seekToTime:0 completionHandler:^(BOOL finished) {
-        @strongify(self)
-        [self play];
+        @zf_strongify(self)
+        if (finished) {
+            [self play];
+        }
     }];
 }
 
 - (void)seekToTime:(NSTimeInterval)time completionHandler:(void (^ __nullable)(BOOL finished))completionHandler {
     if (self.totalTime > 0) {
-        CMTime seekTime = CMTimeMake(time, 1);
+        [_player.currentItem cancelPendingSeeks];
+        int32_t timeScale = _player.currentItem.asset.duration.timescale;
+        CMTime seekTime = CMTimeMakeWithSeconds(time, timeScale);
         [_player seekToTime:seekTime toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:completionHandler];
     } else {
         self.seekTime = time;
@@ -208,22 +211,31 @@ static NSString *const kPresentationSize         = @"presentationSize";
 }
 
 - (UIImage *)thumbnailImageAtCurrentTime {
-    AVAssetImageGenerator *imageGenerator = [AVAssetImageGenerator assetImageGeneratorWithAsset:_asset];
-    CMTime expectedTime = _playerItem.currentTime;
+    CMTime expectedTime = self.playerItem.currentTime;
     CGImageRef cgImage = NULL;
     
-    imageGenerator.requestedTimeToleranceBefore = kCMTimeZero;
-    imageGenerator.requestedTimeToleranceAfter = kCMTimeZero;
-    cgImage = [imageGenerator copyCGImageAtTime:expectedTime actualTime:NULL error:NULL];
-    
+    self.imageGenerator.requestedTimeToleranceBefore = kCMTimeZero;
+    self.imageGenerator.requestedTimeToleranceAfter = kCMTimeZero;
+    cgImage = [self.imageGenerator copyCGImageAtTime:expectedTime actualTime:NULL error:NULL];
+
     if (!cgImage) {
-        imageGenerator.requestedTimeToleranceBefore = kCMTimePositiveInfinity;
-        imageGenerator.requestedTimeToleranceAfter = kCMTimePositiveInfinity;
-        cgImage = [imageGenerator copyCGImageAtTime:expectedTime actualTime:NULL error:NULL];
+        self.imageGenerator.requestedTimeToleranceBefore = kCMTimePositiveInfinity;
+        self.imageGenerator.requestedTimeToleranceAfter = kCMTimePositiveInfinity;
+        cgImage = [self.imageGenerator copyCGImageAtTime:expectedTime actualTime:NULL error:NULL];
     }
     
     UIImage *image = [UIImage imageWithCGImage:cgImage];
     return image;
+}
+
+- (void)thumbnailImageAtCurrentTime:(void(^)(UIImage *))handler {
+    CMTime expectedTime = self.playerItem.currentTime;
+    [self.imageGenerator generateCGImagesAsynchronouslyForTimes:@[[NSValue valueWithCMTime:expectedTime]] completionHandler:^(CMTime requestedTime, CGImageRef  _Nullable image, CMTime actualTime, AVAssetImageGeneratorResult result, NSError * _Nullable error) {
+        if (handler) {
+            UIImage *finalImage = [UIImage imageWithCGImage:image];
+            handler(finalImage);
+        }
+    }];
 }
 
 #pragma mark - private method
@@ -255,16 +267,21 @@ static NSString *const kPresentationSize         = @"presentationSize";
     _asset = [AVURLAsset URLAssetWithURL:self.assetURL options:self.requestHeader];
     _playerItem = [AVPlayerItem playerItemWithAsset:_asset];
     _player = [AVPlayer playerWithPlayerItem:_playerItem];
+    _imageGenerator = [AVAssetImageGenerator assetImageGeneratorWithAsset:_asset];
+
     [self enableAudioTracks:YES inPlayerItem:_playerItem];
     
-    ZFPlayerPresentView *presentView = (ZFPlayerPresentView *)self.view;
+    ZFPlayerPresentView *presentView = [[ZFPlayerPresentView alloc] init];
     presentView.player = _player;
+    self.view.playerView = presentView;
+
     self.scalingMode = _scalingMode;
     if (@available(iOS 9.0, *)) {
         _playerItem.canUseNetworkResourcesForLiveStreamingWhilePaused = NO;
     }
     if (@available(iOS 10.0, *)) {
         _playerItem.preferredForwardBufferDuration = 5;
+        /// 关闭AVPlayer默认的缓冲延迟播放策略，提高首屏播放速度
         _player.automaticallyWaitsToMinimizeStalling = NO;
     }
     [self itemObserving];
@@ -290,7 +307,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
     self.isBuffering = YES;
     
     // 需要先暂停一小会之后再播放，否则网络状况不好的时候时间在走，声音播放不出来
-    [self.player pause];
+    [self pause];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 如果此时用户已经暂停了，则不再需要开启播放了
         if (!self.isPlaying && self.loadState == ZFPlayerLoadStateStalled) {
@@ -329,9 +346,9 @@ static NSString *const kPresentationSize         = @"presentationSize";
                               context:nil];
     
     CMTime interval = CMTimeMakeWithSeconds(self.timeRefreshInterval > 0 ? self.timeRefreshInterval : 0.1, NSEC_PER_SEC);
-    @weakify(self)
+    @zf_weakify(self)
     _timeObserver = [self.player addPeriodicTimeObserverForInterval:interval queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
-        @strongify(self)
+        @zf_strongify(self)
         if (!self) return;
         NSArray *loadedRanges = self.playerItem.seekableTimeRanges;
         if (self.isPlaying && self.loadState == ZFPlayerLoadStateStalled) self.player.rate = self.rate;
@@ -341,7 +358,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
     }];
     
     _itemEndObserver = [[NSNotificationCenter defaultCenter] addObserverForName:AVPlayerItemDidPlayToEndTimeNotification object:self.playerItem queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
-        @strongify(self)
+        @zf_strongify(self)
         if (!self) return;
         self.playState = ZFPlayerPlayStatePlayStopped;
         if (self.playerDidToEnd) self.playerDidToEnd(self);
@@ -358,18 +375,26 @@ static NSString *const kPresentationSize         = @"presentationSize";
                     if (self.playerReadyToPlay) self.playerReadyToPlay(self, self.assetURL);
                 }
                 if (self.seekTime) {
-                    [self seekToTime:self.seekTime completionHandler:nil];
+                    if (self.shouldAutoPlay) [self pause];
+                    @zf_weakify(self)
+                    [self seekToTime:self.seekTime completionHandler:^(BOOL finished) {
+                        @zf_strongify(self)
+                        if (finished) {
+                            if (self.shouldAutoPlay) [self play];
+                        }
+                    }];
                     self.seekTime = 0;
+                } else {
+                    if (self.shouldAutoPlay && self.isPlaying) [self play];
                 }
-                if (self.isPlaying) [self play];
                 self.player.muted = self.muted;
                 NSArray *loadedRanges = self.playerItem.seekableTimeRanges;
                 if (loadedRanges.count > 0) {
-                    /// Fix https://github.com/renzifeng/ZFPlayer/issues/475
                     if (self.playerPlayTimeChanged) self.playerPlayTimeChanged(self, self.currentTime, self.totalTime);
                 }
             } else if (self.player.currentItem.status == AVPlayerItemStatusFailed) {
                 self.playState = ZFPlayerPlayStatePlayFailed;
+                self->_isPlaying = NO;
                 NSError *error = self.player.currentItem.error;
                 if (self.playerPlayFailed) self.playerPlayFailed(self, error);
             }
@@ -390,10 +415,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
             self->_bufferTime = bufferTime;
             if (self.playerBufferTimeChanged) self.playerBufferTimeChanged(self, bufferTime);
         } else if ([keyPath isEqualToString:kPresentationSize]) {
-            self->_presentationSize = self.playerItem.presentationSize;
-            if (self.presentationSizeChanged) {
-                self.presentationSizeChanged(self, self->_presentationSize);
-            }
+            self.presentationSize = self.playerItem.presentationSize;
         } else {
             [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
         }
@@ -402,11 +424,17 @@ static NSString *const kPresentationSize         = @"presentationSize";
 
 #pragma mark - getter
 
-- (UIView *)view {
+- (ZFPlayerView *)view {
     if (!_view) {
-        _view = [[ZFPlayerPresentView alloc] init];
+        ZFPlayerView *view = [[ZFPlayerView alloc] init];
+        _view = view;
     }
     return _view;
+}
+
+- (AVPlayerLayer *)avPlayerLayer {
+    ZFPlayerPresentView *view = (ZFPlayerPresentView *)self.view.playerView;
+    return [view avLayer];
 }
 
 - (float)rate {
@@ -461,7 +489,8 @@ static NSString *const kPresentationSize         = @"presentationSize";
 
 - (void)setScalingMode:(ZFPlayerScalingMode)scalingMode {
     _scalingMode = scalingMode;
-    ZFPlayerPresentView *presentView = (ZFPlayerPresentView *)self.view;
+    ZFPlayerPresentView *presentView = (ZFPlayerPresentView *)self.view.playerView;
+    self.view.scalingMode = scalingMode;
     switch (scalingMode) {
         case ZFPlayerScalingModeNone:
             presentView.videoGravity = AVLayerVideoGravityResizeAspect;
@@ -482,7 +511,15 @@ static NSString *const kPresentationSize         = @"presentationSize";
 
 - (void)setVolume:(float)volume {
     _volume = MIN(MAX(0, volume), 1);
-    self.player.volume = volume;
+    self.player.volume = _volume;
+}
+
+- (void)setPresentationSize:(CGSize)presentationSize {
+    _presentationSize = presentationSize;
+    self.view.presentationSize = presentationSize;
+    if (self.presentationSizeChanged) {
+        self.presentationSizeChanged(self, self.presentationSize);
+    }
 }
 
 @end

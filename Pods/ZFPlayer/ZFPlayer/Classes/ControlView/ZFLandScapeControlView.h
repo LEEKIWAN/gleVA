@@ -61,6 +61,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 锁定屏幕按钮
 @property (nonatomic, strong, readonly) UIButton *lockBtn;
 
+/// 横屏时候是否显示自定义状态栏(iOS13+)，默认 NO.
+@property (nonatomic, assign) BOOL showCustomStatusBar;
+
 /// 播放器
 @property (nonatomic, weak) ZFPlayerController *player;
 
@@ -75,6 +78,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 如果是暂停状态，seek完是否播放，默认YES
 @property (nonatomic, assign) BOOL seekToPlay;
+
+/// 全屏模式
+@property (nonatomic, assign) ZFFullScreenMode fullScreenMode;
 
 /// 重置控制层
 - (void)resetControlView;
@@ -96,6 +102,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 视频尺寸改变
 - (void)videoPlayer:(ZFPlayerController *)videoPlayer presentationSizeChanged:(CGSize)size;
+
+/// 视频view已经旋转
+- (void)videoPlayer:(ZFPlayerController *)videoPlayer orientationWillChange:(ZFOrientationObserver *)observer;
 
 /// 标题和全屏模式
 - (void)showTitle:(NSString *_Nullable)title fullScreenMode:(ZFFullScreenMode)fullScreenMode;

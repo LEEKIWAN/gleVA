@@ -11,7 +11,7 @@ import AFNetworking
 import NVActivityIndicatorView
 import ZFPlayer
 
-class SearchResultViewController: UIViewController, NVActivityIndicatorViewable{
+class SearchResultViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalCountLabel: UILabel!
@@ -80,7 +80,7 @@ class SearchResultViewController: UIViewController, NVActivityIndicatorViewable{
         let encodedString = "\(url)\(searchText!)/\(page)"
         let encodedURL = encodedString.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
         
-        self.startAnimating()
+//        self.startAnimating()
         
         AFHTTPSessionManager().get(encodedURL!, parameters: nil, progress: nil, success: { (task, responseObject) in
             let dict = responseObject as! Dictionary<String, Any>
@@ -98,7 +98,7 @@ class SearchResultViewController: UIViewController, NVActivityIndicatorViewable{
             }
             print(dict)
             
-            self.stopAnimating()
+//            self.stopAnimating()
             self.tableView.reloadData()
             
             let playerManager = ZFAVPlayerManager()

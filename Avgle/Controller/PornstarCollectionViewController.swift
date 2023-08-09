@@ -15,7 +15,7 @@ protocol PornstarCollectionViewControllerDelegate: class {
     func onCollectionCellTouched(viewController: UIViewController, selectedItem: CollectionObject)
 }
 
-class PornstarCollectionViewController: UIViewController, NVActivityIndicatorViewable, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class PornstarCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     weak var delegate: PornstarCollectionViewControllerDelegate?
     var page = 0
@@ -55,7 +55,7 @@ class PornstarCollectionViewController: UIViewController, NVActivityIndicatorVie
         }
         
         
-        self.startAnimating()
+//        self.startAnimating()
         
         AFHTTPSessionManager().get("\(url)\(page)", parameters: nil, progress: nil, success: { (task, responseObject) in
             let dict = responseObject as! Dictionary<String, Any>
@@ -79,7 +79,7 @@ class PornstarCollectionViewController: UIViewController, NVActivityIndicatorVie
                 self.collectionArray.append(collection)
             }
             
-            self.stopAnimating()
+//            self.stopAnimating()
             self.collectionView.reloadData()
             
         }) { (task, error) in

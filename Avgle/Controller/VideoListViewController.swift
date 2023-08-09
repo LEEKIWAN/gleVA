@@ -13,7 +13,7 @@ import KafkaRefresh
 //import MKDropdownMenu
 import ZFPlayer
 
-class VideoListViewController: UIViewController, NVActivityIndicatorViewable {
+class VideoListViewController: UIViewController {
     
     let url = "https://api.avgle.com/v1/videos/"
     
@@ -81,7 +81,7 @@ class VideoListViewController: UIViewController, NVActivityIndicatorViewable {
         
         let parameters: [String : String] = ["type" : "public" , "c" : (currentCategory?.CHID)!]
         
-        self.startAnimating()
+//        self.startAnimating()
         
         AFHTTPSessionManager().get("\(url)\(page)", parameters: parameters, progress: nil, success: { (task, responseObject) in
             let dict = responseObject as! Dictionary<String, Any>
@@ -99,7 +99,7 @@ class VideoListViewController: UIViewController, NVActivityIndicatorViewable {
                 self.urls.append(URL(string: video.preview_video_url!)!)
             }
             
-            self.stopAnimating()
+//            self.stopAnimating()
             self.tableView.headRefreshControl.endRefreshing()
             self.tableView.reloadData()
             

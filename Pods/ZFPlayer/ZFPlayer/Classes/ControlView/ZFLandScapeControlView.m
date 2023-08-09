@@ -25,13 +25,16 @@
 #import "ZFLandScapeControlView.h"
 #import "UIView+ZFFrame.h"
 #import "ZFUtilities.h"
+#import "ZFPlayerStatusBar.h"
 #if __has_include(<ZFPlayer/ZFPlayer.h>)
-#import <ZFPlayer/ZFPlayer.h>
+#import <ZFPlayer/ZFPlayerConst.h>
 #else
-#import "ZFPlayer.h"
+#import "ZFPlayerConst.h"
 #endif
 
 @interface ZFLandScapeControlView () <ZFSliderViewDelegate>
+
+@property (nonatomic, strong) ZFPlayerStatusBar *statusBarView;
 /// 顶部工具栏
 @property (nonatomic, strong) UIView *topToolView;
 /// 返回按钮
@@ -64,6 +67,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         [self addSubview:self.topToolView];
+        [self.topToolView addSubview:self.statusBarView];
         [self.topToolView addSubview:self.backBtn];
         [self.topToolView addSubview:self.titleLabel];
         [self addSubview:self.bottomToolView];
@@ -100,10 +104,20 @@
     min_w = min_view_w;
     min_h = iPhoneX ? 110 : 80;
     self.topToolView.frame = CGRectMake(min_x, min_y, min_w, min_h);
+    
+    min_x = 0;
+    min_y = 0;
+    min_w = min_view_w;
+    min_h = 20;
+    self.statusBarView.frame = CGRectMake(min_x, min_y, min_w, min_h);
 
     min_x = (iPhoneX && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) ? 44: 15;
     if (@available(iOS 13.0, *)) {
-        min_y = UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation) ? 10 : (iPhoneX ? 40 : 20);
+        if (self.showCustomStatusBar) {
+            min_y = self.statusBarView.zf_bottom;
+        } else {
+            min_y = UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation) ? 10 : (iPhoneX ? 40 : 20);
+        }
     } else {
         min_y = (iPhoneX && UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) ? 10: (iPhoneX ? 40 : 20);
     }
@@ -161,7 +175,9 @@
     if (!self.isShow) {
         self.topToolView.zf_y = -self.topToolView.zf_height;
         self.bottomToolView.zf_y = self.zf_height;
+        self.lockBtn.zf_left = iPhoneX ? -82: -47;
     } else {
+        self.lockBtn.zf_left = iPhoneX ? 50: 18;
         if (self.player.isLockedScreen) {
             self.topToolView.zf_y = -self.topToolView.zf_height;
             self.bottomToolView.zf_y = self.zf_height;
@@ -226,11 +242,11 @@
     if (self.player.totalTime > 0) {
         self.slider.isdragging = YES;
         if (self.sliderValueChanging) self.sliderValueChanging(value, self.slider.isForward);
-        @weakify(self)
+        @zf_weakify(self)
         [self.player seekToTime:self.player.totalTime*value completionHandler:^(BOOL finished) {
-            @strongify(self)
+            @zf_strongify(self)
+            self.slider.isdragging = NO;
             if (finished) {
-                self.slider.isdragging = NO;
                 if (self.sliderValueChanged) self.sliderValueChanged(value);
                 if (self.seekToPlay) {
                     [self.player.currentPlayerManager play];
@@ -274,6 +290,7 @@
     self.topToolView.alpha           = 1;
     self.bottomToolView.alpha        = 1;
     self.isShow                      = NO;
+    self.lockBtn.selected            = self.player.isLockedScreen;
 }
 
 - (void)showControlView {
@@ -323,6 +340,17 @@
     self.lockBtn.hidden = self.player.orientationObserver.fullScreenMode == ZFFullScreenModePortrait;
 }
 
+/// 视频view即将旋转
+- (void)videoPlayer:(ZFPlayerController *)videoPlayer orientationWillChange:(ZFOrientationObserver *)observer {
+    if (self.showCustomStatusBar) {
+        if (self.hidden) {
+            [self.statusBarView destoryTimer];
+        } else {
+            [self.statusBarView startTimer];
+        }
+    }
+}
+
 - (void)videoPlayer:(ZFPlayerController *)videoPlayer currentTime:(NSTimeInterval)currentTime totalTime:(NSTimeInterval)totalTime {
     if (!self.slider.isdragging) {
         NSString *currentTimeString = [ZFUtilities convertTimeSecond:currentTime];
@@ -361,7 +389,28 @@
     }];
 }
 
+#pragma mark - setter
+
+- (void)setFullScreenMode:(ZFFullScreenMode)fullScreenMode {
+    _fullScreenMode = fullScreenMode;
+    self.player.orientationObserver.fullScreenMode = fullScreenMode;
+    self.lockBtn.hidden = fullScreenMode == ZFFullScreenModePortrait;
+}
+
+- (void)setShowCustomStatusBar:(BOOL)showCustomStatusBar {
+    _showCustomStatusBar = showCustomStatusBar;
+    self.statusBarView.hidden = !showCustomStatusBar;
+}
+
 #pragma mark - getter
+
+- (ZFPlayerStatusBar *)statusBarView {
+    if (!_statusBarView) {
+        _statusBarView = [[ZFPlayerStatusBar alloc] init];
+        _statusBarView.hidden = YES;
+    }
+    return _statusBarView;
+}
 
 - (UIView *)topToolView {
     if (!_topToolView) {

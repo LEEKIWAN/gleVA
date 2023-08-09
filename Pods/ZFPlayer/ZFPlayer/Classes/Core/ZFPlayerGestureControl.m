@@ -156,7 +156,7 @@
         _doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
         _doubleTap.delegate = self;
         _doubleTap.delaysTouchesBegan = YES;
-        _singleTap.delaysTouchesEnded = YES;
+        _doubleTap.delaysTouchesEnded = YES;
         _doubleTap.numberOfTouchesRequired = 1; 
         _doubleTap.numberOfTapsRequired = 2;
     }
@@ -216,7 +216,7 @@
                 case ZFPanDirectionH: {
                     if (translate.x > 0) {
                         self.panMovingDirection = ZFPanMovingDirectionRight;
-                    } else if (translate.y < 0) {
+                    } else {
                         self.panMovingDirection = ZFPanMovingDirectionLeft;
                     }
                 }
